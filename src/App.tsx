@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "./components/Global/GlobalStyles";
+import { lightTheme, darkTheme } from "./components/Global/Theme";
+import { useTypedSelector } from "./hooks/useTypedSelector";
+import useActions from "./hooks/useActions";
+import Button from "./components/Button";
 
-function App() {
+const App: React.FC = () => {
+  const { theme } = useTypedSelector((state) => state.global);
+  const { toggleTheme } = useActions();
+
+  const handleClick = () => {
+    toggleTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+      <GlobalStyles />
+      <h1
+        style={{
+          textAlign: "center",
+        }}
+      >
+        Rasoul Media
+      </h1>
+      <Button onClick={handleClick} size="small">
+        Theme
+      </Button>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
