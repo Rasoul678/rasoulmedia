@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { ThemeType } from "../Global/Theme";
 
 interface ButtonProps {
@@ -6,36 +6,23 @@ interface ButtonProps {
   theme: ThemeType;
 }
 
-const smallSizeCss = css`
-  height: 1rem;
-  font-size: 0.7em;
-`;
-
-const mediumSizeCss = css`
-  height: 1.2rem;
-  font-size: 0.9em;
-`;
-
-const largeSizeCss = css`
-  height: 1.4rem;
-  font-size: 1.1em;
-`;
-
 export const Button = styled.div<ButtonProps>`
   width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${({ theme }) => theme.text};
-  background: ${({ theme }) => theme.background};
-  border: 1px solid ${({ theme }) => theme.border};
-  padding: 0.5em;
-  border-radius: 0.25rem;
+  color: ${({ theme }: { theme: ThemeType }) =>
+    theme.buttons.primary.textColor};
+  background: ${({ theme }: { theme: ThemeType }) =>
+    theme.buttons.primary.backgroundColor};
+  padding: 0.5rem 0.8em;
+  border-radius: 0.4rem;
   cursor: pointer;
   user-select: none;
-  ${({ size }) => size === "small" && smallSizeCss}
-  ${({ size }) => size === "medium" && mediumSizeCss}
-  ${({ size }) => size === "large" && largeSizeCss}
+  text-transform: capitalize;
+  ${({ size }) => size === "small" && "font-size: 0.9em;"}
+  ${({ size }) => size === "medium" && "font-size: 1em;"}
+  ${({ size }) => size === "large" && "font-size: 1.2em;"}
 
   &:hover {
   }
