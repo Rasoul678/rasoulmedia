@@ -8,9 +8,6 @@ interface ToggleProps {
 
 export const ToggleLabel = styled.label`
   display: inline-block;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 export const ToggleInput = styled.input`
@@ -72,12 +69,11 @@ export const ToggleButton = styled.span<ToggleProps>`
   align-items: center;
 
   &::after {
-    left: 0;
     position: relative;
     display: block;
     content: "";
     width: 1rem;
-    height: 1em;
+    height: 1rem;
     border-radius: 4em;
     background-color: ${({ theme }: { theme: ThemeType }) => theme.body};
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),

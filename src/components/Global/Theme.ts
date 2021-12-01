@@ -37,7 +37,7 @@ export const lightTheme: ThemeType = {
 export const darkTheme: ThemeType = {
   body: Black.b2,
   text: White.w1,
-  border: White.w3,
+  border: Orange,
   background: Black.b2,
   buttons: {
     primary: {
