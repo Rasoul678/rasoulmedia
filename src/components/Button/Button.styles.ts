@@ -1,20 +1,15 @@
 import styled from "styled-components";
-import { ThemeType } from "../Global/Theme";
-
-interface ButtonProps {
+interface IButtonProps {
   size: "small" | "medium" | "large";
-  theme: ThemeType;
 }
 
-export const Button = styled.div<ButtonProps>`
+export const Button = styled.div<IButtonProps>`
   width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${({ theme }: { theme: ThemeType }) =>
-    theme.buttons.primary.textColor};
-  background: ${({ theme }: { theme: ThemeType }) =>
-    theme.buttons.primary.backgroundColor};
+  color: ${({ theme }) => theme.buttons.primary.textColor};
+  background: ${({ theme }) => theme.buttons.primary.backgroundColor};
   padding: 0.5rem 0.8em;
   border-radius: 0.4rem;
   cursor: pointer;

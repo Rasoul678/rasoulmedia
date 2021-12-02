@@ -1,21 +1,8 @@
 import { Black, White, Yellow, Orange, Blue } from "../../constants/Colors";
+import { ThemeType } from "../../types";
 
-interface ButtonColor {
-  backgroundColor: string;
-  textColor: string;
-}
-interface ButtonType {
-  primary: ButtonColor;
-  secondary: ButtonColor;
-  // error: ButtonColor;
-  // success: ButtonColor;
-}
-export interface ThemeType {
-  body: string;
-  text: string;
-  border: string;
-  background: string;
-  buttons: ButtonType;
+declare module "styled-components" {
+  export interface DefaultTheme extends ThemeType {}
 }
 
 export const lightTheme: ThemeType = {
@@ -38,7 +25,7 @@ export const darkTheme: ThemeType = {
   body: Black.b2,
   text: White.w1,
   border: Orange,
-  background: Black.b2,
+  background: Black.b3,
   buttons: {
     primary: {
       backgroundColor: Yellow,

@@ -1,9 +1,11 @@
 import { SiReactrouter } from "react-icons/si";
+import CSS from 'csstype';
 
 interface MenuIconProps {
   size?: number;
   color?: string;
   onClick?: () => void;
+  style?: CSS.Properties;
 }
 
 const MenuIcon: React.FC<MenuIconProps> = (props) => {

@@ -1,9 +1,7 @@
 import styled, { css } from "styled-components";
-import { ThemeType } from "../Global/Theme";
 
-interface ToggleProps {
+interface IToggleProps {
   isChecked: boolean;
-  theme: ThemeType;
 }
 
 export const ToggleLabel = styled.label`
@@ -23,7 +21,7 @@ export const ToggleInput = styled.input`
   white-space: nowrap;
 `;
 
-const getCheckedCss = (props: ToggleProps) => {
+const getCheckedCss = (props: IToggleProps) => {
   return props.isChecked
     ? css`
         &::after {
@@ -49,7 +47,7 @@ const getCheckedCss = (props: ToggleProps) => {
       `;
 };
 
-export const ToggleButton = styled.span<ToggleProps>`
+export const ToggleButton = styled.span<IToggleProps>`
   box-sizing: initial;
   display: inline-block;
   outline: 0;
@@ -62,7 +60,7 @@ export const ToggleButton = styled.span<ToggleProps>`
   user-select: none;
   border-radius: 1.2rem;
   padding: 0.4rem 0rem;
-  background-color: ${({ theme }: { theme: ThemeType }) => theme.text};
+  background-color: ${({ theme }) => theme.text};
   transition: all 0.4s ease;
   display: flex;
   justify-content: space-between;
@@ -75,7 +73,7 @@ export const ToggleButton = styled.span<ToggleProps>`
     width: 1rem;
     height: 1rem;
     border-radius: 4em;
-    background-color: ${({ theme }: { theme: ThemeType }) => theme.body};
+    background-color: ${({ theme }) => theme.body};
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
       padding 0.3s ease, margin 0.3s ease;
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1), 0 4px 0 rgba(0, 0, 0, 0.08);

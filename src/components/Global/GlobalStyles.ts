@@ -1,15 +1,20 @@
 import { createGlobalStyle } from "styled-components";
-import { ThemeType } from "./Theme";
 
-interface GlobalStylesProps {
-  theme: ThemeType;
-}
-
-export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
+export const GlobalStyles = createGlobalStyle`
   *  {
     box-sizing: border-box;
     padding: 0;
-    
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
