@@ -10,10 +10,20 @@ export interface ButtonType {
   // success: ButtonColor;
 }
 
-export interface ThemeType {
-    body: string;
-    text: string;
-    border: string;
-    background: string;
-    buttons: ButtonType;
+export interface Particles {
+  lineColor: string;
+  backgroundColor: {
+    r: number;
+    g: number;
+    b: number;
   }
+}
+
+export interface ThemeType {
+  body: string;
+  text: string;
+  border: string;
+  background: string;
+  buttons: ButtonType;
+  particles: Particles;
+}

@@ -3,7 +3,7 @@ import { useLayoutEffect, useState } from "react";
 type Direction = "up" | "down";
 
 const useScrollDirection = () => {
-  const [scrollDir, setScrollDir] = useState<Direction>("down");
+  const [scrollDir, setScrollDir] = useState<Direction>("up");
 
   useLayoutEffect(() => {
     const threshold = 0;

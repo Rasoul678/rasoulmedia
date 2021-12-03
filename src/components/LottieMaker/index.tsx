@@ -9,11 +9,20 @@ interface LottieMakerProps {
   width?: string;
   isStopped?: boolean;
   speed?: number;
+  className?: string;
 }
 
 const LottieMaker = forwardRef<Lottie, LottieMakerProps>((props, ref) => {
-  const { animationJSON, loop, autoplay, height, width, isStopped, speed } =
-    props;
+  const {
+    animationJSON,
+    loop,
+    autoplay,
+    height,
+    width,
+    isStopped,
+    speed,
+    className,
+  } = props;
 
   const defaultOptions: Options = {
     loop: loop,
@@ -21,6 +30,7 @@ const LottieMaker = forwardRef<Lottie, LottieMakerProps>((props, ref) => {
     animationData: animationJSON,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
+      className,
     },
   };
 
@@ -32,6 +42,7 @@ const LottieMaker = forwardRef<Lottie, LottieMakerProps>((props, ref) => {
       height={height}
       width={width}
       isStopped={isStopped}
+      isClickToPauseDisabled={true}
     />
   );
 });

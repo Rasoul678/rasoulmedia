@@ -22,6 +22,7 @@ export const MobileMenuContainer = styled.div<Partial<MobileMenuProps>>`
   align-items: center;
   gap: 0.7rem;
   transition: bottom 0.3s ease-in-out;
+  z-index: 200;
 `;
 
 export const MenuItem = styled.div<Partial<MobileMenuProps>>`

@@ -20,6 +20,14 @@ export const lightTheme: ThemeType = {
       textColor: Black.b4,
     },
   },
+  particles: {
+    lineColor: Black.b2,
+    backgroundColor: {
+      r: 230,
+      g: 230,
+      b: 230,
+    },
+  },
 };
 export const darkTheme: ThemeType = {
   body: Black.b2,
@@ -34,6 +42,14 @@ export const darkTheme: ThemeType = {
     secondary: {
       backgroundColor: Blue,
       textColor: Black.b1,
+    },
+  },
+  particles: {
+    lineColor: White.w1,
+    backgroundColor: {
+      r: 0,
+      g: 0,
+      b: 0,
     },
   },
 };

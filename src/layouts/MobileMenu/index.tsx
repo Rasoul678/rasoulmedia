@@ -11,6 +11,7 @@ import CustomLink from "../../components/CustomLink";
 
 const MobileMenu: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const direction = useScrollDirection();
 
   const handleMenuClick = () => {
@@ -20,19 +21,42 @@ const MobileMenu: React.FC = () => {
   const hasScrollbar =
     document.body.clientHeight > document.documentElement.clientHeight;
 
-  const isVisible = () => {
-    if (!hasScrollbar) return true;
-    return direction === "down" ? true : false;
-  };
-
   useEffect(() => {
-    if (direction === "up") {
+    if (direction === "down") {
       setIsMenuOpen(false);
     }
-  }, [direction]);
+
+    if (!hasScrollbar) {
+      setIsVisible(true);
+    }
+
+    if (direction === "up") {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  }, [direction, hasScrollbar]);
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.pageYOffset === 0) {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+
+    if (hasScrollbar) {
+      setIsVisible(false);
+    }
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [hasScrollbar]);
 
   return (
-    <Styled.MobileMenuContainer isVisible={isVisible()}>
+    <Styled.MobileMenuContainer isVisible={isVisible}>
       <Styled.MenuItem as={CustomLink} to="/">
         <HomeIcon size={35} />
       </Styled.MenuItem>
