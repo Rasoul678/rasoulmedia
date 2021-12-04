@@ -1,5 +1,5 @@
-import LottieMaker from "../../components/LottieMaker";
-import NotFoundJson from "../../assets/animations/75244-analyse.json";
+import LottieMaker from "components/LottieMaker";
+import NotFoundJson from "assets/animations/75244-analyse.json";
 import * as Styled from "./NotFound.styles";
 
 const NotFound: React.FC = () => {

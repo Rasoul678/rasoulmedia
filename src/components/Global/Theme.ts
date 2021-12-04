@@ -29,6 +29,11 @@ export const lightTheme: ThemeType = {
       b: 230,
     },
   },
+  breakpoints: {
+    mobile: 450,
+    tablet: 1025,
+    desktop: 1824,
+  },
 };
 export const darkTheme: ThemeType = {
   name: "dark",
@@ -53,5 +58,10 @@ export const darkTheme: ThemeType = {
       g: 0,
       b: 0,
     },
+  },
+  breakpoints: {
+    mobile: 450,
+    tablet: 1025,
+    desktop: 1824,
   },
 };

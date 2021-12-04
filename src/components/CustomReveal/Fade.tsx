@@ -1,17 +1,9 @@
 import Fade from "react-reveal/Fade";
+import { RevealProps } from "types";
 
-interface IFade {
-  left?: boolean;
-  right?: boolean;
-}
-
-const FadeAnimation: React.FC<IFade> = (props) => {
-  const { children, left, right } = props;
-  return (
-    <Fade left={!!left} right={!!right}>
-      {children}
-    </Fade>
-  );
+const FadeAnimation: React.FC<RevealProps> = (props) => {
+  const { children, ...rest } = props;
+  return <Fade {...rest}>{children}</Fade>;
 };
 
 export default FadeAnimation;

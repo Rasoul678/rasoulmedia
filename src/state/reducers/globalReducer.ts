@@ -4,10 +4,12 @@ import { Theme, Action } from "../actions";
 
 interface GlobalState {
   theme: Theme;
+  isMobileMenuOpen: boolean;
 }
 
 const initialState: GlobalState = {
   theme: "light",
+  isMobileMenuOpen: false,
 };
 
 const globalReducer = (
@@ -18,6 +20,10 @@ const globalReducer = (
     switch (action.type) {
       case ActionType.TOGGLE_THEME:
         draft.theme = action.payload;
+        break;
+
+      case ActionType.TOGGLE_MOBILE_MENU:
+        draft.isMobileMenuOpen = action.payload;
         break;
 
       default:

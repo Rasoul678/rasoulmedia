@@ -1,5 +1,5 @@
-import LottieMaker from "../../components/LottieMaker";
-import ComingSoonJson from "../../assets/animations/87843-coming-soon.json";
+import LottieMaker from "components/LottieMaker";
+import ComingSoonJson from "assets/animations/87843-coming-soon.json";
 
 const Apps: React.FC = () => {
   return (

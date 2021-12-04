@@ -29,10 +29,6 @@ export const IntroductionContainer = styled.div`
   width: 100%;
   height: 100%;
   padding: 1rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
 
   .home-gallery-avatar {
     border-radius: 50%;
@@ -61,6 +57,10 @@ export const ArrowDownWrapper = styled.div`
   position: absolute;
   bottom: 5rem;
   cursor: pointer;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    bottom: 2rem;
+  }
 `;
 
 export const SocialLinkWrapper = styled.div`
@@ -72,6 +72,10 @@ export const SocialLinkWrapper = styled.div`
   align-items: center;
   gap: 1rem;
   color: ${({ theme }) => theme.border};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    bottom: 8rem;
+  }
 
   svg {
     cursor: pointer;

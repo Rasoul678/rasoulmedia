@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import useResponsive from "../../hooks/useResponsive";
+import useResponsive from "hooks/useResponsive";
 
 const OnDesktop: React.FC = ({ children }) => {
   const { isDesktopOrLaptop, isBigScreenDevice } = useResponsive();

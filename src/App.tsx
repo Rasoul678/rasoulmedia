@@ -1,15 +1,15 @@
 import { ThemeProvider } from "styled-components";
 import { Routes, Route } from "react-router-dom";
-import { GlobalStyles } from "./components/Global/GlobalStyles";
-import { lightTheme, darkTheme } from "./components/Global/Theme";
-import { useTypedSelector } from "./hooks/useTypedSelector";
-import MobileMenu from "./layouts/MobileMenu";
-import Home from "./views/Home";
-import Contact from "./views/Contact";
-import Apps from "./views/Apps";
-import Code from "./views/Code";
-import OnMobile from "./components/MediaQuery/Mobile";
-import NotFound from "./views/404";
+import { GlobalStyles } from "components/Global/GlobalStyles";
+import { lightTheme, darkTheme } from "components/Global/Theme";
+import { useTypedSelector } from "hooks/useTypedSelector";
+import MobileMenu from "layouts/MobileMenu";
+import Home from "views/Home";
+import Contact from "views/Contact";
+import Apps from "views/Apps";
+import Code from "views/Code";
+import OnMobile from "components/MediaQuery/Mobile";
+import NotFound from "views/404";
 
 const App: React.FC = () => {
   const { theme } = useTypedSelector((state) => state.global);

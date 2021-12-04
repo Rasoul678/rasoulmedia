@@ -53,7 +53,7 @@ export const getParticlesConfig = ({
         },
       },
       size: {
-        value: 20,
+        value: 25,
         random: true,
         anim: {
           enable: true,
@@ -89,7 +89,7 @@ export const getParticlesConfig = ({
       events: {
         onHover: {
           enable: false,
-          mode: "bubble",
+          mode: "repulse",
           parallax: {
             enable: false,
             force: 60,
@@ -98,7 +98,7 @@ export const getParticlesConfig = ({
         },
         onClick: {
           enable: true,
-          mode: "push",
+          mode: "repulse",
         },
         resize: true,
       },

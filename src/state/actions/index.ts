@@ -7,4 +7,9 @@ export interface ToggleTheme {
   payload: Theme;
 }
 
-export type Action = ToggleTheme;
+export interface ToggleMobileMenu {
+  type: ActionType.TOGGLE_MOBILE_MENU;
+  payload: boolean;
+}
+
+export type Action = ToggleTheme | ToggleMobileMenu;

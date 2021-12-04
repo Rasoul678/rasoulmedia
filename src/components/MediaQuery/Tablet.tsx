@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import useResponsive from "../../hooks/useResponsive";
+import useResponsive from "hooks/useResponsive";
 
 const OnTablet: React.FC = ({ children }) => {
   const { isMobile, isTablet } = useResponsive();
