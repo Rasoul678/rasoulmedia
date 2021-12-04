@@ -1,13 +1,17 @@
-const Contact = () => {
+import LottieMaker from "../../components/LottieMaker";
+import ComingSoonJson from "../../assets/animations/87843-coming-soon.json";
+
+const Contact: React.FC = () => {
   return (
-    <h1
+    <div
       style={{
         textAlign: "center",
-        height: "20vh",
+        padding: "1rem",
       }}
     >
-      Contact
-    </h1>
+      <h1>Contact</h1>
+      <LottieMaker animationJSON={ComingSoonJson} autoplay width="20rem" />
+    </div>
   );
 };
 

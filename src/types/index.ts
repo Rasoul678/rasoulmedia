@@ -20,6 +20,7 @@ export interface Particles {
 }
 
 export interface ThemeType {
+  name: 'dark' | 'light';
   body: string;
   text: string;
   border: string;

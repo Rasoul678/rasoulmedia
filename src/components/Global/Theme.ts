@@ -6,6 +6,7 @@ declare module "styled-components" {
 }
 
 export const lightTheme: ThemeType = {
+  name: "light",
   body: White.w2,
   text: Black.b1,
   border: White.w4,
@@ -30,6 +31,7 @@ export const lightTheme: ThemeType = {
   },
 };
 export const darkTheme: ThemeType = {
+  name: "dark",
   body: Black.b2,
   text: White.w1,
   border: Orange,

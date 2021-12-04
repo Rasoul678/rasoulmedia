@@ -6,9 +6,11 @@ import { getParticlesConfig } from "../../config";
 import * as Styled from "./HomeGallery.styles";
 import CustomTypewriter from "../CustomTypewriter";
 import LottieMaker from "../LottieMaker";
-import ArrowDown from "../../assets/animations/8711-scroll-down-hint.json";
+import ArrowDownWhite from "../../assets/animations/34342-arrow-down-icon-white.json";
+import ArrowDownBlack from "../../assets/animations/34342-arrow-down-icon.json";
 import LinkedinIcon from "../../components/Icons/LinkedinIcon";
 import GithubIcon from "../../components/Icons/GithubIcon";
+import { Links } from "../../constants/Links";
 
 const HomeGallery: React.FC = () => {
   const theme = useTheme();
@@ -27,17 +29,18 @@ const HomeGallery: React.FC = () => {
     if (newWindow) newWindow.opener = null;
   };
 
-  let email = "h.rostami.r@gmail.com";
   let size = 300;
-  let src = "http://www.gravatar.com/avatar/" + md5(email) + ".jpg?s=" + size;
+  let src =
+    "http://www.gravatar.com/avatar/" + md5(Links.email) + ".jpg?s=" + size;
 
   return (
     <Styled.HomeGalleryContainer>
       <Styled.IntroductionContainer>
         <img
-          src={"https://i.pravatar.cc/150?img="}
+          src={"https://i.pravatar.cc/135?img=67"}
           alt="Rasoul"
           className="home-gallery-avatar"
+          width="135"
         />
         <Styled.UserNameWrapper>
           Hi, I'm <Styled.UserName>Rasoul Hesami</Styled.UserName>
@@ -46,8 +49,8 @@ const HomeGallery: React.FC = () => {
           strings={[
             "I like to design things.",
             "I love learning new tech.",
-            "I love meeting new people.",
-            "I create unique digital experiences.",
+            "I like meeting new people.",
+            "I create unique apps.",
           ]}
           wrapperClassName="typing"
           cursorClassName="cursor"
@@ -55,17 +58,10 @@ const HomeGallery: React.FC = () => {
         />
         <Styled.SocialLinkWrapper>
           <LinkedinIcon
-            size={30}
-            onClick={() =>
-              handleLinkClick(
-                "https://www.linkedin.com/in/rasoul-hesami-rostami/"
-              )
-            }
+            size={40}
+            onClick={() => handleLinkClick(Links.linkedin)}
           />
-          <GithubIcon
-            size={34}
-            onClick={() => handleLinkClick("https://github.com/Rasoul678")}
-          />
+          <GithubIcon size={46} onClick={() => handleLinkClick(Links.github)} />
         </Styled.SocialLinkWrapper>
         <Styled.ArrowDownWrapper>
           <ScrollLink
@@ -77,7 +73,13 @@ const HomeGallery: React.FC = () => {
             duration={500}
             className="scroll-down-btn"
           >
-            <LottieMaker animationJSON={ArrowDown} autoplay width="5rem" />
+            <LottieMaker
+              animationJSON={
+                theme.name === "dark" ? ArrowDownWhite : ArrowDownBlack
+              }
+              autoplay
+              width="4rem"
+            />
           </ScrollLink>
         </Styled.ArrowDownWrapper>
       </Styled.IntroductionContainer>

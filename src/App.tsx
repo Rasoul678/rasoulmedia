@@ -9,7 +9,7 @@ import Contact from "./views/Contact";
 import Apps from "./views/Apps";
 import Code from "./views/Code";
 import OnMobile from "./components/MediaQuery/Mobile";
-import NotFound from "./views/404/NotFound";
+import NotFound from "./views/404";
 
 const App: React.FC = () => {
   const { theme } = useTypedSelector((state) => state.global);

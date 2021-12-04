@@ -15,7 +15,7 @@ export const HomeGalleryContainer = styled.div`
   .Typewriter {
     z-index: 100;
     position: absolute;
-    top: 20rem;
+    top: 17rem;
   }
 
   .gallery-canvas {
@@ -36,9 +36,9 @@ export const IntroductionContainer = styled.div`
 
   .home-gallery-avatar {
     border-radius: 50%;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     z-index: 100;
-    border: 4px solid ${({ theme }) => theme.border};
+    border: 3px solid ${({ theme }) => theme.border};
   }
 
   .scroll-down-btn {
@@ -53,20 +53,20 @@ export const UserName = styled.span`
 export const UserNameWrapper = styled.h1`
   z-index: 100;
   position: absolute;
-  top: 14rem;
+  top: 13rem;
 `;
 
 export const ArrowDownWrapper = styled.div`
   z-index: 100;
   position: absolute;
-  bottom: 1rem;
+  bottom: 5rem;
   cursor: pointer;
 `;
 
 export const SocialLinkWrapper = styled.div`
   z-index: 100;
   position: absolute;
-  bottom: 8rem;
+  bottom: 12rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
