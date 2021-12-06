@@ -16,6 +16,10 @@ export const HomeGalleryContainer = styled.div`
     z-index: 100;
     position: absolute;
     top: 17rem;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+      top: 19rem;
+    }
   }
 
   .gallery-canvas {

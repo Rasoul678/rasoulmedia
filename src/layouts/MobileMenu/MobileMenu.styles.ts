@@ -21,7 +21,7 @@ export const MobileMenuContainer = styled.div<Partial<MobileMenuProps>>`
   justify-content: space-between;
   align-items: center;
   gap: 0.7rem;
-  transition: bottom 0.3s ease-in-out;
+  transition: bottom 0.2s linear;
   z-index: 200;
 `;
 
@@ -55,12 +55,12 @@ export const MenuItem = styled.div<Partial<MobileMenuProps>>`
 export const ExpandedMenuContainer = styled.div<Partial<MobileMenuProps>>`
   -webkit-box-shadow: inset 0px 7px 3px -3px ${({ theme }) => theme.border};
   -moz-box-shadow: inset 0px 7px 3px -3px ${({ theme }) => theme.border};
-  box-shadow: inset 0px 7px 3px -3px ${({ theme }) => theme.border};
+  box-shadow: inset 0px 5px 3px -3px ${({ theme }) => theme.border};
   width: 100vw;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   ${({ isOpen }) =>
-    isOpen ? "height: calc(70vh )" : "height: 0rem; border-color: transparent"};
+    isOpen ? "height: calc(50vh )" : "height: 0rem; border-color: transparent"};
   position: absolute;
   bottom: -2rem;
   transition: all 0.3s ease-in-out;
@@ -85,16 +85,16 @@ export const MenuCellsContainer = styled.div`
   overflow-y: scroll;
   padding: 1.2rem 0.5rem;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
 `;
 
 export const MenuCellWrapper = styled.div`
-  width: calc(32% - 0.4rem);
-  height: 5.6rem;
-  border-radius: 1.3rem;
+  width: calc(30%);
+  height: 6rem;
+  border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,5 +110,5 @@ export const MenuCellWrapper = styled.div`
 `;
 
 export const MenuCellName = styled.h4`
-color: ${({ theme }) => theme.text};
-`
+  color: ${({ theme }) => theme.text};
+`;

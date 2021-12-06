@@ -42,7 +42,7 @@ const MobileMenu: React.FC = () => {
 
   useEffect(() => {
     const onScroll = () => {
-      if (window.pageYOffset === 0) {
+      if (window.pageYOffset < 50 && hasScrollbar) {
         setIsVisible(false);
       }
     };

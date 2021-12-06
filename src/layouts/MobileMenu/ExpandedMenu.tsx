@@ -30,13 +30,15 @@ const ExpandedMenu: React.FC = () => {
       <MenuIcon size={35} onClick={handleCloseMobileMenu} />
 
       <Styled.MenuCellsContainer ref={cellsRef}>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((i) => (
-          <Styled.MenuCellWrapper key={i}>Cell : {i}</Styled.MenuCellWrapper>
-        ))}
         <Styled.MenuCellWrapper>
           <Toggle value={isChecked} onToggle={handleToggle} />
-          <Styled.MenuCellName>{theme === "dark" ? "Dark" : "Light"}</Styled.MenuCellName>
+          <Styled.MenuCellName>
+            {theme === "dark" ? " Light" : "Dark"}
+          </Styled.MenuCellName>
         </Styled.MenuCellWrapper>
+        {[1, 2, 3, 4, 5].map((i) => (
+          <Styled.MenuCellWrapper key={i}>Cell : {i}</Styled.MenuCellWrapper>
+        ))}
       </Styled.MenuCellsContainer>
     </Styled.ExpandedMenuContainer>
   );

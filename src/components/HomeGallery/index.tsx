@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { memo, useEffect, useState } from "react";
 import Particles, { Container } from "react-tsparticles";
 import { useTheme } from "styled-components";
 import md5 from "md5";
 import { Link as ScrollLink } from "react-scroll";
-import { getParticlesConfig } from "config";
+import { useParticlesConfig } from "config";
 import * as Styled from "./HomeGallery.styles";
 import CustomTypewriter from "components/CustomTypewriter";
 import LottieMaker from "components/LottieMaker";
@@ -11,21 +11,24 @@ import ArrowDownWhite from "assets/animations/34342-arrow-down-icon-white.json";
 import ArrowDownBlack from "assets/animations/34342-arrow-down-icon.json";
 import LinkedinIcon from "components/Icons/LinkedinIcon";
 import GithubIcon from "components/Icons/GithubIcon";
+import StackOverflowIcon from "components/Icons/StackOverflowIcon";
 import { Links } from "constants/Links";
 import Fade from "components/CustomReveal/Fade";
 
 const HomeGallery: React.FC = () => {
   const [isImageLoaded, setIsImageLOaded] = useState(false);
+  const [particlesKey, setParticlesKey] = useState<number | null>(null);
   const theme = useTheme();
+
+  useEffect(() => {
+    setParticlesKey(Math.random());
+  }, [theme]);
+
   const particlesLoaded = (container: Container) => {
     // console.log(container);
   };
 
-  const options = {
-    lineColor: theme.particles.lineColor,
-    particleNumber: 70,
-    backgroundColor: theme.particles.backgroundColor,
-  };
+  const options = useParticlesConfig();
 
   const handleLinkClick = (url: string) => {
     const newWindow = window.open(url, "_blank", "noopener,noreferrer");
@@ -74,6 +77,10 @@ const HomeGallery: React.FC = () => {
                 size={36}
                 onClick={() => handleLinkClick(Links.linkedin)}
               />
+              <StackOverflowIcon
+                size={42}
+                onClick={() => handleLinkClick(Links.stackOverflow)}
+              />
               <GithubIcon
                 size={42}
                 onClick={() => handleLinkClick(Links.github)}
@@ -102,13 +109,14 @@ const HomeGallery: React.FC = () => {
         </Fade>
       </Styled.IntroductionContainer>
       <Particles
+        key={particlesKey}
         id="home-gallery"
         loaded={particlesLoaded}
-        options={getParticlesConfig(options) as any}
+        options={options as any}
         canvasClassName="gallery-canvas"
       />
     </Styled.HomeGalleryContainer>
   );
 };
 
-export default HomeGallery;
+export default memo(HomeGallery);

@@ -1,15 +1,9 @@
-import { Particles } from "../types";
+import { useTheme } from "styled-components";
 import BackgroundImage from "../assets/others/particles.png";
 
-interface IParams extends Particles {
-  particleNumber: number;
-}
+export const useParticlesConfig = () => {
+  const theme = useTheme();
 
-export const getParticlesConfig = ({
-  lineColor,
-  particleNumber,
-  backgroundColor,
-}: IParams) => {
   return {
     fullScreen: {
       enable: true,
@@ -17,7 +11,7 @@ export const getParticlesConfig = ({
     },
     particles: {
       number: {
-        value: particleNumber,
+        value: 70,
         limit: 300,
         density: {
           enable: true,
@@ -65,7 +59,7 @@ export const getParticlesConfig = ({
       line_linked: {
         enable: true,
         distance: 100,
-        color: lineColor,
+        color: theme.particles.lineColor,
         opacity: 1,
         width: 1,
       },
@@ -131,7 +125,7 @@ export const getParticlesConfig = ({
       enable: true,
       cover: {
         color: {
-          value: backgroundColor,
+          value: theme.particles.backgroundColor,
         },
       },
     },
