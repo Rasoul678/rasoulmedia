@@ -59,6 +59,7 @@ export const darkTheme: ThemeType = {
       b: 0,
     },
   },
+  //TODO: change
   breakpoints: {
     mobile: 450,
     tablet: 1025,

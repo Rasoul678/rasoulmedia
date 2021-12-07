@@ -18,7 +18,7 @@ const ToggleButton: React.FC<ToggleProps> = (props) => {
   return (
     <Styled.ToggleLabel>
       <Styled.ToggleInput type="checkbox" checked={value} onChange={toggle} />
-      <Styled.ToggleButton isChecked={value} />
+      <Styled.ToggleSlider />
     </Styled.ToggleLabel>
   );
 };

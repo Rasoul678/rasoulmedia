@@ -112,3 +112,31 @@ export const MenuCellWrapper = styled.div`
 export const MenuCellName = styled.h4`
   color: ${({ theme }) => theme.text};
 `;
+
+export const LangOptionsContainer = styled.div`
+  color: ${({ theme }) => theme.text};
+  width: 60vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+`;
+
+export const LangOptionWrapper = styled.div`
+  width: 100%;
+  border: 1px solid ${({ theme }) => theme.border};
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  text-transform: capitalize;
+`;
+
+export const LangCellWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+`;

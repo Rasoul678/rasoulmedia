@@ -21,7 +21,7 @@ export const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
-    font-family: Ubuntu, Helvetica, Arial, Roboto, sans-serif;
+    font-family: IRANSans, Ubuntu, Helvetica, Arial, Roboto, sans-serif;
     transition: all 0.2s linear;
     user-select: none;
     margin-bottom: 4rem;

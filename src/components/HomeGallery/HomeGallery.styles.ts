@@ -16,6 +16,7 @@ export const HomeGalleryContainer = styled.div`
     z-index: 100;
     position: absolute;
     top: 17rem;
+    text-align: center;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
       top: 19rem;
@@ -50,7 +51,7 @@ export const UserName = styled.span`
   color: ${({ theme }) => theme.border};
 `;
 
-export const UserNameWrapper = styled.h1`
+export const UserNameWrapper = styled.h2`
   z-index: 100;
   position: absolute;
   top: 13rem;

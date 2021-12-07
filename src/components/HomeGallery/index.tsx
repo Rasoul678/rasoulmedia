@@ -3,6 +3,7 @@ import Particles, { Container } from "react-tsparticles";
 import { useTheme } from "styled-components";
 import md5 from "md5";
 import { Link as ScrollLink } from "react-scroll";
+import { useTranslation } from "react-i18next";
 import { useParticlesConfig } from "config";
 import * as Styled from "./HomeGallery.styles";
 import CustomTypewriter from "components/CustomTypewriter";
@@ -19,6 +20,7 @@ const HomeGallery: React.FC = () => {
   const [isImageLoaded, setIsImageLOaded] = useState(false);
   const [particlesKey, setParticlesKey] = useState<number | null>(null);
   const theme = useTheme();
+  const { t } = useTranslation();
 
   useEffect(() => {
     setParticlesKey(Math.random());
@@ -59,14 +61,14 @@ const HomeGallery: React.FC = () => {
               onLoad={() => setIsImageLOaded(true)}
             />
             <Styled.UserNameWrapper>
-              Hi, I'm <Styled.UserName>Rasoul Hesami</Styled.UserName>
+              {t("welcome-intro")}
             </Styled.UserNameWrapper>
             <CustomTypewriter
               strings={[
-                "I like to design things.",
-                "I love learning new tech.",
-                "I like meeting new people.",
-                "I create unique apps.",
+                t("typewriter.1"),
+                t("typewriter.2"),
+                t("typewriter.3"),
+                t("typewriter.4"),
               ]}
               wrapperClassName="typing"
               cursorClassName="cursor"
