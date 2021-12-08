@@ -60,7 +60,7 @@ export const ExpandedMenuContainer = styled.div<Partial<MobileMenuProps>>`
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   ${({ isOpen }) =>
-    isOpen ? "height: calc(50vh )" : "height: 0rem; border-color: transparent"};
+    isOpen ? "height: calc(60vh )" : "height: 0rem; border-color: transparent"};
   position: absolute;
   bottom: -2rem;
   transition: all 0.3s ease-in-out;
@@ -84,33 +84,31 @@ export const MenuCellsContainer = styled.div`
   max-height: calc(100% - 6.7rem);
   overflow-y: scroll;
   padding: 1.2rem 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25%, 3fr));
+  gap: 2rem;
 `;
 
 export const MenuCellWrapper = styled.div`
-  width: calc(30%);
-  height: 6rem;
+  width: 100%;
+  aspect-ratio: 1;
   border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
   flex-direction: column;
-  // background-color: ${({ theme }) => theme.background};
-  border: 1px solid ${({ theme }) => theme.border};
+  background-color: ${({ theme }) => theme.card.backgroundColor};
+  box-shadow: 0px 0px 5px 0px ${({ theme }) => theme.card.backgroundColor};
 
   @supports (backdrop-filter: blur(10px)) {
-    backdrop-filter: blur(10px);
-    background-color: transparent;
+    backdrop-filter: blur(20px);
   }
-`;
 
-export const MenuCellName = styled.h4`
-  color: ${({ theme }) => theme.text};
+  .dark-mode {
+    transform: rotateZ(45deg) !important;
+    color: ${({ theme }) => theme.text} !important;
+  }
 `;
 
 export const LangOptionsContainer = styled.div`
@@ -123,11 +121,11 @@ export const LangOptionsContainer = styled.div`
 
 export const LangOptionWrapper = styled.div`
   width: 100%;
-  border: 1px solid ${({ theme }) => theme.border};
   padding: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   text-align: center;
   text-transform: capitalize;
+  background-color: ${({ theme }) => theme.card.backgroundColor};
 `;
 
 export const LangCellWrapper = styled.div`

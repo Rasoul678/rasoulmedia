@@ -34,6 +34,11 @@ export interface ThemeType {
   buttons: ButtonType;
   particles: Particles;
   breakpoints: Breakpoints;
+  card: {
+    backgroundColor: string;
+    borderColor: string;
+    textColor: string;
+  }
 }
 
 export interface RevealProps {

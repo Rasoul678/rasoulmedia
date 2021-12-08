@@ -7,19 +7,29 @@ export interface ModalProps {
   hide: () => void;
   modalContent: JSX.Element;
   headerText?: string;
+  closeButton?: boolean;
+  isLocked?: boolean;
 }
 
 const Modal: React.FC<ModalProps> = (props) => {
-  const { isShown, hide, modalContent, headerText } = props;
+  const { isShown, hide, modalContent, headerText, closeButton, isLocked } =
+    props;
+
+  const handleClickBackdrop = () => {
+    if (isLocked) return;
+    hide();
+  };
 
   const modal = (
     <React.Fragment>
-      <Styled.Backdrop onClick={hide} />
+      <Styled.Backdrop onClick={handleClickBackdrop} />
       <Styled.Wrapper>
         <Styled.Modal>
           <Styled.Header>
             <Styled.HeaderText>{headerText}</Styled.HeaderText>
-            <Styled.CloseButton onClick={hide}>X</Styled.CloseButton>
+            {closeButton && (
+              <Styled.CloseButton onClick={hide}>X</Styled.CloseButton>
+            )}
           </Styled.Header>
           <Styled.Content>{modalContent}</Styled.Content>
         </Styled.Modal>

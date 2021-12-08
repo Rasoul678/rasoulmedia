@@ -1,13 +1,15 @@
-import * as Styled from "./MobileMenu.styles";
 import i18next from "i18next";
+import * as Styled from "./MobileMenu.styles";
+import useLanguages, { Languages } from "hooks/useLanguages";
 
 interface ISelectLang {
-  languages: { [key: string]: string };
   toggle: () => void;
 }
 
 const SelectLang: React.FC<ISelectLang> = (props) => {
-  const { languages, toggle } = props;
+  const { toggle } = props;
+
+  const languages = useLanguages();
 
   const handleSelectLang = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>
@@ -19,13 +21,14 @@ const SelectLang: React.FC<ISelectLang> = (props) => {
 
   return (
     <Styled.LangOptionsContainer>
-      {Object.entries(languages).map(([key, value], index) => (
+      {Object.entries(languages as Languages).map(([key, value], index) => (
         <Styled.LangOptionWrapper
           key={index}
           data-lang={key}
           onClick={handleSelectLang}
         >
-          {value}
+          {value.flag}
+          {value.title}
         </Styled.LangOptionWrapper>
       ))}
     </Styled.LangOptionsContainer>

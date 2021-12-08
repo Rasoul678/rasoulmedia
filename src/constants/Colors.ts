@@ -1,7 +1,7 @@
 export enum White {
   w1 = "#FFFFFF",
   w2 = "#F5F5F5",
-  w3 = "#B2B2B2",
+  w3 = "#D0D0D0",
   w4 = "#6B8096",
 }
 

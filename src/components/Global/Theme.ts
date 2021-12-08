@@ -34,6 +34,11 @@ export const lightTheme: ThemeType = {
     tablet: 1025,
     desktop: 1824,
   },
+  card: {
+    backgroundColor: White.w3,
+    borderColor: White.w2,
+    textColor: White.w1,
+  }
 };
 export const darkTheme: ThemeType = {
   name: "dark",
@@ -65,4 +70,9 @@ export const darkTheme: ThemeType = {
     tablet: 1025,
     desktop: 1824,
   },
+  card: {
+    backgroundColor: Black.b3,
+    borderColor: Black.b2,
+    textColor: Black.b1,
+  }
 };

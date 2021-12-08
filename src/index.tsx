@@ -11,7 +11,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <React.StrictMode>
-        <Suspense fallback='Loading ...'>
+        <Suspense fallback={<div style={{border: '1px solid red', width: '100%', height: 'calc(100vh - 1rem)'}}>Loading...</div>}>
           <App />
         </Suspense>
       </React.StrictMode>

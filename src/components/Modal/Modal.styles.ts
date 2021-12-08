@@ -24,7 +24,7 @@ export const Backdrop = styled.div`
 `;
 export const Modal = styled.div`
   z-index: 100;
-  background: ${({ theme }) => theme.background};
+  background: ${({ theme }) => theme.card.borderColor};
   position: relative;
   margin: auto;
   border-radius: 0.5rem;
