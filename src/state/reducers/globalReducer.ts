@@ -1,14 +1,20 @@
 import produce from "immer";
 import { ActionType } from "../action-types";
-import { Theme, Action } from "../actions";
+import { ThemeMode, Action } from "../actions";
+import theme from "schema/theme.json";
+import { ThemePallet } from "types";
 
 interface GlobalState {
-  theme: Theme;
+  themeMode: ThemeMode;
+  themePallet: ThemePallet;
+  selectedPallet: string;
   isMobileMenuOpen: boolean;
 }
 
 const initialState: GlobalState = {
-  theme: "light",
+  themeMode: "dark",
+  themePallet: theme.data.dark,
+  selectedPallet: "p1",
   isMobileMenuOpen: false,
 };
 
@@ -18,12 +24,17 @@ const globalReducer = (
 ): GlobalState =>
   produce(state, (draft) => {
     switch (action.type) {
-      case ActionType.TOGGLE_THEME:
-        draft.theme = action.payload;
+      case ActionType.TOGGLE_THEME_MODE:
+        draft.themeMode = action.payload;
+        draft.themePallet = theme.data[action.payload];
         break;
 
       case ActionType.TOGGLE_MOBILE_MENU:
         draft.isMobileMenuOpen = action.payload;
+        break;
+
+      case ActionType.SET_THEME_PALETTE:
+        draft.selectedPallet = action.payload;
         break;
 
       default:

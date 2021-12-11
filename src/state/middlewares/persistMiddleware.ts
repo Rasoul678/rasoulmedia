@@ -14,7 +14,13 @@ export const persistMiddleware = ({
       next(action);
       localStorage.setItem(
         "rasoulMediaState",
-        JSON.stringify({ global: { theme: getState().global.theme } })
+        JSON.stringify({
+          global: {
+            themeMode: getState().global.themeMode,
+            themePallet: getState().global.themePallet,
+            selectedPallet: getState().global.selectedPallet,
+          },
+        })
       );
     };
   };

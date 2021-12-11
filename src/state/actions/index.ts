@@ -1,10 +1,10 @@
 import { ActionType } from "../action-types";
 
-export type Theme = "light" | "dark";
+export type ThemeMode = "light" | "dark";
 
-export interface ToggleTheme {
-  type: ActionType.TOGGLE_THEME;
-  payload: Theme;
+export interface ToggleThemeMode {
+  type: ActionType.TOGGLE_THEME_MODE;
+  payload: ThemeMode;
 }
 
 export interface ToggleMobileMenu {
@@ -12,4 +12,9 @@ export interface ToggleMobileMenu {
   payload: boolean;
 }
 
-export type Action = ToggleTheme | ToggleMobileMenu;
+export interface SetThemePalette {
+  type: ActionType.SET_THEME_PALETTE;
+  payload: string;
+}
+
+export type Action = ToggleThemeMode | ToggleMobileMenu | SetThemePalette;

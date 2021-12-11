@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Breakpoints } from "constants/Global";
 
 export const HomeGalleryContainer = styled.div`
   height: 100vh;
@@ -18,7 +19,7 @@ export const HomeGalleryContainer = styled.div`
     top: 17rem;
     text-align: center;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    @media (max-width: ${Breakpoints.mobile}px) {
       top: 19rem;
     }
   }
@@ -63,7 +64,7 @@ export const ArrowDownWrapper = styled.div`
   bottom: 5rem;
   cursor: pointer;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+  @media (min-width: ${Breakpoints.mobile}px) {
     bottom: 2rem;
   }
 `;
@@ -78,7 +79,7 @@ export const SocialLinkWrapper = styled.div`
   gap: 1rem;
   color: ${({ theme }) => theme.border};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+  @media (min-width: ${Breakpoints.mobile}px) {
     bottom: 8rem;
   }
 

@@ -24,11 +24,11 @@ export const Backdrop = styled.div`
 `;
 export const Modal = styled.div`
   z-index: 100;
-  background: ${({ theme }) => theme.card.borderColor};
+  background: ${({ theme }) => theme.background};
   position: relative;
   margin: auto;
   border-radius: 0.5rem;
-  padding: 0 0.3rem;
+  padding: 0.3rem;
 `;
 export const Header = styled.div`
   border-radius: 8px 8px 0 0;
@@ -41,6 +41,8 @@ export const HeaderText = styled.div`
   text-align: center;
   width: 100%;
   text-transform: capitalize;
+  font-weight: 500;
+  font-size: 1.2rem;
 `;
 export const CloseButton = styled.button`
   font-size: 1.3rem;

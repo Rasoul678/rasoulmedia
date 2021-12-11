@@ -5,7 +5,7 @@ import * as Styled from "./Modal.styles";
 export interface ModalProps {
   isShown: boolean;
   hide: () => void;
-  modalContent: JSX.Element;
+  modalContent: JSX.Element | null;
   headerText?: string;
   closeButton?: boolean;
   isLocked?: boolean;

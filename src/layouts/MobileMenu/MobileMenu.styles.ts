@@ -1,4 +1,17 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const bouncing = keyframes`
+  0%{
+    bottom: 0;
+  }
+  50%{
+  bottom: 0.7rem;
+
+  }
+  100%{
+    bottom: 0.3rem;
+  }
+`;
 
 interface MobileMenuProps {
   isVisible: boolean;
@@ -107,25 +120,30 @@ export const MenuCellWrapper = styled.div`
 
   .dark-mode {
     transform: rotateZ(45deg) !important;
-    color: ${({ theme }) => theme.text} !important;
   }
 `;
 
 export const LangOptionsContainer = styled.div`
   color: ${({ theme }) => theme.text};
-  width: 60vw;
+  width: 57vw;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
   gap: 0.5rem;
 `;
 
 export const LangOptionWrapper = styled.div`
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 1rem;
-  text-align: center;
+  width: 6.5rem;
+  height: 6.5rem;
+  padding: 0rem;
+  border-radius: 1.2rem;
   text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: ${({ theme }) => theme.card.backgroundColor};
+  box-shadow: 0px 0px 5px 0px ${({ theme }) => theme.card.backgroundColor};
 `;
 
 export const LangCellWrapper = styled.div`
@@ -137,4 +155,45 @@ export const LangCellWrapper = styled.div`
   align-items: center;
   font-size: 1rem;
   font-weight: bold;
+`;
+
+interface FlagWrapperProps {
+  isSelected: boolean;
+}
+
+export const FlagWrapper = styled.div<FlagWrapperProps>`
+  filter: brightness(${({ isSelected }) => (isSelected ? "100%" : "40%")});
+  text-align: center;
+  padding-top: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+`;
+
+interface PaletteCircleProps {
+  isSelected: boolean;
+}
+
+export const PaletteCircle = styled.div<PaletteCircleProps>`
+color: ${({ color }) => color}};
+width: 4rem;
+height: 4rem;
+border-radius: 50%;
+margin: 0.6rem 0.5rem;
+display: flex;
+justify-content: center;
+align-items: center;
+filter: brightness(${({ isSelected }) => (isSelected ? "100%" : "40%")});
+
+::before{
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  background-color: #00FF00;
+  border-radius: 50%;
+  bottom: 0rem;
+  left: 0rem;
+  display: ${({ isSelected }) => (isSelected ? "revert" : "none")};
+  animation: ${bouncing} 0.5s ease-in-out infinite;
+}
 `;

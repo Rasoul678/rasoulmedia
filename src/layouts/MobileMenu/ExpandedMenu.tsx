@@ -1,25 +1,29 @@
-import React, { useRef } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import * as Styled from "./MobileMenu.styles";
 import usePreventScroll from "hooks/usePreventScroll";
 import MenuIcon from "components/Icons/MenuIcon";
 import SunIcon from "components/Icons/SunIcon";
 import MoonIcon from "components/Icons/MoonIcon";
+import ColorPaletteIcon from "components/Icons/ColorPaletteIcon";
 import { useTypedSelector } from "hooks/useTypedSelector";
 import useActions from "hooks/useActions";
 import Modal from "components/Modal";
 import useModal from "hooks/useModal";
-import SelectLang from "./SelectLang";
+import SelectLanguage from "./SelectLanguage";
+import SelectPalette from "./SelectPalette";
 import useLanguages from "hooks/useLanguages";
+
+type ModalType = "language" | "palette" | null;
 
 const ExpandedMenu: React.FC = () => {
   const { isMobileMenuOpen } = useTypedSelector((state) => state.global);
-  const { toggleMobileMenu, toggleTheme } = useActions();
+  const { toggleMobileMenu, toggleThemeMode } = useActions();
   const ref = useRef<HTMLDivElement>(null);
-  const cellsRef = useRef<HTMLDivElement>(null);
-  const { theme } = useTypedSelector((state) => state.global);
+  const { themeMode } = useTypedSelector((state) => state.global);
   const { t, i18n } = useTranslation();
   const { isShown, toggle } = useModal();
+  const [modalType, setModalType] = useState<ModalType>(null);
 
   usePreventScroll(ref, isMobileMenuOpen);
   const { flag } = useLanguages(i18n.language);
@@ -29,37 +33,54 @@ const ExpandedMenu: React.FC = () => {
   };
 
   const handleToggle = () => {
-    toggleTheme(theme === "dark" ? "light" : "dark");
+    toggleThemeMode(themeMode === "dark" ? "light" : "dark");
+  };
+
+  const handleSelect = useCallback((type: ModalType) => {
+    return () => {
+      toggle();
+      setModalType(type);
+    };
+  }, []);
+
+  const getModalContent = (type: ModalType) => {
+    switch (type) {
+      case "language":
+        return <SelectLanguage toggle={toggle} />;
+      case "palette":
+        return <SelectPalette toggle={toggle} />;
+      default:
+        return null;
+    }
   };
 
   return (
     <Styled.ExpandedMenuContainer ref={ref} isOpen={isMobileMenuOpen}>
       <MenuIcon size={35} onClick={handleCloseMobileMenu} />
-      <Styled.MenuCellsContainer ref={cellsRef}>
+      <Modal
+        isShown={isShown}
+        hide={toggle}
+        headerText={
+          modalType === "language" ? t("select-lang") : t("select-theme")
+        }
+        modalContent={getModalContent(modalType)}
+      />
+      <Styled.MenuCellsContainer>
         <Styled.MenuCellWrapper onClick={handleToggle}>
-          {theme === "dark" ? (
+          {themeMode === "dark" ? (
             <SunIcon size={60} />
           ) : (
-            <MoonIcon className="dark-mode" size={60} />
+            <MoonIcon className="dark-mode" size={50} />
           )}
         </Styled.MenuCellWrapper>
         <Styled.MenuCellWrapper>
-          <>
-            <Styled.LangCellWrapper onClick={toggle}>
-              {flag}
-            </Styled.LangCellWrapper>
-            <Modal
-              isShown={isShown}
-              hide={toggle}
-              headerText={t("select-lang")}
-              modalContent={<SelectLang toggle={toggle} />}
-            />
-          </>
+          <Styled.LangCellWrapper onClick={handleSelect("language")}>
+            {flag}
+          </Styled.LangCellWrapper>
         </Styled.MenuCellWrapper>
-
-        {[1, 2, 3, 4].map((i) => (
-          <Styled.MenuCellWrapper key={i}>Cell : {i}</Styled.MenuCellWrapper>
-        ))}
+        <Styled.MenuCellWrapper onClick={handleSelect("palette")}>
+          <ColorPaletteIcon size={50} />
+        </Styled.MenuCellWrapper>
       </Styled.MenuCellsContainer>
     </Styled.ExpandedMenuContainer>
   );
