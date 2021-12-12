@@ -102,6 +102,28 @@ export const MenuCellsContainer = styled.div`
   gap: 2rem;
 `;
 
+export const MenuSlidesContainer = styled.div`
+  width: 100%;
+  height: calc(100% - 16rem);
+  scroll-snap-type: x mandatory;
+  overflow: scroll;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.2rem;
+`;
+
+export const MenuSlider = styled.div`
+  border: 2px solid ${({ theme }) => theme.border};
+  background: ${({ theme }) => theme.background};
+  border-radius: 1rem;
+  min-width: 100%;
+  height: 100%;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+`;
+
 export const MenuCellWrapper = styled.div`
   width: 100%;
   aspect-ratio: 1;
@@ -125,7 +147,7 @@ export const MenuCellWrapper = styled.div`
 
 export const LangOptionsContainer = styled.div`
   color: ${({ theme }) => theme.text};
-  width: 57vw;
+  width: 60vw;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
@@ -189,7 +211,7 @@ filter: brightness(${({ isSelected }) => (isSelected ? "100%" : "40%")});
   width: 1rem;
   height: 1rem;
   position: absolute;
-  background-color: #00FF00;
+  background-color: ${({ color }) => color};
   border-radius: 50%;
   bottom: 0rem;
   left: 0rem;

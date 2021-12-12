@@ -21,42 +21,35 @@ const MobileMenu: React.FC = () => {
     !isMobileMenuOpen && toggleMobileMenu(!isMobileMenuOpen);
   };
 
-  const hasScrollbar =
-    document.body.clientHeight > document.documentElement.clientHeight;
+  const hasVScrollbar = document.body.scrollHeight > document.body.clientHeight;
 
   useEffect(() => {
     if (direction === "down") {
       toggleMobileMenu(false);
     }
 
-    if (!hasScrollbar) {
+    if (!hasVScrollbar) {
       setIsVisible(true);
     }
 
     if (direction === "up") {
       setIsVisible(true);
-    } else {
+    } else if (direction === "down") {
       setIsVisible(false);
     }
-  }, [direction, hasScrollbar, toggleMobileMenu]);
+  }, [direction, hasVScrollbar, toggleMobileMenu]);
 
-  useEffect(() => {
-    const onScroll = () => {
-      if (window.pageYOffset < 50 && hasScrollbar) {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener("scroll", onScroll);
-
-    if (hasScrollbar) {
-      setIsVisible(false);
-    }
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, [hasScrollbar]);
+  // useEffect(() => {
+  //   const onScroll = () => {
+  //     if (window.pageYOffset < 50 && hasVScrollbar) {
+  //       setIsVisible(false);
+  //     }
+  //   };
+  //   window.addEventListener("scroll", onScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", onScroll);
+  //   };
+  // }, [hasVScrollbar]);
 
   return (
     <Styled.MobileMenuContainer isVisible={isVisible}>

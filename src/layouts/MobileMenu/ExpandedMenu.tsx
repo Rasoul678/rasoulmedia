@@ -82,6 +82,12 @@ const ExpandedMenu: React.FC = () => {
           <ColorPaletteIcon size={50} />
         </Styled.MenuCellWrapper>
       </Styled.MenuCellsContainer>
+      <Styled.MenuSlidesContainer>
+        <Styled.MenuSlider />
+        <Styled.MenuSlider />
+        <Styled.MenuSlider />
+        <Styled.MenuSlider />
+      </Styled.MenuSlidesContainer>
     </Styled.ExpandedMenuContainer>
   );
 };

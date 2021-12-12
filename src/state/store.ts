@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import rootReducer from "./reducers";
 import { persistMiddleware } from "./middlewares/persistMiddleware";
+import { LOCAL_STORAGE_KEY } from "constants/Global";
 
 declare global {
   interface Window {
@@ -10,8 +11,17 @@ declare global {
 }
 
 const reHydrateStore = () => {
-  if (localStorage.getItem("rasoulMediaState") !== null) {
-    return JSON.parse(localStorage.getItem("rasoulMediaState") || "{}");
+  if (localStorage.getItem(LOCAL_STORAGE_KEY) !== null) {
+    const localState = JSON.parse(
+      localStorage.getItem(LOCAL_STORAGE_KEY) || "{}"
+    );
+
+    if (localState?.global?.appVersion === process.env.REACT_APP_VERSION) {
+      return JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || "{}");
+    } else {
+      localStorage.removeItem(LOCAL_STORAGE_KEY);
+      return {};
+    }
   }
 };
 
