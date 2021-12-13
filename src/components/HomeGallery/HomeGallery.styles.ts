@@ -20,7 +20,7 @@ export const HomeGalleryContainer = styled.div`
     text-align: center;
 
     @media (max-width: ${Breakpoints.mobile}px) {
-      top: 19rem;
+      top: 40%;
     }
   }
 
@@ -38,7 +38,6 @@ export const IntroductionContainer = styled.div`
 
   .home-gallery-avatar {
     border-radius: 50%;
-    margin-top: 1.5rem;
     z-index: 100;
     border: 3px solid ${({ theme }) => theme.border};
   }
@@ -55,32 +54,32 @@ export const UserName = styled.span`
 export const UserNameWrapper = styled.h2`
   z-index: 100;
   position: absolute;
-  top: 13rem;
+  top: 27%;
 `;
 
 export const ArrowDownWrapper = styled.div`
   z-index: 100;
   position: absolute;
-  bottom: 5rem;
+  top: 87%;
   cursor: pointer;
 
-  @media (min-width: ${Breakpoints.mobile}px) {
-    bottom: 2rem;
+  @media (max-width: ${Breakpoints.mobile}px) {
+    top: 80% !important;
   }
 `;
 
 export const SocialLinkWrapper = styled.div`
   z-index: 100;
   position: absolute;
-  bottom: 12rem;
+  top: 70%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
   color: ${({ theme }) => theme.border};
 
-  @media (min-width: ${Breakpoints.mobile}px) {
-    bottom: 8rem;
+  @media (max-width: ${Breakpoints.mobile}px) {
+    top: 67%;
   }
 
   svg {

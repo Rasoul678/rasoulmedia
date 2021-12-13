@@ -73,7 +73,7 @@ export const ExpandedMenuContainer = styled.div<Partial<MobileMenuProps>>`
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   ${({ isOpen }) =>
-    isOpen ? "height: calc(60vh )" : "height: 0rem; border-color: transparent"};
+    isOpen ? "height: calc(60vh)" : "height: 0rem; border-color: transparent"};
   position: absolute;
   bottom: -2rem;
   transition: all 0.3s ease-in-out;
@@ -84,7 +84,6 @@ export const ExpandedMenuContainer = styled.div<Partial<MobileMenuProps>>`
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  gap: 1rem;
 
   @supports (backdrop-filter: blur(10px)) {
     backdrop-filter: blur(10px);
@@ -104,22 +103,23 @@ export const MenuCellsContainer = styled.div`
 
 export const MenuSlidesContainer = styled.div`
   width: 100%;
-  height: calc(100% - 16rem);
+  height: calc(100% - 15rem);
   scroll-snap-type: x mandatory;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   padding: 1rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 1.2rem;
+  gap: 0.8rem;
 `;
 
 export const MenuSlider = styled.div`
-  border: 2px solid ${({ theme }) => theme.border};
-  background: ${({ theme }) => theme.background};
+  background: ${({ theme }) => theme.colors[1]};
+  box-shadow: 0px 0px 5px 0px ${({ theme }) => theme.card.backgroundColor};
   border-radius: 1rem;
-  min-width: 100%;
   height: 100%;
+  aspect-ratio: 1.5;
   scroll-snap-align: center;
   scroll-snap-stop: always;
 `;

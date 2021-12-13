@@ -1,10 +1,10 @@
-import Spain from "assets/flags/spain.png";
+import Spain from "assets/flags/es.svg";
 import * as Styled from "./Flags.styles";
 
 const SpainFlag = () => {
   return (
     <Styled.FlagContainer>
-      <img src={Spain} alt="Spain" width="55%" />
+      <Styled.Flag src={Spain} alt="Spain" width="55%" />
     </Styled.FlagContainer>
   );
 };

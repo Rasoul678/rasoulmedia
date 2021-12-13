@@ -7,4 +7,5 @@ export const FlagContainer = styled.div`
   position: relative;
 `;
 
-export const Flag = styled.img``;
+export const Flag = styled.img`
+border-radius: 50%;`;

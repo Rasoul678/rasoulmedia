@@ -1,10 +1,10 @@
-import India from "assets/flags/india.png";
+import India from "assets/flags/in.svg";
 import * as Styled from "./Flags.styles";
 
 const IndiaFlag = () => {
   return (
     <Styled.FlagContainer>
-      <img src={India} alt="Spain" width="55%" />
+      <Styled.Flag src={India} alt="India" width="55%" />
     </Styled.FlagContainer>
   );
 };

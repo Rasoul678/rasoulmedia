@@ -1,11 +1,10 @@
 import * as Styled from "./AppLoader.styles";
+import GoogleLoader from "components/CSSAnimations/google-loader";
 
 const AppLoader = () => {
   return (
     <Styled.AppLoaderContainer>
-      <Styled.AppLoaderTextWrapper>
-        Loading <Styled.AppLoaderDots>...</Styled.AppLoaderDots>
-      </Styled.AppLoaderTextWrapper>
+      <GoogleLoader />
     </Styled.AppLoaderContainer>
   );
 };

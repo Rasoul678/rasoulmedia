@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import USA from "components/Flags/USA";
+import USA from "components/Flags/British";
 import Spain from "components/Flags/Spain";
 import France from "components/Flags/France";
 import Iran from "components/Flags/Iran";

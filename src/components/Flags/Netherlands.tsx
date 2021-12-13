@@ -1,10 +1,10 @@
-import Netherlands from "assets/flags/netherlands.png";
+import Netherlands from "assets/flags/nl.svg";
 import * as Styled from "./Flags.styles";
 
 const NetherlandsFlag = () => {
   return (
     <Styled.FlagContainer>
-      <img src={Netherlands} alt="Netherlands" width="55%" />
+      <Styled.Flag src={Netherlands} alt="Netherlands" width="55%" />
     </Styled.FlagContainer>
   );
 };
