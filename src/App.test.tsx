@@ -2,7 +2,6 @@ import { Suspense } from "react";
 import { Provider } from "react-redux";
 import { render, screen, cleanup } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
-import ReactDOM from "react-dom";
 import App from "./App";
 import { store } from "state";
 import { initI18n } from "./utils/testUtils";

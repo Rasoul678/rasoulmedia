@@ -2,7 +2,7 @@ import produce from "immer";
 import { ActionType } from "../action-types";
 import { ThemeMode, Action } from "../actions";
 import theme from "schema/theme.json";
-import { ThemePallet } from "types";
+import { ThemePallet } from "interfaces";
 
 interface GlobalState {
   themeMode: ThemeMode;

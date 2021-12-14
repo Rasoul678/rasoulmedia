@@ -4,6 +4,7 @@ import { useTheme } from "styled-components";
 import md5 from "md5";
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "react-i18next";
+import reactStringReplace from "react-string-replace";
 import { useParticlesConfig } from "config";
 import * as Styled from "./HomeGallery.styles";
 import CustomTypewriter from "components/CustomTypewriter";
@@ -17,10 +18,10 @@ import { Links } from "constants/Links";
 import Fade from "components/CustomReveal/Fade";
 
 const HomeGallery: React.FC = () => {
-  const [isImageLoaded, setIsImageLOaded] = useState(false);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
   const [particlesKey, setParticlesKey] = useState<number | null>(null);
   const theme = useTheme();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     setParticlesKey(Math.random());
@@ -45,23 +46,22 @@ const HomeGallery: React.FC = () => {
     <Styled.HomeGalleryContainer>
       <Styled.IntroductionContainer>
         <Fade bottom cascade when={isImageLoaded}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "flex-start",
-              alignItems: "center",
-              flexDirection: "column",
-            }}
-          >
+          <div className="content-wrapper">
             <img
               src={"https://i.pravatar.cc/135?img=67"}
               alt="Rasoul"
               className="home-gallery-avatar"
               width="135"
-              onLoad={() => setIsImageLOaded(true)}
+              onLoad={() => setIsImageLoaded(true)}
             />
             <Styled.UserNameWrapper>
-              {t("welcome-intro")}
+              {reactStringReplace(
+                t("welcome-intro"),
+                i18n.language === "fa" ? "رسول حسامی" : "Rasoul Hesami",
+                (match, i) => (
+                  <Styled.Name key={i}>{match}</Styled.Name>
+                )
+              )}
             </Styled.UserNameWrapper>
             <CustomTypewriter
               strings={[

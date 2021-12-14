@@ -1,12 +1,12 @@
 import { useTranslation } from "react-i18next";
-import USA from "components/Flags/British";
+import British from "components/Flags/British";
 import Spain from "components/Flags/Spain";
 import France from "components/Flags/France";
 import Iran from "components/Flags/Iran";
 import Netherlands from "components/Flags/Netherlands";
 import India from "components/Flags/India";
 
-type Code = "fa" | "en" | "es" | "fr" | "nl";
+type Code = "fa" | "en" | "es" | "fr" | "nl" | "hi";
 
 export interface Languages {
   [key: string]: {
@@ -21,7 +21,7 @@ const useLanguages = (code?: Code) => {
   const languages: Languages = {
     en: {
       title: t("lang.english"),
-      flag: USA(),
+      flag: British(),
     },
     es: {
       title: t("lang.spanish"),

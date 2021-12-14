@@ -1,5 +1,5 @@
 import { Black, White, Yellow, Orange, Blue } from "../../constants/Colors";
-import { ThemeType } from "types";
+import { ThemeType } from "interfaces";
 
 declare module "styled-components" {
   export interface DefaultTheme extends ThemeType {}

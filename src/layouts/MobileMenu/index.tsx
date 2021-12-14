@@ -6,7 +6,7 @@ import AppsIcon from "components/Icons/AppsIcon";
 import ContactIcon from "components/Icons/ContactIcon";
 import CodeIcon from "components/Icons/CodeIcon";
 import MenuIcon from "components/Icons/MenuIcon";
-import ExpandedMenu from "./ExpandedMenu";
+import BottomSheet from "./BottomSheet";
 import CustomLink from "components/CustomLink";
 import { useTypedSelector } from "hooks/useTypedSelector";
 import useActions from "hooks/useActions";
@@ -64,7 +64,7 @@ const MobileMenu: React.FC = () => {
         onClick={handleMenuClick}
         isOpen={isMobileMenuOpen}
       >
-        <ExpandedMenu />
+        <BottomSheet />
         {!isMobileMenuOpen && <MenuIcon size={35} />}
       </Styled.MenuItem>
       <Styled.MenuItem as={CustomLink} to="/code">

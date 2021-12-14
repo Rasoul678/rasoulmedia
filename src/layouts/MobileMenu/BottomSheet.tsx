@@ -16,7 +16,7 @@ import useLanguages from "hooks/useLanguages";
 
 type ModalType = "language" | "palette" | null;
 
-const ExpandedMenu: React.FC = () => {
+const BottomSheet: React.FC = () => {
   const { isMobileMenuOpen } = useTypedSelector((state) => state.global);
   const { toggleMobileMenu, toggleThemeMode } = useActions();
   const ref = useRef<HTMLDivElement>(null);
@@ -92,4 +92,4 @@ const ExpandedMenu: React.FC = () => {
   );
 };
 
-export default ExpandedMenu;
+export default BottomSheet;

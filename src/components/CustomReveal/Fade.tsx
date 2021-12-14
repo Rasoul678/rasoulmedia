@@ -1,5 +1,5 @@
 import Fade from "react-reveal/Fade";
-import { RevealProps } from "types";
+import { RevealProps } from "interfaces";
 
 const FadeAnimation: React.FC<RevealProps> = (props) => {
   const { children, ...rest } = props;

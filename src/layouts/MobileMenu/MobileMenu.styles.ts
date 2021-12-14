@@ -27,13 +27,13 @@ export const MobileMenuContainer = styled.div<Partial<MobileMenuProps>>`
   ${({ isVisible }) => !isVisible && "bottom: -3.5rem;"}
   background-color: ${({ theme }) => theme.background};
   border-top: 3px solid ${({ theme }) => theme.border};
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  // border-top-left-radius: 1rem;
+  // border-top-right-radius: 1rem;
   padding: 0.5rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.7rem;
+  gap: 1rem;
   transition: bottom 0.2s linear;
   z-index: 200;
 `;
@@ -70,8 +70,8 @@ export const ExpandedMenuContainer = styled.div<Partial<MobileMenuProps>>`
   -moz-box-shadow: inset 0px 7px 3px -3px ${({ theme }) => theme.border};
   box-shadow: inset 0px 5px 3px -3px ${({ theme }) => theme.border};
   width: 100vw;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  // border-top-left-radius: 1rem;
+  // border-top-right-radius: 1rem;
   ${({ isOpen }) =>
     isOpen ? "height: calc(60vh)" : "height: 0rem; border-color: transparent"};
   position: absolute;

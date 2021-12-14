@@ -2,9 +2,6 @@ import { lazy } from "react";
 import { ThemeProvider } from "styled-components";
 import { Routes, Route } from "react-router-dom";
 import { GlobalStyles } from "components/Global/GlobalStyles";
-import { lightTheme, darkTheme } from "components/Global/Theme";
-import { useTypedSelector } from "hooks/useTypedSelector";
-import MobileMenu from "layouts/MobileMenu";
 import OnMobile from "components/MediaQuery/Mobile";
 import useSetDirection from "hooks/useSetDirection";
 import useDarkMode from "hooks/useDarkMode";
@@ -19,8 +16,11 @@ const NotFound = lazy(
   () => import(/*webpackChunkName: "NotFound_View"*/ "views/404")
 );
 
+const MobileMenu = lazy(
+  () => import(/*webpackChunkName: "Mobile_Menu"*/ "layouts/MobileMenu")
+);
+
 const App: React.FC = () => {
-  const { themeMode } = useTypedSelector((state) => state.global);
   const theme = useDarkMode();
   useSetDirection();
 

@@ -1,5 +1,5 @@
 import { useTypedSelector } from "hooks/useTypedSelector";
-import { ThemeType } from "types";
+import { ThemeType } from "interfaces";
 
 const useDarkMode = () => {
   const { selectedPallet, themePallet } = useTypedSelector(
@@ -8,7 +8,7 @@ const useDarkMode = () => {
 
   const { name, pallets } = themePallet;
 
-  console.log({ selectedPallet, themePallet });
+  // console.log({ selectedPallet, themePallet });
 
   const theme: ThemeType = {
     name: name,

@@ -45,6 +45,13 @@ export const IntroductionContainer = styled.div`
   .scroll-down-btn {
     z-index: 100;
   }
+
+  .content-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
 `;
 
 export const UserName = styled.span`
@@ -64,7 +71,7 @@ export const ArrowDownWrapper = styled.div`
   cursor: pointer;
 
   @media (max-width: ${Breakpoints.mobile}px) {
-    top: 80% !important;
+    top: 75% !important;
   }
 `;
 
@@ -79,10 +86,14 @@ export const SocialLinkWrapper = styled.div`
   color: ${({ theme }) => theme.border};
 
   @media (max-width: ${Breakpoints.mobile}px) {
-    top: 67%;
+    top: 60%;
   }
 
   svg {
     cursor: pointer;
   }
+`;
+
+export const Name = styled.span`
+  color: ${({ theme }) => theme.border};
 `;
