@@ -15,6 +15,7 @@
     "@types/react-redux": "^7.1.20",
     "@types/react-scroll": "^1.8.3",
     "@types/styled-components": "^5.1.15",
+    "framer-motion": "^4.1.17",
     "i18next": "^21.5.4",
     "i18next-browser-languagedetector": "^6.1.2",
     "i18next-chained-backend": "^3.0.2",

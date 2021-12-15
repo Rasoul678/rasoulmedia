@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { motion } from "framer-motion";
 import Slide from "components/CustomReveal/Slide";
 import HomeGallery from "components/HomeGallery";
-import { useTypedSelector } from "hooks/useTypedSelector";
+import * as Styled from "./Home.styles";
 
 interface IHomeProps {}
 
