@@ -53,6 +53,32 @@ export interface ThemePallets {
   [key: string]: ThemePallet;
 }
 
+interface GithubLanguage {
+  color: string;
+  name: string;
+  __typename: string;
+}
+
+interface GithubCountable {
+  totalCount: number;
+  __typename: string;
+}
+
+export interface Repository {
+  id: string;
+  name: string;
+  stargazers: GithubCountable;
+  forks: GithubCountable;
+  issues: GithubCountable;
+  watchers: GithubCountable;
+  languages: {
+    __typename: string;
+    nodes: GithubLanguage[];
+  };
+  url: string;
+  __typename: string;
+}
+
 export interface RevealProps {
   /**
    * This prop is used if the revealed element in the transition group or if an element has when, in or spy props. It `true` then the initial reveal animation will be shown. Defaults to `false`. Optional.

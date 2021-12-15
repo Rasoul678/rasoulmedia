@@ -16,6 +16,7 @@ import GithubIcon from "components/Icons/GithubIcon";
 import StackOverflowIcon from "components/Icons/StackOverflowIcon";
 import { Links } from "constants/Links";
 import Fade from "components/CustomReveal/Fade";
+import { openNewTab } from "utils/helpers";
 
 const HomeGallery: React.FC = () => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -32,11 +33,6 @@ const HomeGallery: React.FC = () => {
   };
 
   const options = useParticlesConfig();
-
-  const handleLinkClick = (url: string) => {
-    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
-    if (newWindow) newWindow.opener = null;
-  };
 
   let size = 300;
   let src =
@@ -77,15 +73,15 @@ const HomeGallery: React.FC = () => {
             <Styled.SocialLinkWrapper>
               <LinkedinIcon
                 size={36}
-                onClick={() => handleLinkClick(Links.linkedin)}
+                onClick={() => openNewTab(Links.linkedin)}
               />
               <StackOverflowIcon
                 size={42}
-                onClick={() => handleLinkClick(Links.stackOverflow)}
+                onClick={() => openNewTab(Links.stackOverflow)}
               />
               <GithubIcon
                 size={42}
-                onClick={() => handleLinkClick(Links.github)}
+                onClick={() => openNewTab(Links.github)}
               />
             </Styled.SocialLinkWrapper>
             <Styled.ArrowDownWrapper>

@@ -89,6 +89,14 @@ export const ExpandedMenuContainer = styled.div<Partial<MobileMenuProps>>`
     backdrop-filter: blur(10px);
     background-color: transparent;
   }
+
+  .slider-loader-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const MenuCellsContainer = styled.div`
@@ -120,8 +128,30 @@ export const MenuSlider = styled.div`
   border-radius: 1rem;
   height: 100%;
   aspect-ratio: 1.5;
+  padding: 1rem;
   scroll-snap-align: center;
   scroll-snap-stop: always;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+
+  .repo-slide-header {
+    // border: 1px solid #fff;
+    width: 90%;
+    color: #ccc;
+    font-size: 1.5rem;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+  }
+
+  svg.repo-external-link {
+    transform: rotate(0deg);
+  }
 `;
 
 export const MenuCellWrapper = styled.div`
@@ -218,4 +248,46 @@ filter: brightness(${({ isSelected }) => (isSelected ? "100%" : "40%")});
   display: ${({ isSelected }) => (isSelected ? "revert" : "none")};
   animation: ${bouncing} 0.5s ease-in-out infinite;
 }
+`;
+
+export const RepoHeaderWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const RepoCountsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5em;
+`;
+
+export const CountWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  height: 2.5em;
+  font-size: 1em;
+  border-radius: 0.5rem;
+  background-color: ${({ theme }) => theme.colors[0]};
+  transition: all 0.5s linear;
+`;
+
+export const Count = styled.span`
+  font-size: 1.2em;
+`;
+
+export const RepoLanguagesContainer = styled.div`
+  border-radius: 0.5rem;
+  background-color: ${({ theme }) => theme.colors[0]};
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+  padding: 0.7rem;
+
+  svg {
+    transform: rotate(0deg) !important;
+  }
 `;
