@@ -7,12 +7,14 @@ interface GithubState {
   repositories: Repository[];
   isLoading: boolean;
   error: string;
+  token: string;
 }
 
 const initialState: GithubState = {
   repositories: [],
   isLoading: false,
   error: "",
+  token: ''
 };
 
 const githubReducer = (
@@ -31,6 +33,10 @@ const githubReducer = (
 
       case ActionType.SET_GITHUB_ERROR:
         draft.error = action.payload;
+        break;
+
+        case ActionType.SET_GITHUB_TOKEN:
+        draft.token = action.payload;
         break;
 
       default:

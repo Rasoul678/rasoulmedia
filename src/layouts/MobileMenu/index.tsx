@@ -15,6 +15,7 @@ const MobileMenu: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const direction = useScrollDirection();
   const { isMobileMenuOpen } = useTypedSelector((state) => state.global);
+  const { token } = useTypedSelector((state) => state.github);
   const { toggleMobileMenu, getGithubRepositories } = useActions();
 
   const handleMenuClick = () => {
@@ -42,7 +43,7 @@ const MobileMenu: React.FC = () => {
   //! Get pinned repositories from my github(rasoul678)
   useEffect(() => {
     getGithubRepositories();
-  }, []);
+  }, [getGithubRepositories, token]);
 
   // useEffect(() => {
   //   const onScroll = () => {

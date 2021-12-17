@@ -33,10 +33,16 @@ export interface SetGithubError {
   payload: string;
 }
 
+export interface SetGithubToken {
+  type: ActionType.SET_GITHUB_TOKEN;
+  payload: string;
+}
+
 export type Action =
   | ToggleThemeMode
   | ToggleMobileMenu
   | SetThemePalette
   | SetGithubRepos
   | SetGithubLoading
-  | SetGithubError;
+  | SetGithubError
+  | SetGithubToken;
