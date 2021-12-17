@@ -26,7 +26,7 @@ const GithubRepository: React.FC<GithubRepositoryProps> = (props) => {
       name,
       stargazers: { totalCount: starsCount },
       forks: { totalCount: forksCount },
-      issues: { totalCount: issuesCount },
+      // issues: { totalCount: issuesCount },
       watchers: { totalCount: watchersCount },
       languages: { nodes: langs },
     },
@@ -66,7 +66,7 @@ const GithubRepository: React.FC<GithubRepositoryProps> = (props) => {
     <Styled.MenuSlider>
       <Styled.RepoHeaderWrapper onClick={() => openNewTab(url)}>
         <div className="repo-slide-header">{name}</div>
-        <ExternalLinkIcon className="repo-external-link" size={30} />
+        <ExternalLinkIcon className="repo-external-link" size={27} />
       </Styled.RepoHeaderWrapper>
       <Styled.RepoCountsContainer>
         <Styled.CountWrapper>

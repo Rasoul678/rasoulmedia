@@ -73,9 +73,9 @@ const BottomSheet: React.FC = () => {
       <Styled.MenuCellsContainer>
         <Styled.MenuCellWrapper onClick={handleToggle}>
           {themeMode === "dark" ? (
-            <SunIcon size={60} />
+            <SunIcon size={40} />
           ) : (
-            <MoonIcon className="dark-mode" size={50} />
+            <MoonIcon className="dark-mode" size={40} />
           )}
         </Styled.MenuCellWrapper>
         <Styled.MenuCellWrapper>
@@ -84,7 +84,7 @@ const BottomSheet: React.FC = () => {
           </Styled.LangCellWrapper>
         </Styled.MenuCellWrapper>
         <Styled.MenuCellWrapper onClick={handleSelect("palette")}>
-          <ColorPaletteIcon size={50} />
+          <ColorPaletteIcon size={40} />
         </Styled.MenuCellWrapper>
       </Styled.MenuCellsContainer>
       <Styled.MenuSlidesContainer>

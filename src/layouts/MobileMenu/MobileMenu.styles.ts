@@ -72,10 +72,10 @@ export const ExpandedMenuContainer = styled.div<Partial<MobileMenuProps>>`
   width: 100vw;
   // border-top-left-radius: 1rem;
   // border-top-right-radius: 1rem;
-  ${({ isOpen }) =>
-    isOpen ? "height: calc(60vh)" : "height: 0rem; border-color: transparent"};
+  height: 27rem;
+  bottom: 0rem;
+  ${({ isOpen }) => !isOpen && "bottom: -28rem;"}
   position: absolute;
-  bottom: -2rem;
   transition: all 0.3s ease-in-out;
   z-index: -1;
   background-color: ${({ theme }) => theme.background};
@@ -84,6 +84,7 @@ export const ExpandedMenuContainer = styled.div<Partial<MobileMenuProps>>`
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  gap: 0.5rem;
 
   @supports (backdrop-filter: blur(10px)) {
     backdrop-filter: blur(10px);
@@ -103,15 +104,17 @@ export const MenuCellsContainer = styled.div`
   width: 100%;
   max-height: calc(100% - 6.7rem);
   overflow-y: scroll;
-  padding: 1.2rem 0.5rem;
+  padding: 0 0.5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25%, 3fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  justify-items: center;
 `;
 
 export const MenuSlidesContainer = styled.div`
   width: 100%;
-  height: calc(100% - 15rem);
+  aspect-ratio: 1.6;
+  // height: calc(100% - 15rem);
   scroll-snap-type: x mandatory;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
@@ -128,7 +131,7 @@ export const MenuSlider = styled.div`
   border-radius: 1rem;
   height: 100%;
   aspect-ratio: 1.5;
-  padding: 1rem;
+  padding: 0.7rem;
   scroll-snap-align: center;
   scroll-snap-stop: always;
   font-size: 1rem;
@@ -136,12 +139,13 @@ export const MenuSlider = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
+  gap: 0.5rem;
 
   .repo-slide-header {
     // border: 1px solid #fff;
     width: 90%;
     color: #ccc;
-    font-size: 1.5rem;
+    font-size: 1.1em;
     font-weight: 500;
     white-space: nowrap;
     overflow: hidden;
@@ -152,10 +156,14 @@ export const MenuSlider = styled.div`
   svg.repo-external-link {
     transform: rotate(0deg);
   }
+
+  svg {
+    width: 1.6rem;
+  }
 `;
 
 export const MenuCellWrapper = styled.div`
-  width: 100%;
+  width: 75%;
   aspect-ratio: 1;
   border-radius: 1rem;
   display: flex;
@@ -268,10 +276,14 @@ export const CountWrapper = styled.div`
   align-items: center;
   gap: 1em;
   height: 2.5em;
-  font-size: 1em;
   border-radius: 0.5rem;
   background-color: ${({ theme }) => theme.colors[0]};
   transition: all 0.5s linear;
+  padding: 0.5rem 0.3rem;
+
+  svg {
+    width: 1.3rem;
+  }
 `;
 
 export const Count = styled.span`
@@ -285,7 +297,8 @@ export const RepoLanguagesContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 1em;
-  padding: 0.7rem;
+  padding: 0.2rem 1rem;
+  transition: all 0.5s linear;
 
   svg {
     transform: rotate(0deg) !important;
