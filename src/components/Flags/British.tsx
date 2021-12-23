@@ -1,10 +1,10 @@
-import British from "assets/flags/gb.svg";
+import { ReactComponent as British } from "assets/flags/gb.svg";
 import * as Styled from "./Flags.styles";
 
 const BritishFlag = () => {
   return (
     <Styled.FlagContainer>
-      <Styled.Flag src={British} alt="British" width="55%" />
+      <British/>
     </Styled.FlagContainer>
   );
 };

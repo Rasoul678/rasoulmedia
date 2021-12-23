@@ -1,5 +1,4 @@
 import { useTheme } from "styled-components";
-import BackgroundImage from "../assets/others/particles.png";
 
 export const useParticlesConfig = () => {
   const theme = useTheme();
@@ -29,11 +28,6 @@ export const useParticlesConfig = () => {
         },
         polygon: {
           nb_sides: 5,
-        },
-        image: {
-          src: "images/github.svg",
-          width: 100,
-          height: 100,
         },
       },
       opacity: {
@@ -132,7 +126,7 @@ export const useParticlesConfig = () => {
     retina_detect: true,
     fps_limit: 60,
     background: {
-      image: `url('${BackgroundImage}')`,
+      color: theme.colors[1],
     },
   };
 };

@@ -1,11 +1,9 @@
 import { memo, useEffect, useState } from "react";
-import Particles, { Container } from "react-tsparticles";
 import { useTheme } from "styled-components";
 import md5 from "md5";
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "react-i18next";
 import reactStringReplace from "react-string-replace";
-import { useParticlesConfig } from "config";
 import * as Styled from "./HomeGallery.styles";
 import CustomTypewriter from "components/CustomTypewriter";
 import LottieMaker from "components/LottieMaker";
@@ -17,22 +15,20 @@ import StackOverflowIcon from "components/Icons/StackOverflowIcon";
 import { Links } from "constants/Links";
 import Fade from "components/CustomReveal/Fade";
 import { openNewTab } from "utils/helpers";
+import MatrixBackground from "components/MatrixBackground/MatrixBackground";
 
 const HomeGallery: React.FC = () => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const [particlesKey, setParticlesKey] = useState<number | null>(null);
+  const [matrixKey, setMatrixKey] = useState<number | null>(null);
   const theme = useTheme();
   const { t, i18n } = useTranslation();
 
+  //! Trigger matrix effect
   useEffect(() => {
-    setParticlesKey(Math.random());
-  }, [theme]);
-
-  const particlesLoaded = (container: Container) => {
-    // console.log(container);
-  };
-
-  const options = useParticlesConfig();
+    setTimeout(() => {
+      setMatrixKey(Math.random());
+    }, 50);
+  }, []);
 
   let size = 300;
   let src =
@@ -79,10 +75,7 @@ const HomeGallery: React.FC = () => {
                 size={42}
                 onClick={() => openNewTab(Links.stackOverflow)}
               />
-              <GithubIcon
-                size={42}
-                onClick={() => openNewTab(Links.github)}
-              />
+              <GithubIcon size={42} onClick={() => openNewTab(Links.github)} />
             </Styled.SocialLinkWrapper>
             <Styled.ArrowDownWrapper>
               <ScrollLink
@@ -106,13 +99,7 @@ const HomeGallery: React.FC = () => {
           </div>
         </Fade>
       </Styled.IntroductionContainer>
-      <Particles
-        key={particlesKey}
-        id="home-gallery"
-        loaded={particlesLoaded}
-        options={options as any}
-        canvasClassName="gallery-canvas"
-      />
+      <MatrixBackground key={matrixKey} timeout={75} />
     </Styled.HomeGalleryContainer>
   );
 };

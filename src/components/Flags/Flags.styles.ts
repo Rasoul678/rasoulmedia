@@ -5,7 +5,8 @@ export const FlagContainer = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-`;
 
-export const Flag = styled.img`
-border-radius: 50%;`;
+  svg {
+    border-radius: 50%;
+  }
+`;
