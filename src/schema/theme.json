@@ -11,8 +11,8 @@
         },
         "p2": {
           "name": "orange",
-          "mainColor": "#FD7014",
-          "colors": ["#111111", "#343A41", "#FD7014", "#EEEEEE"],
+          "mainColor": "#BB004B",
+          "colors": ["#111111", "#343A41", "#BB004B", "#EEEEEE"],
           "text": "#CCCCCC"
         },
         "p3": {

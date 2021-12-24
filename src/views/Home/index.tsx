@@ -1,18 +1,19 @@
 import { useRef } from "react";
 import Slide from "components/CustomReveal/Slide";
 import HomeGallery from "components/HomeGallery";
-import json from "assets/animations/lordicons/green/1845-rose-outline-edited (dark).json";
+import json from "assets/animations/lordicons/green/478-computer-display-outline-edited (dark).json";
 import useLottie from "hooks/useLottie";
 
 interface IHomeProps {}
 
 const Home: React.FC<IHomeProps> = () => {
   const container = useRef<HTMLDivElement | null>(null);
-  
+
   const lottie = useLottie({
     container: container as any,
     animationData: json,
-    name: "roses",
+    name: 'dev',
+    loop: false,
   });
 
   return (
@@ -29,7 +30,7 @@ const Home: React.FC<IHomeProps> = () => {
           Home
         </h1>
         <div>
-          {[1, 2, 3].map((i) => (
+          {[1, 2, 3, 4, 5].map((i) => (
             <Slide bottom key={i}>
               <h1
                 style={{
@@ -47,10 +48,10 @@ const Home: React.FC<IHomeProps> = () => {
           ))}
         </div>
         <div
-          style={{ width: "5rem" }}
+          style={{ width: "10rem", margin: "0 auto" }}
           ref={container}
-          onMouseEnter={() => lottie.play()}
-          onMouseLeave={() => lottie.pause()}
+          onMouseEnter={() => lottie.play('dev')}
+          onMouseLeave={() => lottie.stop('dev')}
         />
       </div>
     </>

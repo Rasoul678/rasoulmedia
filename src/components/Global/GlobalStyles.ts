@@ -24,6 +24,5 @@ export const GlobalStyles = createGlobalStyle`
     font-family: IRANSans, Ubuntu, Helvetica, Arial, Roboto, sans-serif;
     transition: all 0.2s linear;
     user-select: none;
-    margin-bottom: 4rem;
   }
   `;

@@ -20,9 +20,9 @@ const useLottie = (options: AnimationConfigWithData) => {
       name,
     });
 
-    return () => {
-      lottie.destroy();
-    };
+    // return () => {
+    //   lottie.destroy(name);
+    // };
   }, [animationData, autoplay, loop, name, container]);
 
   return lottie;
