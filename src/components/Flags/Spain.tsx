@@ -4,7 +4,7 @@ import * as Styled from "./Flags.styles";
 const SpainFlag = () => {
   return (
     <Styled.FlagContainer>
-      <Spain />
+      <Spain width="60%" />
     </Styled.FlagContainer>
   );
 };

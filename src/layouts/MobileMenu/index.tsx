@@ -15,8 +15,7 @@ const MobileMenu: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const direction = useScrollDirection();
   const { isMobileMenuOpen } = useTypedSelector((state) => state.global);
-  const { token } = useTypedSelector((state) => state.github);
-  const { toggleMobileMenu, getGithubRepositories } = useActions();
+  const { toggleMobileMenu } = useActions();
 
   const handleMenuClick = () => {
     !isMobileMenuOpen && toggleMobileMenu(!isMobileMenuOpen);
@@ -39,11 +38,6 @@ const MobileMenu: React.FC = () => {
       setIsVisible(false);
     }
   }, [direction, hasVScrollbar, toggleMobileMenu]);
-
-  //! Get pinned repositories from my github(rasoul678)
-  useEffect(() => {
-    getGithubRepositories();
-  }, [getGithubRepositories, token]);
 
   // useEffect(() => {
   //   const onScroll = () => {

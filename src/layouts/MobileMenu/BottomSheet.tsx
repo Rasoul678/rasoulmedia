@@ -13,7 +13,6 @@ import useModal from "hooks/useModal";
 import SelectLanguage from "./SelectLanguage";
 import SelectPalette from "./SelectPalette";
 import useLanguages from "hooks/useLanguages";
-import GoogleLoader from "components/CSSAnimations/google-loader";
 import GithubRepository from "./Repository";
 
 type ModalType = "language" | "palette" | null;
@@ -23,9 +22,6 @@ const BottomSheet: React.FC = () => {
   const { toggleMobileMenu, toggleThemeMode } = useActions();
   const ref = useRef<HTMLDivElement>(null);
   const { themeMode } = useTypedSelector((state) => state.global);
-  const { error, isLoading, repositories } = useTypedSelector(
-    (state) => state.github
-  );
   const { t, i18n } = useTranslation();
   const { isShown, toggle } = useModal();
   const [modalType, setModalType] = useState<ModalType>(null);
@@ -88,15 +84,9 @@ const BottomSheet: React.FC = () => {
         </Styled.MenuCellWrapper>
       </Styled.MenuCellsContainer>
       <Styled.MenuSlidesContainer>
-        {isLoading && (
-          <div className="slider-loader-container ">
-            <GoogleLoader />
-          </div>
-        )}
-        {!isLoading &&
-          repositories?.map((repo) => {
-            return <GithubRepository repo={repo} key={repo?.id} />;
-          })}
+        {[1, 2, 3, 4, 5, 6]?.map((i) => {
+          return <GithubRepository key={i} />;
+        })}
       </Styled.MenuSlidesContainer>
     </Styled.ExpandedMenuContainer>
   );

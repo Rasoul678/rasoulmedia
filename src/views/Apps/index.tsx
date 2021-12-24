@@ -1,7 +1,16 @@
-import LottieMaker from "components/LottieMaker";
+import { useRef } from "react";
 import ComingSoonJson from "assets/animations/87843-coming-soon.json";
+import useLottie from "hooks/useLottie";
 
 const Apps: React.FC = () => {
+  const container = useRef<HTMLDivElement | null>(null);
+
+  useLottie({
+    container: container as any,
+    animationData: ComingSoonJson,
+    name: "comingSoon",
+  });
+
   return (
     <div
       style={{
@@ -10,7 +19,7 @@ const Apps: React.FC = () => {
       }}
     >
       <h1>Apps</h1>
-      <LottieMaker animationJSON={ComingSoonJson} autoplay width="20rem" />
+      <div ref={container} />
     </div>
   );
 };

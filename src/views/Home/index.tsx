@@ -1,11 +1,20 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
 import Slide from "components/CustomReveal/Slide";
 import HomeGallery from "components/HomeGallery";
-import * as Styled from "./Home.styles";
+import json from "assets/animations/lordicons/green/1845-rose-outline-edited (dark).json";
+import useLottie from "hooks/useLottie";
 
 interface IHomeProps {}
 
 const Home: React.FC<IHomeProps> = () => {
+  const container = useRef<HTMLDivElement | null>(null);
+  
+  const lottie = useLottie({
+    container: container as any,
+    animationData: json,
+    name: "roses",
+  });
+
   return (
     <>
       <HomeGallery />
@@ -37,6 +46,12 @@ const Home: React.FC<IHomeProps> = () => {
             </Slide>
           ))}
         </div>
+        <div
+          style={{ width: "5rem" }}
+          ref={container}
+          onMouseEnter={() => lottie.play()}
+          onMouseLeave={() => lottie.pause()}
+        />
       </div>
     </>
   );

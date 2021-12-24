@@ -1,11 +1,10 @@
-import { lazy, useEffect } from "react";
+import { lazy } from "react";
 import { ThemeProvider } from "styled-components";
 import { Routes, Route } from "react-router-dom";
 import { GlobalStyles } from "components/Global/GlobalStyles";
 import OnMobile from "components/MediaQuery/Mobile";
 import useSetDirection from "hooks/useSetDirection";
 import useDarkMode from "hooks/useDarkMode";
-import useActions from "hooks/useActions";
 
 const Home = lazy(() => import(/*webpackChunkName: "Home_View"*/ "views/Home"));
 const Contact = lazy(
@@ -22,13 +21,8 @@ const MobileMenu = lazy(
 );
 
 const App: React.FC = () => {
-  const { getGithubToken } = useActions();
   const theme = useDarkMode();
   useSetDirection();
-
-  useEffect(() => {
-    getGithubToken();
-  }, [getGithubToken]);
 
   return (
     <ThemeProvider theme={theme}>
