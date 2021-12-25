@@ -25,6 +25,7 @@ const HomeGallery: React.FC = () => {
   useLottie({
     container: container as any,
     animationData: theme.name === "dark" ? ArrowDownWhite : ArrowDownBlack,
+    name: 'arrow-down'
   });
 
   //! Trigger matrix effect

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   *  {
@@ -26,3 +26,8 @@ export const GlobalStyles = createGlobalStyle`
     user-select: none;
   }
   `;
+
+export const View = styled.div`
+  text-align: center;
+  min-height: 100vh;
+`;

@@ -5,7 +5,6 @@ import { GlobalStyles } from "components/Global/GlobalStyles";
 import OnMobile from "components/MediaQuery/Mobile";
 import useSetDirection from "hooks/useSetDirection";
 import useDarkMode from "hooks/useDarkMode";
-import Footer from "components/Footer";
 
 const Home = lazy(() => import(/*webpackChunkName: "Home_View"*/ "views/Home"));
 const Contact = lazy(
@@ -38,7 +37,6 @@ const App: React.FC = () => {
       <OnMobile>
         <MobileMenu />
       </OnMobile>
-      <Footer color={theme.colors[2]} />
     </ThemeProvider>
   );
 };

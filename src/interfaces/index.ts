@@ -12,15 +12,6 @@ export interface ButtonType {
   // success: ButtonColor;
 }
 
-export interface Particles {
-  lineColor: string;
-  backgroundColor: {
-    r: number;
-    g: number;
-    b: number;
-  };
-}
-
 export interface ThemeType {
   name: ThemeMode;
   colors: string[];
@@ -29,7 +20,6 @@ export interface ThemeType {
   border: string;
   background: string;
   buttons: ButtonType;
-  particles: Particles;
   card: {
     backgroundColor: string;
     borderColor: string;

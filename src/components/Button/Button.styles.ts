@@ -5,20 +5,36 @@ interface IButtonProps {
 
 export const Button = styled.div<IButtonProps>`
   width: fit-content;
+  min-width: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${({ theme }) => theme.buttons.primary.textColor};
-  background: ${({ theme }) => theme.buttons.primary.backgroundColor};
-  padding: 0.5rem 0.8em;
+  mix-blend-mode: difference;
+  color: ${({ theme }) => theme.buttons.secondary.textColor};
+  background: ${({ theme }) => theme.buttons.secondary.backgroundColor};
+  padding: 0.3em 0.8em 0.2em;
   border-radius: 0.4rem;
   cursor: pointer;
   user-select: none;
   text-transform: capitalize;
-  ${({ size }) => size === "small" && "font-size: 0.9em;"}
-  ${({ size }) => size === "medium" && "font-size: 1em;"}
-  ${({ size }) => size === "large" && "font-size: 1.2em;"}
+  position: relative;
+  ${({ size }) =>
+    size === "small" && "height: 2.1em; font-size: 0.9em; min-width: 4rem;"}
+  ${({ size }) =>
+    size === "medium" && "height: 2.3em; font-size: 1em; min-width: 5rem;"}
+  ${({ size }) =>
+    size === "large" && "height: 2.4em; font-size: 1.2em; min-width: 6rem;"}
 
   &:hover {
   }
+`;
+
+interface ButtonLottieProps {
+  isShown?: boolean;
+}
+
+export const ButtonLottie = styled.div<ButtonLottieProps>`
+  width: 3em;
+  display: ${({ isShown }) => (isShown ? "flex" : "none")};
+  flex-direction: column;
 `;

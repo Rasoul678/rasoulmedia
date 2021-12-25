@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import ComingSoonJson from "assets/animations/87843-coming-soon.json";
 import useLottie from "hooks/useLottie";
+import { View } from "components/Global/GlobalStyles";
 
 const Code: React.FC = () => {
   const container = useRef<HTMLDivElement | null>(null);
@@ -12,15 +13,10 @@ const Code: React.FC = () => {
   });
   
   return (
-    <div
-      style={{
-        textAlign: "center",
-        padding: "1rem",
-      }}
-    >
+    <View>
       <h1>Code</h1>
       <div ref={container} />
-    </div>
+    </View>
   );
 };
 

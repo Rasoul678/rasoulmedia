@@ -96,11 +96,7 @@ const MobileMenu: React.FC = () => {
         <div ref={appsRef} />
         {/* <AppsIcon size={35} /> */}
       </Styled.MenuItem>
-      <Styled.MenuItem
-        style={{ position: "relative" }}
-        onClick={handleMenuClick}
-        isOpen={isMobileMenuOpen}
-      >
+      <Styled.MenuItem onClick={handleMenuClick} isOpen={isMobileMenuOpen}>
         <BottomSheet />
         {!isMobileMenuOpen && <MenuIcon size={35} />}
       </Styled.MenuItem>

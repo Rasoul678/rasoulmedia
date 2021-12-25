@@ -74,9 +74,11 @@ export const ExpandedMenuContainer = styled.div<Partial<MobileMenuProps>>`
   // border-top-right-radius: 1rem;
   height: 27rem;
   bottom: 0rem;
+  left: 0;
+  right: 0;
   ${({ isOpen }) => !isOpen && "bottom: -28rem;"}
   position: absolute;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease;
   z-index: -1;
   background-color: ${({ theme }) => theme.background};
   padding: 0.5rem 1rem 1rem 1rem;

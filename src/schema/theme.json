@@ -11,8 +11,8 @@
         },
         "p2": {
           "name": "orange",
-          "mainColor": "#BB004B",
-          "colors": ["#111111", "#343A41", "#BB004B", "#EEEEEE"],
+          "mainColor": "#bd4b4b",
+          "colors": ["#111111", "#343A41", "#bd4b4b", "#EEEEEE"],
           "text": "#CCCCCC"
         },
         "p3": {
@@ -34,26 +34,26 @@
       "pallets": {
         "p1": {
           "name": "yellow",
-          "mainColor": "#F9C160",
-          "colors": ["#BBBBBB", "#393E46", "#F9C160", "#F9C160"],
+          "mainColor": "#ff8343",
+          "colors": ["#CCCCCC", "#393E46", "#ff8343", "#F9C160"],
           "text": "#333333"
         },
         "p2": {
           "name": "orange",
-          "mainColor": "#FD7014",
-          "colors": ["#BBBBBB", "#393E46", "#FD7014", "#EEEEEE"],
+          "mainColor": "#bd4b4b",
+          "colors": ["#CCCCCC", "#393E46", "#bd4b4b", "#EEEEEE"],
           "text": "#333333"
         },
         "p3": {
           "name": "pink",
-          "mainColor": "#E41F7B",
-          "colors": ["#BBBBBB", "#393E46", "#E41F7B", "#FF8BA0"],
+          "mainColor": "#50A989",
+          "colors": ["#CCCCCC", "#393E46", "#50A989", "#FF8BA0"],
           "text": "#333333"
         },
         "p4": {
           "name": "blue",
-          "mainColor": "#00ADB5",
-          "colors": ["#BBBBBB", "#393E46", "#00ADB5", "#00FFF5"],
+          "mainColor": "#5078c0",
+          "colors": ["#CCCCCC", "#393E46", "#5078c0", "#00FFF5"],
           "text": "#333333"
         }
       }

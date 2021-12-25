@@ -1,5 +1,6 @@
 import { useTypedSelector } from "hooks/useTypedSelector";
 import { ThemeType } from "interfaces";
+import { invertColor } from "utils/helpers";
 
 const useDarkMode = () => {
   const { selectedPallet, themePallet } = useTypedSelector(
@@ -20,19 +21,11 @@ const useDarkMode = () => {
     buttons: {
       primary: {
         backgroundColor: pallets[selectedPallet].colors[0],
-        textColor: "#676767",
+        textColor: invertColor(pallets[selectedPallet].colors[0], true),
       },
       secondary: {
         backgroundColor: pallets[selectedPallet].colors[2],
-        textColor: "#fff",
-      },
-    },
-    particles: {
-      lineColor: "",
-      backgroundColor: {
-        r: name === "light" ? 150 : 0,
-        g: name === "light" ? 150 : 0,
-        b: name === "light" ? 150 : 0,
+        textColor: invertColor(pallets[selectedPallet].colors[2], true),
       },
     },
     card: {
