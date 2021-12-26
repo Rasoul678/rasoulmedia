@@ -83,7 +83,7 @@ const HomeGallery: React.FC = () => {
           <Styled.ArrowDownWrapper>
             <ScrollLink
               activeClass="active"
-              to="next"
+              to="bio"
               spy={true}
               smooth={true}
               // offset={200}

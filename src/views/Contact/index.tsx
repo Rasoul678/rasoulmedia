@@ -68,7 +68,6 @@ const Contact: React.FC = () => {
           name="name"
           autoComplete="off"
           required
-          autoFocus
           error={error.name}
         />
         <Input
