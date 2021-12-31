@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 const { float, revFloat } = window;
 
+export const TimelineDescription = styled.div`
+  text-align: justify;
+  text-justify: inter-word;
+`;
+
 export const TimelineContainer = styled.div`
   .vertical-timeline * {
     box-sizing: border-box;
@@ -76,6 +81,7 @@ export const TimelineContainer = styled.div`
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    background-color: #222;
     box-shadow: 0 0 0 2px ${({ theme }) => theme.border},
       inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
   }
@@ -168,9 +174,9 @@ export const TimelineContainer = styled.div`
   .vertical-timeline-element-content {
     position: relative;
     margin-${float}: 60px;
-    background: #fff;
+    background: #222;
     border-radius: 0.25em;
-    padding: 1em;
+    padding: 1rem 1rem 0;
     box-shadow: 0 3px 0 ${({ theme }) => theme.border};
   }
   .vertical-timeline--one-column-right .vertical-timeline-element-content {
@@ -216,12 +222,12 @@ export const TimelineContainer = styled.div`
   .vertical-timeline-element-content-arrow {
     content: "";
     position: absolute;
-    top: 16px;
+    top: 0.8rem;
     ${revFloat}: 100%;
     height: 0;
     width: 0;
     border: 7px solid transparent;
-    border-${revFloat}: 7px solid #fff;
+    border-${revFloat}: 7px solid ${({ theme }) => theme.border};
   }
   .vertical-timeline--one-column-right
     .vertical-timeline-element-content-arrow {

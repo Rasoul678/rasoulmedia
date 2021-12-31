@@ -12,7 +12,7 @@ export const Button = styled.div<IButtonProps>`
   mix-blend-mode: difference;
   color: ${({ theme }) => theme.buttons.secondary.textColor};
   background: ${({ theme }) => theme.buttons.secondary.backgroundColor};
-  padding: 0.3em 0.8em 0.2em;
+  padding: 0.4em 0.8em 0.2em;
   border-radius: 0.4rem;
   cursor: pointer;
   user-select: none;

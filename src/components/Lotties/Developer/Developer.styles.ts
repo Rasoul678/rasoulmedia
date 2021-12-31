@@ -8,11 +8,11 @@ export const LottieWrapper = styled.div`
 `;
 
 export const Lottie = styled.div`
-  height: 90%;
-  width: 90%;
+  height: 110%;
+  width: 110%;
 
   svg {
-    margin-${float}: -43% !important;
-    margin-top: -45% !important;
+    margin-${float}: -53% !important;
+    margin-top: -53% !important;
   }
 `;

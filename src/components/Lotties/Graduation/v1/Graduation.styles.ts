@@ -13,6 +13,6 @@ export const Lottie = styled.div`
 
   svg {
     margin-${float}: -66% !important;
-    margin-top: -72% !important;
+    margin-top: -73% !important;
   }
 `;

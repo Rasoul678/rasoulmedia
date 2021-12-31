@@ -5,6 +5,7 @@ import Button from "components/Button";
 import sendMailJson from "assets/animations/lordicons/green/177-envelope-mail-send-outline-edited.json";
 import { sendEmail } from "utils/helpers";
 import { View } from "components/Global/GlobalStyles";
+import { useTranslation } from "react-i18next";
 
 const INITIAL_FORM = {
   name: "",
@@ -15,6 +16,7 @@ const INITIAL_FORM = {
 const Contact: React.FC = () => {
   const [isSending, setIsSending] = useState(false);
   const [contactForm, setContactForm] = useState(INITIAL_FORM);
+  const { t } = useTranslation();
 
   const [error, setError] = useState({ name: "", message: "" });
 
@@ -49,7 +51,7 @@ const Contact: React.FC = () => {
 
   return (
     <View>
-      <h1>Contact</h1>
+      <h1>{t("contact-me")}</h1>
       <div
         style={{
           display: "flex",
@@ -57,14 +59,14 @@ const Contact: React.FC = () => {
           justifyContent: "flex-start",
           gap: "2rem",
           width: "80%",
-          margin: "auto",
+          margin: "2rem auto",
         }}
       >
         <Input
           onChange={handleFieldValue}
           value={contactForm.name}
           type="text"
-          label="name"
+          label={t("name")}
           name="name"
           autoComplete="off"
           required
@@ -74,7 +76,7 @@ const Contact: React.FC = () => {
           onChange={handleFieldValue}
           value={contactForm.subject}
           type="text"
-          label="subject"
+          label={t("subject")}
           name="subject"
           autoComplete="off"
         />
@@ -82,7 +84,7 @@ const Contact: React.FC = () => {
           onChange={handleFieldValue}
           value={contactForm.message}
           required
-          label="message"
+          label={t("message")}
           rows={7}
           name="message"
           error={error.message}
@@ -93,7 +95,7 @@ const Contact: React.FC = () => {
           isLoading={isSending}
           onClick={handleSendEmail}
         >
-          send
+          {t("send")}
         </Button>
       </div>
     </View>

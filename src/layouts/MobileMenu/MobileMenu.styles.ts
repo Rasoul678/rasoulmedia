@@ -217,6 +217,7 @@ export const LangCellWrapper = styled.div`
   align-items: center;
   font-size: 1rem;
   font-weight: bold;
+  transform: rotateZ(180deg);
 `;
 
 interface FlagWrapperProps {

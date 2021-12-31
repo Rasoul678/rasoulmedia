@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next";
 import Timeline, { TimelineElement } from "components/Timeline";
 import * as Styled from "../Home.styles";
 import FetusLottie from "components/Lotties/Fetus";
@@ -7,30 +6,29 @@ import MasterOfScienceLottie from "components/Lotties/Graduation/v1";
 import BachelorOfScienceLottie from "components/Lotties/Graduation/v2";
 // import CertificationLottie from "components/Lotties/Certification";
 import DeveloperLottie from "components/Lotties/Developer";
-import BirthDescription from "./BirthDescription";
 
-const BiographyEducation: React.FC = () => {
-  const { t } = useTranslation();
+interface WorkExperienceProps {}
 
+const WorkExperience: React.FC<WorkExperienceProps> = () => {
   const items: TimelineElement[] = [
     {
-      title: t("birthday"),
+      title: "Birthday",
       date: "1998/04/07",
-      description: <BirthDescription />,
+      description: "i was born here",
       icon: <FetusLottie />,
     },
     {
-      title: t("school"),
+      title: "School",
       date: "1996 - 2008",
       icon: <BookLottie />,
     },
     {
-      title: t("bs-degree"),
+      title: "Bachelor of Science",
       date: "2011 - 2013",
       icon: <BachelorOfScienceLottie />,
     },
     {
-      title: t("ms-degree"),
+      title: "Master of Science",
       date: "2011 - 2013",
       icon: <MasterOfScienceLottie />,
     },
@@ -45,7 +43,7 @@ const BiographyEducation: React.FC = () => {
   return (
     <Styled.EducationTimelineWrapper>
       <Styled.TimelineTitle className="bio">
-        {t("bio-education")}
+        Work Experience
       </Styled.TimelineTitle>
       <Timeline
         items={items}
@@ -56,4 +54,4 @@ const BiographyEducation: React.FC = () => {
   );
 };
 
-export default BiographyEducation;
+export default WorkExperience;

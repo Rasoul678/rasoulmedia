@@ -1,4 +1,4 @@
-import { useCallback} from "react";
+import { useCallback } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -13,7 +13,7 @@ type ElementProps = VerticalTimelineElementProps & {
 
 export interface TimelineElement extends ElementProps {
   title?: string;
-  description?: string;
+  description?: string | JSX.Element;
 }
 
 interface TimelineProps {
@@ -25,7 +25,6 @@ interface TimelineProps {
 
 const Timeline: React.FC<TimelineProps> = (props) => {
   const { items, rootProps, onIconClick, onElementClick } = props;
-  const { direction } = window;
 
   const handleIconClick = useCallback(
     () => () => {
@@ -45,23 +44,23 @@ const Timeline: React.FC<TimelineProps> = (props) => {
     <Styled.TimelineContainer>
       <VerticalTimeline {...rootProps}>
         {items.map((item, index) => {
-          const { id, title, description, ...rest } = item;
+          const { id, title, description: Description, ...rest } = item;
           return (
             <VerticalTimelineElement
               key={id || index}
-              contentStyle={{ background: "#222", padding: "1rem 1rem 0" }}
-              contentArrowStyle={
-                direction === "rtl"
-                  ? { borderLeft: "7px solid  #333" }
-                  : { borderRight: "7px solid  #333" }
-              }
-              iconStyle={{ backgroundColor: "#222" }}
               iconOnClick={handleIconClick()}
               onTimelineElementClick={handleElementClick()}
               {...rest}
             >
               {!!title && <h3>{title}</h3>}
-              {!!description && <p>{description}</p>}
+              {!!Description &&
+                (typeof Description === "object" ? (
+                  Description
+                ) : (
+                  <Styled.TimelineDescription
+                    dangerouslySetInnerHTML={{ __html: Description }}
+                  />
+                ))}
             </VerticalTimelineElement>
           );
         })}

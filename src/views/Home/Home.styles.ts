@@ -12,5 +12,19 @@ export const EducationTimelineWrapper = styled.div`
 `;
 
 export const TimelineTitle = styled.h2`
-  padding: 2rem 0;
+  padding: 1rem 0;
+  border-bottom: 5px solid ${({ theme }) => theme.border};
+`;
+
+export const LinkTo = styled.a`
+  display: inline-block;
+  text-decoration: none;
+  color: ${({ theme }) => theme.border};
+  border-bottom: 1px solid #fff;
+`;
+
+export const BirthDescriptionWrapper = styled.div`
+  text-align: justify;
+  text-justify: inter-character;
+  padding: 1rem 0;
 `;

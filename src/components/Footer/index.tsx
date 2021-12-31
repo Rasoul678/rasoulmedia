@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import * as Styled from "./Footer.styles";
 import algaeJson from "assets/animations/lordicons/green/1841-algae-outline-edited (dark).json";
+import coralJson from "assets/animations/lordicons/green/1167-coral-outline-edited (dark).json";
 import useLottie from "hooks/useLottie";
 
 interface FooterProps {
@@ -8,39 +9,39 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ color }) => {
-  const algaeRef1 = useRef<HTMLDivElement | null>(null);
-  const algaeRef2 = useRef<HTMLDivElement | null>(null);
-  const algaeRef3 = useRef<HTMLDivElement | null>(null);
-  const algaeRef4 = useRef<HTMLDivElement | null>(null);
+  const ref1 = useRef<HTMLDivElement | null>(null);
+  const ref2 = useRef<HTMLDivElement | null>(null);
+  const ref3 = useRef<HTMLDivElement | null>(null);
+  const ref4 = useRef<HTMLDivElement | null>(null);
 
   useLottie({
-    container: algaeRef1 as any,
-    animationData: algaeJson,
-    name: "algae1",
+    container: ref1 as any,
+    animationData: coralJson,
+    name: "json1",
   });
   useLottie({
-    container: algaeRef2 as any,
+    container: ref2 as any,
     animationData: algaeJson,
-    name: "algae2",
+    name: "json2",
   });
   useLottie({
-    container: algaeRef3 as any,
-    animationData: algaeJson,
-    name: "algae3",
+    container: ref3 as any,
+    animationData: coralJson,
+    name: "json3",
   });
   useLottie({
-    container: algaeRef4 as any,
+    container: ref4 as any,
     animationData: algaeJson,
-    name: "algae4",
+    name: "json4",
   });
 
   return (
     <Styled.FooterContainer>
       <Styled.AlgaeWrapper>
-        <div ref={algaeRef1} />
-        <div ref={algaeRef2} />
-        <div ref={algaeRef3} />
-        <div ref={algaeRef4} />
+        <div ref={ref1} />
+        <div ref={ref2} />
+        <div ref={ref3} />
+        <div ref={ref4} />
       </Styled.AlgaeWrapper>
       <div style={{ display: "flex" }}>
         <svg

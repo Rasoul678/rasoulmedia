@@ -34,7 +34,7 @@ const MatrixBackground: React.FC<MatrixBackgroundProps> = ({
         context.fillStyle = "#0001";
         context.fillRect(0, 0, width, height);
 
-        context.fillStyle = "rgba(0, 85, 85, 0.5)";
+        context.fillStyle = "rgba(0, 85, 85, 0.6)";
         context.font = "0.8rem ubuntu";
 
         yPositions.forEach((y, index) => {

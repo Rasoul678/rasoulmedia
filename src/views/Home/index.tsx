@@ -6,6 +6,7 @@ import useLottie from "hooks/useLottie";
 import Footer from "components/Footer";
 import { View } from "components/Global/GlobalStyles";
 import BiographyEducation from "./timelines/Biography_Education";
+import WorkExperience from "./timelines/WorkExperience";
 
 interface IHomeProps {}
 
@@ -26,6 +27,7 @@ const Home: React.FC<IHomeProps> = () => {
       <div>
         <div>
           <BiographyEducation />
+          <WorkExperience />
         </div>
         <div
           style={{ width: "10rem", margin: "0 auto" }}
