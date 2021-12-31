@@ -16,6 +16,7 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
     scroll-behavior: smooth;
+    width: calc(100% - 0.05rem);
   }
 
   body {

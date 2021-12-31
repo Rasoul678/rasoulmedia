@@ -14,6 +14,11 @@ const SelectLanguage: React.FC<ISelectLang> = (props) => {
 
   const handleSelectLanguage = useCallback((language: string) => {
     return () => {
+      //! Reload for rtl.
+      if (language === "fa" || i18next.language === "fa") {
+        window.location.reload();
+      }
+
       i18next.changeLanguage(language);
       toggle();
     };

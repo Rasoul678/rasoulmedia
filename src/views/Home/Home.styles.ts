@@ -7,8 +7,10 @@ export const HomeTitle = styled(motion.h1)`
 
 export const EducationTimelineWrapper = styled.div`
   padding: 1rem;
+  width: calc(100% - 2rem);
+  margin: 0 auto;
 `;
 
 export const TimelineTitle = styled.h2`
-  padding: 2rem 0 ;
+  padding: 2rem 0;
 `;

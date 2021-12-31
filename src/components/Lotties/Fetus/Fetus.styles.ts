@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+const { float } = window;
+
 export const LottieWrapper = styled.div`
   height: 100%;
   width: 100%;
@@ -10,7 +12,7 @@ export const Lottie = styled.div`
   width: 133%;
 
   svg {
-    margin-left: -62% !important;
+    margin-${float}: -62% !important;
     margin-top: -63% !important;
   }
 `;

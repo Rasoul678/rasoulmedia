@@ -1,11 +1,10 @@
+import { useCallback} from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
   VerticalTimelineElementProps,
   VerticalTimelineProps,
 } from "react-vertical-timeline-component";
-import { useCallback } from "react";
-import "./timeline.css";
 import * as Styled from "./Timeline.styles";
 
 type ElementProps = VerticalTimelineElementProps & {
@@ -26,6 +25,7 @@ interface TimelineProps {
 
 const Timeline: React.FC<TimelineProps> = (props) => {
   const { items, rootProps, onIconClick, onElementClick } = props;
+  const { direction } = window;
 
   const handleIconClick = useCallback(
     () => () => {
@@ -50,7 +50,11 @@ const Timeline: React.FC<TimelineProps> = (props) => {
             <VerticalTimelineElement
               key={id || index}
               contentStyle={{ background: "#222", padding: "1rem 1rem 0" }}
-              contentArrowStyle={{ borderRight: "7px solid  #333" }}
+              contentArrowStyle={
+                direction === "rtl"
+                  ? { borderLeft: "7px solid  #333" }
+                  : { borderRight: "7px solid  #333" }
+              }
               iconStyle={{ backgroundColor: "#222" }}
               iconOnClick={handleIconClick()}
               onTimelineElementClick={handleElementClick()}
