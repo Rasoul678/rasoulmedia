@@ -5,6 +5,7 @@ const { float, revFloat } = window;
 export const TimelineDescription = styled.div`
   text-align: justify;
   text-justify: inter-word;
+  margin-top: 1rem;
 `;
 
 export const TimelineContainer = styled.div`

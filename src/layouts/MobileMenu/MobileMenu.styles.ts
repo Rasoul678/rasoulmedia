@@ -2,14 +2,22 @@ import styled, { keyframes } from "styled-components";
 
 const bouncing = keyframes`
   0%{
-    bottom: 0;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
   }
   50%{
-  bottom: 0.7rem;
-
+    width: 2rem;
+    height: 2rem;
+    top: calc(50% - 1rem);
+    left: calc(50% - 1rem);
   }
   100%{
-    bottom: 0.3rem;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
   }
 `;
 
@@ -195,8 +203,8 @@ export const LangOptionsContainer = styled.div`
 `;
 
 export const LangOptionWrapper = styled.div`
-  width: 6.5rem;
-  height: 6.5rem;
+  width: 5.5rem;
+  height: 5.5rem;
   padding: 0rem;
   border-radius: 1.2rem;
   text-transform: capitalize;
@@ -237,28 +245,27 @@ interface PaletteCircleProps {
 }
 
 export const PaletteCircle = styled.div<PaletteCircleProps>`
-color: ${({ color }) => color}};
-width: 4rem;
-height: 4rem;
-border-radius: 50%;
-margin: 0.6rem 0.5rem;
-display: flex;
-justify-content: center;
-align-items: center;
-filter: brightness(${({ isSelected }) => (isSelected ? "100%" : "40%")});
-
-::before{
-  content: "";
-  width: 1rem;
-  height: 1rem;
-  position: absolute;
-  background-color: ${({ color }) => color};
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
-  bottom: 0rem;
-  left: 0rem;
-  display: ${({ isSelected }) => (isSelected ? "revert" : "none")};
-  animation: ${bouncing} 0.5s ease-in-out infinite;
-}
+  margin: 0.6rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: brightness(${({ isSelected }) => (isSelected ? "100%" : "40%")});
+
+  ::before {
+    content: "";
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    background-color: ${({ color }) => color};
+    border-radius: 0.4rem;
+    top: calc(50% - 1rem);
+    left: calc(50% - 1rem);
+    display: ${({ isSelected }) => (isSelected ? "revert" : "none")};
+    animation: ${bouncing} 1s ease-in-out infinite;
+  }
 `;
 
 export const RepoHeaderWrapper = styled.div`

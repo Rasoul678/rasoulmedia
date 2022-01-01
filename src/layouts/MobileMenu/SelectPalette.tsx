@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import * as Styled from "./MobileMenu.styles";
 import { useTypedSelector } from "hooks/useTypedSelector";
 import useActions from "hooks/useActions";
-import PaintRollerIcon from "components/Icons/PaintRollerIcon";
+import ColorPickLottie from "../../components/Lotties/ColorPick";
 
 interface ISelectLang {
   toggle: () => void;
@@ -17,7 +17,7 @@ const SelectPalette: React.FC<ISelectLang> = ({ toggle }) => {
 
   const handleSelectPalette = useCallback((palette: string) => {
     return () => {
-        toggle();
+      toggle();
       setThemePalette(palette);
     };
   }, []);
@@ -33,7 +33,7 @@ const SelectPalette: React.FC<ISelectLang> = ({ toggle }) => {
             isSelected={selectedPallet === key}
             color={value.mainColor}
           >
-            <PaintRollerIcon size={60}  />
+            <ColorPickLottie name={value.mainColor} color={value.name} />
           </Styled.PaletteCircle>
         </Styled.LangOptionWrapper>
       ))}

@@ -4,12 +4,14 @@ import FetusLottie from "components/Lotties/Fetus";
 import BookLottie from "components/Lotties/Book";
 import MasterOfScienceLottie from "components/Lotties/Graduation/v1";
 import BachelorOfScienceLottie from "components/Lotties/Graduation/v2";
-// import CertificationLottie from "components/Lotties/Certification";
 import DeveloperLottie from "components/Lotties/Developer";
+import { useTranslation } from "react-i18next";
 
 interface WorkExperienceProps {}
 
 const WorkExperience: React.FC<WorkExperienceProps> = () => {
+  const { t } = useTranslation();
+
   const items: TimelineElement[] = [
     {
       title: "Birthday",
@@ -43,7 +45,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
   return (
     <Styled.EducationTimelineWrapper>
       <Styled.TimelineTitle className="bio">
-        Work Experience
+        {t("work-experience")}
       </Styled.TimelineTitle>
       <Timeline
         items={items}
