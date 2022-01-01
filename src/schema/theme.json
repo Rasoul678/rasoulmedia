@@ -39,13 +39,13 @@
           "text": "#333333"
         },
         "p2": {
-          "name": "orange",
+          "name": "red",
           "mainColor": "#bd4b4b",
           "colors": ["#CCCCCC", "#393E46", "#bd4b4b", "#EEEEEE"],
           "text": "#333333"
         },
         "p3": {
-          "name": "pink",
+          "name": "green",
           "mainColor": "#50A989",
           "colors": ["#CCCCCC", "#393E46", "#50A989", "#FF8BA0"],
           "text": "#333333"

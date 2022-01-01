@@ -1,54 +1,23 @@
-import { useEffect, useRef, useState, lazy, Suspense } from "react";
+import { useEffect, useState } from "react";
+import lottie from "lottie-web";
 import * as Styled from "./MobileMenu.styles";
 import useScrollDirection from "hooks/useScrollDirection";
 import MenuIcon from "components/Icons/MenuIcon";
 import BottomSheet from "./BottomSheet";
 import CustomLink from "components/CustomLink";
 import { useTypedSelector } from "hooks/useTypedSelector";
-import useLottie from "hooks/useLottie";
 import useActions from "hooks/useActions";
-import homeJson from "assets/animations/lordicons/green/63-home-outline-edited (dark).json";
-import appsJson from "assets/animations/lordicons/green/12-layes-outline-edited (dark).json";
-import codeJson from "assets/animations/lordicons/green/742-multimedia-code-1-outline-edited (dark).json";
-import contactJson from "assets/animations/lordicons/green/981-consultation-outline-edited (dark).json";
+
+import HomeLottie from "../../components/Lotties/Home";
+import LayersLottie from "../../components/Lotties/Layers";
+import CodeLottie from "../../components/Lotties/Code";
+import ContactLottie from "../../components/Lotties/Contact";
 
 const MobileMenu: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const direction = useScrollDirection();
   const { isMobileMenuOpen } = useTypedSelector((state) => state.global);
   const { toggleMobileMenu } = useActions();
-  const homeRef = useRef<HTMLDivElement | null>(null);
-  const appsRef = useRef<HTMLDivElement | null>(null);
-  const codeRef = useRef<HTMLDivElement | null>(null);
-  const contactRef = useRef<HTMLDivElement | null>(null);
-
-  const lottie = useLottie({
-    container: homeRef as any,
-    animationData: homeJson,
-    name: "home",
-    loop: false,
-  });
-
-  useLottie({
-    container: appsRef as any,
-    animationData: appsJson,
-    name: "apps",
-    loop: false,
-  });
-
-  useLottie({
-    container: codeRef as any,
-    animationData: codeJson,
-    name: "code",
-    loop: false,
-  });
-
-  useLottie({
-    container: contactRef as any,
-    animationData: contactJson,
-    name: "contact",
-    loop: false,
-  });
 
   const handleMenuClick = () => {
     !isMobileMenuOpen && toggleMobileMenu(!isMobileMenuOpen);
@@ -80,8 +49,7 @@ const MobileMenu: React.FC = () => {
         as={CustomLink}
         to="/"
       >
-        <div style={{ width: "2.5rem" }} ref={homeRef} />
-        {/* <HomeIcon size={35} /> */}
+        <HomeLottie style={{ height: "2.5rem" }} />
       </Styled.MenuItem>
       <Styled.MenuItem
         onMouseEnter={() => lottie.play("apps")}
@@ -89,8 +57,7 @@ const MobileMenu: React.FC = () => {
         as={CustomLink}
         to="/apps"
       >
-        <div ref={appsRef} />
-        {/* <AppsIcon size={35} /> */}
+        <LayersLottie style={{ height: "4.7rem" }} />
       </Styled.MenuItem>
       <Styled.MenuItem onClick={handleMenuClick} isOpen={isMobileMenuOpen}>
         <BottomSheet />
@@ -102,8 +69,7 @@ const MobileMenu: React.FC = () => {
         as={CustomLink}
         to="/code"
       >
-        <div style={{ width: "4.7rem" }} ref={codeRef} />
-        {/* <CodeIcon size={35} /> */}
+        <CodeLottie style={{ height: "5rem", width: "5rem" }} />
       </Styled.MenuItem>
       <Styled.MenuItem
         onMouseEnter={() => lottie.play("contact")}
@@ -111,8 +77,7 @@ const MobileMenu: React.FC = () => {
         as={CustomLink}
         to="/contact"
       >
-        <div style={{ width: "3rem" }} ref={contactRef} />
-        {/* <ContactIcon size={35} /> */}
+        <ContactLottie style={{ height: "4rem" }} />
       </Styled.MenuItem>
     </Styled.MobileMenuContainer>
   );

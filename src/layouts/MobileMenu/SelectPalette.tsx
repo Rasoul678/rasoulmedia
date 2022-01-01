@@ -17,7 +17,7 @@ const SelectPalette: React.FC<ISelectLang> = ({ toggle }) => {
 
   const handleSelectPalette = useCallback((palette: string) => {
     return () => {
-      //   toggle();
+        toggle();
       setThemePalette(palette);
     };
   }, []);
