@@ -17,28 +17,33 @@ const BiographyEducation: React.FC = () => {
       title: t("birthday"),
       date: "1998/04/07",
       description: <BirthDescription />,
-      icon: <FetusLottie />,
+      icon: <FetusLottie className="fetus" />,
+      className: "timeline-fetus-lottie",
     },
     {
       title: t("school"),
       date: "1996 - 2008",
       icon: <BookLottie />,
+      className: "timeline-lottie",
     },
     {
       title: t("bs-degree"),
       date: "2011 - 2013",
-      icon: <BachelorOfScienceLottie />,
+      icon: <BachelorOfScienceLottie className="bachelor" />,
+      className: "timeline-grad-lottie",
     },
     {
       title: t("ms-degree"),
       date: "2011 - 2013",
-      icon: <MasterOfScienceLottie />,
+      icon: <MasterOfScienceLottie className="master" />,
+      className: "timeline-grad2-lottie",
     },
     {
       title: "End of education",
       date: "...",
       icon: <DeveloperLottie />,
       contentStyle: { display: "none" },
+      className: "timeline-lottie",
     },
   ];
 

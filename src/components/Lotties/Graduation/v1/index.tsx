@@ -1,24 +1,22 @@
-import { useRef } from "react";
+import { HTMLAttributes, useRef } from "react";
 import useLottie from "hooks/useLottie";
 import json from "assets/animations/lordicons/green/graduation.json";
 import * as Styled from "./Graduation.styles";
 
-interface GraduationLottieProps {}
+interface GraduationLottieProps extends HTMLAttributes<HTMLDivElement> {
+  name?: string;
+}
 
-const GraduationLottie: React.FC<GraduationLottieProps> = () => {
+const GraduationLottie: React.FC<GraduationLottieProps> = (props) => {
   const container = useRef<HTMLDivElement | null>(null);
 
   useLottie({
     container: container as any,
     animationData: json,
-    name: "graduation-v1",
+    name: props.name || "graduation-v1",
   });
 
-  return (
-    <Styled.LottieWrapper>
-      <Styled.Lottie ref={container} />
-    </Styled.LottieWrapper>
-  );
+  return <Styled.Lottie ref={container} {...props} />;
 };
 
 export default GraduationLottie;

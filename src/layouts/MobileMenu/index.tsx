@@ -1,20 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, lazy, Suspense } from "react";
 import * as Styled from "./MobileMenu.styles";
 import useScrollDirection from "hooks/useScrollDirection";
-// import HomeIcon from "components/Icons/HomeIcon";
-// import AppsIcon from "components/Icons/AppsIcon";
-// import ContactIcon from "components/Icons/ContactIcon";
-// import CodeIcon from "components/Icons/CodeIcon";
 import MenuIcon from "components/Icons/MenuIcon";
 import BottomSheet from "./BottomSheet";
 import CustomLink from "components/CustomLink";
 import { useTypedSelector } from "hooks/useTypedSelector";
+import useLottie from "hooks/useLottie";
 import useActions from "hooks/useActions";
 import homeJson from "assets/animations/lordicons/green/63-home-outline-edited (dark).json";
 import appsJson from "assets/animations/lordicons/green/12-layes-outline-edited (dark).json";
 import codeJson from "assets/animations/lordicons/green/742-multimedia-code-1-outline-edited (dark).json";
 import contactJson from "assets/animations/lordicons/green/981-consultation-outline-edited (dark).json";
-import useLottie from "hooks/useLottie";
 
 const MobileMenu: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);

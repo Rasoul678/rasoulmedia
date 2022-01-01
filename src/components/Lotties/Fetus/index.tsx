@@ -1,24 +1,22 @@
-import { useRef } from "react";
+import { HTMLAttributes, useRef } from "react";
 import useLottie from "hooks/useLottie";
 import json from "assets/animations/lordicons/green/1270-fetus-outline-edited (dark).json";
 import * as Styled from "./Fetus.styles";
 
-interface FetusLottieProps {}
+interface FetusLottieProps extends HTMLAttributes<HTMLDivElement> {
+  name?: string;
+}
 
-const FetusLottie: React.FC<FetusLottieProps> = () => {
+const FetusLottie: React.FC<FetusLottieProps> = (props) => {
   const container = useRef<HTMLDivElement | null>(null);
 
   useLottie({
     container: container as any,
     animationData: json,
-    name: "fetus",
+    name: props.name || "fetus",
   });
 
-  return (
-    <Styled.LottieWrapper>
-      <Styled.Lottie ref={container} />
-    </Styled.LottieWrapper>
-  );
+  return <Styled.Lottie ref={container} {...props} />;
 };
 
 export default FetusLottie;

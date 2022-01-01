@@ -1,24 +1,22 @@
-import { useRef } from "react";
+import { HTMLAttributes, useRef } from "react";
 import useLottie from "hooks/useLottie";
 import json from "assets/animations/lordicons/green/245-edit-document-outline-edited (dark).json";
 import * as Styled from "./Book.styles";
 
-interface FetusLottieProps {}
+interface FetusLottieProps extends HTMLAttributes<HTMLDivElement> {
+  name?: string;
+}
 
-const BookLottie: React.FC<FetusLottieProps> = () => {
+const BookLottie: React.FC<FetusLottieProps> = (props) => {
   const container = useRef<HTMLDivElement | null>(null);
 
   useLottie({
     container: container as any,
     animationData: json,
-    name: "book",
+    name: props.name || "book",
   });
 
-  return (
-    <Styled.LottieWrapper>
-      <Styled.Lottie ref={container} />
-    </Styled.LottieWrapper>
-  );
+  return <Styled.Lottie ref={container} {...props} />;
 };
 
 export default BookLottie;
