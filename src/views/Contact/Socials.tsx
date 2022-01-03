@@ -43,10 +43,8 @@ const Socials: React.FC<SocialsProps> = () => {
   );
 
   return (
-    <Flex position="relative" marginTop="2rem">
-      <ThankYou />
-
-      <Flex flexDirection="column" width="100%" alignItems="flex-start">
+    <Flex position="relative" marginTop="2rem" gap='1rem'>
+      <Flex flexDirection="column" width="100%" alignItems="center" justifyContent='center'>
         <Styled.SocialWrapper
           onMouseEnter={handleMouseEnter("twitter")}
           onMouseLeave={handleMouseLeave("twitter")}
@@ -76,6 +74,8 @@ const Socials: React.FC<SocialsProps> = () => {
           <FacebookLottie color={memoColors[3]} style={{ width: "3rem" }} />
         </Styled.SocialWrapper>
       </Flex>
+
+      <ThankYou />
     </Flex>
   );
 };

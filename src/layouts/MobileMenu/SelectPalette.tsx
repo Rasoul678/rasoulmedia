@@ -26,6 +26,7 @@ const SelectPalette: React.FC<ISelectLang> = ({ toggle }) => {
     <Styled.LangOptionsContainer>
       {Object.entries(themePallet.pallets).map(([key, value], index) => (
         <Styled.LangOptionWrapper
+          style={{ borderRadius: "50%" }}
           key={index}
           onClick={handleSelectPalette(key)}
         >
@@ -33,7 +34,9 @@ const SelectPalette: React.FC<ISelectLang> = ({ toggle }) => {
             isSelected={selectedPallet === key}
             color={value.mainColor}
           >
-            <ColorPickLottie name={value.mainColor} color={value.name} />
+            {selectedPallet === key && (
+              <ColorPickLottie name={value.mainColor} color={value.name} />
+            )}
           </Styled.PaletteCircle>
         </Styled.LangOptionWrapper>
       ))}

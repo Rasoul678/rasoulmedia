@@ -39,6 +39,7 @@ const LinkedinLottie: React.FC<LinkedinLottieProps> = (props) => {
     container: container as any,
     animationData: linkedinJson,
     name: props.name || "linkedin",
+    loop: false,
   });
 
   return (

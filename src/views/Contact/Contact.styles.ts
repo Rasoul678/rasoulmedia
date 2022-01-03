@@ -6,7 +6,7 @@ export const InputsWrapper = styled.div`
   justify-content: flex-start;
   gap: 1.5rem;
   width: 80%;
-  margin: 1rem auto;
+  margin: 1rem auto 0rem;
 `;
 
 export const FormTitle = styled.h2`
@@ -15,6 +15,5 @@ export const FormTitle = styled.h2`
 
 export const SocialWrapper = styled.div`
   position: relative;
-  width: 100%;
   cursor: pointer;
 `;

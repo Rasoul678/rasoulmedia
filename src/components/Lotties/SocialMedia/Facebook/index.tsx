@@ -39,6 +39,7 @@ const FacebookLottie: React.FC<FacebookLottieProps> = (props) => {
     container: container as any,
     animationData: facebookJson,
     name: props.name || "facebook",
+    loop: false,
   });
 
   return (

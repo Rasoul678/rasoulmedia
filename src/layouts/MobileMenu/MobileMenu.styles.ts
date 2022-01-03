@@ -241,7 +241,7 @@ export const FlagWrapper = styled.div<FlagWrapperProps>`
 `;
 
 interface PaletteCircleProps {
-  isSelected: boolean;
+  isSelected?: boolean;
 }
 
 export const PaletteCircle = styled.div<PaletteCircleProps>`
@@ -252,19 +252,17 @@ export const PaletteCircle = styled.div<PaletteCircleProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  filter: brightness(${({ isSelected }) => (isSelected ? "100%" : "40%")});
+  filter: brightness(${({ isSelected }) => (isSelected ? "100%" : "50%")});
 
   ::before {
     content: "";
-    width: 2rem;
-    height: 2rem;
+    width: 2.7rem;
+    height: 2.7rem;
     position: absolute;
     background-color: ${({ color }) => color};
-    border-radius: 0.4rem;
-    top: calc(50% - 1rem);
-    left: calc(50% - 1rem);
-    display: ${({ isSelected }) => (isSelected ? "revert" : "none")};
-    animation: ${bouncing} 1s ease-in-out infinite;
+    border-radius: 50%;
+    top: calc(50% - 1.3rem);
+    left: calc(50% - 1.3rem);
   }
 `;
 
