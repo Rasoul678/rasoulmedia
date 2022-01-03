@@ -18,7 +18,7 @@ const Textarea: React.FC<TextareaProps> = ({ name, label, error, ...rest }) => {
       />
       <Styled.Label title={label} htmlFor={name} />
       <Styled.Indicator />
-      <Styled.Error>{error}</Styled.Error>
+      {!!error && <Styled.Error>{error}</Styled.Error>}
     </Styled.TextareaContainer>
   );
 };

@@ -8,13 +8,15 @@ interface ButtonProps extends HTMLAttributes<HTMLDivElement> {
   size: "small" | "medium" | "large";
   isLoading?: boolean;
   loaderJson?: any;
+  fullWidth?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = (props) => {
-  const { onClick, size, isLoading, loaderJson, children, ...rest } = props;
+  const { onClick, size, isLoading, loaderJson, fullWidth, children, ...rest } =
+    props;
   const container = useRef<HTMLDivElement | null>(null);
 
-  const lottie = useLottie({
+  useLottie({
     container: container as any,
     animationData: loaderJson || json,
     name: "send-email",
@@ -27,7 +29,12 @@ const Button: React.FC<ButtonProps> = (props) => {
   };
 
   return (
-    <Styled.Button size={size} onClick={handleClickButton} {...rest}>
+    <Styled.Button
+      fullWidth={fullWidth}
+      size={size}
+      onClick={handleClickButton}
+      {...rest}
+    >
       <Styled.ButtonLottie isShown={isLoading} ref={container} />
       {!isLoading && children}
     </Styled.Button>

@@ -1,4 +1,4 @@
-import { HTMLAttributes, useRef } from "react";
+import { HTMLAttributes, memo, useRef } from "react";
 import useLottie from "hooks/useLottie";
 import json from "assets/animations/lordicons/green/1270-fetus-outline-edited (dark).json";
 import * as Styled from "./Fetus.styles";
@@ -19,4 +19,4 @@ const FetusLottie: React.FC<FetusLottieProps> = (props) => {
   return <Styled.Lottie ref={container} {...props} />;
 };
 
-export default FetusLottie;
+export default memo(FetusLottie);

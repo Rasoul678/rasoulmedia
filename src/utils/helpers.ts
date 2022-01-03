@@ -69,3 +69,6 @@ export const sendEmail = async (options: Record<string, string>) => {
     console.error("Failed to send email. Error: ", error);
   }
 };
+
+//! Shuffle an array.
+export const shuffleArray = (array: Array<any>) =>  array.sort(() => 0.5 - Math.random());

@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Input from "components/Input";
 import Textarea from "components/Textarea";
 import Button from "components/Button";
 import sendMailJson from "assets/animations/lordicons/green/177-envelope-mail-send-outline-edited.json";
 import { sendEmail } from "utils/helpers";
 import { View } from "components/Global/GlobalStyles";
-import { useTranslation } from "react-i18next";
+import * as Styled from "./Contact.styles";
+import Socials from "./Socials";
 
 const INITIAL_FORM = {
   name: "",
@@ -22,11 +24,11 @@ const Contact: React.FC = () => {
 
   const handleSendEmail = () => {
     if (!contactForm.message) {
-      setError((oldErr) => ({ ...oldErr, message: "Please enter message" }));
+      setError((oldErr) => ({ ...oldErr, message: "Message is required" }));
     }
 
     if (!contactForm.name) {
-      setError((oldErr) => ({ ...oldErr, name: "Please enter your name" }));
+      setError((oldErr) => ({ ...oldErr, name: "Name is required" }));
     }
 
     if (!contactForm.name || !contactForm.message) return;
@@ -51,17 +53,8 @@ const Contact: React.FC = () => {
 
   return (
     <View>
-      <h1>{t("contact-me")}</h1>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          gap: "2rem",
-          width: "80%",
-          margin: "2rem auto",
-        }}
-      >
+      <Styled.FormTitle>{t("contact-me")}</Styled.FormTitle>
+      <Styled.InputsWrapper>
         <Input
           onChange={handleFieldValue}
           value={contactForm.name}
@@ -85,7 +78,7 @@ const Contact: React.FC = () => {
           value={contactForm.message}
           required
           label={t("message")}
-          rows={7}
+          rows={5}
           name="message"
           error={error.message}
         />
@@ -94,10 +87,12 @@ const Contact: React.FC = () => {
           size="medium"
           isLoading={isSending}
           onClick={handleSendEmail}
+          fullWidth
         >
           {t("send")}
         </Button>
-      </div>
+      </Styled.InputsWrapper>
+      <Socials />
     </View>
   );
 };

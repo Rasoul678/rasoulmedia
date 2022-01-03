@@ -1,4 +1,4 @@
-import { HTMLAttributes, useRef, Suspense, useEffect, useState } from "react";
+import { HTMLAttributes, useRef, Suspense, useEffect, useState, memo } from "react";
 import useLottie from "hooks/useLottie";
 import * as Styled from "./Algae.styles";
 import loadingJson from "assets/animations/lordicons/333-loader-4-edited.json";
@@ -40,4 +40,4 @@ const AlgaeLottie: React.FC<AlgaeLottieProps> = (props) => {
   );
 };
 
-export default AlgaeLottie;
+export default memo(AlgaeLottie);

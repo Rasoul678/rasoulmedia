@@ -1,10 +1,11 @@
 import styled from "styled-components";
 interface IButtonProps {
   size: "small" | "medium" | "large";
+  fullWidth?: boolean;
 }
 
 export const Button = styled.div<IButtonProps>`
-  width: fit-content;
+  width: ${({ fullWidth }) => (fullWidth ? "100%" : "fit-content")};
   min-width: 5rem;
   display: flex;
   justify-content: center;

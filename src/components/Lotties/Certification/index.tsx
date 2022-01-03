@@ -1,4 +1,4 @@
-import { HTMLAttributes, useRef } from "react";
+import { HTMLAttributes, memo, useRef } from "react";
 import useLottie from "hooks/useLottie";
 import json from "assets/animations/award.json";
 import * as Styled from "./Certification.styles";
@@ -19,4 +19,4 @@ const CertificationLottie: React.FC<CertificationLottieProps> = (props) => {
   return <Styled.Lottie ref={container} {...props} />;
 };
 
-export default CertificationLottie;
+export default memo(CertificationLottie);

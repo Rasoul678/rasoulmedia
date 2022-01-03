@@ -20,7 +20,6 @@ export const InputContainer = styled.div`
 
 export const Indicator = styled.div`
   position: absolute;
-  bottom: 0rem;
   width: 0;
   height: 0.2rem;
   border-bottom-left-radius: 0.3rem;
@@ -111,12 +110,9 @@ export const Label = styled.label`
 `;
 
 export const Error = styled.span`
-  position: absolute;
   width: 100%;
   display: block;
   font-size: 0.8rem;
   text-align: start;
   font-weight: bold;
-  padding: 0 1rem;
-  text-transform: capitalize;
 `;

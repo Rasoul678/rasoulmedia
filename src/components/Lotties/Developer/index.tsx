@@ -1,4 +1,4 @@
-import { HTMLAttributes, useRef } from "react";
+import { HTMLAttributes, memo, useRef } from "react";
 import useLottie from "hooks/useLottie";
 import json from "assets/animations/lordicons/green/680-it-developer-outline-edited (dark).json";
 import * as Styled from "./Developer.styles";
@@ -19,4 +19,4 @@ const DeveloperLottie: React.FC<DeveloperLottieProps> = (props) => {
   return <Styled.Lottie ref={container} {...props} />;
 };
 
-export default DeveloperLottie;
+export default memo(DeveloperLottie);

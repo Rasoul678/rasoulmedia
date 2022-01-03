@@ -1,4 +1,4 @@
-import { HTMLAttributes, useRef, Suspense, useEffect, useState } from "react";
+import { HTMLAttributes, useRef, Suspense, useEffect, useState, memo } from "react";
 import useLottie from "hooks/useLottie";
 import * as Styled from "./Contact.styles";
 import loadingJson from "assets/animations/lordicons/333-loader-4-edited.json";
@@ -39,4 +39,4 @@ const ContactLottie: React.FC<ContactLottieProps> = (props) => {
   );
 };
 
-export default ContactLottie;
+export default memo(ContactLottie);

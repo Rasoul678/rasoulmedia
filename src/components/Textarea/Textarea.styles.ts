@@ -122,6 +122,4 @@ export const Error = styled.span`
   font-size: 0.8rem;
   text-align: start;
   font-weight: bold;
-  padding: 0 1rem;
-  text-transform: capitalize;
 `;

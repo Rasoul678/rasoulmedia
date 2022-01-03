@@ -1,4 +1,4 @@
-import { HTMLAttributes, useRef } from "react";
+import { HTMLAttributes, memo, useRef } from "react";
 import useLottie from "hooks/useLottie";
 import json from "assets/animations/lordicons/green/245-edit-document-outline-edited (dark).json";
 import * as Styled from "./Book.styles";
@@ -19,4 +19,4 @@ const BookLottie: React.FC<FetusLottieProps> = (props) => {
   return <Styled.Lottie ref={container} {...props} />;
 };
 
-export default BookLottie;
+export default memo(BookLottie);

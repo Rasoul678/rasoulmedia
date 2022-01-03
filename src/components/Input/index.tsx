@@ -12,8 +12,10 @@ const Input: React.FC<InputProps> = ({ name, label, error, ...rest }) => {
     <Styled.InputContainer>
       <Styled.Input id={name} name={name} placeholder="placeholder" {...rest} />
       <Styled.Label title={label} htmlFor={name} />
-      <Styled.Indicator />
-      <Styled.Error>{error}</Styled.Error>
+      <Styled.Indicator
+        style={!!error ? { bottom: "1.35rem" } : { bottom: "0" }}
+      />
+      {!!error && <Styled.Error>{error}</Styled.Error>}
     </Styled.InputContainer>
   );
 };

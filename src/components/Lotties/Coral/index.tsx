@@ -1,4 +1,4 @@
-import { HTMLAttributes, useRef, Suspense, useEffect, useState } from "react";
+import { HTMLAttributes, useRef, Suspense, useEffect, useState, memo } from "react";
 import useLottie from "hooks/useLottie";
 import * as Styled from "./Coral.styles";
 import loadingJson from "assets/animations/lordicons/333-loader-4-edited.json";
@@ -38,4 +38,4 @@ const CoralLottie: React.FC<CoralLottieProps> = (props) => {
   );
 };
 
-export default CoralLottie;
+export default memo(CoralLottie);
