@@ -2,14 +2,18 @@ export enum Links {
   linkedin = "https://www.linkedin.com/in/rasoul-hesami-rostami/",
   github = "https://github.com/Rasoul678",
   stackOverflow = "https://stackoverflow.com/users/13294844/rasoul-hesami-rostami",
-  facebook = 'https://www.facebook.com/profile.php?id=100076905066398',
-  twitter = 'https://twitter.com/HesamiRasoul',
-  instagram = 'https://www.instagram.com/rasoulhesamirostami/',
+  facebook = "https://www.facebook.com/profile.php?id=100076905066398",
+  twitter = "https://twitter.com/HesamiRasoul",
+  instagram = "https://www.instagram.com/rasoulhesamirostami/",
   email = "h.rostami.r@gmail.com",
   home_inventory = "http://home-inventory-laravel.herokuapp.com/",
   store = "http://storefortest.herokuapp.com/",
   cliqmind = "https://cliqmind.ir/",
   karabama = "https://karabama.com/",
+  wiki_iran = "https://en.wikipedia.org/wiki/Iran",
+  wiki_rostamkola = "https://en.wikipedia.org/wiki/Rostamkola",
+  MUT = "http://mut.ac.ir",
+  SBU = "https://www.sbu.ac.ir/",
 }
 
 export const projects = {

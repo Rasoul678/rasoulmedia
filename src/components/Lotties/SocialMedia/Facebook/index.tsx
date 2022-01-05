@@ -19,7 +19,7 @@ interface FacebookLottieProps extends HTMLAttributes<HTMLDivElement> {
 const FacebookLottie: React.FC<FacebookLottieProps> = (props) => {
   const container = useRef<HTMLDivElement | null>(null);
   const [facebookJson, setFacebookJson] = useState<any>(loadingJson);
-  const { themePallet, selectedPallet } = useTypedSelector(
+  const { themePallet, selectedPallet, themeMode } = useTypedSelector(
     (state) => state.global
   );
 
@@ -29,7 +29,7 @@ const FacebookLottie: React.FC<FacebookLottieProps> = (props) => {
     import(
       `assets/animations/lordicons/${
         props.color || themeColorName
-      }/social-media-facebook.json`
+      }/social-media-facebook (${themeMode}).json`
     ).then((json) => {
       setFacebookJson(json.default);
     });

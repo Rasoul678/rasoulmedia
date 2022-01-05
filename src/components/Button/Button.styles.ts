@@ -10,9 +10,8 @@ export const Button = styled.div<IButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  mix-blend-mode: difference;
-  color: ${({ theme }) => theme.buttons.secondary.textColor};
   background: ${({ theme }) => theme.buttons.secondary.backgroundColor};
+  color: ${({ theme }) => theme.buttons.secondary.textColor};
   padding: 0.4em 0.8em 0.2em;
   border-radius: 0.4rem;
   cursor: pointer;

@@ -19,7 +19,7 @@ interface TwitterLottieProps extends HTMLAttributes<HTMLDivElement> {
 const TwitterLottie: React.FC<TwitterLottieProps> = (props) => {
   const container = useRef<HTMLDivElement | null>(null);
   const [twitterJson, setTwitterJson] = useState<any>(loadingJson);
-  const { themePallet, selectedPallet } = useTypedSelector(
+  const { themePallet, selectedPallet, themeMode } = useTypedSelector(
     (state) => state.global
   );
 
@@ -29,7 +29,7 @@ const TwitterLottie: React.FC<TwitterLottieProps> = (props) => {
     import(
       `assets/animations/lordicons/${
         props.color || themeColorName
-      }/social-media-twitter.json`
+      }/social-media-twitter (${themeMode}).json`
     ).then((json) => {
       setTwitterJson(json.default);
     });

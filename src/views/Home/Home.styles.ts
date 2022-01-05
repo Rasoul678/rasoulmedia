@@ -9,7 +9,7 @@ export const HomeTitle = styled(motion.h1)`
 
 export const EducationTimelineWrapper = styled.div`
   padding: 1rem;
-  width: calc(100% - 2rem);
+  width: calc(100% - 0rem);
   margin: 0 auto;
 
   .timeline-lottie svg {
@@ -61,7 +61,7 @@ export const LinkTo = styled.a`
   border-bottom: 1px solid #fff;
 `;
 
-export const BirthDescriptionWrapper = styled.div`
+export const DescriptionWrapper = styled.div`
   text-align: justify;
   text-justify: inter-character;
   padding: 1rem 0;

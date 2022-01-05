@@ -19,7 +19,7 @@ interface LinkedinLottieProps extends HTMLAttributes<HTMLDivElement> {
 const LinkedinLottie: React.FC<LinkedinLottieProps> = (props) => {
   const container = useRef<HTMLDivElement | null>(null);
   const [linkedinJson, setLinkedinJson] = useState<any>(loadingJson);
-  const { themePallet, selectedPallet } = useTypedSelector(
+  const { themePallet, selectedPallet, themeMode } = useTypedSelector(
     (state) => state.global
   );
 
@@ -29,7 +29,7 @@ const LinkedinLottie: React.FC<LinkedinLottieProps> = (props) => {
     import(
       `assets/animations/lordicons/${
         props.color || themeColorName
-      }/social-media-linkedin.json`
+      }/social-media-linkedin (${themeMode}).json`
     ).then((json) => {
       setLinkedinJson(json.default);
     });

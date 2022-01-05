@@ -175,10 +175,12 @@ export const TimelineContainer = styled.div`
   .vertical-timeline-element-content {
     position: relative;
     margin-${float}: 60px;
-    background: #222;
+    background: ${({ theme }) => theme.card.backgroundColor};
     border-radius: 0.25em;
     padding: 1rem 1rem 0;
     box-shadow: 0 3px 0 ${({ theme }) => theme.border};
+    color: ${({ theme }) => theme.card.textColor};
+
   }
   .vertical-timeline--one-column-right .vertical-timeline-element-content {
     margin-${revFloat}: 60px;
@@ -468,7 +470,6 @@ export const TimelineContainer = styled.div`
   }
 
   .vertical-timeline-element-date {
-    color: ${({ theme }) => theme.text};
     opacity: 1 !important;
   }
 `;

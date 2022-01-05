@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useTheme } from "styled-components";
 import * as Styled from "./Matrix.styles";
 
 interface MatrixBackgroundProps {
@@ -9,6 +10,7 @@ const MatrixBackground: React.FC<MatrixBackgroundProps> = ({
   timeout = 50,
 }) => {
   const canvas = useRef<HTMLCanvasElement | null>(null);
+  const { name } = useTheme();
 
   useEffect(() => {
     let interval: any;
@@ -20,21 +22,24 @@ const MatrixBackground: React.FC<MatrixBackgroundProps> = ({
     canvas.current!.height = height;
 
     if (context) {
-      context.fillStyle = "#000";
+      context.fillStyle = name === "dark" ? "#000" : "#ffff";
       context.fillRect(0, 0, width, height);
 
       //! calculate how many 'lines' to show and animate
       const columns = Math.floor(width / 15) + 1;
       const yPositions = Array.from({ length: columns }).fill(0) as number[];
 
-      context.fillStyle = "#000";
+      context.fillStyle =
+        name === "dark" ? "rgba(0, 0, 0, 1)" : "rgba(204, 204, 204, 1)";
       context.fillRect(0, 0, width, height);
 
       const matrixEffect = () => {
-        context.fillStyle = "#0001";
+        context.fillStyle =
+          name === "dark" ? "rgba(0, 0, 0, 0.1)" : "rgba(204, 204, 204, 0.1)";
         context.fillRect(0, 0, width, height);
 
-        context.fillStyle = "rgba(0, 85, 85, 0.6)";
+        context.fillStyle =
+          name === "dark" ? "rgba(0, 85, 85, 0.6)" : "rgba(0, 85, 85, 0.15)";
         context.font = "0.8rem ubuntu";
 
         yPositions.forEach((y, index) => {
@@ -62,7 +67,7 @@ const MatrixBackground: React.FC<MatrixBackgroundProps> = ({
     return () => {
       clearInterval(interval);
     };
-  }, [canvas, timeout]);
+  }, [canvas, timeout, name]);
 
   return (
     <Styled.MatrixContainer>

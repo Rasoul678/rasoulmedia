@@ -7,6 +7,8 @@ import MasterOfScienceLottie from "components/Lotties/Graduation/v1";
 import BachelorOfScienceLottie from "components/Lotties/Graduation/v2";
 import DeveloperLottie from "components/Lotties/Developer";
 import BirthDescription from "./BirthDescription";
+import BSDescription from "./BSDescription";
+import MSDescription from "./MSDescription";
 
 const BiographyEducation: React.FC = () => {
   const { t } = useTranslation();
@@ -29,15 +31,15 @@ const BiographyEducation: React.FC = () => {
     {
       title: t("bs-degree"),
       date: "2011 - 2013",
+      description: <BSDescription />,
       icon: <BachelorOfScienceLottie className="bachelor" />,
-      description: t("bachelor-description"),
       className: "timeline-grad-lottie",
     },
     {
       title: t("ms-degree"),
       date: "2011 - 2013",
+      description: <MSDescription />,
       icon: <MasterOfScienceLottie className="master" />,
-      description: t("master-description"),
       className: "timeline-grad2-lottie",
     },
     {

@@ -20,11 +20,11 @@ const useDarkMode = () => {
     background: pallets[selectedPallet].colors[0],
     buttons: {
       primary: {
-        backgroundColor: pallets[selectedPallet].colors[0],
-        textColor: invertColor(pallets[selectedPallet].colors[0], true),
+        backgroundColor: pallets[selectedPallet].mainColor,
+        textColor: invertColor(pallets[selectedPallet].colors[2], true),
       },
       secondary: {
-        backgroundColor: pallets[selectedPallet].colors[2],
+        backgroundColor: pallets[selectedPallet].mainColor,
         textColor: invertColor(pallets[selectedPallet].colors[2], true),
       },
     },

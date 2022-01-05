@@ -19,7 +19,7 @@ interface InstagramLottieProps extends HTMLAttributes<HTMLDivElement> {
 const InstagramLottie: React.FC<InstagramLottieProps> = (props) => {
   const container = useRef<HTMLDivElement | null>(null);
   const [instagramJson, setInstagramJson] = useState<any>(loadingJson);
-  const { themePallet, selectedPallet } = useTypedSelector(
+  const { themePallet, selectedPallet, themeMode } = useTypedSelector(
     (state) => state.global
   );
 
@@ -29,7 +29,7 @@ const InstagramLottie: React.FC<InstagramLottieProps> = (props) => {
     import(
       `assets/animations/lordicons/${
         props.color || themeColorName
-      }/social-media-instagram.json`
+      }/social-media-instagram (${themeMode}).json`
     ).then((json) => {
       setInstagramJson(json.default);
     });

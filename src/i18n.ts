@@ -5,7 +5,7 @@ import ChainedBackend from 'i18next-chained-backend';
 import LocalStorageBackend from 'i18next-localstorage-backend';
 import { initReactI18next } from "react-i18next";
 
-const version = 8;
+const version = 9;
 const apiKey = "tZJd0jWjb3bkrTIqWuwhhw";
 const loadPath = `https://cdn.i18nexus.com/versions/${version}/translations/{{lng}}/{{ns}}.json?api_key=${apiKey}`;
 
