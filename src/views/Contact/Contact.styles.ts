@@ -10,7 +10,7 @@ export const InputsWrapper = styled.div`
 `;
 
 export const FormTitle = styled.h2`
-  // margin-top: 1rem;
+  margin-top: 1rem;
 `;
 
 export const SocialWrapper = styled.div`

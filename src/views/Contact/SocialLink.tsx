@@ -24,11 +24,12 @@ const SocialLink: React.FC<SocialLinkProps> = (props) => {
 const Span = styled.span`
   position: absolute;
   ${float}: 3rem;
-  top: 1rem;
+  top: 0.5rem;
   text-transform: uppercase;
   font-size: 1.1rem;
   font-weight: bold;
   color: ${({ theme }) => theme.text};
+  padding: 0.5rem 0.7rem 0.5rem 0;
 
   ::${direction === 'rtl' ? 'after' : 'before'} {
     content: "@";

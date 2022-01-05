@@ -1,6 +1,8 @@
+import "react-toastify/dist/ReactToastify.css";
 import { lazy } from "react";
 import { ThemeProvider } from "styled-components";
 import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import { GlobalStyles } from "components/Global/GlobalStyles";
 import OnMobile from "components/MediaQuery/Mobile";
 import useSetDirection from "hooks/useSetDirection";
@@ -22,11 +24,20 @@ const MobileMenu = lazy(
 
 const App: React.FC = () => {
   const theme = useDarkMode();
-  useSetDirection();
+  const { direction } = useSetDirection();
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
+      <ToastContainer
+        position="bottom-left"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop
+        closeOnClick
+        rtl={direction === "rtl"}
+        draggable
+      />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />

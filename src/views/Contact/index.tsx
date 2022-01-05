@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "styled-components";
 import Input from "components/Input";
 import Textarea from "components/Textarea";
 import Button from "components/Button";
@@ -8,9 +9,11 @@ import { sendEmail } from "utils/helpers";
 import { View } from "components/Global/GlobalStyles";
 import * as Styled from "./Contact.styles";
 import Socials from "./Socials";
+import renderToast from "utils/renderToast";
 
 const INITIAL_FORM = {
   name: "",
+  email: "",
   subject: "",
   message: "",
 };
@@ -19,24 +22,53 @@ const Contact: React.FC = () => {
   const [isSending, setIsSending] = useState(false);
   const [contactForm, setContactForm] = useState(INITIAL_FORM);
   const { t } = useTranslation();
+  const { name: themeName, background, text } = useTheme();
 
-  const [error, setError] = useState({ name: "", message: "" });
+  const [error, setError] = useState({ name: "", email: "", message: "" });
 
   const handleSendEmail = () => {
     if (!contactForm.message) {
-      setError((oldErr) => ({ ...oldErr, message: "Message is required" }));
+      setError((oldErr) => ({
+        ...oldErr,
+        message: t("msg.input.error", { input: t("message") }),
+      }));
     }
 
     if (!contactForm.name) {
-      setError((oldErr) => ({ ...oldErr, name: "Name is required" }));
+      setError((oldErr) => ({
+        ...oldErr,
+        name: t("msg.input.error", { input: t("name") }),
+      }));
     }
 
-    if (!contactForm.name || !contactForm.message) return;
+    if (!contactForm.email) {
+      setError((oldErr) => ({
+        ...oldErr,
+        email: t("msg.input.error", { input: t("email") }),
+      }));
+    }
+
+    if (!contactForm.name || !contactForm.message || !contactForm.email) return;
 
     setIsSending(true);
     sendEmail(contactForm)
-      .then(() => setContactForm(INITIAL_FORM))
-      .catch((err) => console.log(err))
+      .then(() => {
+        setContactForm(INITIAL_FORM);
+        renderToast({
+          message: t("msg.message.sent"),
+          theme: themeName === "dark" ? "dark" : "light",
+          type: "success",
+          style: { backgroundColor: background, color: text },
+        });
+      })
+      .catch(() => {
+        renderToast({
+          message: t("msg.message.error"),
+          theme: themeName === "dark" ? "dark" : "light",
+          type: "error",
+          style: { backgroundColor: background, color: text },
+        });
+      })
       .finally(() => setIsSending(false));
   };
 
@@ -64,6 +96,16 @@ const Contact: React.FC = () => {
           autoComplete="off"
           required
           error={error.name}
+        />
+        <Input
+          onChange={handleFieldValue}
+          value={contactForm.email}
+          type="email"
+          label={t("email")}
+          name="email"
+          autoComplete="off"
+          required
+          error={error.email}
         />
         <Input
           onChange={handleFieldValue}

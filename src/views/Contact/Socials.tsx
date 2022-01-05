@@ -43,39 +43,52 @@ const Socials: React.FC<SocialsProps> = () => {
   );
 
   return (
-    <Flex position="relative" marginTop="2rem" gap='1rem'>
-      <Flex flexDirection="column" width="100%" alignItems="center" justifyContent='center'>
+    <Flex
+      position="relative"
+      margin="2.5rem 0"
+      gap="1rem"
+      justifyContent="center"
+    >
+      <Flex
+        flexDirection="column"
+        width="60%"
+        alignItems="center"
+        justifyContent="center"
+      >
         <Styled.SocialWrapper
           onMouseEnter={handleMouseEnter("twitter")}
           onMouseLeave={handleMouseLeave("twitter")}
         >
-          {show.twitter && <SocialLink title="github" />}
+          {show.twitter && <SocialLink title="twitter" />}
           <TwitterLottie color={memoColors[0]} style={{ width: "3rem" }} />
         </Styled.SocialWrapper>
-        <Styled.SocialWrapper
-          onMouseEnter={handleMouseEnter("instagram")}
-          onMouseLeave={handleMouseLeave("instagram")}
-        >
-          {show.instagram && <SocialLink title="github" />}
-          <InstagramLottie color={memoColors[1]} style={{ width: "3rem" }} />
-        </Styled.SocialWrapper>
+
         <Styled.SocialWrapper
           onMouseEnter={handleMouseEnter("linkedin")}
           onMouseLeave={handleMouseLeave("linkedin")}
         >
           {show.linkedin && <SocialLink title="linkedin" />}
-          <LinkedinLottie color={memoColors[2]} style={{ width: "3rem" }} />
+          <LinkedinLottie color={memoColors[1]} style={{ width: "3rem" }} />
+        </Styled.SocialWrapper>
+        <Styled.SocialWrapper
+          onMouseEnter={handleMouseEnter("instagram")}
+          onMouseLeave={handleMouseLeave("instagram")}
+        >
+          {show.instagram && <SocialLink title="instagram" />}
+          <InstagramLottie color={memoColors[2]} style={{ width: "3rem" }} />
         </Styled.SocialWrapper>
         <Styled.SocialWrapper
           onMouseEnter={handleMouseEnter("facebook")}
           onMouseLeave={handleMouseLeave("facebook")}
         >
-          {show.facebook && <SocialLink title="github" />}
+          {show.facebook && <SocialLink title="facebook" />}
           <FacebookLottie color={memoColors[3]} style={{ width: "3rem" }} />
         </Styled.SocialWrapper>
       </Flex>
 
-      <ThankYou />
+      <Flex alignItems="center">
+        <ThankYou />
+      </Flex>
     </Flex>
   );
 };

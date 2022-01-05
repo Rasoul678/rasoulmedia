@@ -115,4 +115,5 @@ export const Error = styled.span`
   font-size: 0.8rem;
   text-align: start;
   font-weight: bold;
+  color: #EB4A62;
 `;

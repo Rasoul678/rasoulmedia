@@ -53,22 +53,27 @@ export const invertColor = (hex: string, bw?: boolean) => {
   return "#" + padZero(r) + padZero(g) + padZero(b);
 };
 
-export const sendEmail = async (options: Record<string, string>) => {
-  try {
-    const response = await emailjs.send(
-      EmailService.serviceId,
-      EmailService.templateId,
-      options,
-      EmailService.userId
-    );
+export const sendEmail = (options: Record<string, string>) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const response = await emailjs.send(
+        EmailService.serviceId,
+        EmailService.templateId,
+        options,
+        EmailService.userId
+      );
 
-    if (response.status === 200) {
-      console.log("Successfully sent message.");
+      if (response.status === 200) {
+        console.log("Successfully sent message.");
+        resolve(response);
+      }
+    } catch (error) {
+      console.error("Failed to send email. Error: ", error);
+      reject(error);
     }
-  } catch (error) {
-    console.error("Failed to send email. Error: ", error);
-  }
+  });
 };
 
 //! Shuffle an array.
-export const shuffleArray = (array: Array<any>) =>  array.sort(() => 0.5 - Math.random());
+export const shuffleArray = (array: Array<any>) =>
+  array.sort(() => 0.5 - Math.random());
