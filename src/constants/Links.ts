@@ -14,6 +14,7 @@ export enum Links {
   wiki_rostamkola = "https://en.wikipedia.org/wiki/Rostamkola",
   MUT = "http://mut.ac.ir",
   SBU = "https://www.sbu.ac.ir/",
+  gravatar = "http://www.gravatar.com/avatar/",
 }
 
 export const projects = {

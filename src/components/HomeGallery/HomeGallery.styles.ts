@@ -6,7 +6,7 @@ export const HomeGalleryContainer = styled.div`
   position: relative;
 
   .typing {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
   }
 
   .cursor {
@@ -39,7 +39,7 @@ export const IntroductionContainer = styled.div`
   .home-gallery-avatar {
     border-radius: 50%;
     z-index: 100;
-    border: 3px solid ${({ theme }) => theme.border};
+    // border: 3px solid   ${({ theme }) => theme.border};
   }
 
   .scroll-down-btn {
@@ -65,10 +65,11 @@ export const UserNameWrapper = styled.h2`
 `;
 
 export const ArrowDownWrapper = styled.div`
-  z-index: 100;
-  position: absolute;
-  top: 87%;
-  cursor: pointer;
+width: 20%;
+position: absolute;
+top: 87%;
+cursor: pointer;
+z-index: 100;
 
   @media (max-width: ${Breakpoints.mobile}px) {
     top: 75% !important;
