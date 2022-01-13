@@ -3,7 +3,7 @@ import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "react-i18next";
 import reactStringReplace from "react-string-replace";
 import { motion } from "framer-motion";
-import * as Styled from "../HomeGallery.styles";
+import * as Styled from "./MobileGallery.styles";
 import CustomTypewriter from "components/CustomTypewriter";
 import LinkedinIcon from "components/Icons/LinkedinIcon";
 import GithubIcon from "components/Icons/GithubIcon";
