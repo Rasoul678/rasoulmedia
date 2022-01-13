@@ -37,7 +37,7 @@ export const TimelineContainer = styled.div`
     ${revFloat}: 18px;
     ${float}: unset;
   }
-  @media only screen and (min-width: 1170px) {
+  @media only screen and (min-width: 700px) {
     .vertical-timeline.vertical-timeline--two-columns {
       width: 90%;
     }
@@ -64,7 +64,7 @@ export const TimelineContainer = styled.div`
   .vertical-timeline-element:last-child {
     margin-bottom: 0;
   }
-  @media only screen and (min-width: 1170px) {
+  @media only screen and (min-width: 700px) {
     .vertical-timeline-element {
       margin: 4em 0;
     }
@@ -100,7 +100,7 @@ export const TimelineContainer = styled.div`
     margin-${float}: -12px;
     margin-top: -12px;
   }
-  @media only screen and (min-width: 1170px) {
+  @media only screen and (min-width: 700px) {
     .vertical-timeline--two-columns .vertical-timeline-element-icon {
       width: 60px;
       height: 60px;
@@ -258,9 +258,8 @@ export const TimelineContainer = styled.div`
     .vertical-timeline-element-content-arrow {
     display: none;
   }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 450px) {
     .vertical-timeline-element-content h2 {
-      font-size: 20px;
       font-size: 1.25rem;
     }
     .vertical-timeline-element-content p {
@@ -272,7 +271,7 @@ export const TimelineContainer = styled.div`
       font-size: 0.875rem;
     }
   }
-  @media only screen and (min-width: 1170px) {
+  @media only screen and (min-width: 700px) {
     .vertical-timeline--two-columns .vertical-timeline-element-content {
       margin-${float}: 0;
       padding: 1.5em;
@@ -346,7 +345,7 @@ export const TimelineContainer = styled.div`
     -moz-animation: cd-bounce-2 0.6s;
     animation: cd-bounce-2 0.6s;
   }
-  @media only screen and (min-width: 1170px) {
+  @media only screen and (min-width: 700px) {
     .vertical-timeline--two-columns.vertical-timeline--animate
       .vertical-timeline-element.vertical-timeline-element--right
       .vertical-timeline-element-content.bounce-in,
@@ -358,7 +357,7 @@ export const TimelineContainer = styled.div`
       animation: cd-bounce-2-inverse 0.6s;
     }
   }
-  @media only screen and (max-width: 1169px) {
+  @media only screen and (max-width: 690px) {
     .vertical-timeline--animate .vertical-timeline-element-content.bounce-in {
       visibility: visible;
       -webkit-animation: cd-bounce-2-inverse 0.6s;

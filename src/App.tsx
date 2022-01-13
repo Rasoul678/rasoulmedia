@@ -7,6 +7,7 @@ import { GlobalStyles } from "components/Global/GlobalStyles";
 import OnMobile from "components/MediaQuery/Mobile";
 import useSetDirection from "hooks/useSetDirection";
 import useDarkMode from "hooks/useDarkMode";
+import OnTablet from "components/MediaQuery/Tablet";
 
 const Home = lazy(() => import(/*webpackChunkName: "Home_View"*/ "views/Home"));
 const Contact = lazy(
@@ -20,6 +21,9 @@ const NotFound = lazy(
 
 const MobileMenu = lazy(
   () => import(/*webpackChunkName: "Mobile_Menu"*/ "layouts/MobileMenu")
+);
+const TabletMenu = lazy(
+  () => import(/*webpackChunkName: "Tablet_Menu"*/ "layouts/TabletMenu")
 );
 
 const App: React.FC = () => {
@@ -48,6 +52,9 @@ const App: React.FC = () => {
       <OnMobile>
         <MobileMenu />
       </OnMobile>
+      <OnTablet>
+        <TabletMenu />
+      </OnTablet>
     </ThemeProvider>
   );
 };

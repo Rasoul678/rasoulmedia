@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+const { direction } = window;
+
 export const FooterContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -13,11 +15,11 @@ export const SeaCreaturesWrapper = styled.div`
   div:nth-child(1) {
     width: 7rem;
     position: relative;
-    top: 2rem;
+    top: 1.6rem;
     transform: rotateY(180deg);
 
     @media only screen and (min-width: 450px) {
-      top: 2.2rem;
+      top: ${direction === "ltr" ? "2.2rem" : "1.8rem"};
     }
   }
 
@@ -28,7 +30,7 @@ export const SeaCreaturesWrapper = styled.div`
     transform: rotateY(180deg);
 
     @media only screen and (min-width: 450px) {
-      top: 1.85rem;
+      top: ${direction === "ltr" ? "1.85rem" : "3.5rem"};
     }
   }
 
@@ -38,16 +40,17 @@ export const SeaCreaturesWrapper = styled.div`
     top: 2.2rem;
 
     @media only screen and (min-width: 450px) {
-      top: 2.9rem;
+      top: ${direction === "ltr" ? "2.9rem" : "3.5rem"};
     }
   }
 
   div:nth-child(4) {
     width: 9rem;
     position: relative;
+    top: 0.3rem;
 
     @media only screen and (min-width: 450px) {
-      top: 0.5rem;
+      top: ${direction === "ltr" ? "0.5rem" : "-0.7rem"};
     }
   }
 `;

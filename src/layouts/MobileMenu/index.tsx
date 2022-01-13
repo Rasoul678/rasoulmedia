@@ -8,10 +8,10 @@ import CustomLink from "components/CustomLink";
 import { useTypedSelector } from "hooks/useTypedSelector";
 import useActions from "hooks/useActions";
 
-import HomeLottie from "../../components/Lotties/Home";
-import LayersLottie from "../../components/Lotties/Layers";
-import CodeLottie from "../../components/Lotties/Code";
-import ContactLottie from "../../components/Lotties/Contact";
+import HomeLottie from "components/Lotties/Home";
+import LayersLottie from "components/Lotties/Layers";
+import CodeLottie from "components/Lotties/Code";
+import ContactLottie from "components/Lotties/Contact";
 
 const MobileMenu: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);

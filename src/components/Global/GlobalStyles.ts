@@ -26,6 +26,41 @@ export const GlobalStyles = createGlobalStyle`
     transition: all 0.2s linear;
     user-select: none;
   }
+
+
+//! Works on Chrome, Edge, and Safari 
+//! width
+::-webkit-scrollbar {
+  width: 0.4rem;
+  background-color: ${({ theme }) => theme.background};
+}
+
+@media screen and (max-width: 550px) {
+  ::-webkit-scrollbar {
+    display: none; /*! Hide scrollbar for Chrome, Safari and Opera */
+  }
+  * {
+    -ms-overflow-style: none; /*! IE and Edge */
+    scrollbar-width: none; /*! Firefox */
+  }
+}
+
+//! Track 
+::-webkit-scrollbar-track {
+  background: ${({ theme }) => theme.background};
+  border-radius: 10px;
+}
+
+//! Handle
+::-webkit-scrollbar-thumb {
+  background: ${({ theme }) => theme.text};
+  border-radius: 15px;
+}
+
+//! Handle on hover
+//  ::-webkit-scrollbar-thumb:hover {
+//     background: red;
+//   } 
   `;
 
 export const View = styled.div`

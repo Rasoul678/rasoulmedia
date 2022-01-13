@@ -5,7 +5,7 @@ export enum EmailService {
 }
 
 export const Breakpoints = {
-  mobile: 450,
+  mobile: 550,
   tablet: 1025,
   desktop: 1824,
 };

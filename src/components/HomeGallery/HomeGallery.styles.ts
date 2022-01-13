@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Breakpoints } from "constants/Global";
+import { motion } from "framer-motion";
 
 export const HomeGalleryContainer = styled.div`
   height: 100vh;
@@ -16,7 +17,7 @@ export const HomeGalleryContainer = styled.div`
   .Typewriter {
     z-index: 100;
     position: absolute;
-    top: 17rem;
+    top: 40%;
     text-align: center;
 
     @media (max-width: ${Breakpoints.mobile}px) {
@@ -39,6 +40,8 @@ export const IntroductionContainer = styled.div`
   .home-gallery-avatar {
     border-radius: 50%;
     z-index: 100;
+    margin-top: 1rem;
+    filter: brightness(1.2);
     // border: 3px solid   ${({ theme }) => theme.border};
   }
 
@@ -58,36 +61,50 @@ export const UserName = styled.span`
   color: ${({ theme }) => theme.border};
 `;
 
-export const UserNameWrapper = styled.h2`
+export const UserNameWrapper = styled(motion.h2)`
   z-index: 100;
   position: absolute;
-  top: 27%;
+  top: 30%;
+
+  @media (max-width: ${Breakpoints.mobile}px) {
+    top: 27% !important;
+  }
 `;
 
-export const ArrowDownWrapper = styled.div`
-width: 20%;
-position: absolute;
-top: 87%;
-cursor: pointer;
-z-index: 100;
+export const TypeWriterWrapper = styled(motion.div)`
+  display: flex;
+  justify-content: center;
+`;
+
+export const ArrowDownWrapper = styled(motion.div)`
+  width: 4rem;
+  position: absolute;
+  top: 87%;
+  cursor: pointer;
+  z-index: 100;
 
   @media (max-width: ${Breakpoints.mobile}px) {
     top: 75% !important;
   }
 `;
 
-export const SocialLinkWrapper = styled.div`
+export const SocialLinkWrapper = styled(motion.div)`
   z-index: 100;
   position: absolute;
   top: 70%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   color: ${({ theme }) => theme.border};
+
+  div {
+    display: flex;
+  }
 
   @media (max-width: ${Breakpoints.mobile}px) {
     top: 60%;
+    gap: 1rem;
   }
 
   svg {
@@ -97,4 +114,16 @@ export const SocialLinkWrapper = styled.div`
 
 export const Name = styled.span`
   color: ${({ theme }) => theme.border};
+`;
+
+export const Blob = styled(motion.div)`
+  position: absolute;
+  top: 3%;
+  background-color: ${({ theme }) => theme.border};
+  width: 9rem;
+  height: 9rem;
+  border-top-left-radius: 40% 60%;
+  border-top-right-radius: 40% 60%;
+  border-bottom-right-radius: 40% 60%;
+  border-bottom-left-radius: 60% 40%;
 `;

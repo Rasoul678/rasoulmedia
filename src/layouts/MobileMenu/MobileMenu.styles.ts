@@ -1,25 +1,5 @@
-import styled, { keyframes } from "styled-components";
-
-const bouncing = keyframes`
-  0%{
-    width: 0;
-    height: 0;
-    top: 50%;
-    left: 50%;
-  }
-  50%{
-    width: 2rem;
-    height: 2rem;
-    top: calc(50% - 1rem);
-    left: calc(50% - 1rem);
-  }
-  100%{
-    width: 0;
-    height: 0;
-    top: 50%;
-    left: 50%;
-  }
-`;
+import { Breakpoints } from "constants/Global";
+import styled from "styled-components";
 
 interface MobileMenuProps {
   isVisible: boolean;
@@ -195,7 +175,7 @@ export const MenuCellWrapper = styled.div`
 
 export const LangOptionsContainer = styled.div`
   color: ${({ theme }) => theme.text};
-  width: 60vw;
+  width: 15rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
@@ -212,8 +192,12 @@ export const LangOptionWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.card.backgroundColor};
-  box-shadow: 0px 0px 5px 0px ${({ theme }) => theme.card.backgroundColor};
+  cursor: pointer;
+
+  @media only screen and (max-width: ${Breakpoints.mobile}px) {
+    // background-color: ${({ theme }) => theme.card.backgroundColor};
+    // box-shadow: 0px 0px 5px 0px ${({ theme }) => theme.card.backgroundColor};
+  }
 `;
 
 export const LangCellWrapper = styled.div`
@@ -242,6 +226,8 @@ export const FlagWrapper = styled.div<FlagWrapperProps>`
 
 interface PaletteCircleProps {
   isSelected?: boolean;
+  bgColor: string;
+  themeColor: string;
 }
 
 export const PaletteCircle = styled.div<PaletteCircleProps>`
@@ -254,15 +240,25 @@ export const PaletteCircle = styled.div<PaletteCircleProps>`
   align-items: center;
   filter: brightness(${({ isSelected }) => (isSelected ? "100%" : "50%")});
 
+  @keyframes pulse {
+    0% {
+      box-shadow: ${({ themeColor }) => themeColor} 0 0 0 0;
+    }
+    75% {
+      box-shadow: ${({ themeColor }) => themeColor}00 0 0 0 1.5rem;
+    }
+  }
+
   ::before {
     content: "";
     width: 2.7rem;
     height: 2.7rem;
     position: absolute;
-    background-color: ${({ color }) => color};
+    background-color: ${({ bgColor }) => bgColor};
     border-radius: 50%;
     top: calc(50% - 1.3rem);
     left: calc(50% - 1.3rem);
+    ${({ isSelected }) => isSelected && "animation: pulse 1s infinite"};
   }
 `;
 

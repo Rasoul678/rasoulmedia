@@ -23,7 +23,7 @@
         },
         "p4": {
           "name": "blue",
-          "mainColor": "#00FFF5",
+          "mainColor": "#00ADB5",
           "colors": ["#111111", "#343A41", "#00ADB5", "#00FFF5"],
           "text": "#CCCCCC"
         }
