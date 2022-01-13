@@ -1,11 +1,8 @@
+import { useTranslation } from "react-i18next";
 import Timeline, { TimelineElement } from "components/Timeline";
 import * as Styled from "../Home.styles";
-import FetusLottie from "components/Lotties/Fetus";
-import BookLottie from "components/Lotties/Book";
-import MasterOfScienceLottie from "components/Lotties/Graduation/v1";
-import BachelorOfScienceLottie from "components/Lotties/Graduation/v2";
-import DeveloperLottie from "components/Lotties/Developer";
-import { useTranslation } from "react-i18next";
+import SuitcaseLottie from "components/Lotties/Suitcase";
+import CertificationLottie from "components/Lotties/Certification";
 
 interface WorkExperienceProps {}
 
@@ -14,37 +11,39 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
 
   const items: TimelineElement[] = [
     {
-      title: "Birthday",
-      date: "1998/04/07",
-      description: "i was born here",
-      icon: <FetusLottie />,
+      title: "Newbie",
+      date: "2019 - 2020",
+      description: "Getting familiar with new technologies & Freelancing",
+      icon: <SuitcaseLottie name="suitcase1" />,
+      className: "timeline-lottie",
     },
     {
-      title: "School",
-      date: "1996 - 2008",
-      icon: <BookLottie />,
+      title: "Frontend developer",
+      description: "www.karabama.com",
+      date: "2020 - 2021",
+      icon: <SuitcaseLottie name="suitcase2" />,
+      className: "timeline-lottie",
     },
     {
-      title: "Bachelor of Science",
-      date: "2011 - 2013",
-      icon: <BachelorOfScienceLottie />,
+      title: "Frontend developer",
+      description: "www.cliqmind.ir",
+      date: "2021 - 2022",
+      icon: <SuitcaseLottie name="suitcase3" />,
+      className: "timeline-lottie",
     },
+
     {
-      title: "Master of Science",
-      date: "2011 - 2013",
-      icon: <MasterOfScienceLottie />,
-    },
-    {
-      title: "End of education",
+      title: "...",
       date: "...",
-      icon: <DeveloperLottie />,
+      icon: <CertificationLottie />,
       contentStyle: { display: "none" },
+      className: "timeline-certification-lottie",
     },
   ];
 
   return (
-    <Styled.EducationTimelineWrapper>
-      <Styled.TimelineTitle className="bio">
+    <Styled.TimelineWrapper style={{ marginTop: "3rem" }}>
+      <Styled.TimelineTitle className="work">
         {t("work-experience")}
       </Styled.TimelineTitle>
       <Timeline
@@ -52,7 +51,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
         onIconClick={() => console.log("icon clicked")}
         onElementClick={() => console.log("element clicked")}
       />
-    </Styled.EducationTimelineWrapper>
+    </Styled.TimelineWrapper>
   );
 };
 

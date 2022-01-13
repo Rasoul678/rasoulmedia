@@ -66,4 +66,5 @@ export const GlobalStyles = createGlobalStyle`
 export const View = styled.div`
   text-align: center;
   min-height: 100vh;
+  position: relative;
 `;

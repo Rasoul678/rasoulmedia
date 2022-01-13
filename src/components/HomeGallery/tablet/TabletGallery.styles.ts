@@ -9,7 +9,11 @@ export const HomeGalleryContainer = styled.div`
   position: relative;
 
   .typing {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+
+    @media only screen and (min-width: 650px) {
+      font-size: 2rem;
+    }
   }
 
   .cursor {
@@ -45,8 +49,8 @@ export const IntroductionContainer = styled.div`
     flex-direction: row-reverse;
 
     img {
-      width: 12rem;
-      margin-top: 1rem;
+      width: 10rem;
+      margin-top: 2rem;
     }
 
     > div:first-child {
@@ -77,6 +81,11 @@ export const UserName = styled.span`
 
 export const UserNameWrapper = styled(motion.h2)`
   z-index: 100;
+  font-size: 2rem;
+
+  @media only screen and (min-width: 650px) {
+    font-size: 2.5rem;
+  }
 `;
 
 export const TypeWriterWrapper = styled(motion.div)`
@@ -103,7 +112,7 @@ export const SocialLinkWrapper = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
   gap: 2rem;
   color: ${({ theme }) => theme.border};
 

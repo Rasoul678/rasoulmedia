@@ -1,6 +1,7 @@
-import { memo, useRef, useState } from "react";
+import { memo, useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 import reactStringReplace from "react-string-replace";
 import * as Styled from "./TabletGallery.styles";
 import CustomTypewriter from "components/CustomTypewriter";
@@ -10,7 +11,6 @@ import StackOverflowIcon from "components/Icons/StackOverflowIcon";
 import { Links } from "constants/Links";
 import { openNewTab } from "utils/helpers";
 import ScrollDown from "components/Lotties/ScrollDown";
-import { motion, useCycle } from "framer-motion";
 import ProfilePic from "assets/profile-pic.png";
 import NightBackground from "components/NightBackground/NightBackground";
 

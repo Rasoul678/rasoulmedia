@@ -2,6 +2,7 @@ import styled from "styled-components";
 interface IButtonProps {
   size: "small" | "medium" | "large";
   fullWidth?: boolean;
+  variant: "outline" | "ghost" | "regular";
 }
 
 export const Button = styled.div<IButtonProps>`
@@ -10,10 +11,14 @@ export const Button = styled.div<IButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${({ theme }) => theme.buttons.secondary.backgroundColor};
-  color: ${({ theme }) => theme.buttons.secondary.textColor};
+  background: ${({ theme, variant }) =>
+    variant === "regular" && theme.buttons.secondary.backgroundColor};
+  color: ${({ theme, variant }) =>
+    variant !== "regular" ? theme.border : theme.buttons.secondary.textColor};
   padding: 0.4em 0.8em 0.2em;
   border-radius: 0.4rem;
+  ${({ theme, variant }) =>
+    variant === "outline" && `border: 1px solid ${theme.border}`};
   cursor: pointer;
   user-select: none;
   text-transform: capitalize;
@@ -24,9 +29,6 @@ export const Button = styled.div<IButtonProps>`
     size === "medium" && "height: 2.3em; font-size: 1em; min-width: 5rem;"}
   ${({ size }) =>
     size === "large" && "height: 2.4em; font-size: 1.2em; min-width: 6rem;"}
-
-  &:hover {
-  }
 `;
 
 interface ButtonLottieProps {

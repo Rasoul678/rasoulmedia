@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Link as ScrollLink } from "react-scroll";
 import Timeline, { TimelineElement } from "components/Timeline";
 import * as Styled from "../Home.styles";
 import FetusLottie from "components/Lotties/Fetus";
@@ -9,6 +10,7 @@ import DeveloperLottie from "components/Lotties/Developer";
 import BirthDescription from "./BirthDescription";
 import BSDescription from "./BSDescription";
 import MSDescription from "./MSDescription";
+import Button from "components/Button";
 
 const BiographyEducation: React.FC = () => {
   const { t } = useTranslation();
@@ -52,16 +54,27 @@ const BiographyEducation: React.FC = () => {
   ];
 
   return (
-    <Styled.EducationTimelineWrapper>
+    <Styled.TimelineWrapper>
       <Styled.TimelineTitle className="bio">
         {t("bio-education")}
+        <ScrollLink
+          activeClass="active"
+          to="work"
+          spy={true}
+          smooth={true}
+          duration={500}
+        >
+          <Button variant="ghost" size="small" className="next-button">
+            next
+          </Button>
+        </ScrollLink>
       </Styled.TimelineTitle>
       <Timeline
         items={items}
         onIconClick={() => console.log("icon clicked")}
         onElementClick={() => console.log("element clicked")}
       />
-    </Styled.EducationTimelineWrapper>
+    </Styled.TimelineWrapper>
   );
 };
 
