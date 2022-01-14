@@ -55,7 +55,8 @@ const BiographyEducation: React.FC = () => {
 
   return (
     <Styled.TimelineWrapper>
-      <Styled.TimelineTitle className="bio">
+      <Styled.ScrollPlaceholder className="bio" />
+      <Styled.TimelineTitle>
         {t("bio-education")}
         <ScrollLink
           activeClass="active"

@@ -10,6 +10,7 @@ import { View } from "components/Global/GlobalStyles";
 import * as Styled from "./Contact.styles";
 import Socials from "./Socials";
 import renderToast from "utils/renderToast";
+import MainLayout from "layouts/Main";
 
 const INITIAL_FORM = {
   name: "",
@@ -85,56 +86,58 @@ const Contact: React.FC = () => {
 
   return (
     <View>
-      <Styled.FormTitle>{t("contact-me")}</Styled.FormTitle>
-      <Styled.InputsWrapper>
-        <Input
-          onChange={handleFieldValue}
-          value={contactForm.name}
-          type="text"
-          label={t("name")}
-          name="name"
-          autoComplete="off"
-          required
-          error={error.name}
-        />
-        <Input
-          onChange={handleFieldValue}
-          value={contactForm.email}
-          type="email"
-          label={t("email")}
-          name="email"
-          autoComplete="off"
-          required
-          error={error.email}
-        />
-        <Input
-          onChange={handleFieldValue}
-          value={contactForm.subject}
-          type="text"
-          label={t("subject")}
-          name="subject"
-          autoComplete="off"
-        />
-        <Textarea
-          onChange={handleFieldValue}
-          value={contactForm.message}
-          required
-          label={t("message")}
-          rows={5}
-          name="message"
-          error={error.message}
-        />
-        <Button
-          loaderJson={sendMailJson}
-          size="medium"
-          isLoading={isSending}
-          onClick={handleSendEmail}
-          fullWidth
-        >
-          {t("send")}
-        </Button>
-      </Styled.InputsWrapper>
-      <Socials />
+      <MainLayout>
+        <Styled.FormTitle>{t("contact-me")}</Styled.FormTitle>
+        <Styled.InputsWrapper>
+          <Input
+            onChange={handleFieldValue}
+            value={contactForm.name}
+            type="text"
+            label={t("name")}
+            name="name"
+            autoComplete="off"
+            required
+            error={error.name}
+          />
+          <Input
+            onChange={handleFieldValue}
+            value={contactForm.email}
+            type="email"
+            label={t("email")}
+            name="email"
+            autoComplete="off"
+            required
+            error={error.email}
+          />
+          <Input
+            onChange={handleFieldValue}
+            value={contactForm.subject}
+            type="text"
+            label={t("subject")}
+            name="subject"
+            autoComplete="off"
+          />
+          <Textarea
+            onChange={handleFieldValue}
+            value={contactForm.message}
+            required
+            label={t("message")}
+            rows={5}
+            name="message"
+            error={error.message}
+          />
+          <Button
+            loaderJson={sendMailJson}
+            size="medium"
+            isLoading={isSending}
+            onClick={handleSendEmail}
+            fullWidth
+          >
+            {t("send")}
+          </Button>
+        </Styled.InputsWrapper>
+        <Socials />
+      </MainLayout>
     </View>
   );
 };

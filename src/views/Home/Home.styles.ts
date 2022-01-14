@@ -1,3 +1,4 @@
+import { Breakpoints } from "constants/Global";
 import styled from "styled-components";
 
 const { float, revFloat } = window;
@@ -6,6 +7,7 @@ export const TimelineWrapper = styled.div`
   padding: 1rem;
   width: calc(100% - 0rem);
   margin: 0 auto;
+  position: relative;
 
   .timeline-lottie svg {
     margin-${float}: -50% !important;
@@ -51,15 +53,17 @@ export const TimelineWrapper = styled.div`
 
 export const TimelineTitle = styled.div`
   position: relative;
-  padding: 1.2rem 0;
+  padding: 1rem;
   font-size: 1.2rem;
-  border-bottom: 5px solid ${({ theme }) => theme.border};
+  border-bottom: 1px solid ${({ theme }) => theme.border};
+  display: flex;
+  justify-content: space-between;
 
-  .next-button {
-    position: absolute;
-    ${revFloat}: 0;
-    top: 1rem;
-  }
+  // .next-button {
+  //   position: absolute;
+  //   ${revFloat}: 0;
+  //   top: 1rem;
+  // }
 `;
 
 export const LinkTo = styled.a`
@@ -95,5 +99,15 @@ export const FooterText = styled.div`
 
   @media only screen and (max-width: 550px) {
     bottom: 0.5rem;
+  }
+`;
+
+export const ScrollPlaceholder = styled.div`
+  position: absolute;
+  width: 90%;
+  top: 0;
+
+  @media only screen and (min-width: ${Breakpoints.tablet}px) {
+    top: -3rem;
   }
 `;

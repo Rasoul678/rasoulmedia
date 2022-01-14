@@ -269,6 +269,10 @@ export const TimelineContainer = styled.div`
     .vertical-timeline-element-content .vertical-timeline-element-date {
       font-size: 14px;
       font-size: 0.875rem;
+
+      @media only screen and (min-width: 700px) {
+        color: ${({ theme }) => theme.text};
+        }
     }
   }
   @media only screen and (min-width: 700px) {

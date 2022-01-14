@@ -43,9 +43,8 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
 
   return (
     <Styled.TimelineWrapper style={{ marginTop: "3rem" }}>
-      <Styled.TimelineTitle className="work">
-        {t("work-experience")}
-      </Styled.TimelineTitle>
+      <Styled.ScrollPlaceholder className="work" />
+      <Styled.TimelineTitle>{t("work-experience")}</Styled.TimelineTitle>
       <Timeline
         items={items}
         onIconClick={() => console.log("icon clicked")}

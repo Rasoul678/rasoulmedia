@@ -3,7 +3,7 @@ import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import reactStringReplace from "react-string-replace";
-import * as Styled from "./TabletGallery.styles";
+import * as Styled from "./LapTopGallery.styles";
 import CustomTypewriter from "components/CustomTypewriter";
 import LinkedinIcon from "components/Icons/LinkedinIcon";
 import GithubIcon from "components/Icons/GithubIcon";
@@ -40,7 +40,7 @@ const HomeGallery: React.FC = () => {
           alt="astronaut"
         />
         <ScrollDown
-          name="slide-tablet"
+          name="slide-laptop"
           style={{
             width: "4rem",
             transform: "rotateZ(-90deg)",

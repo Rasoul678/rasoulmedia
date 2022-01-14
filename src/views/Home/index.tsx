@@ -7,12 +7,16 @@ import BiographyEducation from "./timelines/Biography_Education";
 import WorkExperience from "./timelines/WorkExperience";
 import OnMobile from "components/MediaQuery/Mobile";
 import OnTablet from "components/MediaQuery/Tablet";
+import OnDesktop from "components/MediaQuery/Desktop";
+import OnBigScreen from "components/MediaQuery/BigScreen";
 import MobileIcon from "components/Icons/MobileIcon";
 import TabletIcon from "components/Icons/TabletIcon";
 import LapTopIcon from "components/Icons/LapTopIcon";
+import MainLayout from "layouts/Main";
 
 const MobileGallery = lazy(() => import("components/HomeGallery/mobile"));
 const TabletGallery = lazy(() => import("components/HomeGallery/tablet"));
+const DesktopGallery = lazy(() => import("components/HomeGallery/laptop"));
 
 interface IHomeProps {}
 
@@ -27,21 +31,28 @@ const Home: React.FC<IHomeProps> = () => {
       <OnTablet>
         <TabletGallery />
       </OnTablet>
-      <div>
+      <OnDesktop>
+        <DesktopGallery />
+      </OnDesktop>
+      <OnBigScreen>
+        <DesktopGallery />
+      </OnBigScreen>
+
+      <MainLayout>
         <div>
           <BiographyEducation />
           <WorkExperience />
         </div>
-      </div>
-      <Styled.DevicesWrapper>
-        <MobileIcon size={30} />
-        <TabletIcon size={30} />
-        <LapTopIcon size={35} />
-      </Styled.DevicesWrapper>
-      <Styled.FooterText>
-        Made by love | {new Date().getFullYear()}
-      </Styled.FooterText>
-      <Footer color={theme.colors[2]} />
+        <Styled.DevicesWrapper>
+          <MobileIcon size={30} />
+          <TabletIcon size={30} />
+          <LapTopIcon size={35} />
+        </Styled.DevicesWrapper>
+        <Styled.FooterText>
+          Made by love | {new Date().getFullYear()}
+        </Styled.FooterText>
+        <Footer color={theme.colors[2]} />
+      </MainLayout>
     </View>
   );
 };

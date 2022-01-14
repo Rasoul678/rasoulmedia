@@ -2,6 +2,7 @@ import { useRef } from "react";
 import ComingSoonJson from "assets/animations/87843-coming-soon.json";
 import useLottie from "hooks/useLottie";
 import { View } from "components/Global/GlobalStyles";
+import MainLayout from "layouts/Main";
 
 const Apps: React.FC = () => {
   const container = useRef<HTMLDivElement | null>(null);
@@ -14,8 +15,10 @@ const Apps: React.FC = () => {
 
   return (
     <View>
-      <h1>Apps</h1>
-      <div ref={container} />
+      <MainLayout>
+        <h1>Apps</h1>
+        <div ref={container} />
+      </MainLayout>
     </View>
   );
 };
