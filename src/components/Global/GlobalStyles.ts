@@ -32,6 +32,7 @@ export const GlobalStyles = createGlobalStyle`
 //! width
 ::-webkit-scrollbar {
   width: 0.4rem;
+  height: 0.2rem;
   background-color: ${({ theme }) => theme.background};
 }
 

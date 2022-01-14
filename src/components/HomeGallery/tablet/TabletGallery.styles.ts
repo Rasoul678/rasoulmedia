@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Breakpoints } from "constants/Global";
 import { motion } from "framer-motion";
 
-const { revFloat } = window;
+const { revFloat, direction } = window;
 
 export const HomeGalleryContainer = styled.div`
   height: 100vh;
@@ -34,7 +34,7 @@ export const HomeGalleryContainer = styled.div`
   }
 `;
 
-export const IntroductionContainer = styled.div`
+export const IntroductionContainer = styled(motion.div)`
   color: ${({ theme }) => theme.text};
   width: 100%;
   height: 100%;
@@ -46,16 +46,14 @@ export const IntroductionContainer = styled.div`
   align-items: center;
 
   @media only screen and (min-width: 650px) {
-    flex-direction: row-reverse;
-
     img {
       width: 10rem;
-      margin-top: 2rem;
+      margin-top: 0rem;
     }
 
     > div:first-child {
-      min-width: 15rem;
-      min-height: 15rem;
+      min-width: 11rem;
+      min-height: 11rem;
       margin-${revFloat}: 2.5rem; 
     }
   }
@@ -66,12 +64,13 @@ export const IntroductionInfoWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  gap: 6rem;
+  gap: 4rem;
+  margin-top: 3rem;
 
   @media only screen and (max-width: 650px) {
-    gap: 3rem;
+    margin-top: 7rem;
   }
 `;
 
@@ -112,9 +111,16 @@ export const SocialLinkWrapper = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3rem;
   gap: 2rem;
   color: ${({ theme }) => theme.border};
+  margin-top: 2rem;
+
+  @media only screen and (min-width: 650px) {
+    width: 5rem;
+    position: absolute;
+    ${revFloat}: 1rem;
+    flex-direction: column;
+  }
 
   div {
     display: flex;
@@ -139,3 +145,14 @@ export const Blob = styled(motion.div)`
   border-bottom-right-radius: 40% 60%;
   border-bottom-left-radius: 60% 40%;
 `;
+
+export const AstronautWrapper = styled(motion.div)`
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: ${direction === "rtl" ? "row-reverse" : "row"};
+  justify-content: center;
+  align-items: center;
+`;
+
+export const AstronautImage = styled.img``;

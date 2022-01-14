@@ -12,6 +12,7 @@ import { Links } from "constants/Links";
 import { openNewTab } from "utils/helpers";
 import ScrollDown from "components/Lotties/ScrollDown";
 import ProfilePic from "assets/profile-pic.png";
+import AstronautPic from "assets/astronaut.png";
 import NightBackground from "components/NightBackground/NightBackground";
 
 const HomeGallery: React.FC = () => {
@@ -20,22 +21,46 @@ const HomeGallery: React.FC = () => {
 
   return (
     <Styled.HomeGalleryContainer>
-      <Styled.IntroductionContainer>
+      <Styled.AstronautWrapper
+        initial={{ x: 0 }}
+        animate={{
+          x: showIntro ? -1000 : 0,
+          transition: { duration: 1, ease: "easeInOut" },
+        }}
+      >
+        <Styled.AstronautImage src={AstronautPic} alt="astronaut" />
+        <ScrollDown
+          name="slide"
+          style={{
+            width: "4rem",
+            transform: "rotateZ(-90deg)",
+            cursor: "pointer",
+          }}
+          onClick={() => setShowIntro((v) => !v)}
+        />
+      </Styled.AstronautWrapper>
+
+      <Styled.IntroductionContainer
+        initial={{ x: 1000 }}
+        animate={
+          showIntro ? { x: 0, display: "flex" } : { x: 1000, display: "none" }
+        }
+        transition={{ duration: 1 }}
+      >
         <Styled.Blob>
           <motion.img
             initial={{ scale: 0 }}
-            animate={{ scale: showIntro ? 1 : 0 }}
+            animate={{ scale: 1 }}
             whileHover={{ scale: 1.2 }}
             transition={{ duration: 0.3 }}
             src={ProfilePic}
             alt="Rasoul"
             className="home-gallery-avatar"
             width="125"
-            onLoad={() => setShowIntro(true)}
           />
           <Styled.SocialLinkWrapper
             initial={{ scale: 0 }}
-            animate={{ scale: showIntro ? 1 : 0 }}
+            animate={{ scale: 1 }}
             transition={{ duration: 0.3 }}
           >
             <motion.div whileHover={{ scale: 1.2, rotate: 360 }}>
@@ -58,7 +83,7 @@ const HomeGallery: React.FC = () => {
         <Styled.IntroductionInfoWrapper>
           <Styled.UserNameWrapper
             initial={{ scale: 0 }}
-            animate={{ scale: showIntro ? 1 : 0 }}
+            animate={{ scale: 1 }}
             transition={{ duration: 0.3 }}
           >
             {reactStringReplace(t("welcome-intro"), t("me"), (match, i) => (
@@ -67,7 +92,7 @@ const HomeGallery: React.FC = () => {
           </Styled.UserNameWrapper>
           <Styled.TypeWriterWrapper
             initial={{ scale: 0 }}
-            animate={{ scale: showIntro ? 1 : 0 }}
+            animate={{ scale: 1 }}
             transition={{ duration: 0.3 }}
           >
             <CustomTypewriter
@@ -85,7 +110,7 @@ const HomeGallery: React.FC = () => {
 
           <Styled.ArrowDownWrapper
             initial={{ scale: 0 }}
-            animate={{ scale: showIntro ? 1 : 0 }}
+            animate={{ scale: 1 }}
             transition={{ duration: 0.3 }}
           >
             <ScrollLink
