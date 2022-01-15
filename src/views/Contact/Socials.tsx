@@ -45,16 +45,11 @@ const Socials: React.FC<SocialsProps> = () => {
   return (
     <Flex
       position="relative"
-      margin="2.5rem 0"
+      margin="2rem 0"
       gap="1rem"
       justifyContent="center"
     >
-      <Flex
-        flexDirection="column"
-        width="60%"
-        alignItems="center"
-        justifyContent="center"
-      >
+      <Flex width="100%" alignItems="center" justifyContent="center" gap="2rem">
         <Styled.SocialWrapper
           onMouseEnter={handleMouseEnter("twitter")}
           onMouseLeave={handleMouseLeave("twitter")}
@@ -86,9 +81,9 @@ const Socials: React.FC<SocialsProps> = () => {
         </Styled.SocialWrapper>
       </Flex>
 
-      <Flex alignItems="center">
+      {/* <Flex alignItems="center">
         <ThankYou />
-      </Flex>
+      </Flex> */}
     </Flex>
   );
 };

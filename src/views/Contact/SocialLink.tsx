@@ -23,8 +23,8 @@ const SocialLink: React.FC<SocialLinkProps> = (props) => {
 
 const Span = styled.span`
   position: absolute;
-  ${float}: 3rem;
-  top: 0.5rem;
+  ${float}: -2rem;
+  top: 3rem;
   text-transform: uppercase;
   font-size: 1.1rem;
   font-weight: bold;

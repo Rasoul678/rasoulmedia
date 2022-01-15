@@ -122,7 +122,7 @@ const Contact: React.FC = () => {
             value={contactForm.message}
             required
             label={t("message")}
-            rows={5}
+            rows={3}
             name="message"
             error={error.message}
           />
