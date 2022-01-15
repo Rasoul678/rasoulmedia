@@ -19,20 +19,20 @@ const HomeGallery: React.FC = () => {
   const [showIntro, setShowIntro] = useState(false);
   const { t } = useTranslation();
 
+  console.log("render");
+
   return (
     <Styled.HomeGalleryContainer>
       <Styled.AstronautWrapper
         initial={{ x: 0 }}
         animate={{
-          x: showIntro ? -1000 : 0,
+          x: showIntro ? -500 : 0,
           transition: { duration: 1, ease: "easeInOut" },
         }}
       >
         <Styled.Image
-          animate={{ y: [0, 10, 0] }}
+          animate={{ y: [5, 15, 5] }}
           transition={{
-            type: "spring",
-            stiffness: 100,
             repeat: Infinity,
             duration: 3,
           }}
@@ -50,36 +50,25 @@ const HomeGallery: React.FC = () => {
         />
       </Styled.AstronautWrapper>
       <Styled.IntroductionContainer
-        initial={{ x: 1000 }}
+        initial={{ x: 500 }}
         animate={
-          showIntro ? { x: 0, display: "revert" } : { x: 1000, display: "none" }
+          showIntro ? { x: 0, display: "block" } : { x: 1000, display: "none" }
         }
         transition={{ duration: 1 }}
       >
         <div className="content-wrapper">
           <motion.img
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.3 }}
             src={ProfilePic}
             alt="Rasoul"
             className="home-gallery-avatar"
             width="125"
           />
-          <Styled.UserNameWrapper
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.3 }}
-          >
+          <Styled.UserNameWrapper>
             {reactStringReplace(t("welcome-intro"), t("me"), (match, i) => (
               <Styled.Name key={i}>{match}</Styled.Name>
             ))}
           </Styled.UserNameWrapper>
-          <Styled.TypeWriterWrapper
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.3 }}
-          >
+          <Styled.TypeWriterWrapper>
             <CustomTypewriter
               strings={[
                 t("typewriter.1"),
@@ -92,32 +81,24 @@ const HomeGallery: React.FC = () => {
               cursor="|"
             />
           </Styled.TypeWriterWrapper>
-          <Styled.SocialLinkWrapper
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.3 }}
-          >
-            <motion.div whileHover={{ scale: 1.2, rotate: 360 }}>
+          <Styled.SocialLinkWrapper>
+            <motion.div>
               <LinkedinIcon
                 size={30}
                 onClick={() => openNewTab(Links.linkedin)}
               />
             </motion.div>
-            <motion.div whileHover={{ scale: 1.2, rotate: 360 }}>
+            <motion.div>
               <StackOverflowIcon
                 size={35}
                 onClick={() => openNewTab(Links.stackOverflow)}
               />
             </motion.div>
-            <motion.div whileHover={{ scale: 1.2, rotate: 360 }}>
+            <motion.div>
               <GithubIcon size={35} onClick={() => openNewTab(Links.github)} />
             </motion.div>
           </Styled.SocialLinkWrapper>
-          <Styled.ArrowDownWrapper
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.3 }}
-          >
+          <Styled.ArrowDownWrapper>
             <ScrollLink
               activeClass="active"
               to="bio"
@@ -129,13 +110,7 @@ const HomeGallery: React.FC = () => {
               <ScrollDown />
             </ScrollLink>
           </Styled.ArrowDownWrapper>
-          {showIntro && (
-            <Styled.Blob
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.3 }}
-            />
-          )}
+          <Styled.Blob />
         </div>
       </Styled.IntroductionContainer>
       <NightBackground />

@@ -130,7 +130,7 @@ export const Blob = styled(motion.div)`
 
 export const AstronautWrapper = styled(motion.div)`
   width: 100%;
-  height: 100%;
+  height: 90%;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -145,5 +145,5 @@ export const Image = styled(motion.img)`
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-  width: 90%;
+  width: 80%;
 `;

@@ -1,6 +1,7 @@
 import * as Styled from "./Footer.styles";
 import CoralLottie from "../Lotties/Coral";
 import AlgaeLottie from "../Lotties/Algae";
+import OnMobile from "components/MediaQuery/Mobile";
 
 interface FooterProps {}
 
@@ -10,12 +11,14 @@ const Footer: React.FC<FooterProps> = () => {
       <Styled.FooterText>
         Made by love | {new Date().getFullYear()}
       </Styled.FooterText>
-      <Styled.SeaCreaturesWrapper>
-        <CoralLottie name="coral1" />
-        <AlgaeLottie name="algae1" />
-        <CoralLottie name="coral2" />
-        <AlgaeLottie name="algae2" />
-      </Styled.SeaCreaturesWrapper>
+      <OnMobile>
+        <Styled.SeaCreaturesWrapper>
+          <CoralLottie name="coral1" />
+          <AlgaeLottie name="algae1" />
+          <CoralLottie name="coral2" />
+          <AlgaeLottie name="algae2" />
+        </Styled.SeaCreaturesWrapper>
+      </OnMobile>
       <Styled.FooterWaves
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 24 150 28"

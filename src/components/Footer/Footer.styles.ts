@@ -13,19 +13,20 @@ export const FooterWaves = styled.svg`
   position: absolute;
   ${float}: 0;
   width: 100%;
-  height: 10rem;
+  height: 7rem;
   //! Fix for safari gap
   margin-bottom: -0.5rem;
-  min-height: 10rem;
+  min-height: 7rem;
+  bottom: -9.5rem;
 
   @media (max-width: 1000px) {
-    height: 8.5rem;
-    min-height: 8.5rem;
+    height: 6.5rem;
+    min-height: 6.5rem;
   }
 
   @media (max-width: 700px) {
-    height: 7rem;
-    min-height: 7rem;
+    height: 5.5rem;
+    min-height: 5.5rem;
   }
 
   //! Shrinking for mobile
@@ -77,7 +78,7 @@ export const FooterParallax = styled.g`
 
 export const SeaCreaturesWrapper = styled.div`
   position: absolute;
-  top: -3.5rem;
+  bottom: -9rem;
   width: 100%;
   z-index: 100;
 
@@ -86,8 +87,8 @@ export const SeaCreaturesWrapper = styled.div`
   }
 
   div:nth-child(1) {
-    width: 7rem;
-    height: 7rem;
+    width: 4rem;
+    height: 4rem;
     position: absolute;
     bottom: 0;
     ${float}: 5%;
@@ -95,32 +96,32 @@ export const SeaCreaturesWrapper = styled.div`
   }
 
   div:nth-child(2) {
-    width: 6rem;
+    width: 4rem;
     position: absolute;
-    bottom: 0;
+    bottom: -1rem;
     ${float}: 30%;
     transform: rotateY(180deg);
   }
 
   div:nth-child(3) {
-    width: 5rem;
+    width: 3rem;
     position: absolute;
-    bottom: 0rem;
+    bottom: -1rem;
     ${float}: 55%;
   }
 
   div:nth-child(4) {
-    width: 8rem;
+    width: 5rem;
     position: relative;
-    bottom: 0;
-    ${float}: 65%;
+    bottom: -1rem;
+    ${float}: 70%;
   }
 `;
 
 export const FooterText = styled.div`
   text-align: center;
   position: absolute;
-  bottom: -5rem;
+  bottom: -10rem;
   ${float}: 0;
   color: #000;
   font-weight: 500;
@@ -129,14 +130,6 @@ export const FooterText = styled.div`
   width: 100%;
 
   @media only screen and (min-width: 550px) {
-    bottom: -7rem;
-  }
-
-  @media only screen and (min-width: 700px) {
-    bottom: -8.5rem;
-  }
-
-  @media only screen and (min-width: 1000px) {
     bottom: -10rem;
   }
 `;

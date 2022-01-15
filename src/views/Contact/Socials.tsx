@@ -49,7 +49,7 @@ const Socials: React.FC<SocialsProps> = () => {
       gap="1rem"
       justifyContent="center"
     >
-      <Flex width="100%" alignItems="center" justifyContent="center" gap="2rem">
+      <Flex width="100%" alignItems="center" justifyContent="center" gap="1.5rem">
         <Styled.SocialWrapper
           onMouseEnter={handleMouseEnter("twitter")}
           onMouseLeave={handleMouseLeave("twitter")}
