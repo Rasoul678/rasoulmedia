@@ -4,7 +4,7 @@ import TwitterLottie from "components/Lotties/SocialMedia/Twitter";
 import InstagramLottie from "components/Lotties/SocialMedia/Instagram";
 import LinkedinLottie from "components/Lotties/SocialMedia/Linkedin";
 import FacebookLottie from "components/Lotties/SocialMedia/Facebook";
-import ThankYou from "components/SVG/ThankYou";
+// import ThankYou from "components/SVG/ThankYou";
 import Flex from "components/Flex";
 import { shuffleArray } from "utils/helpers";
 import { ThemeColors } from "constants/Colors";

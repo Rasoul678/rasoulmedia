@@ -30,7 +30,7 @@ export const HomeGalleryContainer = styled.div`
   }
 `;
 
-export const IntroductionContainer = styled.div`
+export const IntroductionContainer = styled(motion.div)`
   color: ${({ theme }) => theme.text};
   position: absolute;
   width: 100%;
@@ -126,4 +126,24 @@ export const Blob = styled(motion.div)`
   border-top-right-radius: 40% 60%;
   border-bottom-right-radius: 40% 60%;
   border-bottom-left-radius: 60% 40%;
+`;
+
+export const AstronautWrapper = styled(motion.div)`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const Image = styled(motion.img)`
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  width: 100%;
 `;
