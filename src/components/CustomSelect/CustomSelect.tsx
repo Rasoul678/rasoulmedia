@@ -6,7 +6,6 @@ function CustomSelect<
   IsMulti extends boolean = false,
   Group extends GroupBase<Option> = GroupBase<Option>
 >(props: Props<Option, IsMulti, Group>) {
-  //   const { className } = props;
 
   return (
     <Styled.SelectContainer>

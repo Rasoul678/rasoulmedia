@@ -5,7 +5,7 @@ export const DesktopNavbar = styled(motion.nav)`
   position: sticky;
   top: 0;
   padding: 1rem;
-  height: 4rem;
+  height: 3.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,6 +35,7 @@ export const MenuLink = styled.div`
 `;
 
 export const SettingWrapper = styled(motion.div)`
+  display: flex;
   cursor: pointer;
   color: ${({ theme }) => theme.border};
 `;

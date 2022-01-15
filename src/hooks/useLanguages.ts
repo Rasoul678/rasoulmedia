@@ -20,27 +20,27 @@ const useLanguages = (code?: Code) => {
 
   const languages: Languages = {
     en: {
-      title: t("lang.english"),
+      title: t("lang.en"),
       flag: British(),
     },
     es: {
-      title: t("lang.spanish"),
+      title: t("lang.es"),
       flag: Spain(),
     },
     fr: {
-      title: t("lang.french"),
+      title: t("lang.fr"),
       flag: France(),
     },
     fa: {
-      title: t("lang.persian"),
+      title: t("lang.fa"),
       flag: Iran(),
     },
     nl: {
-      title: t("lang.dutch"),
+      title: t("lang.nl"),
       flag: Netherlands(),
     },
     hi: {
-      title: t("lang.hindi"),
+      title: t("lang.hi"),
       flag: India(),
     },
   };
