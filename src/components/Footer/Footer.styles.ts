@@ -1,56 +1,142 @@
 import styled from "styled-components";
 
-const { direction } = window;
+const { float } = window;
 
 export const FooterContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  text-align: center;
+  background: transparent;
+  margin-top: 5rem;
+`;
+
+export const FooterWaves = styled.svg`
+  position: absolute;
+  ${float}: 0;
+  width: 100%;
+  height: 10rem;
+  //! Fix for safari gap
+  margin-bottom: -0.5rem;
+  min-height: 10rem;
+
+  @media (max-width: 1000px) {
+    height: 8.5rem;
+    min-height: 8.5rem;
+  }
+
+  @media (max-width: 700px) {
+    height: 7rem;
+    min-height: 7rem;
+  }
+
+  //! Shrinking for mobile
+  @media (max-width: 550px) {
+    height: 5rem;
+    min-height: 5rem;
+  }
+`;
+
+export const FooterParallax = styled.g`
+  @keyframes move-forever {
+    0% {
+      transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+      transform: translate3d(85px, 0, 0);
+    }
+  }
+
+  //! Animation
+  use {
+    animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+  }
+  > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+    fill: ${({ theme }) => theme.border};
+    opacity: 0.5;
+  }
+  > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+    fill: ${({ theme }) => theme.border};
+    opacity: 0.4;
+  }
+  > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+    fill: ${({ theme }) => theme.border};
+    opacity: 0.3;
+  }
+  > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+    fill: ${({ theme }) => theme.border};
+    opacity: 0.2;
+  }
 `;
 
 export const SeaCreaturesWrapper = styled.div`
-  display: flex;
-  position: relative;
-  bottom: -5.5rem;
+  position: absolute;
+  top: -3.5rem;
+  width: 100%;
+  z-index: 100;
+
+  @media (min-width: 550px) {
+    top: -1.5rem;
+  }
 
   div:nth-child(1) {
     width: 7rem;
-    position: relative;
-    top: 1.6rem;
+    height: 7rem;
+    position: absolute;
+    bottom: 0;
+    ${float}: 5%;
     transform: rotateY(180deg);
-
-    @media only screen and (min-width: 450px) {
-      top: ${direction === "ltr" ? "2.2rem" : "1.8rem"};
-    }
   }
 
   div:nth-child(2) {
     width: 6rem;
-    position: relative;
-    top: 1.7rem;
+    position: absolute;
+    bottom: 0;
+    ${float}: 30%;
     transform: rotateY(180deg);
-
-    @media only screen and (min-width: 450px) {
-      top: ${direction === "ltr" ? "1.85rem" : "3.5rem"};
-    }
   }
 
   div:nth-child(3) {
     width: 5rem;
-    position: relative;
-    top: 2.2rem;
-
-    @media only screen and (min-width: 450px) {
-      top: ${direction === "ltr" ? "2.9rem" : "3.5rem"};
-    }
+    position: absolute;
+    bottom: 0rem;
+    ${float}: 55%;
   }
 
   div:nth-child(4) {
-    width: 9rem;
+    width: 8rem;
     position: relative;
-    top: 0.3rem;
+    bottom: 0;
+    ${float}: 65%;
+  }
+`;
 
-    @media only screen and (min-width: 450px) {
-      top: ${direction === "ltr" ? "0.5rem" : "-0.7rem"};
-    }
+export const FooterText = styled.div`
+  text-align: center;
+  position: absolute;
+  bottom: -5rem;
+  ${float}: 0;
+  color: #000;
+  font-weight: 500;
+  font-size: 0.8rem;
+  z-index: 10;
+  width: 100%;
+
+  @media only screen and (min-width: 550px) {
+    bottom: -7rem;
+  }
+
+  @media only screen and (min-width: 700px) {
+    bottom: -8.5rem;
+  }
+
+  @media only screen and (min-width: 1000px) {
+    bottom: -10rem;
   }
 `;

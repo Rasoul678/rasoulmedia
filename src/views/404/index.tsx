@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import { useTheme } from "styled-components";
 import { useNavigate } from "react-router-dom";
 import NotFoundJson from "assets/animations/73059-search-not-found.json";
 import useLottie from "hooks/useLottie";
@@ -9,7 +8,6 @@ import Button from "components/Button";
 
 const NotFound: React.FC = () => {
   const container = useRef<HTMLDivElement | null>(null);
-  const theme = useTheme();
   const navigate = useNavigate();
 
   useLottie({
@@ -22,7 +20,12 @@ const NotFound: React.FC = () => {
     <View>
       <Button
         size="medium"
-        style={{ position: "absolute", top: "2rem", left: "2rem", zIndex: '10' }}
+        style={{
+          position: "absolute",
+          top: "2rem",
+          left: "2rem",
+          zIndex: "10",
+        }}
         onClick={() => navigate(-1)}
       >
         go back
@@ -35,7 +38,7 @@ const NotFound: React.FC = () => {
         }}
         ref={container}
       />
-      <Footer color={theme.colors[2]} />
+      <Footer />
     </View>
   );
 };

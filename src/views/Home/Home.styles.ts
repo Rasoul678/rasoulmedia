@@ -20,13 +20,13 @@ export const TimelineWrapper = styled.div`
   }
 
   .timeline-fetus-lottie svg {
-    margin-${float}: -63% !important;
-    margin-top: -64% !important;
+    margin-${float}: -64% !important;
+    margin-top: -65% !important;
   }
 
   .timeline-grad-lottie svg{
-    margin-${float}: -73% !important;
-    margin-top: -73% !important;
+    margin-${float}: -75% !important;
+    margin-top: -75% !important;
   }
 
   .timeline-grad2-lottie svg{
@@ -55,7 +55,7 @@ export const TimelineTitle = styled.div`
   position: relative;
   padding: 1rem;
   font-size: 1.2rem;
-  border-bottom: 1px solid ${({ theme }) => theme.border};
+  border-bottom: 2px solid ${({ theme }) => theme.text};
   display: flex;
   justify-content: space-between;
 
@@ -84,22 +84,7 @@ export const DevicesWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  position: absolute;
-  bottom: 11rem;
-  ${float}: calc(50% - 4rem);
-`;
-
-export const FooterText = styled.div`
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  ${float}: calc(50% - 5rem);
-  color: #000;
-  font-weight: 500;
-
-  @media only screen and (max-width: 550px) {
-    bottom: 0.5rem;
-  }
+  margin-top: 3rem;
 `;
 
 export const ScrollPlaceholder = styled.div`

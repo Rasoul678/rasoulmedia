@@ -28,7 +28,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = () => {
       label: t(value.name),
       value: key,
     }));
-  }, []);
+  }, [t]);
 
   const langOptions = useMemo(() => {
     return [
@@ -56,7 +56,10 @@ const DesktopMenu: React.FC<DesktopMenuProps> = () => {
   }, []);
 
   const getStyles = (select?: string) => ({
-    menu: (styles: any) => ({ ...styles, width: "7rem" }),
+    menu: (styles: any) => ({
+      ...styles,
+      ...(select === "lang" ? { width: "7rem" } : { width: "auto" }),
+    }),
     option: (styles: any, { isSelected }: { isSelected: boolean }) => ({
       ...styles,
       backgroundColor: "transparent",
@@ -67,9 +70,9 @@ const DesktopMenu: React.FC<DesktopMenuProps> = () => {
     }),
     singleValue: (styles: any) => ({
       ...styles,
-      fontSize: "1.2rem",
       cursor: "pointer",
-      ...(select === "lang" && { width: "6rem" }),
+      ...(select === "lang" ? { width: "6rem" } : { width: "3rem" }),
+      height: "1.8rem",
     }),
   });
 

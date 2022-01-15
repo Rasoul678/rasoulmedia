@@ -31,7 +31,7 @@ export const TimelineContainer = styled.div`
     ${float}: 18px;
     height: 100%;
     width: 4px;
-    background: ${({ theme }) => theme.border};
+    background: ${({ theme }) => theme.text};
   }
   .vertical-timeline.vertical-timeline--one-column-right::before {
     ${revFloat}: 18px;
@@ -225,12 +225,12 @@ export const TimelineContainer = styled.div`
   .vertical-timeline-element-content-arrow {
     content: "";
     position: absolute;
-    top: 0.8rem;
+    top: 0.5rem;
     ${revFloat}: 100%;
     height: 0;
     width: 0;
-    border: 7px solid transparent;
-    border-${revFloat}: 7px solid ${({ theme }) => theme.border};
+    border: 10px solid transparent;
+    border-${revFloat}: 10px solid ${({ theme }) => theme.card.backgroundColor};
   }
   .vertical-timeline--one-column-right
     .vertical-timeline-element-content-arrow {

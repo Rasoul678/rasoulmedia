@@ -5,6 +5,7 @@ export const SelectContainer = styled.div`
 
   .select__menu {
     background: ${({ theme }) => theme.background};
+    box-shadow: 0px 0px 2px 0px ${({ theme }) => theme.text};
   }
 
   .select__control {

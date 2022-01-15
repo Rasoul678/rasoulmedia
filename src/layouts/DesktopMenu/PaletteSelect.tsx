@@ -8,7 +8,7 @@ const PaletteSelect = (props: any) => (
     components={{
       Control: ({ children, ...rest }) => (
         <components.Control {...rest}>
-          <ColorPaletteIcon size={28} />
+          <ColorPaletteIcon style={{ position: "absolute", right: 'calc(50% - 1rem)' }} size={28} />
           {children}
         </components.Control>
       ),
