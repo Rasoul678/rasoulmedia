@@ -3,6 +3,9 @@ import Timeline, { TimelineElement } from "components/Timeline";
 import * as Styled from "../Home.styles";
 import SuitcaseLottie from "components/Lotties/Suitcase";
 import CertificationLottie from "components/Lotties/Certification";
+import JSDescription from "./JSDescription";
+import KarabamaDescription from "./KarabamaDescription";
+import CliqmindDescription from "./CliqmindDescription";
 
 interface WorkExperienceProps {}
 
@@ -11,22 +14,22 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
 
   const items: TimelineElement[] = [
     {
-      title: "Newbie",
+      title: t('js.dev'),
       date: "2019 - 2020",
-      description: "Getting familiar with new technologies & Freelancing",
+      description: <JSDescription />,
       icon: <SuitcaseLottie name="suitcase1" />,
       className: "timeline-lottie",
     },
     {
-      title: "Frontend developer",
-      description: "www.karabama.com",
+      title: t('front.dev'),
+      description: <KarabamaDescription />,
       date: "2020 - 2021",
       icon: <SuitcaseLottie name="suitcase2" />,
       className: "timeline-lottie",
     },
     {
-      title: "Frontend developer",
-      description: "www.cliqmind.ir",
+      title: t('front.dev'),
+      description: <CliqmindDescription />,
       date: "2021 - 2022",
       icon: <SuitcaseLottie name="suitcase3" />,
       className: "timeline-lottie",

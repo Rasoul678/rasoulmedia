@@ -24,7 +24,7 @@ const SocialLink: React.FC<SocialLinkProps> = (props) => {
 const Span = styled.span`
   position: absolute;
   ${float}: -1.5rem;
-  top: 3rem;
+  top: 3.5rem;
   text-transform: uppercase;
   font-size: 0.9rem;
   font-weight: bold;
@@ -32,7 +32,7 @@ const Span = styled.span`
   padding: 0.5rem 0.7rem 0.5rem 0;
 
   ::${direction === 'rtl' ? 'after' : 'before'} {
-    content: "@";
+    content: "🔗";
     padding: 0 0.2rem;
   }
 `;

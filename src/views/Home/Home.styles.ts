@@ -1,7 +1,7 @@
 import { Breakpoints } from "constants/Global";
 import styled from "styled-components";
 
-const { float, revFloat } = window;
+const { float } = window;
 
 export const TimelineWrapper = styled.div`
   padding: 1rem;
@@ -53,17 +53,15 @@ export const TimelineWrapper = styled.div`
 
 export const TimelineTitle = styled.div`
   position: relative;
-  padding: 1rem;
+  padding: 1rem 0;
   font-size: 1.2rem;
   border-bottom: 2px solid ${({ theme }) => theme.text};
   display: flex;
   justify-content: space-between;
 
-  // .next-button {
-  //   position: absolute;
-  //   ${revFloat}: 0;
-  //   top: 1rem;
-  // }
+  .next-button {
+    text-transform: lowercase;
+  }
 `;
 
 export const LinkTo = styled.a`
@@ -95,4 +93,15 @@ export const ScrollPlaceholder = styled.div`
   @media only screen and (min-width: ${Breakpoints.tablet}px) {
     top: -3rem;
   }
+`;
+
+export const StackContainer = styled.div`
+  padding: 1rem;
+`;
+
+export const StackWrapper = styled.div`
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 `;

@@ -9,7 +9,7 @@ const Footer: React.FC<FooterProps> = () => {
   return (
     <Styled.FooterContainer>
       <Styled.FooterText>
-        Made by love | {new Date().getFullYear()}
+        Made by ❤️ | {new Date().getFullYear()}
       </Styled.FooterText>
       <OnMobile>
         <Styled.SeaCreaturesWrapper>

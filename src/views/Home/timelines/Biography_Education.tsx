@@ -66,7 +66,7 @@ const BiographyEducation: React.FC = () => {
           duration={500}
         >
           <Button variant="ghost" size="small" className="next-button">
-            next
+            {t("next")}
           </Button>
         </ScrollLink>
       </Styled.TimelineTitle>

@@ -28,7 +28,7 @@ const Button: React.FC<ButtonProps> = (props) => {
   useLottie({
     container: container as any,
     animationData: loaderJson || json,
-    name: "send-email",
+    name: "button",
   });
 
   const handleClickButton = () => {

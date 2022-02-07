@@ -34,6 +34,10 @@ export const Textarea = styled.textarea`
   background-color: ${({ theme }) => theme.card.backgroundColor};
   color: #ccc;
 
+  @media only screen and (min-width: 706px) {
+    min-height: 12rem;
+  }
+
   ::placeholder {
     color: transparent;
   }
@@ -122,5 +126,5 @@ export const Error = styled.span`
   font-size: 0.8rem;
   text-align: start;
   font-weight: bold;
-  color: #EB4A62;
+  color: #eb4a62;
 `;
