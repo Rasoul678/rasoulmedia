@@ -21,6 +21,7 @@ export const InputContainer = styled.div`
 
 export const Indicator = styled.div`
   position: absolute;
+  top: 2.3rem;
   width: 0;
   height: 0.2rem;
   border-bottom-left-radius: 0.3rem;

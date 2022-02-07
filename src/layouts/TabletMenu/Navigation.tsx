@@ -19,7 +19,7 @@ import SelectPalette from "layouts/MobileMenu/SelectPalette";
 
 type ModalType = "language" | "palette" | null;
 
-const footer = {
+const navigate = {
   open: {
     y: 0,
     x: 0,
@@ -30,7 +30,7 @@ const footer = {
   },
   closed: {
     y: 0,
-    x: -250,
+    x: window.float === "right" ? 500 : -250,
     opacity: 0,
     transition: {
       y: { stiffness: 1000 },
@@ -83,7 +83,7 @@ const Navigation = () => {
   };
 
   return (
-    <Styled.TabletMenuItemsWrapper variants={footer}>
+    <Styled.TabletMenuItemsWrapper variants={navigate}>
       <Modal
         isShown={isShown}
         hide={toggle}

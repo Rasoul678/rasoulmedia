@@ -19,16 +19,19 @@ const HomeGallery: React.FC = () => {
   const [showIntro, setShowIntro] = useState(false);
   const { t } = useTranslation();
 
-  console.log("render");
-
   return (
     <Styled.HomeGalleryContainer>
       <Styled.AstronautWrapper
-        initial={{ x: 0 }}
-        animate={{
-          x: showIntro ? -500 : 0,
-          transition: { duration: 1, ease: "easeInOut" },
-        }}
+        initial={{ x: 0, display: "flex" }}
+        animate={
+          showIntro && {
+            x: 500,
+            transitionEnd: {
+              display: "none",
+            },
+          }
+        }
+        transition={{ duration: 0.7, ease: "easeInOut" }}
       >
         <Styled.Image
           animate={{ y: [5, 15, 5] }}
@@ -49,70 +52,73 @@ const HomeGallery: React.FC = () => {
           onClick={() => setShowIntro((v) => !v)}
         />
       </Styled.AstronautWrapper>
-      <Styled.IntroductionContainer
-        initial={{ x: 500 }}
-        animate={
-          showIntro ? { x: 0, display: "block" } : { x: 1000, display: "none" }
-        }
-        transition={{ duration: 1 }}
-      >
-        <div className="content-wrapper">
-          <motion.img
-            src={ProfilePic}
-            alt="Rasoul"
-            className="home-gallery-avatar"
-            width="125"
-          />
-          <Styled.UserNameWrapper>
-            {reactStringReplace(t("welcome-intro"), t("me"), (match, i) => (
-              <Styled.Name key={i}>{match}</Styled.Name>
-            ))}
-          </Styled.UserNameWrapper>
-          <Styled.TypeWriterWrapper>
-            <CustomTypewriter
-              strings={[
-                t("typewriter.1"),
-                t("typewriter.2"),
-                t("typewriter.3"),
-                t("typewriter.4"),
-              ]}
-              wrapperClassName="typing"
-              cursorClassName="cursor"
-              cursor="|"
+      {showIntro && (
+        <Styled.IntroductionContainer
+          initial={{ x: 500, display: "none" }}
+          animate={showIntro && { x: 0, display: "block" }}
+          transition={{ duration: 0.7 }}
+        >
+          <div className="content-wrapper">
+            <motion.img
+              src={ProfilePic}
+              alt="Rasoul"
+              className="home-gallery-avatar"
+              width="125"
             />
-          </Styled.TypeWriterWrapper>
-          <Styled.SocialLinkWrapper>
-            <motion.div>
-              <LinkedinIcon
-                size={30}
-                onClick={() => openNewTab(Links.linkedin)}
+            <Styled.UserNameWrapper>
+              {reactStringReplace(t("welcome-intro"), t("me"), (match, i) => (
+                <Styled.Name key={i}>{match}</Styled.Name>
+              ))}
+            </Styled.UserNameWrapper>
+            <Styled.TypeWriterWrapper>
+              <CustomTypewriter
+                strings={[
+                  t("typewriter.1"),
+                  t("typewriter.2"),
+                  t("typewriter.3"),
+                  t("typewriter.4"),
+                ]}
+                wrapperClassName="typing"
+                cursorClassName="cursor"
+                cursor="|"
               />
-            </motion.div>
-            <motion.div>
-              <StackOverflowIcon
-                size={35}
-                onClick={() => openNewTab(Links.stackOverflow)}
-              />
-            </motion.div>
-            <motion.div>
-              <GithubIcon size={35} onClick={() => openNewTab(Links.github)} />
-            </motion.div>
-          </Styled.SocialLinkWrapper>
-          <Styled.ArrowDownWrapper>
-            <ScrollLink
-              activeClass="active"
-              to="bio"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className="scroll-down-btn"
-            >
-              <ScrollDown />
-            </ScrollLink>
-          </Styled.ArrowDownWrapper>
-          <Styled.Blob />
-        </div>
-      </Styled.IntroductionContainer>
+            </Styled.TypeWriterWrapper>
+            <Styled.SocialLinkWrapper>
+              <motion.div>
+                <LinkedinIcon
+                  size={30}
+                  onClick={() => openNewTab(Links.linkedin)}
+                />
+              </motion.div>
+              <motion.div>
+                <StackOverflowIcon
+                  size={35}
+                  onClick={() => openNewTab(Links.stackOverflow)}
+                />
+              </motion.div>
+              <motion.div>
+                <GithubIcon
+                  size={35}
+                  onClick={() => openNewTab(Links.github)}
+                />
+              </motion.div>
+            </Styled.SocialLinkWrapper>
+            <Styled.ArrowDownWrapper>
+              <ScrollLink
+                activeClass="active"
+                to="bio"
+                spy={true}
+                smooth={true}
+                duration={500}
+                className="scroll-down-btn"
+              >
+                <ScrollDown />
+              </ScrollLink>
+            </Styled.ArrowDownWrapper>
+            <Styled.Blob />
+          </div>
+        </Styled.IntroductionContainer>
+      )}
       <NightBackground />
     </Styled.HomeGalleryContainer>
   );

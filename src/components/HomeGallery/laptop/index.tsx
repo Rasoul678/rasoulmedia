@@ -23,10 +23,15 @@ const HomeGallery: React.FC = () => {
     <Styled.HomeGalleryContainer>
       <Styled.AstronautWrapper
         initial={{ x: 0 }}
-        animate={{
-          x: showIntro ? -1000 : 0,
-          transition: { duration: 1, ease: "easeInOut" },
-        }}
+        animate={
+          showIntro && {
+            x: -1000,
+            transitionEnd: {
+              display: "none",
+            },
+          }
+        }
+        transition={{ duration: 0.7, ease: "easeInOut" }}
       >
         <Styled.Image
           animate={{ y: [0, 10, 0] }}
@@ -50,91 +55,94 @@ const HomeGallery: React.FC = () => {
         />
       </Styled.AstronautWrapper>
 
-      <Styled.IntroductionContainer
-        initial={{ x: 1000 }}
-        animate={
-          showIntro ? { x: 0, display: "flex" } : { x: 1000, display: "none" }
-        }
-        transition={{ duration: 1 }}
-      >
-        <Styled.Blob>
-          <Styled.Image
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            whileHover={{ scale: 1.2 }}
-            transition={{ duration: 0.3 }}
-            src={ProfilePic}
-            alt="Rasoul"
-            width="125"
-          />
-          <Styled.SocialLinkWrapper
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.3 }}
-          >
-            <motion.div whileHover={{ scale: 1.2, rotate: 360 }}>
-              <LinkedinIcon
-                size={30}
-                onClick={() => openNewTab(Links.linkedin)}
-              />
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.2, rotate: 360 }}>
-              <StackOverflowIcon
-                size={35}
-                onClick={() => openNewTab(Links.stackOverflow)}
-              />
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.2, rotate: 360 }}>
-              <GithubIcon size={35} onClick={() => openNewTab(Links.github)} />
-            </motion.div>
-          </Styled.SocialLinkWrapper>
-        </Styled.Blob>
-        <Styled.IntroductionInfoWrapper>
-          <Styled.UserNameWrapper
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.3 }}
-          >
-            {reactStringReplace(t("welcome-intro"), t("me"), (match, i) => (
-              <Styled.Name key={i}>{match}</Styled.Name>
-            ))}
-          </Styled.UserNameWrapper>
-          <Styled.TypeWriterWrapper
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.3 }}
-          >
-            <CustomTypewriter
-              strings={[
-                t("typewriter.1"),
-                t("typewriter.2"),
-                t("typewriter.3"),
-                t("typewriter.4"),
-              ]}
-              wrapperClassName="typing"
-              cursorClassName="cursor"
-              cursor="|"
+      {showIntro && (
+        <Styled.IntroductionContainer
+          initial={{ x: 1000, display: "none" }}
+          animate={showIntro && { x: 0, display: "flex" }}
+          transition={{ duration: 0.7 }}
+        >
+          <Styled.Blob>
+            <Styled.Image
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.3 }}
+              src={ProfilePic}
+              alt="Rasoul"
+              width="125"
             />
-          </Styled.TypeWriterWrapper>
-
-          <Styled.ArrowDownWrapper
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.3 }}
-          >
-            <ScrollLink
-              activeClass="active"
-              to="bio"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className="scroll-down-btn"
+            <Styled.SocialLinkWrapper
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.3 }}
             >
-              <ScrollDown />
-            </ScrollLink>
-          </Styled.ArrowDownWrapper>
-        </Styled.IntroductionInfoWrapper>
-      </Styled.IntroductionContainer>
+              <motion.div whileHover={{ scale: 1.2, rotate: 360 }}>
+                <LinkedinIcon
+                  size={30}
+                  onClick={() => openNewTab(Links.linkedin)}
+                />
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.2, rotate: 360 }}>
+                <StackOverflowIcon
+                  size={35}
+                  onClick={() => openNewTab(Links.stackOverflow)}
+                />
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.2, rotate: 360 }}>
+                <GithubIcon
+                  size={35}
+                  onClick={() => openNewTab(Links.github)}
+                />
+              </motion.div>
+            </Styled.SocialLinkWrapper>
+          </Styled.Blob>
+          <Styled.IntroductionInfoWrapper>
+            <Styled.UserNameWrapper
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              {reactStringReplace(t("welcome-intro"), t("me"), (match, i) => (
+                <Styled.Name key={i}>{match}</Styled.Name>
+              ))}
+            </Styled.UserNameWrapper>
+            <Styled.TypeWriterWrapper
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              <CustomTypewriter
+                strings={[
+                  t("typewriter.1"),
+                  t("typewriter.2"),
+                  t("typewriter.3"),
+                  t("typewriter.4"),
+                ]}
+                wrapperClassName="typing"
+                cursorClassName="cursor"
+                cursor="|"
+              />
+            </Styled.TypeWriterWrapper>
+
+            <Styled.ArrowDownWrapper
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ScrollLink
+                activeClass="active"
+                to="bio"
+                spy={true}
+                smooth={true}
+                duration={500}
+                className="scroll-down-btn"
+              >
+                <ScrollDown />
+              </ScrollLink>
+            </Styled.ArrowDownWrapper>
+          </Styled.IntroductionInfoWrapper>
+        </Styled.IntroductionContainer>
+      )}
       <NightBackground />
     </Styled.HomeGalleryContainer>
   );
