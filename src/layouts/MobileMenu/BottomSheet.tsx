@@ -17,6 +17,17 @@ import GithubRepository from "./Repository";
 
 type ModalType = "language" | "palette" | null;
 
+const sheet = {
+  open: {
+    y: -150,
+    transition: { duration: 0.3 },
+  },
+  closed: {
+    y: 250,
+    transition: { duration: 0.3 },
+  },
+};
+
 const BottomSheet: React.FC = () => {
   const { isMobileMenuOpen } = useTypedSelector((state) => state.global);
   const { toggleMobileMenu, toggleThemeMode } = useActions();
@@ -56,7 +67,12 @@ const BottomSheet: React.FC = () => {
   };
 
   return (
-    <Styled.ExpandedMenuContainer ref={ref} isOpen={isMobileMenuOpen}>
+    <Styled.ExpandedMenuContainer
+      ref={ref}
+      initial={false}
+      variants={sheet}
+      animate={isMobileMenuOpen ? "open" : "closed"}
+    >
       <MenuIcon size={35} onClick={handleCloseMobileMenu} />
       <Modal
         isShown={isShown}

@@ -1,5 +1,6 @@
 import { Breakpoints } from "constants/Global";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 interface MobileMenuProps {
   isVisible: boolean;
@@ -53,7 +54,7 @@ export const MenuItem = styled.div<Partial<MobileMenuProps>>`
   }
 `;
 
-export const ExpandedMenuContainer = styled.div<Partial<MobileMenuProps>>`
+export const ExpandedMenuContainer = styled(motion.div)`
   -webkit-box-shadow: inset 0px 7px 3px -3px ${({ theme }) => theme.border};
   -moz-box-shadow: inset 0px 7px 3px -3px ${({ theme }) => theme.border};
   box-shadow: inset 0px 5px 3px -3px ${({ theme }) => theme.border};
@@ -61,10 +62,9 @@ export const ExpandedMenuContainer = styled.div<Partial<MobileMenuProps>>`
   // border-top-left-radius: 1rem;
   // border-top-right-radius: 1rem;
   height: 27rem;
-  bottom: 0rem;
+  // bottom: 0rem;
   left: 0;
   right: 0;
-  ${({ isOpen }) => !isOpen && "bottom: -28rem;"}
   position: absolute;
   transition: all 0.5s ease;
   z-index: -1;

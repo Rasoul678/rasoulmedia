@@ -61,7 +61,7 @@ const MobileMenu: React.FC = () => {
       </Styled.MenuItem>
       <Styled.MenuItem onClick={handleMenuClick} isOpen={isMobileMenuOpen}>
         <BottomSheet />
-        {!isMobileMenuOpen && <MenuIcon size={35} />}
+        {!isMobileMenuOpen && <MenuIcon onClick={handleMenuClick} size={35} />}
       </Styled.MenuItem>
       <Styled.MenuItem
         onMouseEnter={() => lottie.play("code")}
@@ -69,7 +69,7 @@ const MobileMenu: React.FC = () => {
         as={CustomLink}
         to="/code"
       >
-        <CodeLottie style={{ height: "5rem", width: "5rem" }} />
+        <CodeLottie style={{ height: "4.7rem", width: "4.7rem" }} />
       </Styled.MenuItem>
       <Styled.MenuItem
         onMouseEnter={() => lottie.play("contact")}
