@@ -20,11 +20,11 @@ type ModalType = "language" | "palette" | null;
 const sheet = {
   open: {
     y: -150,
-    transition: { duration: 0.3 },
+    transition: { duration: 0.1 },
   },
   closed: {
     y: 250,
-    transition: { duration: 0.3 },
+    transition: { duration: 0.1 },
   },
 };
 
