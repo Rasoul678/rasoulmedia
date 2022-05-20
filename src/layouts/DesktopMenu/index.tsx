@@ -73,6 +73,8 @@ const DesktopMenu: React.FC<DesktopMenuProps> = () => {
       cursor: "pointer",
       ...(select === "lang" ? { width: "6rem" } : { width: "3rem" }),
       height: "1.8rem",
+      color: themePallet.pallets[selectedPallet].text + "!important",
+      fontSize: "1.2rem",
     }),
   });
 
@@ -118,9 +120,9 @@ const DesktopMenu: React.FC<DesktopMenuProps> = () => {
         </Styled.SettingWrapper>
         <Styled.SettingWrapper onClick={handleToggle}>
           {themeMode === "dark" ? (
-            <SunIcon size={30} />
+            <SunIcon size={32} color="#F8C004" />
           ) : (
-            <MoonIcon className="dark-mode" size={25} />
+            <MoonIcon size={30} />
           )}
         </Styled.SettingWrapper>
       </Styled.MenuItemsWrapper>

@@ -23,7 +23,7 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
     font-family: IRANSans, Ubuntu, Helvetica, Arial, Roboto, sans-serif;
-    transition: all 0.2s linear;
+    transition: all 0.3s linear;
     user-select: none;
   }
 

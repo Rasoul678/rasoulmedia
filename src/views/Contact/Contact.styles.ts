@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const InputsWrapper = styled.div`
@@ -21,7 +22,7 @@ export const FormTitle = styled.h2`
   margin-top: 2rem;
 `;
 
-export const SocialWrapper = styled.div`
+export const SocialWrapper = styled(motion.div)`
   position: relative;
   cursor: pointer;
 `;

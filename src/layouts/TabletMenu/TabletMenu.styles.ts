@@ -13,7 +13,7 @@ export const TabletNavbar = styled(motion.nav)<TabletNavbarProps>`
   ${float}: 0;
   bottom: 0;
   width: ${({ isOpen }) => (isOpen ? "15rem" : "0")};
-  z-index: 100;
+  z-index: 2000;
 `;
 
 export const TabletNavbarBg = styled(motion.div)`

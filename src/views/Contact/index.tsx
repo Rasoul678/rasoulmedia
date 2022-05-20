@@ -8,7 +8,6 @@ import sendMailJson from "assets/animations/lordicons/green/177-envelope-mail-se
 import { sendEmail } from "utils/helpers";
 import { View } from "components/Global/GlobalStyles";
 import * as Styled from "./Contact.styles";
-import Socials from "./Socials";
 import renderToast from "utils/renderToast";
 import MainLayout from "layouts/Main";
 
@@ -136,7 +135,6 @@ const Contact: React.FC = () => {
             {t("send")}
           </Button>
         </Styled.InputsWrapper>
-        <Socials />
       </MainLayout>
     </View>
   );
