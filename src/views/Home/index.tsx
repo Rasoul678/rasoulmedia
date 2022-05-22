@@ -7,6 +7,10 @@ import MobileIcon from "components/Icons/MobileIcon";
 import TabletIcon from "components/Icons/TabletIcon";
 import LapTopIcon from "components/Icons/LapTopIcon";
 import MainLayout from "layouts/Main";
+// import BiographyEducation from "./timelines/Biography_Education";
+// import WorkExperience from "./timelines/WorkExperience";
+// import Box from "components/Box";
+// import Slider from "components/Slider";
 
 const DesktopGallery = lazy(() => import("components/HomeGallery/laptop"));
 
@@ -16,32 +20,15 @@ const Home: React.FC<IHomeProps> = () => {
   return (
     <View>
       <MainLayout>
-      <DesktopGallery />
-        <div className="bio">
-          {/* <BiographyEducation />
-          <WorkExperience /> */}
-        </div>
-        <div>
-          <h1>Hello</h1>
-        </div>
-        <div>
-          <h1>Hello</h1>
-        </div>
-        <div>
-          <h1>Hello</h1>
-        </div>
-        <div>
-          <h1>Hello</h1>
-        </div>
-        <div>
-          <h1>Hello</h1>
-        </div>
+        <DesktopGallery />
+        {/* <BiographyEducation />
+        <WorkExperience /> */}
         <Styled.DevicesWrapper>
           <MobileIcon size={30} />
           <TabletIcon size={30} />
           <LapTopIcon size={35} />
         </Styled.DevicesWrapper>
-        {/* <Footer /> */}
+        <Footer />
       </MainLayout>
     </View>
   );

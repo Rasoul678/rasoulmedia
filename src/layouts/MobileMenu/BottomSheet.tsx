@@ -14,6 +14,7 @@ import SelectLanguage from "./SelectLanguage";
 import SelectPalette from "./SelectPalette";
 import useLanguages from "hooks/useLanguages";
 import GithubRepository from "./Repository";
+import AppLoader from "components/AppLoader";
 
 type ModalType = "language" | "palette" | null;
 
@@ -29,10 +30,14 @@ const sheet = {
 };
 
 const BottomSheet: React.FC = () => {
-  const { isMobileMenuOpen } = useTypedSelector((state) => state.global);
+  const { isMobileMenuOpen, themeMode } = useTypedSelector(
+    (state) => state.global
+  );
   const { toggleMobileMenu, toggleThemeMode } = useActions();
   const ref = useRef<HTMLDivElement>(null);
-  const { themeMode } = useTypedSelector((state) => state.global);
+  const { error, isLoading, repositories } = useTypedSelector(
+    (state) => state.github
+  );
   const { t, i18n } = useTranslation();
   const { isShown, toggle } = useModal();
   const [modalType, setModalType] = useState<ModalType>(null);
@@ -85,9 +90,9 @@ const BottomSheet: React.FC = () => {
       <Styled.MenuCellsContainer>
         <Styled.MenuCellWrapper onClick={handleToggle}>
           {themeMode === "dark" ? (
-            <SunIcon size={40} />
+            <SunIcon size={50} color="#F8C004" />
           ) : (
-            <MoonIcon className="dark-mode" size={40} />
+            <MoonIcon className="dark-mode" size={50} color="#333" />
           )}
         </Styled.MenuCellWrapper>
         <Styled.MenuCellWrapper>
@@ -96,13 +101,19 @@ const BottomSheet: React.FC = () => {
           </Styled.LangCellWrapper>
         </Styled.MenuCellWrapper>
         <Styled.MenuCellWrapper onClick={handleSelect("palette")}>
-          <ColorPaletteIcon size={40} />
+          <ColorPaletteIcon size={50} />
         </Styled.MenuCellWrapper>
       </Styled.MenuCellsContainer>
       <Styled.MenuSlidesContainer>
-        {[1, 2, 3, 4, 5, 6]?.map((i) => {
-          return <GithubRepository key={i} />;
-        })}
+        {isLoading && (
+          <div className="slider-loader-container ">
+            <AppLoader />
+          </div>
+        )}
+        {!isLoading &&
+          repositories?.map((repo) => {
+            return <GithubRepository repo={repo} key={repo?.id} />;
+          })}
       </Styled.MenuSlidesContainer>
     </Styled.ExpandedMenuContainer>
   );

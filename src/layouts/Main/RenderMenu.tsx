@@ -4,6 +4,10 @@ import OnTablet from "components/MediaQuery/Tablet";
 import OnDesktop from "components/MediaQuery/Desktop";
 import OnBigScreen from "components/MediaQuery/BigScreen";
 
+const MobileMenu = lazy(
+  () => import(/*webpackChunkName: "Mobile_Menu"*/ "layouts/MobileMenu")
+);
+
 const TabletMenu = lazy(
   () => import(/*webpackChunkName: "Tablet_Menu"*/ "layouts/TabletMenu")
 );
@@ -16,7 +20,7 @@ const RenderMenu: React.FC = () => {
   return (
     <>
       <OnMobile>
-        <TabletMenu />
+        <MobileMenu />
       </OnMobile>
       <OnTablet>
         <TabletMenu />

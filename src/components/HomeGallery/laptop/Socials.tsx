@@ -56,8 +56,8 @@ const Socials: React.FC<SocialsProps> = () => {
         gap="1.5rem"
       >
         <Styled.SocialWrapper
-          onHoverStart={() => handleMouseEnter("twitter")}
-          onHoverEnd={() => handleMouseLeave("twitter")}
+          onHoverStart={handleMouseEnter("twitter")}
+          onHoverEnd={handleMouseLeave("twitter")}
           onClick={handleClick(Links.twitter)}
         >
           <TwitterLottie color={memoColors[0]} style={{ width: "3rem" }} />

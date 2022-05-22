@@ -8,7 +8,7 @@ export const HomeGalleryContainer = styled.div`
   height: 100vh;
   position: relative;
 
-  @media only screen and (min-width: 1000px) {
+  @media only screen and (min-width: 1030px) {
     height: calc(100vh - 4rem);
   }
 
@@ -59,7 +59,7 @@ export const IntroductionContainer = styled(motion.div)`
   justify-content: space-between;
   align-items: center;
 
-  @media only screen and (min-width: 1000px) {
+  @media only screen and (min-width: 1030px) {
     flex-direction: row-reverse;
     padding: 0rem 7rem;
 
@@ -79,13 +79,23 @@ export const IntroductionInfoWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   gap: 6rem;
 
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 1030px) {
     align-items: center;
     gap: 1rem;
+  }
+
+  @media only screen and (max-width: 550px) {
+    margin-top: 20%;
+    gap: 6rem;
+  }
+
+  @media only screen and (min-width: 1030px) {
+    margin-top: 20%;
+    gap: 5rem;
   }
 `;
 
@@ -129,7 +139,7 @@ export const ArrowDownWrapper = styled(motion.div)`
   z-index: 100;
 
   @media (max-width: ${Breakpoints.mobile}px) {
-    top: 80% !important;
+    top: 75% !important;
   }
 `;
 
@@ -189,5 +199,9 @@ export const Image = styled(motion.img)`
   -webkit-user-select: none;
   -ms-user-select: none;
   border-radius: 50%;
-  width: 10rem;
+  max-width: 12rem;
+
+  @media only screen and (max-width: 1030px) {
+    width: 9rem;
+  }
 `;

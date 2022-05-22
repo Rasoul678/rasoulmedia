@@ -155,14 +155,14 @@ export const MenuSlider = styled.div`
 export const MenuCellWrapper = styled.div`
   width: 75%;
   aspect-ratio: 1;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.card.backgroundColor};
-  box-shadow: 0px 0px 5px 0px ${({ theme }) => theme.card.backgroundColor};
+  background-color: transparent;
+  // box-shadow: 0px 0px 5px 0px ${({ theme }) => theme.card.backgroundColor};
 
   @supports (backdrop-filter: blur(10px)) {
     backdrop-filter: blur(20px);

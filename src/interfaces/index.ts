@@ -42,3 +42,29 @@ export type ThemePallet = {
 export interface ThemePallets {
   [key: string]: ThemePallet;
 }
+
+interface GithubLanguage {
+  color: string;
+  name: string;
+  __typename: string;
+}
+
+interface GithubCountable {
+  totalCount: number;
+  __typename: string;
+}
+
+export interface Repository {
+  id: string;
+  name: string;
+  stargazers: GithubCountable;
+  forks: GithubCountable;
+  issues: GithubCountable;
+  watchers: GithubCountable;
+  languages: {
+    __typename: string;
+    nodes: GithubLanguage[];
+  };
+  url: string;
+  __typename: string;
+}

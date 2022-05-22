@@ -3,10 +3,11 @@ import styled from "styled-components";
 const { float } = window;
 
 export const FooterContainer = styled.div`
-  position: relative;
   text-align: center;
   background: transparent;
-  margin-top: 5rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
 `;
 
 export const FooterWaves = styled.svg`
@@ -120,16 +121,12 @@ export const SeaCreaturesWrapper = styled.div`
 
 export const FooterText = styled.div`
   text-align: center;
-  position: absolute;
-  bottom: -10rem;
-  ${float}: 0;
-  color: #000;
+  font-size: 1rem;
+  color: ${({ theme }) => theme.text};
   font-weight: 500;
-  font-size: 0.8rem;
-  z-index: 10;
   width: 100%;
 
-  @media only screen and (min-width: 550px) {
-    bottom: -10rem;
+  @media only screen and (max-width: 550px) {
+    font-size: 0.8rem;
   }
 `;
