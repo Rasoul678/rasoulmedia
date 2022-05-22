@@ -69,7 +69,7 @@ export const IntroductionContainer = styled(motion.div)`
 
   @media only screen and (min-width: 1030px) {
     flex-direction: row-reverse;
-    padding: 0rem 7rem;
+    padding: 0rem 9rem;
 
     img {
       width: 15rem;
@@ -127,8 +127,10 @@ export const UserNameWrapper = styled(motion.h2)`
 
 export const UserSkills = styled(motion.h2)`
   color: ${({ theme }) => theme.border};
+  font-size: 1.2rem;
+
   @media only screen and (max-width: 650px) {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 `;
 
@@ -204,6 +206,22 @@ export const AstronautWrapper = styled(motion.div)`
   align-items: center;
 `;
 
+export const ImageWrapper = styled.div`
+  background-color: #e5e5e5;
+  width: 12.5rem;
+  height: 12.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+
+  @media only screen and (max-width: 1030px) {
+    width: 9rem;
+    height: 9rem;
+  }
+`;
+
 export const Image = styled(motion.img)`
   user-drag: none;
   -webkit-user-drag: none;
@@ -211,8 +229,8 @@ export const Image = styled(motion.img)`
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-  border-radius: 50%;
   max-width: 12rem;
+  object-position: -0.6rem 0;
 
   @media only screen and (max-width: 1030px) {
     width: 9rem;

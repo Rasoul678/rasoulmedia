@@ -1,6 +1,9 @@
 import { Breakpoints } from "constants/Global";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import BG from "../../assets/bg/bg7.jpg";
+import BG1 from "../../assets/bg/bg2.jpg";
+import BG2 from "../../assets/bg/bg10.jpg";
 
 interface MobileMenuProps {
   isVisible: boolean;
@@ -130,6 +133,8 @@ export const MenuSlider = styled.div`
   justify-content: space-between;
   align-items: stretch;
   gap: 0.5rem;
+  background-image: url(${BG});
+  background-size: cover;
 
   .repo-slide-header {
     // border: 1px solid #fff;
@@ -279,11 +284,14 @@ export const CountWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1em;
-  height: 2.5em;
-  border-radius: 0.5rem;
+  height: 2rem;
+  border-radius: 1rem;
   background-color: ${({ theme }) => theme.colors[0]};
   transition: all 0.5s linear;
-  padding: 0.5rem 0.3rem;
+  // padding: 0.5rem;
+  font-size: 0.8rem;
+  background-image: url(${BG1});
+  background-size: cover;
 
   svg {
     width: 1.3rem;
@@ -292,6 +300,8 @@ export const CountWrapper = styled.div`
 
 export const Count = styled.span`
   font-size: 1.2em;
+  font-weight: bold;
+  color: #fff;
 `;
 
 export const RepoLanguagesContainer = styled.div`

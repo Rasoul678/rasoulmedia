@@ -5,7 +5,7 @@ import reactStringReplace from "react-string-replace";
 import * as Styled from "./LapTopGallery.styles";
 import CustomTypewriter from "components/CustomTypewriter";
 import ScrollDown from "components/Lotties/ScrollDown";
-import ProfilePic from "assets/profile-pic-1.jpg";
+import ProfilePic from "assets/profile-pic-2.jpg";
 import Socials from "./Socials";
 import Flex from "components/Flex";
 
@@ -16,13 +16,15 @@ const HomeGallery: React.FC = () => {
     <Styled.HomeGalleryContainer>
       <Styled.IntroductionContainer>
         <Flex flexDirection="column" alignItems="center">
-          <Styled.Image
-            initial={{ scale: 0 }}
-            animate={{ scale: 1.1 }}
-            transition={{ duration: 0.3 }}
-            src={ProfilePic}
-            alt="My-Picture"
-          />
+          <Styled.ImageWrapper>
+            <Styled.Image
+              initial={{ scale: 0 }}
+              animate={{ scale: 1.1 }}
+              transition={{ duration: 0.3 }}
+              src={ProfilePic}
+              alt="My-Picture"
+            />
+          </Styled.ImageWrapper>
           <Socials />
         </Flex>
         <Styled.IntroductionInfoWrapper>

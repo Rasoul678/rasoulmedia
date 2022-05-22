@@ -80,7 +80,7 @@ const GithubRepository: React.FC<GithubRepositoryProps> = (props) => {
       </Styled.RepoHeaderWrapper>
       <Styled.RepoCountsContainer>
         <Styled.CountWrapper>
-          <StarIcon size={20} />
+          <StarIcon size={15} />
           <Styled.Count>{stargazers_count}</Styled.Count>
         </Styled.CountWrapper>
         <Styled.CountWrapper>

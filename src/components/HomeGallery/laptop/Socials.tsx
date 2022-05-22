@@ -53,7 +53,7 @@ const Socials: React.FC<SocialsProps> = () => {
         width="100%"
         alignItems="center"
         justifyContent="center"
-        gap="1.5rem"
+        gap="0.5rem"
       >
         <Styled.SocialWrapper
           onHoverStart={handleMouseEnter("twitter")}
