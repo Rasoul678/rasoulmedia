@@ -22,10 +22,18 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#191919",endCo
       : `background: rgb(255,255,255);`}
 
   .typing {
-    font-size: 1.8rem;
+    font-size: 1rem;
+
+    @media only screen and (min-width: 450px) {
+      font-size: 1.8rem;
+    }
+
+    @media only screen and (min-width: 650px) {
+      font-size: 2rem;
+    }
 
     @media only screen and (min-width: 1000px) {
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
   }
 
@@ -85,17 +93,17 @@ export const IntroductionInfoWrapper = styled.div`
 
   @media only screen and (max-width: 1030px) {
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   @media only screen and (max-width: 550px) {
-    margin-top: 20%;
-    gap: 6rem;
+    margin-top: 10%;
+    gap: 3rem;
   }
 
   @media only screen and (min-width: 1030px) {
     margin-top: 20%;
-    gap: 5rem;
+    gap: 6rem;
   }
 `;
 
@@ -105,10 +113,15 @@ export const UserName = styled.span`
 
 export const UserNameWrapper = styled(motion.h2)`
   z-index: 100;
-  font-size: 2rem;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+
+  @media only screen and (min-width: 450px) {
+    font-size: 2rem;
+  }
 
   @media only screen and (min-width: 650px) {
-    font-size: 3.5rem;
+    font-size: 2.8rem;
   }
 `;
 
@@ -139,7 +152,7 @@ export const ArrowDownWrapper = styled(motion.div)`
   z-index: 100;
 
   @media (max-width: ${Breakpoints.mobile}px) {
-    top: 75% !important;
+    top: 70% !important;
   }
 `;
 

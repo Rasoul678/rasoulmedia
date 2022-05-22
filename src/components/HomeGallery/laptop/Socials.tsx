@@ -60,7 +60,7 @@ const Socials: React.FC<SocialsProps> = () => {
           onHoverEnd={handleMouseLeave("twitter")}
           onClick={handleClick(Links.twitter)}
         >
-          <TwitterLottie color={memoColors[0]} style={{ width: "3rem" }} />
+          <TwitterLottie color={memoColors[0]} style={{ maxWidth: "3rem" }} />
         </Styled.SocialWrapper>
 
         <Styled.SocialWrapper
@@ -68,21 +68,21 @@ const Socials: React.FC<SocialsProps> = () => {
           onMouseLeave={handleMouseLeave("linkedin")}
           onClick={handleClick(Links.linkedin)}
         >
-          <LinkedinLottie color={memoColors[1]} style={{ width: "3rem" }} />
+          <LinkedinLottie color={memoColors[1]} style={{ maxWidth: "3rem" }} />
         </Styled.SocialWrapper>
         <Styled.SocialWrapper
           onMouseEnter={handleMouseEnter("instagram")}
           onMouseLeave={handleMouseLeave("instagram")}
           onClick={handleClick(Links.instagram)}
         >
-          <InstagramLottie color={memoColors[2]} style={{ width: "3rem" }} />
+          <InstagramLottie color={memoColors[2]} style={{ maxWidth: "3rem" }} />
         </Styled.SocialWrapper>
         <Styled.SocialWrapper
           onMouseEnter={handleMouseEnter("facebook")}
           onMouseLeave={handleMouseLeave("facebook")}
           onClick={handleClick(Links.facebook)}
         >
-          <FacebookLottie color={memoColors[3]} style={{ width: "3rem" }} />
+          <FacebookLottie color={memoColors[3]} style={{ maxWidth: "3rem" }} />
         </Styled.SocialWrapper>
       </Flex>
     </Flex>

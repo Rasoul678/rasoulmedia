@@ -104,7 +104,7 @@ export const MenuCellsContainer = styled.div`
 export const MenuSlidesContainer = styled.div`
   width: 100%;
   aspect-ratio: 1.6;
-  // height: calc(100% - 15rem);
+  height: calc(100% - 14rem);
   scroll-snap-type: x mandatory;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
