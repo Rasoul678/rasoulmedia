@@ -1,6 +1,5 @@
-import { Repository } from "interfaces";
 import { openNewTab } from "utils/helpers";
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import * as Styled from "./MobileMenu.styles";
 import ExternalLinkIcon from "components/Icons/ExternalLinkIcon";
 import StarIcon from "components/Icons/StarIcon";
@@ -16,46 +15,57 @@ import DockerIcon from "components/Icons/DockerIcon";
 import VueJsIcon from "components/Icons/VueJsIcon";
 
 interface GithubRepositoryProps {
-  repo: Repository;
+  repo: any;
 }
 
 const GithubRepository: React.FC<GithubRepositoryProps> = (props) => {
+  const [languages, setLanguages] = useState({});
   const {
     repo: {
-      url,
       name,
-      stargazers: { totalCount: starsCount },
-      forks: { totalCount: forksCount },
-      issues: { totalCount: issuesCount },
-      watchers: { totalCount: watchersCount },
-      languages: { nodes: langs },
+      stargazers_count,
+      forks_count,
+      watchers_count,
+      languages_url,
     },
   } = props;
 
-  const getLangIcon = (lang: { name: string; color: string }) => {
-    const { name, color } = lang;
+  useEffect(() => {
+    let controller = new AbortController();
+    let signal = controller.signal;
 
-    switch (name) {
+    fetch(languages_url, { signal })
+      .then((res) => res.json())
+      .then((data) => setLanguages(data))
+      .catch((err) => console.log(err));
+
+    return () => {
+      controller.abort();
+    };
+  }, [languages_url]);
+
+  const getLangIcon = (lang: string) => {
+    switch (lang) {
       case "CSS":
-        return <CSS3Icon size={40} color={color} />;
+        return <CSS3Icon size={40} color="#0066B6" />;
 
       case "PHP":
-        return <PHPIcon size={40} color={color} />;
+        return <PHPIcon size={40} color="#828BB4" />;
 
       case "JavaScript":
-        return <JavascriptIcon size={40} color={color} />;
+        return <JavascriptIcon size={40} color="#EAD41C" />;
 
       case "HTML":
-        return <HTML5Icon size={40} color={color} />;
+        return <HTML5Icon size={40} color="#D84924" />;
 
       case "Dockerfile":
-        return <DockerIcon size={40} color={color} />;
+        return <DockerIcon size={40} color="#228EE1" />;
 
       case "TypeScript":
-        return <TypescriptIcon size={40} color={color} />;
+        return <TypescriptIcon size={40} color="#2F72BC" />;
 
       case "Vue":
-        return <VueJsIcon size={40} color={color} />;
+        return <VueJsIcon size={40} color="#55AF7C" />;
 
       default:
         return null;
@@ -64,18 +74,18 @@ const GithubRepository: React.FC<GithubRepositoryProps> = (props) => {
 
   return (
     <Styled.MenuSlider>
-      <Styled.RepoHeaderWrapper onClick={() => openNewTab(url)}>
+      <Styled.RepoHeaderWrapper onClick={() => openNewTab("url")}>
         <div className="repo-slide-header">{name}</div>
         <ExternalLinkIcon className="repo-external-link" size={30} />
       </Styled.RepoHeaderWrapper>
       <Styled.RepoCountsContainer>
         <Styled.CountWrapper>
           <StarIcon size={20} />
-          <Styled.Count>{starsCount}</Styled.Count>
+          <Styled.Count>{stargazers_count}</Styled.Count>
         </Styled.CountWrapper>
         <Styled.CountWrapper>
-          <GitForkIcon size={30} />
-          <Styled.Count>{forksCount}</Styled.Count>
+          <GitForkIcon size={35} />
+          <Styled.Count>{forks_count}</Styled.Count>
         </Styled.CountWrapper>
         {/* <Styled.CountWrapper>
           <OpenIssueIcon size={25} />
@@ -83,11 +93,11 @@ const GithubRepository: React.FC<GithubRepositoryProps> = (props) => {
         </Styled.CountWrapper> */}
         <Styled.CountWrapper>
           <EyeIcon size={25} />
-          <Styled.Count>{watchersCount}</Styled.Count>
+          <Styled.Count>{watchers_count}</Styled.Count>
         </Styled.CountWrapper>
       </Styled.RepoCountsContainer>
       <Styled.RepoLanguagesContainer>
-        {langs.map((lang, index) => (
+        {Object.keys(languages)?.map((lang, index) => (
           <Fragment key={index}>{getLangIcon(lang)}</Fragment>
         ))}
       </Styled.RepoLanguagesContainer>

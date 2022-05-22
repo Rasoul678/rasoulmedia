@@ -1,4 +1,3 @@
-import { Repository } from "interfaces";
 import { ActionType } from "../action-types";
 
 export type ThemeMode = "light" | "dark";
@@ -20,7 +19,7 @@ export interface SetThemePalette {
 
 export interface SetGithubRepos {
   type: ActionType.SET_GITHUB_REPOS;
-  payload: Repository[];
+  payload: any[];
 }
 
 export interface SetGithubLoading {

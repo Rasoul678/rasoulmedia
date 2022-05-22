@@ -1,3 +1,4 @@
+import { Dispatch } from "react";
 import { ActionType } from "../action-types";
 import {
   ToggleThemeMode,
@@ -6,11 +7,6 @@ import {
   SetThemePalette,
   Action,
 } from "../actions";
-
-import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
-import { Dispatch } from "react";
-import { getRepositoriesQuery } from "queries";
 
 export const toggleThemeMode = (themeMode: ThemeMode): ToggleThemeMode => {
   return { type: ActionType.TOGGLE_THEME_MODE, payload: themeMode };
@@ -25,39 +21,19 @@ export const setThemePalette = (palette: string): SetThemePalette => {
 };
 
 export const getGithubRepositories = () => {
-  const httpLink = createHttpLink({
-    uri: "https://api.github.com/graphql",
-  });
-
-  const authLink = setContext((_, { headers }) => {
-    return {
-      headers: {
-        ...headers,
-        authorization: `Bearer ${process.env.REACT_APP_GITHUB_PERSONAL_ACCESS_TOKEN}`,
-      },
-    };
-  });
-
-  const client = new ApolloClient({
-    link: authLink.concat(httpLink),
-    cache: new InMemoryCache(),
-  });
-
   return async (dispatch: Dispatch<Action>) => {
     dispatch({ type: ActionType.SET_GITHUB_LOADING, payload: true });
 
     try {
-      const { data } = await client.query({
-        query: getRepositoriesQuery,
-      });
+      const response = await fetch(
+        "https://api.github.com/users/rasoul678/repos?per_page=100"
+      );
+      const repos = await response.json();
 
-      const { user } = data;
-      const pinnedItems = user.pinnedItems.edges.map((edge: any) => edge.node);
+      const myOwnRepos = repos.filter((repo: any) => !repo.fork);
 
       dispatch({ type: ActionType.SET_GITHUB_LOADING, payload: false });
-      dispatch({ type: ActionType.SET_GITHUB_REPOS, payload: pinnedItems });
-
-      // console.log(data);
+      dispatch({ type: ActionType.SET_GITHUB_REPOS, payload: myOwnRepos });
     } catch (error) {
       dispatch({ type: ActionType.SET_GITHUB_LOADING, payload: false });
       dispatch({

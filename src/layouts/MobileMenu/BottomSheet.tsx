@@ -35,9 +35,7 @@ const BottomSheet: React.FC = () => {
   );
   const { toggleMobileMenu, toggleThemeMode } = useActions();
   const ref = useRef<HTMLDivElement>(null);
-  const { error, isLoading, repositories } = useTypedSelector(
-    (state) => state.github
-  );
+  const { isLoading, repositories } = useTypedSelector((state) => state.github);
   const { t, i18n } = useTranslation();
   const { isShown, toggle } = useModal();
   const [modalType, setModalType] = useState<ModalType>(null);
@@ -58,6 +56,7 @@ const BottomSheet: React.FC = () => {
       toggle();
       setModalType(type);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getModalContent = (type: ModalType) => {

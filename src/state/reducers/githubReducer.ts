@@ -1,10 +1,9 @@
 import produce from "immer";
 import { ActionType } from "../action-types";
 import { Action } from "../actions";
-import { Repository } from "interfaces";
 
 interface GithubState {
-  repositories: Repository[];
+  repositories: any[];
   isLoading: boolean;
   error: string;
 }

@@ -296,7 +296,6 @@ export const Count = styled.span`
 
 export const RepoLanguagesContainer = styled.div`
   border-radius: 0.5rem;
-  background-color: ${({ theme }) => theme.colors[0]};
   display: flex;
   justify-content: flex-start;
   align-items: center;
