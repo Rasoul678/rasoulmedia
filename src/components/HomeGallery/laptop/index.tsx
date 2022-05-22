@@ -33,7 +33,7 @@ const HomeGallery: React.FC = () => {
               transition={{ duration: 0.3 }}
             >
               {reactStringReplace(t("welcome-intro"), t("me"), (match, i) => (
-                <Styled.Name key={i}>{match} Rostami</Styled.Name>
+                <Styled.Name key={i}>{match} Rostami!!</Styled.Name>
               ))}
             </Styled.UserNameWrapper>
             <Styled.UserSkills
