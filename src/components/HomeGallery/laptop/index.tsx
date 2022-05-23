@@ -76,7 +76,7 @@ const HomeGallery: React.FC = () => {
       >
         <ScrollLink
           activeClass="active"
-          to="bio"
+          to="github-repos"
           spy={true}
           smooth={true}
           duration={500}

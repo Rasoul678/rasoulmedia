@@ -77,12 +77,9 @@ const GithubRepository: React.FC<GithubRepositoryProps> = (props) => {
   return (
     <Styled.MenuSlider>
       <Styled.HeaderWrapper>
-        <img
+        <Styled.RepoImage
           src={avatar_url}
-          alt="test"
-          width="45"
-          height="45"
-          style={{ borderRadius: "50%" }}
+          alt={login}
         />
         <span>{login}</span>
       </Styled.HeaderWrapper>

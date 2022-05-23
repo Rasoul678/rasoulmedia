@@ -134,6 +134,7 @@ export const MenuSlider = styled.div`
   gap: 0.3rem;
   background-image: url(${BG});
   background-size: cover;
+  width: 100%;
 
   .repo-slide-title {
     // border: 1px solid #fff;
@@ -166,6 +167,17 @@ export const HeaderWrapper = styled.div`
   align-items: center;
   gap: 0.5rem;
   color: #ccc;
+`;
+
+export const RepoImage = styled.img`
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+
+  @media only screen and (min-width: 450px) {
+    width: 4rem;
+    height: 4rem;
+  }
 `;
 
 export const MenuCellWrapper = styled.div`

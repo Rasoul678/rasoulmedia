@@ -3,7 +3,7 @@ import "./carousel.css";
 
 interface CarouselSliderProps {}
 
-const CarouselSlider: React.FC<CarouselSliderProps> = ({}) => {
+const CarouselSlider: React.FC<CarouselSliderProps> = () => {
   return (
     <section className="carousel" aria-label="Gallery">
       <ol className="carousel__viewport">
