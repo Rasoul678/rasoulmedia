@@ -27,6 +27,8 @@ const GithubRepository: React.FC<GithubRepositoryProps> = (props) => {
       forks_count,
       watchers_count,
       languages_url,
+      html_url,
+      owner: { avatar_url, login },
     },
   } = props;
 
@@ -47,25 +49,25 @@ const GithubRepository: React.FC<GithubRepositoryProps> = (props) => {
   const getLangIcon = (lang: string) => {
     switch (lang) {
       case "CSS":
-        return <CSS3Icon size={40} color="#0066B6" />;
+        return <CSS3Icon size={20} color="#0066B6" />;
 
       case "PHP":
-        return <PHPIcon size={40} color="#828BB4" />;
+        return <PHPIcon size={20} color="#828BB4" />;
 
       case "JavaScript":
-        return <JavascriptIcon size={40} color="#EAD41C" />;
+        return <JavascriptIcon size={20} color="#EAD41C" />;
 
       case "HTML":
-        return <HTML5Icon size={40} color="#D84924" />;
+        return <HTML5Icon size={20} color="#D84924" />;
 
       case "Dockerfile":
-        return <DockerIcon size={40} color="#228EE1" />;
+        return <DockerIcon size={20} color="#228EE1" />;
 
       case "TypeScript":
-        return <TypescriptIcon size={40} color="#2F72BC" />;
+        return <TypescriptIcon size={20} color="#2F72BC" />;
 
       case "Vue":
-        return <VueJsIcon size={40} color="#55AF7C" />;
+        return <VueJsIcon size={20} color="#55AF7C" />;
 
       default:
         return null;
@@ -74,8 +76,18 @@ const GithubRepository: React.FC<GithubRepositoryProps> = (props) => {
 
   return (
     <Styled.MenuSlider>
-      <Styled.RepoHeaderWrapper onClick={() => openNewTab("url")}>
-        <div className="repo-slide-header">{name}</div>
+      <Styled.HeaderWrapper>
+        <img
+          src={avatar_url}
+          alt="test"
+          width="45"
+          height="45"
+          style={{ borderRadius: "50%" }}
+        />
+        <span>{login}</span>
+      </Styled.HeaderWrapper>
+      <Styled.RepoHeaderWrapper onClick={() => openNewTab(html_url)}>
+        <div className="repo-slide-title">{name}</div>
         <ExternalLinkIcon className="repo-external-link" size={30} />
       </Styled.RepoHeaderWrapper>
       <Styled.RepoCountsContainer>

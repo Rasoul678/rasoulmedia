@@ -56,7 +56,7 @@ const BottomSheet: React.FC = () => {
       toggle();
       setModalType(type);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getModalContent = (type: ModalType) => {

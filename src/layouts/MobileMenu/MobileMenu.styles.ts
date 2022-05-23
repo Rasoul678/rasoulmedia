@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import BG from "../../assets/bg/bg7.jpg";
 import BG1 from "../../assets/bg/bg2.jpg";
-import BG2 from "../../assets/bg/bg10.jpg";
 
 interface MobileMenuProps {
   isVisible: boolean;
@@ -124,7 +123,7 @@ export const MenuSlider = styled.div`
   border-radius: 1rem;
   height: 100%;
   aspect-ratio: 1.5;
-  padding: 0.7rem;
+  padding: 0.3rem;
   scroll-snap-align: center;
   scroll-snap-stop: always;
   font-size: 1rem;
@@ -132,29 +131,41 @@ export const MenuSlider = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
-  gap: 0.5rem;
+  gap: 0.3rem;
   background-image: url(${BG});
   background-size: cover;
 
-  .repo-slide-header {
+  .repo-slide-title {
     // border: 1px solid #fff;
     width: 90%;
     color: #ccc;
-    font-size: 1.1em;
-    font-weight: 500;
+    // font-size: 1.1em;
+    // font-weight: 500;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     text-transform: capitalize;
+    text-align: start;
   }
 
   svg.repo-external-link {
     transform: rotate(0deg);
-  }
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    width: 1.2rem;
 
-  svg {
-    width: 1.6rem;
+    @media only screen and (max-width: 450px) {
+      opacity: 1;
+    }
   }
+`;
+
+export const HeaderWrapper = styled.div`
+  display: flex;
+  justify-content: fles-start;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ccc;
 `;
 
 export const MenuCellWrapper = styled.div`
@@ -271,6 +282,10 @@ export const RepoHeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  :hover svg.repo-external-link {
+    opacity: 1;
+  }
 `;
 
 export const RepoCountsContainer = styled.div`
@@ -284,17 +299,19 @@ export const CountWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1em;
-  height: 2rem;
+  height: 1.5rem;
+  width: 3rem;
+  margin: auto;
   border-radius: 1rem;
   background-color: ${({ theme }) => theme.colors[0]};
   transition: all 0.5s linear;
   // padding: 0.5rem;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   background-image: url(${BG1});
   background-size: cover;
 
   svg {
-    width: 1.3rem;
+    width: 1rem;
   }
 `;
 
