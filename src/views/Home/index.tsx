@@ -7,6 +7,7 @@ import MobileIcon from "components/Icons/MobileIcon";
 import TabletIcon from "components/Icons/TabletIcon";
 import LapTopIcon from "components/Icons/LapTopIcon";
 import MainLayout from "layouts/Main";
+import CarouselSlider from "components/CarouselSlider";
 // import BiographyEducation from "./timelines/Biography_Education";
 // import WorkExperience from "./timelines/WorkExperience";
 // import Box from "components/Box";
@@ -23,6 +24,7 @@ const Home: React.FC<IHomeProps> = () => {
         <DesktopGallery />
         {/* <BiographyEducation />
         <WorkExperience /> */}
+        <CarouselSlider />
         <Styled.DevicesWrapper>
           <MobileIcon size={30} />
           <TabletIcon size={30} />
