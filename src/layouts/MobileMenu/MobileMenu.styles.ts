@@ -103,19 +103,19 @@ export const MenuCellsContainer = styled.div`
   justify-items: center;
 `;
 
-export const MenuSlidesContainer = styled.div`
-  width: 100%;
-  aspect-ratio: 1.6;
-  height: calc(100% - 14rem);
-  scroll-snap-type: x mandatory;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-  padding: 1rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 0.8rem;
-`;
+// export const MenuSlidesContainer = styled.div`
+//   width: 100%;
+//   aspect-ratio: 1.6;
+//   height: calc(100% - 14rem);
+//   scroll-snap-type: x mandatory;
+//   overflow: scroll;
+//   -webkit-overflow-scrolling: touch;
+//   padding: 1rem;
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: center;
+//   gap: 0.8rem;
+// `;
 
 export const MenuSlider = styled.div`
   background: ${({ theme }) => theme.colors[1]};

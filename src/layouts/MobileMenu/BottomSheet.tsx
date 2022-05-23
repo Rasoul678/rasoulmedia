@@ -15,6 +15,7 @@ import SelectPalette from "./SelectPalette";
 import useLanguages from "hooks/useLanguages";
 import GithubRepository from "./Repository";
 import AppLoader from "components/AppLoader";
+import Slider from "components/Slider";
 
 type ModalType = "language" | "palette" | null;
 
@@ -103,7 +104,7 @@ const BottomSheet: React.FC = () => {
           <ColorPaletteIcon size={50} />
         </Styled.MenuCellWrapper>
       </Styled.MenuCellsContainer>
-      <Styled.MenuSlidesContainer>
+      <Slider height="calc(100% - 14rem)">
         {isLoading && (
           <div className="slider-loader-container ">
             <AppLoader />
@@ -113,7 +114,7 @@ const BottomSheet: React.FC = () => {
           repositories?.map((repo) => {
             return <GithubRepository repo={repo} key={repo?.id} />;
           })}
-      </Styled.MenuSlidesContainer>
+      </Slider>
     </Styled.ExpandedMenuContainer>
   );
 };
