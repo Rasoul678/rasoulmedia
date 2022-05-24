@@ -10,6 +10,9 @@ import MainLayout from "layouts/Main";
 import GithubRepos from "./items/github-repos";
 import { useMediaQuery } from "react-responsive";
 import Box from "components/Box";
+// import WorkExperience from "./timelines/WorkExperience";
+import Educations from "./items/educations";
+// import RAFLoader from "components/RAFLoader";
 
 const DesktopGallery = lazy(() => import("components/HomeGallery/laptop"));
 
@@ -26,6 +29,7 @@ const Home: React.FC<IHomeProps> = () => {
             <GithubRepos />
           </Box>
         )}
+        <Educations />
         <Styled.DevicesWrapper>
           <MobileIcon size={30} />
           <TabletIcon size={30} />

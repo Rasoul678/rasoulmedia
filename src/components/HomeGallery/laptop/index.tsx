@@ -80,6 +80,7 @@ const HomeGallery: React.FC = () => {
           smooth={true}
           duration={500}
           className="scroll-down-btn"
+          offset={-60}
         >
           <ScrollDown />
         </ScrollLink>

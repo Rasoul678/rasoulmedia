@@ -113,7 +113,7 @@ export const IntroductionInfoWrapper = styled.div`
   }
 
   @media only screen and (min-width: 1030px) {
-    margin-top: 20%;
+    padding-top: 10%;
     gap: 6rem;
   }
 `;
