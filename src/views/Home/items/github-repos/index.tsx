@@ -3,17 +3,24 @@ import SwiperCarousel from "components/Swiper";
 import { useTypedSelector } from "hooks/useTypedSelector";
 import AppLoader from "components/AppLoader";
 import GithubRepository from "layouts/MobileMenu/Repository";
+import { useTranslation } from "react-i18next";
 
 interface GithubReposProps {}
 
 const GithubRepos: React.FC<GithubReposProps> = () => {
   const { isLoading, repositories } = useTypedSelector((state) => state.github);
+  const { t } = useTranslation();
 
   return (
-    <div style={{ width: "85%", margin: "auto" }} className="github-repos">
-      <h2 style={{ padding: "1rem" }}>Github Repositories</h2>
+    <section style={{ width: "90%", margin: "auto" }} className="github-repos">
+      <h2 style={{ padding: "0.5rem 0" }}>{t("git.repos")}</h2>
+      <h3 style={{ padding: "1rem 0" }}>{t("git.message")}</h3>
       <SwiperCarousel
-        style={{ height: "12rem", backgroundColor: "transparent" }}
+        style={{
+          height: "12rem",
+          backgroundColor: "transparent",
+          padding: "0.1rem 0",
+        }}
       >
         {isLoading && (
           <div className="slider-loader-container ">
@@ -25,7 +32,7 @@ const GithubRepos: React.FC<GithubReposProps> = () => {
             return <GithubRepository repo={repo} key={repo?.id} />;
           })}
       </SwiperCarousel>
-    </div>
+    </section>
   );
 };
 

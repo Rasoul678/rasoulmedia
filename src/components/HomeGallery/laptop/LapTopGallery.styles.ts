@@ -82,6 +82,17 @@ export const IntroductionContainer = styled(motion.div)`
   }
 `;
 
+export const IntroHead = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media only screen and (min-width: 1030px) {
+    margin-bottom: 3rem;
+    gap: 2rem;
+  }
+`;
+
 export const IntroductionInfoWrapper = styled.div`
   height: 100%;
   width: 100%;

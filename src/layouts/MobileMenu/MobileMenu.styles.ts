@@ -1,8 +1,8 @@
 import { Breakpoints } from "constants/Global";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import BG from "../../assets/bg/bg7.jpg";
-import BG1 from "../../assets/bg/bg2.jpg";
+import BG_Light from "../../assets/bg/bg9.jpg";
+import BG_Dark from "../../assets/bg/bg10.jpg";
 
 interface MobileMenuProps {
   isVisible: boolean;
@@ -132,28 +132,40 @@ export const MenuSlider = styled.div`
   justify-content: space-between;
   align-items: stretch;
   gap: 0.3rem;
-  background-image: url(${BG});
+  ${({ theme }) =>
+    theme.name === "dark"
+      ? `
+  background: linear-gradient(rgba(31, 40, 55, 0.4), rgba(31, 40, 55, 0.8)),
+    url(${BG_Dark});
+  `
+      : `
+      background: linear-gradient(rgba(227,231,234,0.2), rgba(227,231,234,0.5)),
+    url(${BG_Light});
+    `}
+  // background-image: url(${BG_Light});
   background-size: cover;
   width: 100%;
 
   .repo-slide-title {
     // border: 1px solid #fff;
     width: 90%;
-    color: #ccc;
-    // font-size: 1.1em;
-    // font-weight: 500;
+    // color: #ccc;
+    font-size: 1.2em;
+    font-weight: 500;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     text-transform: capitalize;
     text-align: start;
+    padding: 0 1rem;
   }
 
   svg.repo-external-link {
     transform: rotate(0deg);
     opacity: 0;
     transition: opacity 0.3s ease;
-    width: 1.2rem;
+    width: 1.5rem;
+    margin: 0 1rem;
 
     @media only screen and (max-width: 450px) {
       opacity: 1;
@@ -166,7 +178,6 @@ export const HeaderWrapper = styled.div`
   justify-content: fles-start;
   align-items: center;
   gap: 0.5rem;
-  color: #ccc;
 `;
 
 export const RepoImage = styled.img`
@@ -290,7 +301,7 @@ export const PaletteCircle = styled.div<PaletteCircleProps>`
   }
 `;
 
-export const RepoHeaderWrapper = styled.div`
+export const RepoTitleWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -319,8 +330,6 @@ export const CountWrapper = styled.div`
   transition: all 0.5s linear;
   // padding: 0.5rem;
   font-size: 0.6rem;
-  background-image: url(${BG1});
-  background-size: cover;
 
   svg {
     width: 1rem;
@@ -328,9 +337,9 @@ export const CountWrapper = styled.div`
 `;
 
 export const Count = styled.span`
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-weight: bold;
-  color: #fff;
+  // color: #fff;
 `;
 
 export const RepoLanguagesContainer = styled.div`

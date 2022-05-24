@@ -77,16 +77,15 @@ const GithubRepository: React.FC<GithubRepositoryProps> = (props) => {
   return (
     <Styled.MenuSlider>
       <Styled.HeaderWrapper>
-        <Styled.RepoImage
-          src={avatar_url}
-          alt={login}
-        />
-        <span>{login}</span>
+        <Styled.RepoImage src={avatar_url} alt={login} />
+        <span style={{ fontWeight: "bold" }}>{login}</span>
       </Styled.HeaderWrapper>
-      <Styled.RepoHeaderWrapper onClick={() => openNewTab(html_url)}>
-        <div className="repo-slide-title">{name}</div>
+      <Styled.RepoTitleWrapper onClick={() => openNewTab(html_url)}>
+        <div className="repo-slide-title" title={name}>
+          {name}
+        </div>
         <ExternalLinkIcon className="repo-external-link" size={30} />
-      </Styled.RepoHeaderWrapper>
+      </Styled.RepoTitleWrapper>
       <Styled.RepoCountsContainer>
         <Styled.CountWrapper>
           <StarIcon size={15} />

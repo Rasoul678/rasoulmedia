@@ -32,7 +32,7 @@ const SwiperCarousel: React.FC<SwiperCarouselProps> = (props) => {
 
   const getPerView = useCallback(() => {
     if (isBigScreenDevice || isDesktopOrLaptop) {
-      return 4;
+      return 3.5;
     }
 
     if (isMobile) {
@@ -64,7 +64,7 @@ const SwiperCarousel: React.FC<SwiperCarouselProps> = (props) => {
         slidesPerView={getPerView()}
         centeredSlides={true}
         autoplay={{
-          delay: 2000,
+          delay: 2500,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}

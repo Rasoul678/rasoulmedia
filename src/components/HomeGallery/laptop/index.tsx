@@ -7,7 +7,6 @@ import CustomTypewriter from "components/CustomTypewriter";
 import ScrollDown from "components/Lotties/ScrollDown";
 import ProfilePic from "assets/profile-pic-2.jpg";
 import Socials from "./Socials";
-import Flex from "components/Flex";
 
 const HomeGallery: React.FC = () => {
   const { t } = useTranslation();
@@ -15,7 +14,7 @@ const HomeGallery: React.FC = () => {
   return (
     <Styled.HomeGalleryContainer>
       <Styled.IntroductionContainer>
-        <Flex flexDirection="column" alignItems="center">
+        <Styled.IntroHead>
           <Styled.ImageWrapper>
             <Styled.Image
               initial={{ scale: 0 }}
@@ -26,7 +25,7 @@ const HomeGallery: React.FC = () => {
             />
           </Styled.ImageWrapper>
           <Socials />
-        </Flex>
+        </Styled.IntroHead>
         <Styled.IntroductionInfoWrapper>
           <div>
             <Styled.UserNameWrapper
