@@ -36,7 +36,7 @@ const SwiperCarousel: React.FC<SwiperCarouselProps> = (props) => {
     }
 
     if (isMobile) {
-      return 1.3;
+      return 1.1;
     }
 
     if (isMobileToTablet) {
