@@ -1,24 +1,27 @@
 import React from "react";
-import { useInView } from "react-intersection-observer";
+// import { useInView } from "react-intersection-observer";
 import BachelorOfScienceLottie from "components/Lotties/Graduation/v2";
 import * as Styled from "./Educations.styles";
 import { useTranslation } from "react-i18next";
 import reactStringReplace from "react-string-replace";
 import { Links } from "constants/Links";
 import { useMediaQuery } from "react-responsive";
+import useElementInView from "hooks/useElementInView";
 
 interface EducationsProps {}
 
 const Educations: React.FC<EducationsProps> = () => {
   const { t } = useTranslation();
   const isMobile = useMediaQuery({ maxWidth: 550 });
-  const { ref, inView, entry } = useInView({
-    /* Optional options */
-    threshold: 0,
-    skip: isMobile,
-  });
+  // const { ref, inView, entry } = useInView({
+  //   /* Optional options */
+  //   threshold: 0,
+  //   skip: isMobile,
+  // });
 
-  // console.log({ inView, entry });
+  const [ref, inView] = useElementInView({ threshold: 0 });
+
+  // console.log({ inView });
 
   return (
     <Styled.EducationsContainer ref={ref}>
