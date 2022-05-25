@@ -5,23 +5,26 @@ import * as Styled from "./Educations.styles";
 import { useTranslation } from "react-i18next";
 import reactStringReplace from "react-string-replace";
 import { Links } from "constants/Links";
+import { useMediaQuery } from "react-responsive";
 
 interface EducationsProps {}
 
 const Educations: React.FC<EducationsProps> = () => {
   const { t } = useTranslation();
+  const isMobile = useMediaQuery({ maxWidth: 550 });
   const { ref, inView, entry } = useInView({
     /* Optional options */
     threshold: 0,
+    skip: isMobile,
   });
 
-  console.log({ inView, entry });
+  // console.log({ inView, entry });
 
   return (
     <Styled.EducationsContainer ref={ref}>
       <Styled.EducationsWrapper
-        initial={{ width: 0 }}
-        animate={{ width: inView ? "100%" : 0 }}
+        initial={{ width: isMobile ? "100%" : 0 }}
+        animate={!isMobile && { width: inView ? "100%" : 0 }}
         transition={{ duration: 0.4 }}
       >
         <Styled.EducationsItems>

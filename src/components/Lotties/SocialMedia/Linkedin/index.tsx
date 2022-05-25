@@ -1,15 +1,7 @@
-import {
-  HTMLAttributes,
-  useRef,
-  Suspense,
-  useEffect,
-  useState,
-  memo,
-} from "react";
+import { HTMLAttributes, useRef } from "react";
 import useLottie from "hooks/useLottie";
 import * as Styled from "./Linkedin.styles";
-import loadingJson from "assets/animations/lordicons/333-loader-4-edited.json";
-import { useTypedSelector } from "hooks/useTypedSelector";
+import linkedinJson from "assets/animations/lordicons/red/social-media-linkedin (dark).json";
 
 interface LinkedinLottieProps extends HTMLAttributes<HTMLDivElement> {
   name?: string;
@@ -18,22 +10,6 @@ interface LinkedinLottieProps extends HTMLAttributes<HTMLDivElement> {
 
 const LinkedinLottie: React.FC<LinkedinLottieProps> = (props) => {
   const container = useRef<HTMLDivElement | null>(null);
-  const [linkedinJson, setLinkedinJson] = useState<any>(loadingJson);
-  const { themePallet, selectedPallet, themeMode } = useTypedSelector(
-    (state) => state.global
-  );
-
-  const themeColorName = themePallet.pallets[selectedPallet].name;
-
-  useEffect(() => {
-    import(
-      `assets/animations/lordicons/${
-        props.color || themeColorName
-      }/social-media-linkedin (${themeMode}).json`
-    ).then((json) => {
-      setLinkedinJson(json.default);
-    });
-  }, [themeColorName, props.color]);
 
   useLottie({
     container: container as any,
@@ -42,11 +18,7 @@ const LinkedinLottie: React.FC<LinkedinLottieProps> = (props) => {
     loop: false,
   });
 
-  return (
-    <Suspense fallback={<div>Loading ...</div>}>
-      <Styled.Lottie ref={container} {...props} />
-    </Suspense>
-  );
+  return <Styled.Lottie ref={container} {...props} />;
 };
 
-export default memo(LinkedinLottie);
+export default LinkedinLottie;

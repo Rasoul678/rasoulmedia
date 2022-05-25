@@ -1,15 +1,7 @@
-import {
-  HTMLAttributes,
-  useRef,
-  Suspense,
-  useEffect,
-  useState,
-  memo,
-} from "react";
+import { HTMLAttributes, useRef } from "react";
 import useLottie from "hooks/useLottie";
 import * as Styled from "./Facebook.styles";
-import loadingJson from "assets/animations/lordicons/333-loader-4-edited.json";
-import { useTypedSelector } from "hooks/useTypedSelector";
+import facebookJson from "assets/animations/lordicons/red/social-media-facebook (dark).json";
 
 interface FacebookLottieProps extends HTMLAttributes<HTMLDivElement> {
   name?: string;
@@ -18,22 +10,6 @@ interface FacebookLottieProps extends HTMLAttributes<HTMLDivElement> {
 
 const FacebookLottie: React.FC<FacebookLottieProps> = (props) => {
   const container = useRef<HTMLDivElement | null>(null);
-  const [facebookJson, setFacebookJson] = useState<any>(loadingJson);
-  const { themePallet, selectedPallet, themeMode } = useTypedSelector(
-    (state) => state.global
-  );
-
-  const themeColorName = themePallet.pallets[selectedPallet].name;
-
-  useEffect(() => {
-    import(
-      `assets/animations/lordicons/${
-        props.color || themeColorName
-      }/social-media-facebook (${themeMode}).json`
-    ).then((json) => {
-      setFacebookJson(json.default);
-    });
-  }, [themeColorName, props.color]);
 
   useLottie({
     container: container as any,
@@ -42,11 +18,7 @@ const FacebookLottie: React.FC<FacebookLottieProps> = (props) => {
     loop: false,
   });
 
-  return (
-    <Suspense fallback={<div>Loading ...</div>}>
-      <Styled.Lottie ref={container} {...props} />
-    </Suspense>
-  );
+  return <Styled.Lottie ref={container} {...props} />;
 };
 
-export default memo(FacebookLottie);
+export default FacebookLottie;

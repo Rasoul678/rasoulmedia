@@ -8,7 +8,7 @@ import TabletIcon from "components/Icons/TabletIcon";
 import LapTopIcon from "components/Icons/LapTopIcon";
 import MainLayout from "layouts/Main";
 import GithubRepos from "./items/github-repos";
-import { useMediaQuery } from "react-responsive";
+// import { useMediaQuery } from "react-responsive";
 import Box from "components/Box";
 // import WorkExperience from "./timelines/WorkExperience";
 import Educations from "./items/educations";
@@ -19,17 +19,22 @@ const DesktopGallery = lazy(() => import("components/HomeGallery/laptop"));
 interface IHomeProps {}
 
 const Home: React.FC<IHomeProps> = () => {
-  const isMobile = useMediaQuery({ maxWidth: "550px" });
+  // const isMobile = useMediaQuery({ maxWidth: "550px" });
   return (
     <View>
       <MainLayout>
         <DesktopGallery />
-        {!isMobile && (
+        {/* {!isMobile && (
           <Box width="90%" margin="auto">
             <GithubRepos />
           </Box>
-        )}
-        <Educations />
+        )} */}
+        <Box width="90%" margin="auto">
+          <GithubRepos />
+        </Box>
+        <Box marginTop="2rem">
+          <Educations />
+        </Box>
         <Styled.DevicesWrapper>
           <MobileIcon size={30} />
           <TabletIcon size={30} />

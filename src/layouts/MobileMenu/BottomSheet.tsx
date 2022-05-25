@@ -13,16 +13,16 @@ import useModal from "hooks/useModal";
 import SelectLanguage from "./SelectLanguage";
 import SelectPalette from "./SelectPalette";
 import useLanguages from "hooks/useLanguages";
-import GithubRepository from "./Repository";
-import AppLoader from "components/AppLoader";
-import Slider from "components/Slider";
+// import GithubRepository from "./Repository";
+// import AppLoader from "components/AppLoader";
+// import Slider from "components/Slider";
 // import GithubRepos from "views/Home/items/github-repos";
 
 type ModalType = "language" | "palette" | null;
 
 const sheet = {
   open: {
-    y: -150,
+    y: 50,
     transition: { duration: 0.1 },
   },
   closed: {
@@ -37,7 +37,7 @@ const BottomSheet: React.FC = () => {
   );
   const { toggleMobileMenu, toggleThemeMode } = useActions();
   const ref = useRef<HTMLDivElement>(null);
-  const { isLoading, repositories } = useTypedSelector((state) => state.github);
+  // const { isLoading, repositories } = useTypedSelector((state) => state.github);
   const { t, i18n } = useTranslation();
   const { isShown, toggle } = useModal();
   const [modalType, setModalType] = useState<ModalType>(null);
@@ -106,7 +106,7 @@ const BottomSheet: React.FC = () => {
         </Styled.MenuCellWrapper>
       </Styled.MenuCellsContainer>
       {/* <GithubRepos showHeader={false} containerStyles={{ width: "100%" }} /> */}
-      <Slider height="calc(100% - 14rem)">
+      {/* <Slider height="calc(100% - 14rem)">
         {isLoading && (
           <div className="slider-loader-container ">
             <AppLoader />
@@ -116,7 +116,7 @@ const BottomSheet: React.FC = () => {
           repositories?.map((repo) => {
             return <GithubRepository repo={repo} key={repo?.id} />;
           })}
-      </Slider>
+      </Slider> */}
     </Styled.ExpandedMenuContainer>
   );
 };

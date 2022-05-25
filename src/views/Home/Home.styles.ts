@@ -85,6 +85,19 @@ export const DevicesWrapper = styled.div`
   margin-top: 3rem;
 `;
 
+export const CardWrapper = styled.div`
+  display: grid;
+  gap: 1rem;
+  margin: 3rem;
+  margin-bottom: 0;
+
+  @media only screen and (max-width: 550px) {
+    margin: 1rem;
+  }
+
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+`;
+
 export const ScrollPlaceholder = styled.div`
   position: absolute;
   width: 90%;

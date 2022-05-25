@@ -1,6 +1,6 @@
 export const ThemeColors = {
-  dark: ["green", "blue", "red", "yellow"],
-  light: ["green", "blue", "red", "yellow"],
+  dark: ["#50A989", "#00ADB5", "#bd4b4b", "#F9C160"],
+  light: ["#50A989", "#5078c0", "#bd4b4b", "#ff8343"],
 };
 
 export enum White {

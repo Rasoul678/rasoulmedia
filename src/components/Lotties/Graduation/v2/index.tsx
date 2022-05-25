@@ -1,4 +1,4 @@
-import { HTMLAttributes, memo, useRef } from "react";
+import { HTMLAttributes, useRef } from "react";
 import useLottie from "hooks/useLottie";
 import json from "assets/animations/lordicons/green/graduation2.json";
 import * as Styled from "./Graduation.styles";
@@ -20,4 +20,4 @@ const GraduationLottie: React.FC<GraduationLottieProps> = (props) => {
   return <Styled.Lottie ref={container} {...props} />;
 };
 
-export default memo(GraduationLottie);
+export default GraduationLottie;
