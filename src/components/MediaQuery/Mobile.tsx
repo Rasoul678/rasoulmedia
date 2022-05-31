@@ -1,10 +1,14 @@
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 import useResponsive from "hooks/useResponsive";
 
-const OnMobile: React.FC = ({ children }) => {
+interface OnMobileProps {
+  children?: ReactNode;
+}
+
+const OnMobile: React.FC<OnMobileProps> = ({ children }) => {
   const { isMobile } = useResponsive();
 
-  return isMobile ? (children as ReactElement) : null;
+  return isMobile ? <>{children}</> : null;
 };
 
 export default OnMobile;

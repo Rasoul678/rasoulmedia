@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { ReactNode, useCallback, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import * as Styled from "./MobileMenu.styles";
 import usePreventScroll from "hooks/usePreventScroll";
@@ -98,7 +98,7 @@ const BottomSheet: React.FC = () => {
         </Styled.MenuCellWrapper>
         <Styled.MenuCellWrapper>
           <Styled.LangCellWrapper onClick={handleSelect("language")}>
-            {flag}
+            {flag as ReactNode}
           </Styled.LangCellWrapper>
         </Styled.MenuCellWrapper>
         <Styled.MenuCellWrapper onClick={handleSelect("palette")}>

@@ -28,7 +28,7 @@ class ErrorBoundary extends Component<Props, State> {
       return <ErrorFallback />;
     }
 
-    return this.props.children;
+    return <>{this.props.children}</>;
   }
 }
 

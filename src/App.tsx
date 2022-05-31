@@ -27,7 +27,7 @@ const App: React.FC = () => {
   //! Get pinned repositories from my github(rasoul678)
   useEffect(() => {
     getGithubRepositories();
-  }, []);
+  }, [getGithubRepositories]);
 
   return (
     <ThemeProvider theme={theme}>

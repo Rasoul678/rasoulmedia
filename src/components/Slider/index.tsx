@@ -1,9 +1,10 @@
-import React, { Children, cloneElement } from "react";
+import React, { Children, cloneElement, ReactNode } from "react";
 import * as Styled from "./Slider.styles";
 import { CSSProperties } from "styled-components";
 
 interface SliderProps extends CSSProperties {
   sliderStyles?: CSSProperties;
+  children?: ReactNode;
 }
 
 const Slider: React.FC<SliderProps> = ({ children, sliderStyles, ...rest }) => {

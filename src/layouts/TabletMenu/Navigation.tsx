@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { ReactNode, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import MenuItem from "./MenuItem";
 import * as Styled from "./TabletMenu.styles";
@@ -121,7 +121,7 @@ const Navigation = () => {
           whileTap={{ scale: 0.95 }}
         >
           <Styled.LangCellWrapper onClick={handleSelect("language")}>
-            {flag}
+            {flag as ReactNode}
           </Styled.LangCellWrapper>
         </Styled.MenuCellWrapper>
         <Styled.MenuCellWrapper

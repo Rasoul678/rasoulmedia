@@ -1,10 +1,14 @@
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 import useResponsive from "hooks/useResponsive";
 
-const OnTablet: React.FC = ({ children }) => {
+interface OnTabletProps {
+  children?: ReactNode;
+}
+
+const OnTablet: React.FC<OnTabletProps> = ({ children }) => {
   const { isMobile, isTablet } = useResponsive();
 
-  return !isMobile && isTablet ? (children as ReactElement) : null;
+  return !isMobile && isTablet ? <>{children}</> : null;
 };
 
 export default OnTablet;

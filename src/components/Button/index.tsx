@@ -1,4 +1,4 @@
-import { HTMLAttributes, useRef } from "react";
+import { HTMLAttributes, ReactNode, useRef } from "react";
 import useLottie from "hooks/useLottie";
 import * as Styled from "./Button.styles";
 import json from "assets/animations/lordicons/333-loader-4-edited.json";
@@ -10,6 +10,7 @@ interface ButtonProps extends HTMLAttributes<HTMLDivElement> {
   loaderJson?: any;
   fullWidth?: boolean;
   variant?: "outline" | "ghost" | "regular";
+  children?: ReactNode;
 }
 
 const Button: React.FC<ButtonProps> = (props) => {

@@ -1,12 +1,14 @@
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 import useResponsive from "hooks/useResponsive";
 
-const OnDesktop: React.FC = ({ children }) => {
+interface OnDesktopProps {
+  children?: ReactNode;
+}
+
+const OnDesktop: React.FC<OnDesktopProps> = ({ children }) => {
   const { isDesktopOrLaptop, isBigScreenDevice } = useResponsive();
 
-  return isDesktopOrLaptop && !isBigScreenDevice
-    ? (children as ReactElement)
-    : null;
+  return isDesktopOrLaptop && !isBigScreenDevice ? <>{children}</> : null;
 };
 
 export default OnDesktop;

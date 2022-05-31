@@ -1,10 +1,12 @@
 import lottie from "lottie-web";
+import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import * as Styled from "./TabletMenu.styles";
 
 interface MenuItemProps {
   name: string;
   linkTo: string;
+  children?: ReactNode;
 }
 
 const variants = {
