@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
 import { Link as ScrollLink } from "react-scroll";
-import Timeline, { TimelineElement } from "components/Timeline";
 import * as Styled from "../Home.styles";
 import FetusLottie from "components/Lotties/Fetus";
 import BookLottie from "components/Lotties/Book";
@@ -15,7 +14,7 @@ import Button from "components/Button";
 const BiographyEducation: React.FC = () => {
   const { t } = useTranslation();
 
-  const items: TimelineElement[] = [
+  const items = [
     {
       title: t("birthday"),
       date: "1998/04/07",
@@ -70,11 +69,11 @@ const BiographyEducation: React.FC = () => {
           </Button>
         </ScrollLink>
       </Styled.TimelineTitle>
-      <Timeline
+      {/* <Timeline
         items={items}
         onIconClick={() => console.log("icon clicked")}
         onElementClick={() => console.log("element clicked")}
-      />
+      /> */}
     </Styled.TimelineWrapper>
   );
 };

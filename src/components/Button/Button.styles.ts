@@ -24,7 +24,6 @@ export const Button = styled.div<IButtonProps>`
   text-transform: capitalize;
   position: relative;
   font-weight: 600;
-  font-family: ubuntu, sans-serif;
   ${({ size }) =>
     size === "small" && "min-height: 1.9em; font-size: 0.85em; min-width: 4rem;"}
   ${({ size }) =>

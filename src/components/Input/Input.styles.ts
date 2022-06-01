@@ -1,14 +1,11 @@
 import styled, { css } from "styled-components";
 
-const { float } = window;
-
 const commonCss = css`
   line-height: 1rem;
   font-size: 0.85rem;
   top: -1rem;
   background: #fff;
   padding: 0.35rem 0.8rem;
-  ${float}: 0;
   border-radius: 0.2rem;
   background-color: ${({ theme }) => theme.card.backgroundColor};
   color: #ccc;
@@ -52,6 +49,7 @@ export const Input = styled.input`
 
   :not(:placeholder-shown) + label::before {
     ${commonCss};
+    ${({ dir }) => dir}: 0;
     font-weight: bold;
     color: #ccc;
   }
@@ -67,6 +65,7 @@ export const Input = styled.input`
 
   :focus + label::before {
     ${commonCss};
+    ${({ dir }) => dir}: 0;
     font-weight: bold;
     color: #ccc;
   }
@@ -76,7 +75,7 @@ export const Input = styled.input`
     content: "*";
     position: absolute;
     top: -1.5rem;
-    ${float}: 0.3rem;
+    ${({ dir }) => dir}: 0.3rem;
     line-height: 2.7rem;
     font-size: 1rem;
     font-weight: bold;
@@ -91,7 +90,7 @@ export const Label = styled.label`
     content: attr(title);
     position: absolute;
     top: 0;
-    ${float}: 0.8rem;
+    ${({ dir }) => dir}: 0.8rem;
     width: fit-content;
     line-height: 2.7rem;
     font-size: 0.9rem;
@@ -103,7 +102,7 @@ export const Label = styled.label`
     content: "";
     position: absolute;
     top: 0rem;
-    ${float}: 0.3rem;
+    ${({ dir }) => dir}: 0.3rem;
     line-height: 2.7rem;
     font-size: 0.9rem;
     color: #bd4b4b;

@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import Timeline, { TimelineElement } from "components/Timeline";
 import * as Styled from "../Home.styles";
 import SuitcaseLottie from "components/Lotties/Suitcase";
 import CertificationLottie from "components/Lotties/Certification";
@@ -12,7 +11,7 @@ interface WorkExperienceProps {}
 const WorkExperience: React.FC<WorkExperienceProps> = () => {
   const { t } = useTranslation();
 
-  const items: TimelineElement[] = [
+  const items = [
     {
       title: t('js.dev'),
       date: "2019 - 2020",
@@ -48,11 +47,11 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
     <Styled.TimelineWrapper style={{ marginTop: "3rem" }}>
       <Styled.ScrollPlaceholder className="work" />
       <Styled.TimelineTitle>{t("work-experience")}</Styled.TimelineTitle>
-      <Timeline
+      {/* <Timeline
         items={items}
         onIconClick={() => console.log("icon clicked")}
         onElementClick={() => console.log("element clicked")}
-      />
+      /> */}
     </Styled.TimelineWrapper>
   );
 };

@@ -125,6 +125,7 @@ export const FooterText = styled.div`
   color: ${({ theme }) => theme.text};
   font-weight: 500;
   width: 100%;
+  direction: ltr;
 
   @media only screen and (max-width: 550px) {
     font-size: 0.8rem;

@@ -39,7 +39,7 @@ export const EducationsWrapper = styled(motion.div)`
   // color: #111;
 
   @media only screen and (max-width: 550px) {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 0rem;
   }
 `;
 
