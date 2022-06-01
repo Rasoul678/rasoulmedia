@@ -1,11 +1,12 @@
 import React, { CSSProperties } from "react";
-import SwiperCarousel from "components/Swiper";
+import SlickCarousel from "components/Slick";
 import { useTypedSelector } from "hooks/useTypedSelector";
 import AppLoader from "components/AppLoader";
 import GithubRepository from "layouts/MobileMenu/Repository";
 import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
 import Slider from "components/Slider";
+import Box from "components/Box";
 
 interface GithubReposProps {
   showHeader?: boolean;
@@ -29,13 +30,7 @@ const GithubRepos: React.FC<GithubReposProps> = ({
         </>
       )}
       {!isMobile ? (
-        <SwiperCarousel
-          style={{
-            height: "12rem",
-            backgroundColor: "transparent",
-            padding: "0.1rem 0",
-          }}
-        >
+        <SlickCarousel>
           {isLoading && (
             <div className="slider-loader-container ">
               <AppLoader />
@@ -43,9 +38,13 @@ const GithubRepos: React.FC<GithubReposProps> = ({
           )}
           {!isLoading &&
             repositories?.map((repo) => {
-              return <GithubRepository repo={repo} key={repo?.id} />;
+              return (
+                <Box key={repo?.id} height='12rem' margin="0.1rem 0.5rem">
+                  <GithubRepository repo={repo} />
+                </Box>
+              );
             })}
-        </SwiperCarousel>
+        </SlickCarousel>
       ) : (
         <Slider height="14rem">
           {isLoading && (

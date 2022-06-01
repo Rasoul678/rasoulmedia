@@ -1,10 +1,33 @@
 import styled from "styled-components";
 
-
-export const SwiperWrapper = styled.div`
+export const SlickWrapper = styled.div`
   .swiper {
     width: 100%;
     height: 10rem;
+  }
+
+  button.slick-arrow.slick-prev::before {
+    color: ${({ theme }) => theme.text};
+    opacity: 1;
+  }
+
+  button.slick-arrow.slick-next::before {
+    color: ${({ theme }) => theme.text};
+    opacity: 1;
+  }
+
+  .custom-dot {
+    button::before {
+      color: ${({ theme }) => theme.text};
+      font-size: 0.85rem;
+      opacity: 0.5;
+    }
+
+    li[class="slick-active"] button::before {
+      color: ${({ theme }) => theme.border};
+      opacity: 1;
+      font-size: 1.2rem;
+    }
   }
 
   .swiper-slide {

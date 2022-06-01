@@ -16,24 +16,52 @@ export const Regular = Template.bind({});
 Regular.args = {
   size: "medium",
   variant: "regular",
-  children: "Regular Button",
+  children: "Button",
 };
 
-Regular.storyName = "Regular Button";
+Regular.storyName = "Regular";
 
-// export const Secondary = Template.bind({});
-// Secondary.args = {
-//   label: "Button",
-// };
+export const Outlined = Template.bind({});
+Outlined.args = {
+  size: "medium",
+  variant: "outline",
+  children: "Button",
+};
 
-// export const Large = Template.bind({});
-// Large.args = {
-//   size: "large",
-//   label: "Button",
-// };
+Outlined.storyName = "Outlined";
 
-// export const Small = Template.bind({});
-// Small.args = {
-//   size: "small",
-//   label: "Button",
-// };
+export const Ghost = Template.bind({});
+Ghost.args = {
+  size: "medium",
+  variant: "ghost",
+  children: "Button",
+};
+
+Ghost.storyName = "Ghost";
+
+export const Small = Template.bind({});
+Small.args = {
+  size: "small",
+  variant: "regular",
+  children: "Button",
+};
+
+Small.storyName = "Small";
+
+export const Medium = Template.bind({});
+Medium.args = {
+  size: "medium",
+  variant: "regular",
+  children: "Button",
+};
+
+Medium.storyName = "Medium";
+
+export const Large = Template.bind({});
+Large.args = {
+  size: "large",
+  variant: "regular",
+  children: "Button",
+};
+
+Large.storyName = "Large";

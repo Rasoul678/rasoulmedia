@@ -15,20 +15,22 @@ export const Button = styled.div<IButtonProps>`
     variant === "regular" && theme.buttons.secondary.backgroundColor};
   color: ${({ theme, variant }) =>
     variant !== "regular" ? theme.border : theme.buttons.secondary.textColor};
-  padding: 0.4em 0.8em 0.2em;
-  border-radius: 0.4rem;
+  padding: 0.2em 0.6em 0.2em;
+  border-radius: 1.5em;
   ${({ theme, variant }) =>
     variant === "outline" && `border: 1px solid ${theme.border}`};
   cursor: pointer;
   user-select: none;
   text-transform: capitalize;
   position: relative;
+  font-weight: 600;
+  font-family: ubuntu, sans-serif;
   ${({ size }) =>
-    size === "small" && "min-height: 2.1em; font-size: 0.9em; min-width: 4rem;"}
+    size === "small" && "min-height: 1.9em; font-size: 0.85em; min-width: 4rem;"}
   ${({ size }) =>
-    size === "medium" && "min-height: 2.3em; font-size: 1em; min-width: 5rem;"}
+    size === "medium" && "min-height: 2em; font-size: 1em; min-width: 5rem;"}
   ${({ size }) =>
-    size === "large" && "min-height: 2.4em; font-size: 1.2em; min-width: 6rem;"}
+    size === "large" && "min-height: 2.2em; font-size: 1.1em; min-width: 6rem;"}
 `;
 
 interface ButtonLottieProps {

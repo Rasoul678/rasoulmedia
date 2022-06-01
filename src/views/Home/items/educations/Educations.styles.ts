@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const { revFloat } = window;
-
 export const EducationsContainer = styled(motion.div)`
   min-height: 20rem;
   margin: 3rem;
@@ -19,13 +17,13 @@ export const EducationsContainer = styled(motion.div)`
 
 export const LottieWrapper = styled.div`
   position: absolute;
-  ${revFloat}: -3.5rem;
+  ${({ dir }) => dir}: -3.5rem;
   top: -4rem;
   width: 13rem;
   opacity: 0.8;
 
   @media only screen and (max-width: 550px) {
-    ${revFloat}: -2.5rem;
+    ${({ dir }) => dir}: -2.5rem;
     top: -2.5rem;
     width: 10rem;
   }

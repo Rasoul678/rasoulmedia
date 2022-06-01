@@ -79,7 +79,7 @@ const Educations: React.FC<EducationsProps> = () => {
             </Styled.Item>
           </Styled.ItemsList>
         </Styled.EducationsItems>
-        <Styled.LottieWrapper>
+        <Styled.LottieWrapper dir={window.revFloat || "right"}>
           <BachelorOfScienceLottie className="bs-lottie-icon" />
         </Styled.LottieWrapper>
       </Styled.EducationsWrapper>

@@ -127,7 +127,7 @@ const Contact: React.FC = () => {
           />
           <Button
             loaderJson={sendMailJson}
-            size="medium"
+            size="large"
             isLoading={isSending}
             onClick={handleSendEmail}
             fullWidth
