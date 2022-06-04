@@ -7,6 +7,9 @@ import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
 import Slider from "components/Slider";
 import Box from "components/Box";
+import Countup from "components/CountUp";
+import Flex from "components/Flex";
+import useElementInView from "hooks/useElementInView";
 
 interface GithubReposProps {
   showHeader?: boolean;
@@ -20,13 +23,24 @@ const GithubRepos: React.FC<GithubReposProps> = ({
   const { isLoading, repositories } = useTypedSelector((state) => state.github);
   const { t } = useTranslation();
   const isMobile = useMediaQuery({ maxWidth: "550px" });
+  const [ref, inView] = useElementInView({ threshold: 0 });
 
   return (
     <section style={containerStyles} className="github-repos">
       {showHeader && (
         <>
-          <h2 style={{ padding: "0.5rem 0" }}>{t("git.repos")}</h2>
-          <h3 style={{ padding: "1rem 0" }}>{t("git.message")}</h3>
+          <Flex justifyContent="center" alignItems="center" gap="1rem">
+            <h2 style={{ padding: "0.5rem 0" }}>{t("git.repos")}</h2>
+            {inView ? (
+              <Countup
+                end={repositories.length > 99 ? 99 : repositories.length}
+                prefix={repositories.length > 99 ? "+" : ""}
+              />
+            ) : null}
+          </Flex>
+          <h3 ref={ref} style={{ padding: "1rem 0" }}>
+            {t("git.message")}
+          </h3>
         </>
       )}
       {!isMobile ? (
@@ -39,7 +53,7 @@ const GithubRepos: React.FC<GithubReposProps> = ({
           {!isLoading &&
             repositories?.map((repo) => {
               return (
-                <Box key={repo?.id} height='12rem' margin="0.1rem 0.5rem">
+                <Box key={repo?.id} height="12rem" margin="0.1rem 0.5rem">
                   <GithubRepository repo={repo} />
                 </Box>
               );

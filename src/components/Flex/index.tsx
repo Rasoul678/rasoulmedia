@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { forwardRef, ReactNode } from "react";
 import { CSSProperties } from "styled-components";
 import * as Styled from "./Flex.styles";
 
@@ -6,8 +6,14 @@ interface FlexProps extends CSSProperties {
   children?: ReactNode;
 }
 
-const Flex: React.FC<FlexProps> = ({ children, ...rest }) => {
-  return <Styled.Flex style={{ ...rest }}>{children}</Styled.Flex>;
-};
+type Ref = HTMLDivElement;
+
+const Flex = forwardRef<Ref, FlexProps>(({ children, ...rest }, ref) => {
+  return (
+    <Styled.Flex style={{ display: "flex", ...rest }} ref={ref}>
+      {children}
+    </Styled.Flex>
+  );
+});
 
 export default Flex;
