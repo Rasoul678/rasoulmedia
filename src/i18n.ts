@@ -5,9 +5,7 @@ import ChainedBackend from "i18next-chained-backend";
 import LocalStorageBackend from "i18next-localstorage-backend";
 import { initReactI18next } from "react-i18next";
 
-const version = 21;
-const apiKey = "tZJd0jWjb3bkrTIqWuwhhw";
-const loadPath = `https://cdn.i18nexus.com/versions/${version}/translations/{{lng}}/{{ns}}.json?api_key=${apiKey}`;
+const version = 24;
 
 i18next
   .use(ChainedBackend)
@@ -16,9 +14,6 @@ i18next
   .init({
     fallbackLng: "en",
 
-    ns: ["rasoul-media"],
-    defaultNS: "rasoul-media",
-
     supportedLngs: ["nl", "fr", "fa", "es", "en", "hi"],
 
     backend: {
@@ -26,9 +21,6 @@ i18next
       backendOptions: [
         {
           defaultVersion: version,
-        },
-        {
-          loadPath: loadPath,
         },
       ],
     },
