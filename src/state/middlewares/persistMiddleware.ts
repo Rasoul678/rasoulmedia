@@ -21,6 +21,7 @@ export const persistMiddleware = ({
             themeMode: getState().global.themeMode,
             themePallet: getState().global.themePallet,
             selectedPallet: getState().global.selectedPallet,
+            tour: getState().global.tour,
           },
         })
       );

@@ -14,7 +14,7 @@ const HomeGallery: React.FC = () => {
   return (
     <Styled.HomeGalleryContainer>
       <Styled.IntroductionContainer>
-        <Styled.IntroHead>
+        <Styled.IntroHead data-tour="step-3">
           <Styled.ImageWrapper>
             <Styled.Image
               initial={{ scale: 0 }}
@@ -27,7 +27,7 @@ const HomeGallery: React.FC = () => {
           <Socials />
         </Styled.IntroHead>
         <Styled.IntroductionInfoWrapper>
-          <div>
+          <div data-tour="step-1">
             <Styled.UserNameWrapper
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -53,6 +53,7 @@ const HomeGallery: React.FC = () => {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.3 }}
+            data-tour="step-2"
           >
             <CustomTypewriter
               strings={[

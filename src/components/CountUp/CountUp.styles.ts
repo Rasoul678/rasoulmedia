@@ -11,8 +11,5 @@ export const Countup = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  @media only screen and (min-width: 550px) {
-    padding-top: 0.3rem;
-  }
+  padding-top: 0.3rem;
 `;

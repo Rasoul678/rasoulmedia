@@ -5,4 +5,6 @@ export enum ActionType {
   SET_GITHUB_REPOS = "set-github-repos",
   SET_GITHUB_LOADING = "set-github-loading",
   SET_GITHUB_ERROR = "set-github-error",
+  SET_APP_TOUR = "set-app-tour",
+  SET_PAGE_TOUR = "set-page-tour",
 }

@@ -154,6 +154,10 @@ export const TypeWriterWrapper = styled(motion.div)`
   display: flex;
   justify-content: center;
   transition: color 0.7s linear;
+
+  @media only screen and (max-width: 1030px) {
+    width: 90%;
+  }
 `;
 
 export const ArrowDownWrapper = styled(motion.div)`

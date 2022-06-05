@@ -68,3 +68,5 @@ export interface Repository {
   url: string;
   __typename: string;
 }
+
+export type Pages = "home" | "contact";

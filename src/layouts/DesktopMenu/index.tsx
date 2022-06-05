@@ -28,7 +28,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = () => {
       label: t(value.name),
       value: key,
     }));
-  }, [t]);
+  }, [t, themePallet.pallets]);
 
   const langOptions = useMemo(() => {
     return [
@@ -80,7 +80,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = () => {
 
   return (
     <Styled.DesktopNavbar>
-      <Styled.MenuItemsWrapper>
+      <Styled.MenuItemsWrapper data-tour="step-desktop-nav-links">
         <MenuItem name="home" linkTo="/">
           <HomeLottie name="home" style={{ width: "2.5rem" }} />
         </MenuItem>
@@ -95,7 +95,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = () => {
         </MenuItem>
       </Styled.MenuItemsWrapper>
       <Styled.MenuItemsWrapper style={{ gap: "0" }}>
-        <Styled.SettingWrapper>
+        <Styled.SettingWrapper data-tour="step-desktop-nav-lang">
           <CustomSelect
             value={{
               label: t(`lang.${i18next.language}`),
@@ -108,7 +108,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = () => {
             hideSelectedOptions={true}
           />
         </Styled.SettingWrapper>
-        <Styled.SettingWrapper>
+        <Styled.SettingWrapper data-tour="step-desktop-nav-color">
           <PaletteSelect
             value={{ label: "", value: selectedPallet }}
             options={colorOptions}
@@ -118,7 +118,10 @@ const DesktopMenu: React.FC<DesktopMenuProps> = () => {
             // hideSelectedOptions={true}
           />
         </Styled.SettingWrapper>
-        <Styled.SettingWrapper onClick={handleToggle}>
+        <Styled.SettingWrapper
+          onClick={handleToggle}
+          data-tour="step-desktop-nav-dark"
+        >
           {themeMode === "dark" ? (
             <SunIcon size={32} color="#F8C004" />
           ) : (

@@ -62,6 +62,32 @@ export const GlobalStyles = createGlobalStyle`
 //  ::-webkit-scrollbar-thumb:hover {
 //     background: red;
 //   } 
+
+  .custom-helper {
+    padding-top: 2.5rem;
+    color: ${({ theme }) => (theme.name === "dark" ? "#000" : "#ddd")};
+    background-color: ${({ theme }) =>
+      theme.name === "dark" ? "#eee" : "#111"};
+    
+      svg{
+        color: ${({ theme }) => (theme.name === "dark" ? "#000" : "#FFF")};
+      }
+
+      nav button{
+        width: 0.7rem;
+        height: 0.7rem;
+        background-color: ${({ theme }) => theme.border};
+        border: 2px solid #000;
+      }
+
+      [data-tour-elem='controls'] {
+        direction: initial;
+      }
+
+      [data-tour-elem='right-arrow'] {
+        font-family: IRANSans, Ubuntu, Helvetica, Arial, Roboto, sans-serif;
+      }
+  }
   `;
 
 export const View = styled.div`

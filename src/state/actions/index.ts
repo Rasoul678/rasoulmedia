@@ -1,3 +1,4 @@
+import { Pages } from "interfaces";
 import { ActionType } from "../action-types";
 
 export type ThemeMode = "light" | "dark";
@@ -32,10 +33,22 @@ export interface SetGithubError {
   payload: string;
 }
 
+export interface SetAppTour {
+  type: ActionType.SET_APP_TOUR;
+  payload: boolean;
+}
+
+export interface SetPageTour {
+  type: ActionType.SET_PAGE_TOUR;
+  payload: { name: Pages; isDone: boolean };
+}
+
 export type Action =
   | ToggleThemeMode
   | ToggleMobileMenu
   | SetThemePalette
   | SetGithubRepos
   | SetGithubLoading
-  | SetGithubError;
+  | SetGithubError
+  | SetAppTour
+  | SetPageTour;

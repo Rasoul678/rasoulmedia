@@ -12,6 +12,8 @@ import Box from "components/Box";
 // import WorkExperience from "./timelines/WorkExperience";
 import Educations from "./items/educations";
 // import RAFLoader from "components/RAFLoader";
+// import steps from "components/Tour/steps/home";
+import ReactTour from "components/Tour";
 
 const DesktopGallery = lazy(() => import("components/HomeGallery/laptop"));
 
@@ -20,6 +22,7 @@ interface IHomeProps {}
 const Home: React.FC<IHomeProps> = () => {
   return (
     <View>
+      <ReactTour name="home" />
       <MainLayout>
         <DesktopGallery />
         <Box width="90%" margin="auto">

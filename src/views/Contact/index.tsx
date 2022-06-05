@@ -10,6 +10,8 @@ import { View } from "components/Global/GlobalStyles";
 import * as Styled from "./Contact.styles";
 import renderToast from "utils/renderToast";
 import MainLayout from "layouts/Main";
+import ReactTour from "components/Tour";
+// import steps from "components/Tour/steps/contact";
 
 const INITIAL_FORM = {
   name: "",
@@ -85,6 +87,10 @@ const Contact: React.FC = () => {
 
   return (
     <View>
+      <ReactTour
+        name="contact"
+        lastStepNextButton={<Button size="small">Bye!</Button>}
+      />
       <MainLayout>
         <Styled.FormTitle>{t("contact-me")}</Styled.FormTitle>
         <Styled.InputsWrapper>
@@ -97,6 +103,7 @@ const Contact: React.FC = () => {
             autoComplete="off"
             required
             error={error.name}
+            data-tour="step-1"
           />
           <Input
             onChange={handleFieldValue}
@@ -107,6 +114,7 @@ const Contact: React.FC = () => {
             autoComplete="off"
             required
             error={error.email}
+            data-tour="step-2"
           />
           <Input
             onChange={handleFieldValue}
@@ -115,6 +123,7 @@ const Contact: React.FC = () => {
             label={t("subject")}
             name="subject"
             autoComplete="off"
+            data-tour="step-3"
           />
           <Textarea
             onChange={handleFieldValue}
@@ -124,6 +133,7 @@ const Contact: React.FC = () => {
             rows={3}
             name="message"
             error={error.message}
+            data-tour="step-4"
           />
           <Button
             loaderJson={sendMailJson}
@@ -131,6 +141,7 @@ const Contact: React.FC = () => {
             isLoading={isSending}
             onClick={handleSendEmail}
             fullWidth
+            data-tour="step-5"
           >
             {t("send")}
           </Button>
