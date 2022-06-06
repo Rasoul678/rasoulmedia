@@ -65,7 +65,7 @@ const Navigation = () => {
       toggle();
       setModalType(type);
     };
-  }, []);
+  }, [toggle]);
 
   const handleToggle = () => {
     toggleThemeMode(themeMode === "dark" ? "light" : "dark");
@@ -92,18 +92,18 @@ const Navigation = () => {
         }
         modalContent={getModalContent(modalType)}
       />
-      <MenuItem linkTo="/" name={t("nav.home")}>
-        <HomeLottie name={t("nav.home")} style={style} />
-      </MenuItem>
-      <MenuItem linkTo="/apps" name={t("nav.applications")}>
-        <LayersLottie name={t("nav.applications")} style={style} />
-      </MenuItem>
-      <MenuItem linkTo="/code" name={t("nav.code")}>
-        <CodeLottie name={t("nav.code")} style={style} />
-      </MenuItem>
-      <MenuItem linkTo="/contact" name={t("nav.contact")}>
-        <ContactLottie name={t("nav.contact")} style={style} />
-      </MenuItem>
+        <MenuItem linkTo="/" name={t("nav.home")}>
+          <HomeLottie name={t("nav.home")} style={style} />
+        </MenuItem>
+        <MenuItem linkTo="/apps" name={t("nav.applications")}>
+          <LayersLottie name={t("nav.applications")} style={style} />
+        </MenuItem>
+        <MenuItem linkTo="/code" name={t("nav.code")}>
+          <CodeLottie name={t("nav.code")} style={style} />
+        </MenuItem>
+        <MenuItem linkTo="/contact" name={t("nav.contact")}>
+          <ContactLottie name={t("nav.contact")} style={style} />
+        </MenuItem>
       <Styled.MenuCellsContainer variants={variants}>
         <Styled.MenuCellWrapper
           whileHover={{ scale: 1.2 }}

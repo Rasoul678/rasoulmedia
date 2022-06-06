@@ -1,9 +1,7 @@
-import Button from "components/Button";
 import useActions from "hooks/useActions";
 import { useTypedSelector } from "hooks/useTypedSelector";
 import { Pages } from "interfaces";
 import React, { useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
 import Tour, { ReactourProps } from "reactour";
 import useStep from "./useStep";
 
@@ -13,12 +11,10 @@ interface TourProps
 }
 
 const ReactTour: React.FC<TourProps> = ({ name, ...rest }) => {
-  const { t } = useTranslation();
   const { tour } = useTypedSelector((state) => state.global);
   const [isTourOpen, setIsTourOpen] = useState(
     tour.hasTour && !tour.pages[name].isDone
   );
-  const [showNav, setShowNav] = useState(false);
   const currentStepRef = useRef<number | null>(null);
   const { setAppTour, setPageTour } = useActions();
 
@@ -36,12 +32,6 @@ const ReactTour: React.FC<TourProps> = ({ name, ...rest }) => {
 
   const setCurrentStep = (currentStep: number) => {
     currentStepRef.current = currentStep;
-
-    if (currentStep > 0) {
-      setShowNav(true);
-    } else {
-      setShowNav(false);
-    }
   };
 
   return (
@@ -51,12 +41,11 @@ const ReactTour: React.FC<TourProps> = ({ name, ...rest }) => {
       onRequestClose={closeTour}
       rounded={7}
       className="custom-helper"
-      showNavigation={showNav}
-      showButtons={showNav}
+      showNavigation={false}
+      showButtons={false}
       onAfterOpen={() => (document.body.style.overflowY = "hidden")}
       onBeforeClose={() => (document.body.style.overflowY = "auto")}
       getCurrentStep={setCurrentStep}
-      lastStepNextButton={<Button  size="large">{t("step.enjoy")}</Button>}
       {...rest}
     />
   );

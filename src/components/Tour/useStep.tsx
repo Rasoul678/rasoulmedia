@@ -1,8 +1,10 @@
 import Flex from "components/Flex";
-import Button from "components/Button";
 import { ReactourStep } from "reactour";
 import { Pages } from "interfaces";
 import { useTranslation } from "react-i18next";
+import Content from "./Content";
+import AskTour from "./AskTour";
+import StartContact from "./StartContact";
 
 const useStep = (step: Pages): ReactourStep[] => {
   const { t } = useTranslation();
@@ -13,77 +15,50 @@ const useStep = (step: Pages): ReactourStep[] => {
       steps = [
         {
           selector: '[data-tour="step-start"]',
-          content: ({ goTo, close }) => (
-            <div>
-              <h4 style={{ fontSize: "1rem" }}>{t("step.asktour")}</h4>
-              <Flex gap="1rem" marginTop="1rem" justifyContent="center">
-                <Button
-                  onClick={close}
-                  size="small"
-                  variant="outline"
-                  style={{ color: "#777" }}
-                >
-                  {t("step.no")}
-                </Button>
-                <Button size="small" onClick={() => goTo(1)}>
-                  {t("step.yes")}
-                </Button>
-              </Flex>
-              <div
-                style={{
-                  fontSize: "0.85rem",
-                  marginTop: "1rem",
-                  color: "crimson",
-                  textAlign: "center",
-                }}
-              >
-                {t("step.warning")}
-              </div>
-            </div>
-          ),
+          content: (props) => <AskTour {...props} />,
         },
         {
           selector: '[data-tour="step-1"]',
-          content: <div style={{ fontSize: "1.2rem" }}>{t("step.info")}</div>,
+          content: (props) => <Content content={t("step.info")} {...props} />,
           position: "bottom",
           resizeObservables: ['[data-tour="step-1"]'],
         },
         {
           selector: '[data-tour="step-2"]',
-          content: (
-            <div style={{ fontSize: "1.2rem" }}>{t("step.passion")}</div>
+          content: (props) => (
+            <Content content={t("step.passion")} {...props} />
           ),
           position: "top",
           resizeObservables: ['[data-tour="step-2"]'],
         },
         {
           selector: '[data-tour="step-3"]',
-          content: <div style={{ fontSize: "1.2rem" }}>{t("step.social")}</div>,
+          content: (props) => <Content content={t("step.social")} {...props} />,
           position: "bottom",
           resizeObservables: ['[data-tour="step-3"]'],
         },
         {
           selector: '[data-tour="step-desktop-nav-links"]',
-          content: <div style={{ fontSize: "1.1rem" }}>{t("step.nav")}</div>,
+          content: (props) => <Content content={t("step.nav")} {...props} />,
           position: "bottom",
           resizeObservables: ['[data-tour="step-desktop-nav-links"]'],
         },
         {
           selector: '[data-tour="step-desktop-nav-lang"]',
-          content: <div style={{ fontSize: "1.1rem" }}>{t("step.lang")}</div>,
+          content: (props) => <Content content={t("step.lang")} {...props} />,
           position: "bottom",
           resizeObservables: ['[data-tour="step-desktop-nav-lang"]'],
         },
         {
           selector: '[data-tour="step-desktop-nav-color"]',
-          content: <div style={{ fontSize: "1.1rem" }}>{t("step.theme")}</div>,
+          content: (props) => <Content content={t("step.theme")} {...props} />,
           position: "bottom",
           resizeObservables: ['[data-tour="step-desktop-nav-color"]'],
         },
         {
           selector: '[data-tour="step-desktop-nav-dark"]',
-          content: (
-            <div style={{ fontSize: "0.9rem" }}>{t("step.darkmode")}</div>
+          content: (props) => (
+            <Content content={t("step.darkmode")} {...props} />
           ),
           position: "bottom",
           resizeObservables: ['[data-tour="step-desktop-nav-dark"]'],
@@ -105,46 +80,43 @@ const useStep = (step: Pages): ReactourStep[] => {
       steps = [
         {
           selector: '[data-tour="step-start"]',
-          content: ({ goTo }) => (
-            <Flex fontSize="1rem" flexDirection="column" gap="1rem">
-              <div>This is where you can contact me</div>
-              <Button size="medium" onClick={() => goTo(1)}>
-                Start
-              </Button>
-            </Flex>
-          ),
+          content: (props) => <StartContact {...props} />,
         },
         {
           selector: '[data-tour="step-1"]',
-          content: <div style={{ fontSize: "1.2rem" }}>Enter you name</div>,
+          content: (props) => (
+            <Content content={t("step.enterName")} {...props} />
+          ),
           position: "bottom",
           resizeObservables: ['[data-tour="step-1"]'],
         },
         {
           selector: '[data-tour="step-2"]',
-          content: <div style={{ fontSize: "1.2rem" }}>Enter your E-mail</div>,
+          content: (props) => (
+            <Content content={t("step.enterEmail")} {...props} />
+          ),
           position: "bottom",
           resizeObservables: ['[data-tour="step-2"]'],
         },
         {
           selector: '[data-tour="step-3"]',
-          content: (
-            <div style={{ fontSize: "1.2rem" }}>Enter subject (optional)</div>
+          content: (props) => (
+            <Content content={t("step.enterSubject")} {...props} />
           ),
           position: "bottom",
           resizeObservables: ['[data-tour="step-3"]'],
         },
         {
           selector: '[data-tour="step-4"]',
-          content: (
-            <div style={{ fontSize: "1.2rem" }}>Write your message here</div>
+          content: (props) => (
+            <Content content={t("step.writeMsg")} {...props} />
           ),
           position: "bottom",
           resizeObservables: ['[data-tour="step-4"]'],
         },
         {
           selector: '[data-tour="step-5"]',
-          content: <div style={{ fontSize: "1.2rem" }}>And, send it to me</div>,
+          content: (props) => <Content content={t("step.send")} {...props} />,
           position: "bottom",
           resizeObservables: ['[data-tour="step-5"]'],
         },
@@ -152,7 +124,7 @@ const useStep = (step: Pages): ReactourStep[] => {
           selector: '[data-tour="step-end"]',
           content: (
             <Flex justifyContent="center" fontSize="1.3rem">
-              Thank You! 🎉
+              {t("step.tnx")}
             </Flex>
           ),
           position: "top",

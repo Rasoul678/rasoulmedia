@@ -76,6 +76,7 @@
     "home": "Home"
   },
   "next": "Next",
+  "prev": "Previous",
   "red": "Red",
   "school": "School",
   "school-description": "I went to school in my hometown and I graduated from Dr. Omidi School.",
@@ -95,9 +96,16 @@
     "theme": "Choose theme color",
     "tnx": "Thank You! 🎉",
     "warning": "If you cancel it here, won't see it again.",
-    "yes": "Yes, let's go"
+    "yes": "Yes, let's go",
+    "startContact": "This is where you can contact me",
+    "enterName": "Enter you name",
+    "enterEmail": "Enter your E-mail",
+    "enterSubject": "Enter subject (optional)",
+    "writeMsg": "Write your message here",
+    "send": "And, send it to me"
   },
   "subject": "Subject",
+  "start": "Start",
   "tech-stack": "Technology",
   "typewriter": {
     "1": "I like to design.",
