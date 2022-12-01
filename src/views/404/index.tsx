@@ -5,6 +5,7 @@ import useLottie from "hooks/useLottie";
 import { View } from "components/Global/GlobalStyles";
 import Footer from "components/Footer";
 import Button from "components/Button";
+import * as Styled from "./NotFound.styles";
 
 const NotFound: React.FC = () => {
   const container = useRef<HTMLDivElement | null>(null);
@@ -30,14 +31,7 @@ const NotFound: React.FC = () => {
       >
         go back
       </Button>
-      <div
-        style={{
-          width: "20rem",
-          margin: "auto",
-          height: "calc(100vh - 16rem)",
-        }}
-        ref={container}
-      />
+      <Styled.NotFoundContainer ref={container} />
       <Footer />
     </View>
   );

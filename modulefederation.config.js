@@ -4,7 +4,7 @@ module.exports = {
   name: "rasoulmedia",
   filename: "remoteEntry.js",
   remotes: {
-    remote: "remote@https://rasoul678.github.io/MicroFront-CRACO-remote/remoteEntry.js",
+    editor: "editor@http://localhost:3020/remoteEntry.js",
     store: "store@http://localhost:3010/remoteEntry.js",
   },
   exposes: {},

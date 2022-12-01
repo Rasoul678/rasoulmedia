@@ -1,20 +1,21 @@
-import { lazy, Suspense } from "react";
+import { Link } from "react-router-dom";
 import { View } from "components/Global/GlobalStyles";
 import MainLayout from "layouts/Main";
-import ErrorBoundary from "components/ErrorBoundary";
-
-const Remote = lazy(() => import("remote/Remote"));
+import editorGif from "assets/gif/code-editor.gif";
 
 const Apps: React.FC = () => {
   return (
     <View>
       <MainLayout>
         <h1>Apps</h1>
-        <ErrorBoundary>
-          <Suspense fallback={<div>Loading from remote ...</div>}>
-            <Remote isRemote />
-          </Suspense>
-        </ErrorBoundary>
+        <Link to="/apps/code-editor">
+          <img
+            width={600}
+            style={{ borderRadius: "1rem", cursor: "pointer" }}
+            src={editorGif}
+            alt="code-editor-gif"
+          />
+        </Link>
       </MainLayout>
     </View>
   );

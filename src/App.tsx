@@ -7,6 +7,7 @@ import { GlobalStyles } from "components/Global/GlobalStyles";
 import useSetDirection from "hooks/useSetDirection";
 import useDarkMode from "hooks/useDarkMode";
 import { useStore } from "store/store";
+import CodeEditor from "views/Apps/code-editor";
 
 const Home = lazy(() => import(/*webpackChunkName: "Home_View"*/ "views/Home"));
 const Contact = lazy(
@@ -41,10 +42,15 @@ const App: React.FC = () => {
         draggable
       />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/apps" element={<Apps />} />
-        <Route path="/code" element={<Code />} />
+        <Route path="/">
+          <Route index element={<Home />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="apps">
+            <Route index element={<Apps />} />
+            <Route path="code-editor" element={<CodeEditor />} />
+          </Route>
+          <Route path="code" element={<Code />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </ThemeProvider>
