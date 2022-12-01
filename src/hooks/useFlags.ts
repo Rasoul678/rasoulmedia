@@ -6,19 +6,19 @@ import Iran from "components/Flags/Iran";
 import Netherlands from "components/Flags/Netherlands";
 import India from "components/Flags/India";
 
-type Code = "fa" | "en" | "es" | "fr" | "nl" | "hi";
+export type LangCodeType = "fa" | "en" | "es" | "fr" | "nl" | "hi";
 
-export interface Languages {
+export interface FlagTypes {
   [key: string]: {
     title: string;
     flag: JSX.Element;
   };
 }
 
-const useLanguages = (code?: Code) => {
+const useFlags = (code?: LangCodeType) => {
   const { t } = useTranslation();
 
-  const languages: Languages = {
+  const flags: FlagTypes = {
     en: {
       title: t("lang.en"),
       flag: British(),
@@ -45,9 +45,9 @@ const useLanguages = (code?: Code) => {
     },
   };
 
-  if (code) return languages[code];
+  if (code) return flags[code];
 
-  return languages;
+  return flags;
 };
 
-export default useLanguages;
+export default useFlags;

@@ -6,17 +6,12 @@ import MenuIcon from "components/Icons/MenuIcon";
 import SunIcon from "components/Icons/SunIcon";
 import MoonIcon from "components/Icons/MoonIcon";
 import ColorPaletteIcon from "components/Icons/ColorPaletteIcon";
-import { useTypedSelector } from "hooks/useTypedSelector";
-import useActions from "hooks/useActions";
 import Modal from "components/Modal";
 import useModal from "hooks/useModal";
 import SelectLanguage from "./SelectLanguage";
 import SelectPalette from "./SelectPalette";
-import useLanguages from "hooks/useLanguages";
-// import GithubRepository from "./Repository";
-// import AppLoader from "components/AppLoader";
-// import Slider from "components/Slider";
-// import GithubRepos from "views/Home/items/github-repos";
+import useFlags from "hooks/useFlags";
+import { useStore } from "store/store";
 
 type ModalType = "language" | "palette" | null;
 
@@ -32,18 +27,16 @@ const sheet = {
 };
 
 const BottomSheet: React.FC = () => {
-  const { isMobileMenuOpen, themeMode } = useTypedSelector(
-    (state) => state.global
-  );
-  const { toggleMobileMenu, toggleThemeMode } = useActions();
+  const { store, actions } = useStore();
+  const { isMobileMenuOpen, themeMode } = store.global;
+  const { toggleMobileMenu, toggleThemeMode } = actions;
   const ref = useRef<HTMLDivElement>(null);
-  // const { isLoading, repositories } = useTypedSelector((state) => state.github);
   const { t, i18n } = useTranslation();
   const { isShown, toggle } = useModal();
   const [modalType, setModalType] = useState<ModalType>(null);
 
   usePreventScroll(ref, isMobileMenuOpen);
-  const { flag } = useLanguages(i18n.language);
+  const { flag } = useFlags(i18n.language);
 
   const handleCloseMobileMenu = () => {
     toggleMobileMenu(false);

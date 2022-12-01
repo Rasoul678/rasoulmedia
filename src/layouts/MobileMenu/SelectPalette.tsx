@@ -1,20 +1,17 @@
 import { useCallback } from "react";
 import * as Styled from "./MobileMenu.styles";
-import { useTypedSelector } from "hooks/useTypedSelector";
-import useActions from "hooks/useActions";
 import { useTheme } from "styled-components";
+import { useStore } from "store/store";
 
 interface ISelectLang {
   toggle: () => void;
 }
 
 const SelectPalette: React.FC<ISelectLang> = ({ toggle }) => {
-  const { setThemePalette } = useActions();
   const { colors } = useTheme();
-
-  const { selectedPallet, themePallet } = useTypedSelector(
-    (state) => state.global
-  );
+  const { store, actions } = useStore();
+  const { selectedPallet, themePallet } = store.global;
+  const { setThemePalette } = actions;
 
   const handleSelectPalette = useCallback((palette: string) => {
     return () => {
@@ -24,7 +21,7 @@ const SelectPalette: React.FC<ISelectLang> = ({ toggle }) => {
   }, []);
 
   return (
-    <Styled.LangOptionsContainer style={{width: '12rem'}}>
+    <Styled.LangOptionsContainer style={{ width: "12rem" }}>
       {Object.entries(themePallet.pallets).map(([key, value], index) => (
         <Styled.LangOptionWrapper
           style={{ borderRadius: "50%" }}
@@ -33,7 +30,7 @@ const SelectPalette: React.FC<ISelectLang> = ({ toggle }) => {
         >
           <Styled.PaletteCircle
             isSelected={selectedPallet === key}
-            bgColor={value.mainColor}
+            bgColor={(value as any).mainColor}
             themeColor={colors[2]}
           />
         </Styled.LangOptionWrapper>

@@ -1,8 +1,15 @@
-import { HTMLAttributes, useRef, Suspense, useEffect, useState, memo } from "react";
+import {
+  HTMLAttributes,
+  useRef,
+  Suspense,
+  useEffect,
+  useState,
+  memo,
+} from "react";
 import useLottie from "hooks/useLottie";
 import * as Styled from "./Algae.styles";
 import loadingJson from "assets/animations/lordicons/333-loader-4-edited.json";
-import { useTypedSelector } from "hooks/useTypedSelector";
+import { useStore } from "store/store";
 
 interface AlgaeLottieProps extends HTMLAttributes<HTMLDivElement> {
   name?: string;
@@ -11,13 +18,8 @@ interface AlgaeLottieProps extends HTMLAttributes<HTMLDivElement> {
 const AlgaeLottie: React.FC<AlgaeLottieProps> = (props) => {
   const container = useRef<HTMLDivElement | null>(null);
   const [algaeJson, setAlgaeJson] = useState<any>(loadingJson);
-  const {
-    // themePallet,
-    //  selectedPallet,
-    themeMode,
-  } = useTypedSelector((state) => state.global);
-
-  // const themeColorName = themePallet.pallets[selectedPallet].name;
+  const { store } = useStore();
+  const { themeMode } = store.global;
 
   useEffect(() => {
     import(

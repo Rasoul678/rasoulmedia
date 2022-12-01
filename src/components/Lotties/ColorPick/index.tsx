@@ -1,8 +1,14 @@
-import { HTMLAttributes, useRef, Suspense, useEffect, useState, memo } from "react";
+import {
+  HTMLAttributes,
+  useRef,
+  Suspense,
+  useEffect,
+  useState,
+  memo,
+} from "react";
 import useLottie from "hooks/useLottie";
 import * as Styled from "./ColorPick.styles";
 import loadingJson from "assets/animations/lordicons/333-loader-4-edited.json";
-// import { useTypedSelector } from "hooks/useTypedSelector";
 
 interface ColorPickLottieProps extends HTMLAttributes<HTMLDivElement> {
   name?: string;
@@ -12,7 +18,6 @@ interface ColorPickLottieProps extends HTMLAttributes<HTMLDivElement> {
 const ColorPickLottie: React.FC<ColorPickLottieProps> = (props) => {
   const container = useRef<HTMLDivElement | null>(null);
   const [codeJson, setCodeJson] = useState<any>(loadingJson);
-  //   const { themeMode } = useTypedSelector((state) => state.global);
 
   useEffect(() => {
     import(

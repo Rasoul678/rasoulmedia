@@ -11,7 +11,6 @@ import * as Styled from "./Contact.styles";
 import renderToast from "utils/renderToast";
 import MainLayout from "layouts/Main";
 import ReactTour from "components/Tour";
-// import steps from "components/Tour/steps/contact";
 
 const INITIAL_FORM = {
   name: "",

@@ -1,8 +1,15 @@
-import { HTMLAttributes, useRef, Suspense, useEffect, useState, memo } from "react";
+import {
+  HTMLAttributes,
+  useRef,
+  Suspense,
+  useEffect,
+  useState,
+  memo,
+} from "react";
 import useLottie from "hooks/useLottie";
 import * as Styled from "./Coral.styles";
 import loadingJson from "assets/animations/lordicons/333-loader-4-edited.json";
-import { useTypedSelector } from "hooks/useTypedSelector";
+import { useStore } from "store/store";
 
 interface CoralLottieProps extends HTMLAttributes<HTMLDivElement> {
   name?: string;
@@ -11,9 +18,9 @@ interface CoralLottieProps extends HTMLAttributes<HTMLDivElement> {
 const CoralLottie: React.FC<CoralLottieProps> = (props) => {
   const container = useRef<HTMLDivElement | null>(null);
   const [coralJson, setCoralJson] = useState<any>(loadingJson);
-  const { themePallet, selectedPallet, themeMode } = useTypedSelector(
-    (state) => state.global
-  );
+
+  const { store } = useStore();
+  const { themePallet, selectedPallet, themeMode } = store.global;
 
   const themeColorName = themePallet.pallets[selectedPallet].name;
 

@@ -7,14 +7,16 @@ import FacebookLottie from "components/Lotties/SocialMedia/Facebook";
 import Flex from "components/Flex";
 import { openNewTab, shuffleArray } from "utils/helpers";
 import { ThemeColors } from "constants/Colors";
-import { useTypedSelector } from "hooks/useTypedSelector";
 import * as Styled from "views/Contact/Contact.styles";
 import { Links } from "constants/Links";
+import { useStore } from "store/store";
+import { ThemeMode } from "state/actions";
 
 interface SocialsProps {}
 
 const Socials: React.FC<SocialsProps> = () => {
-  const { themeMode } = useTypedSelector((state) => state.global);
+  const { store } = useStore();
+  const { themeMode }: {themeMode: ThemeMode} = store.global;
 
   const memoColors = useMemo(
     () => shuffleArray(ThemeColors[themeMode]),

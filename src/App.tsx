@@ -6,7 +6,7 @@ import { ToastContainer } from "react-toastify";
 import { GlobalStyles } from "components/Global/GlobalStyles";
 import useSetDirection from "hooks/useSetDirection";
 import useDarkMode from "hooks/useDarkMode";
-import useActions from "hooks/useActions";
+import { useStore } from "store/store";
 
 const Home = lazy(() => import(/*webpackChunkName: "Home_View"*/ "views/Home"));
 const Contact = lazy(
@@ -21,13 +21,12 @@ const NotFound = lazy(
 const App: React.FC = () => {
   const theme = useDarkMode();
   const { direction } = useSetDirection();
-  const { getGithubRepositories } = useActions();
+  const { actions } = useStore();
 
-
-  //! Get pinned repositories from my github(rasoul678)
+  //! Get repositories from my github account
   useEffect(() => {
-    getGithubRepositories();
-  }, [getGithubRepositories]);
+    actions.getGithubRepos();
+  }, [actions]);
 
   return (
     <ThemeProvider theme={theme}>

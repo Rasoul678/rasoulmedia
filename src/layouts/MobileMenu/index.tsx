@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
-// import lottie from "lottie-web";
 import * as Styled from "./MobileMenu.styles";
 import useScrollDirection from "hooks/useScrollDirection";
 import MenuIcon from "components/Icons/MenuIcon";
 import BottomSheet from "./BottomSheet";
 import CustomLink from "components/CustomLink";
-import { useTypedSelector } from "hooks/useTypedSelector";
-import useActions from "hooks/useActions";
+import { useStore } from "store/store";
 
 import HomeLottie from "components/Lotties/Home";
 import LayersLottie from "components/Lotties/Layers";
@@ -16,8 +14,9 @@ import ContactLottie from "components/Lotties/Contact";
 const MobileMenu: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const direction = useScrollDirection();
-  const { isMobileMenuOpen } = useTypedSelector((state) => state.global);
-  const { toggleMobileMenu } = useActions();
+  const { store, actions } = useStore();
+  const { isMobileMenuOpen } = store.global;
+  const { toggleMobileMenu } = actions;
 
   const handleMenuClick = () => {
     !isMobileMenuOpen && toggleMobileMenu(!isMobileMenuOpen);

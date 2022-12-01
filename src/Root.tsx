@@ -1,20 +1,20 @@
 import React, { Suspense } from "react";
 import { createRoot } from "react-dom/client";
-import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
-import { store } from "./state";
 import AppLoader from "./components/AppLoader";
 import ErrorBoundary from "components/ErrorBoundary";
 import "./i18n";
 import "./index.css";
+import { StoreProvider } from "store/store";
+
 
 const container = document.getElementById("root") as HTMLElement;
 const root = createRoot(container);
 
 root.render(
   <ErrorBoundary>
-    <Provider store={store}>
+    <StoreProvider>
       <Router>
         <React.StrictMode>
           <Suspense fallback={<AppLoader />}>
@@ -22,6 +22,6 @@ root.render(
           </Suspense>
         </React.StrictMode>
       </Router>
-    </Provider>
+    </StoreProvider>
   </ErrorBoundary>
 );

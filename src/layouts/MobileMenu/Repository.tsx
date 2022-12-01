@@ -4,7 +4,6 @@ import * as Styled from "./MobileMenu.styles";
 import ExternalLinkIcon from "components/Icons/ExternalLinkIcon";
 import StarIcon from "components/Icons/StarIcon";
 import GitForkIcon from "components/Icons/GitForkIcon";
-// import OpenIssueIcon from "components/Icons/OpenIssueIcon";
 import EyeIcon from "components/Icons/EyeIcon";
 import TypescriptIcon from "components/Icons/TypescriptIcon";
 import CSS3Icon from "components/Icons/CSS3Icon";

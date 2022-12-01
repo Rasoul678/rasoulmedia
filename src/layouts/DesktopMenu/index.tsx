@@ -9,23 +9,21 @@ import ContactLottie from "components/Lotties/Contact";
 import MenuItem from "./MenuItem";
 import SunIcon from "components/Icons/SunIcon";
 import MoonIcon from "components/Icons/MoonIcon";
-import { useTypedSelector } from "hooks/useTypedSelector";
-import useActions from "hooks/useActions";
 import PaletteSelect from "./PaletteSelect";
 import CustomSelect from "components/CustomSelect/CustomSelect";
+import { useStore } from "store/store";
 
 interface DesktopMenuProps {}
 
 const DesktopMenu: React.FC<DesktopMenuProps> = () => {
-  const { themeMode, selectedPallet, themePallet } = useTypedSelector(
-    (state) => state.global
-  );
-  const { toggleThemeMode, setThemePalette } = useActions();
+  const { store, actions } = useStore();
+  const { themeMode, selectedPallet, themePallet } = store.global;
+  const { toggleThemeMode, setThemePalette } = actions;
   const { t } = useTranslation();
 
   const colorOptions = useMemo(() => {
     return Object.entries(themePallet.pallets).map(([key, value]) => ({
-      label: t(value.name),
+      label: t((value as any).name),
       value: key,
     }));
   }, [t, themePallet.pallets]);

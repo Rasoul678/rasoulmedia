@@ -1,14 +1,14 @@
 import { HTMLAttributes, Suspense, useEffect, useState, memo } from "react";
-import { useTypedSelector } from "hooks/useTypedSelector";
 import * as Styled from "./ThankYou.styles";
+import { useStore } from "store/store";
 
 interface ThankSvgProps extends HTMLAttributes<HTMLOrSVGElement> {}
 
 const ThankSvg: React.FC<ThankSvgProps> = (props) => {
   const [svg, setSvg] = useState<any>(null);
-  const { themePallet, selectedPallet } = useTypedSelector(
-    (state) => state.global
-  );
+
+  const { store } = useStore();
+  const { themePallet, selectedPallet } = store.global;
 
   const themeColorName = themePallet.pallets[selectedPallet].name;
 
@@ -22,7 +22,7 @@ const ThankSvg: React.FC<ThankSvgProps> = (props) => {
 
   return (
     <Suspense fallback={<div>Loading ...</div>}>
-      <Styled.ThankImg src={svg} alt='Thank You!' />
+      <Styled.ThankImg src={svg} alt="Thank You!" />
     </Suspense>
   );
 };

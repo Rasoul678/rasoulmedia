@@ -1,15 +1,12 @@
-import { useTypedSelector } from "hooks/useTypedSelector";
 import { ThemeType } from "interfaces";
 import { invertColor } from "utils/helpers";
+import { useStore } from "store/store";
 
 const useDarkMode = () => {
-  const { selectedPallet, themePallet } = useTypedSelector(
-    (state) => state.global
-  );
+  const { store } = useStore();
+  const { selectedPallet, themePallet } = store.global;
 
   const { name, pallets } = themePallet;
-
-  // console.log({ selectedPallet, themePallet });
 
   const theme: ThemeType = {
     name: name,

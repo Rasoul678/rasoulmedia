@@ -6,16 +6,15 @@ import HomeLottie from "components/Lotties/Home";
 import LayersLottie from "components/Lotties/Layers";
 import CodeLottie from "components/Lotties/Code";
 import ContactLottie from "components/Lotties/Contact";
-import { useTypedSelector } from "hooks/useTypedSelector";
-import useLanguages from "hooks/useLanguages";
+import useFlags from "hooks/useFlags";
 import SunIcon from "components/Icons/SunIcon";
 import MoonIcon from "components/Icons/MoonIcon";
 import ColorPaletteIcon from "components/Icons/ColorPaletteIcon";
-import useActions from "hooks/useActions";
 import useModal from "hooks/useModal";
 import Modal from "components/Modal";
 import SelectLanguage from "layouts/MobileMenu/SelectLanguage";
 import SelectPalette from "layouts/MobileMenu/SelectPalette";
+import { useStore } from "store/store";
 
 type ModalType = "language" | "palette" | null;
 
@@ -50,22 +49,24 @@ const variants = {
 const style = { height: "2.5rem", width: "2.5rem" };
 
 const Navigation = () => {
-  const { t, i18n } = useTranslation();
-  const { toggleThemeMode } = useActions();
-
-  const { themeMode } = useTypedSelector((state) => state.global);
-  const { flag } = useLanguages(i18n.language);
-
   const [modalType, setModalType] = useState<ModalType>(null);
-
+  const { t, i18n } = useTranslation();
+  const { flag } = useFlags(i18n.language);
   const { isShown, toggle } = useModal();
+  const { store, actions } = useStore();
 
-  const handleSelect = useCallback((type: ModalType) => {
-    return () => {
-      toggle();
-      setModalType(type);
-    };
-  }, [toggle]);
+  const { themeMode } = store.global;
+  const { toggleThemeMode } = actions;
+
+  const handleSelect = useCallback(
+    (type: ModalType) => {
+      return () => {
+        toggle();
+        setModalType(type);
+      };
+    },
+    [toggle]
+  );
 
   const handleToggle = () => {
     toggleThemeMode(themeMode === "dark" ? "light" : "dark");
@@ -92,18 +93,18 @@ const Navigation = () => {
         }
         modalContent={getModalContent(modalType)}
       />
-        <MenuItem linkTo="/" name={t("nav.home")}>
-          <HomeLottie name={t("nav.home")} style={style} />
-        </MenuItem>
-        <MenuItem linkTo="/apps" name={t("nav.applications")}>
-          <LayersLottie name={t("nav.applications")} style={style} />
-        </MenuItem>
-        <MenuItem linkTo="/code" name={t("nav.code")}>
-          <CodeLottie name={t("nav.code")} style={style} />
-        </MenuItem>
-        <MenuItem linkTo="/contact" name={t("nav.contact")}>
-          <ContactLottie name={t("nav.contact")} style={style} />
-        </MenuItem>
+      <MenuItem linkTo="/" name={t("nav.home")}>
+        <HomeLottie name={t("nav.home")} style={style} />
+      </MenuItem>
+      <MenuItem linkTo="/apps" name={t("nav.applications")}>
+        <LayersLottie name={t("nav.applications")} style={style} />
+      </MenuItem>
+      <MenuItem linkTo="/code" name={t("nav.code")}>
+        <CodeLottie name={t("nav.code")} style={style} />
+      </MenuItem>
+      <MenuItem linkTo="/contact" name={t("nav.contact")}>
+        <ContactLottie name={t("nav.contact")} style={style} />
+      </MenuItem>
       <Styled.MenuCellsContainer variants={variants}>
         <Styled.MenuCellWrapper
           whileHover={{ scale: 1.2 }}

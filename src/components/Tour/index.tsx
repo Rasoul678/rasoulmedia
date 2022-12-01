@@ -1,9 +1,8 @@
-import useActions from "hooks/useActions";
-import { useTypedSelector } from "hooks/useTypedSelector";
 import { Pages } from "interfaces";
 import React, { useRef, useState } from "react";
 import Tour, { ReactourProps } from "reactour";
 import useStep from "./useStep";
+import { useStore } from "store/store";
 
 interface TourProps
   extends Omit<ReactourProps, "isOpen" | "onRequestClose" | "steps"> {
@@ -11,12 +10,13 @@ interface TourProps
 }
 
 const ReactTour: React.FC<TourProps> = ({ name, ...rest }) => {
-  const { tour } = useTypedSelector((state) => state.global);
+  const { store, actions } = useStore();
+  const { tour } = store.global;
   const [isTourOpen, setIsTourOpen] = useState(
     tour.hasTour && !tour.pages[name].isDone
   );
   const currentStepRef = useRef<number | null>(null);
-  const { setAppTour, setPageTour } = useActions();
+  const { setAppTour, setPageTour } = actions;
 
   const steps = useStep(name);
 

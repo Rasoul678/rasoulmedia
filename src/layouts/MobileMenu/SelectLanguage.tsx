@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import i18next from "i18next";
 import * as Styled from "./MobileMenu.styles";
-import useLanguages, { Languages } from "hooks/useLanguages";
+import useFlags, { FlagTypes } from "hooks/useFlags";
 
 interface ISelectLang {
   toggle: () => void;
@@ -10,7 +10,7 @@ interface ISelectLang {
 const SelectLanguage: React.FC<ISelectLang> = (props) => {
   const { toggle } = props;
 
-  const languages = useLanguages();
+  const falgs = useFlags();
 
   const handleSelectLanguage = useCallback((language: string) => {
     return () => {
@@ -26,7 +26,7 @@ const SelectLanguage: React.FC<ISelectLang> = (props) => {
 
   return (
     <Styled.LangOptionsContainer>
-      {Object.entries(languages as Languages).map(([key, value], index) => (
+      {Object.entries(falgs as FlagTypes).map(([key, value], index) => (
         <Styled.LangOptionWrapper
           key={index}
           onClick={handleSelectLanguage(key)}
