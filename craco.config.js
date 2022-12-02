@@ -1,8 +1,9 @@
 const cracoModuleFederation = require("craco-module-federation");
 
 module.exports = {
+  mode: "production",
   output: {
-    publicPath: "http://localhost:3000",
+    publicPath: "https://rasoulmedia.com/",
   },
   plugins: [
     {
