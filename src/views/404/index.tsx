@@ -20,16 +20,16 @@ const NotFound: React.FC = () => {
   return (
     <View>
       <Button
-        size="medium"
+        size="large"
         style={{
           position: "absolute",
-          top: "2rem",
-          left: "2rem",
+          top: "5rem",
+          left: "5rem",
           zIndex: "10",
         }}
         onClick={() => navigate(-1)}
       >
-        go back
+        back
       </Button>
       <Styled.NotFoundContainer ref={container} />
       <Footer />
