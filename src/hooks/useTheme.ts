@@ -2,7 +2,7 @@ import { ThemeType } from "interfaces";
 import { invertColor } from "utils/helpers";
 import { useStore } from "store/store";
 
-const useDarkMode = () => {
+const useTheme = () => {
   const { store } = useStore();
   const { selectedPallet, themePallet } = store.global;
 
@@ -35,4 +35,4 @@ const useDarkMode = () => {
   return theme;
 };
 
-export default useDarkMode;
+export default useTheme;

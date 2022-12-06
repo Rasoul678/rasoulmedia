@@ -43,7 +43,10 @@ const Button: React.FC<ButtonProps> = (props) => {
       fullWidth={fullWidth}
       size={size}
       onClick={handleClickButton}
+      onKeyDown={handleClickButton}
       variant={variant}
+      role="button"
+      tabIndex={0}
       {...rest}
     >
       <Styled.ButtonLottie isShown={isLoading} ref={container} />

@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { GlobalStyles } from "components/Global/GlobalStyles";
 import useSetDirection from "hooks/useSetDirection";
-import useDarkMode from "hooks/useDarkMode";
+import useTheme from "hooks/useTheme";
 import { useStore } from "store/store";
 import CodeEditor from "views/Apps/code-editor";
 
@@ -20,7 +20,7 @@ const NotFound = lazy(
 );
 
 const App: React.FC = () => {
-  const theme = useDarkMode();
+  const theme = useTheme();
   const { direction } = useSetDirection();
   const { actions } = useStore();
 

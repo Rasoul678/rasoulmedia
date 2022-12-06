@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useCallback } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "react-i18next";
 import reactStringReplace from "react-string-replace";
@@ -6,25 +6,48 @@ import * as Styled from "./LapTopGallery.styles";
 import CustomTypewriter from "components/CustomTypewriter";
 import ScrollDown from "components/Lotties/ScrollDown";
 import ProfilePic from "assets/profile-pic-2.jpg";
-import Socials from "./Socials";
+import SocialsLink from "./Socials";
+import { openNewTab } from "utils/helpers";
+import { Links } from "constants/Links";
 
 const HomeGallery: React.FC = () => {
   const { t } = useTranslation();
+
+  const handleClick = useCallback((link: string) => () => openNewTab(link), []);
+
+  const handleKeyDown = useCallback(
+    (link: string) => (e: React.KeyboardEvent<HTMLDivElement>) => {
+      if (e.key === "Enter") {
+        openNewTab(link);
+      }
+    },
+    []
+  );
+
+  const handlekeyPressLink = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLElement;
+    (target.children[0] as HTMLElement).click();
+  };
 
   return (
     <Styled.HomeGalleryContainer>
       <Styled.IntroductionContainer>
         <Styled.IntroHead data-tour="step-3">
-          <Styled.ImageWrapper>
+          <Styled.ImageWrapper
+            tabIndex={0}
+            onClick={handleClick(Links.github)}
+            onKeyDown={handleKeyDown(Links.github)}
+          >
             <Styled.Image
               initial={{ scale: 0 }}
               animate={{ scale: 1.1 }}
               transition={{ duration: 0.3 }}
               src={ProfilePic}
               alt="My-Picture"
+              aria-label="my profile picture"
             />
           </Styled.ImageWrapper>
-          <Socials />
+          <SocialsLink />
         </Styled.IntroHead>
         <Styled.IntroductionInfoWrapper>
           <div data-tour="step-1">
@@ -32,6 +55,7 @@ const HomeGallery: React.FC = () => {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.3 }}
+              tabIndex={0}
             >
               {reactStringReplace(t("welcome-intro"), t("me"), (match, i) => (
                 <Styled.Name key={i}>{match}</Styled.Name>
@@ -42,11 +66,25 @@ const HomeGallery: React.FC = () => {
               animate={{ scale: 1 }}
               transition={{ duration: 0.3 }}
             >
-              <Styled.Skill>Web Developer</Styled.Skill> |{" "}
-              <Styled.Skill>Javascript</Styled.Skill> |{" "}
-              <Styled.Skill>ReactJS</Styled.Skill> |{" "}
-              <Styled.Skill>HTML</Styled.Skill> |{" "}
-              <Styled.Skill>CSS</Styled.Skill>
+              <Styled.Skill tabIndex={0} aria-label="Web Developer">
+                Web Developer
+              </Styled.Skill>{" "}
+              |{" "}
+              <Styled.Skill tabIndex={0} aria-label="Javascript">
+                Javascript
+              </Styled.Skill>{" "}
+              |{" "}
+              <Styled.Skill tabIndex={0} aria-label="ReactJS">
+                ReactJS
+              </Styled.Skill>{" "}
+              |{" "}
+              <Styled.Skill tabIndex={0} aria-label="HTML">
+                HTML
+              </Styled.Skill>{" "}
+              |{" "}
+              <Styled.Skill tabIndex={0} aria-label="CSS">
+                CSS
+              </Styled.Skill>
             </Styled.UserSkills>
           </div>
           <Styled.TypeWriterWrapper
@@ -73,6 +111,8 @@ const HomeGallery: React.FC = () => {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.3 }}
+        tabIndex={0}
+        onKeyPress={handlekeyPressLink}
       >
         <ScrollLink
           activeClass="active"

@@ -12,12 +12,14 @@ import MoonIcon from "components/Icons/MoonIcon";
 import PaletteSelect from "./PaletteSelect";
 import CustomSelect from "components/CustomSelect/CustomSelect";
 import { useStore } from "store/store";
+import { GlobalState } from "state/reducers/globalReducer";
 
 interface DesktopMenuProps {}
 
 const DesktopMenu: React.FC<DesktopMenuProps> = () => {
   const { store, actions } = useStore();
-  const { themeMode, selectedPallet, themePallet } = store.global;
+  const { themeMode, selectedPallet, themePallet } =
+    store.global as GlobalState;
   const { toggleThemeMode, setThemePalette } = actions;
   const { t } = useTranslation();
 
@@ -43,6 +45,12 @@ const DesktopMenu: React.FC<DesktopMenuProps> = () => {
     toggleThemeMode(themeMode === "dark" ? "light" : "dark");
   };
 
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Enter") {
+      handleToggle();
+    }
+  };
+
   const handleChangeLanguage = useCallback((value: any) => {
     const lang = value.value;
     //! Reload for rtl.
@@ -58,12 +66,19 @@ const DesktopMenu: React.FC<DesktopMenuProps> = () => {
       ...styles,
       ...(select === "lang" ? { width: "7rem" } : { width: "auto" }),
     }),
-    option: (styles: any, { isSelected }: { isSelected: boolean }) => ({
+    option: (
+      styles: any,
+      { isSelected, isFocused }: { isSelected: boolean; isFocused: boolean }
+    ) => ({
       ...styles,
-      backgroundColor: "transparent",
+      backgroundColor: isFocused
+        ? themePallet.pallets[selectedPallet].mainColor + "!important"
+        : "",
       cursor: "pointer",
       color: isSelected
-        ? themePallet.pallets[selectedPallet].mainColor + "!important"
+        ? isFocused
+          ? ""
+          : themePallet.pallets[selectedPallet].mainColor + "!important"
         : "",
     }),
     singleValue: (styles: any) => ({
@@ -118,7 +133,9 @@ const DesktopMenu: React.FC<DesktopMenuProps> = () => {
         </Styled.SettingWrapper>
         <Styled.SettingWrapper
           onClick={handleToggle}
+          onKeyPress={handleKeyPress}
           data-tour="step-desktop-nav-dark"
+          tabIndex={0}
         >
           {themeMode === "dark" ? (
             <SunIcon size={32} color="#F8C004" />

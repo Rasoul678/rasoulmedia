@@ -14,9 +14,9 @@ import { ThemeMode } from "state/actions";
 
 interface SocialsProps {}
 
-const Socials: React.FC<SocialsProps> = () => {
+const SocialsLink: React.FC<SocialsProps> = () => {
   const { store } = useStore();
-  const { themeMode }: {themeMode: ThemeMode} = store.global;
+  const { themeMode }: { themeMode: ThemeMode } = store.global;
 
   const memoColors = useMemo(
     () => shuffleArray(ThemeColors[themeMode]),
@@ -44,6 +44,15 @@ const Socials: React.FC<SocialsProps> = () => {
     []
   );
 
+  const handleKeyPress = useCallback(
+    (link: string) => (e: React.KeyboardEvent<HTMLDivElement>) => {
+      if (e.key === "Enter") {
+        openNewTab(link);
+      }
+    },
+    []
+  );
+
   return (
     <Flex
       position="relative"
@@ -61,6 +70,8 @@ const Socials: React.FC<SocialsProps> = () => {
           onHoverStart={handleMouseEnter("twitter")}
           onHoverEnd={handleMouseLeave("twitter")}
           onClick={handleClick(Links.twitter)}
+          onKeyPress={handleKeyPress(Links.twitter)}
+          tabIndex={0}
         >
           <TwitterLottie color={memoColors[0]} style={{ maxWidth: "3rem" }} />
         </Styled.SocialWrapper>
@@ -69,6 +80,8 @@ const Socials: React.FC<SocialsProps> = () => {
           onMouseEnter={handleMouseEnter("linkedin")}
           onMouseLeave={handleMouseLeave("linkedin")}
           onClick={handleClick(Links.linkedin)}
+          onKeyPress={handleKeyPress(Links.linkedin)}
+          tabIndex={0}
         >
           <LinkedinLottie color={memoColors[1]} style={{ maxWidth: "3rem" }} />
         </Styled.SocialWrapper>
@@ -76,6 +89,8 @@ const Socials: React.FC<SocialsProps> = () => {
           onMouseEnter={handleMouseEnter("instagram")}
           onMouseLeave={handleMouseLeave("instagram")}
           onClick={handleClick(Links.instagram)}
+          onKeyPress={handleKeyPress(Links.instagram)}
+          tabIndex={0}
         >
           <InstagramLottie color={memoColors[2]} style={{ maxWidth: "3rem" }} />
         </Styled.SocialWrapper>
@@ -83,6 +98,8 @@ const Socials: React.FC<SocialsProps> = () => {
           onMouseEnter={handleMouseEnter("facebook")}
           onMouseLeave={handleMouseLeave("facebook")}
           onClick={handleClick(Links.facebook)}
+          onKeyPress={handleKeyPress(Links.facebook)}
+          tabIndex={0}
         >
           <FacebookLottie color={memoColors[3]} style={{ maxWidth: "3rem" }} />
         </Styled.SocialWrapper>
@@ -91,4 +108,4 @@ const Socials: React.FC<SocialsProps> = () => {
   );
 };
 
-export default memo(Socials);
+export default memo(SocialsLink);

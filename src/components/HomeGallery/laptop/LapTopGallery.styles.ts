@@ -231,6 +231,7 @@ export const ImageWrapper = styled.div`
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid #333;
+  cursor: pointer;
 
   @media only screen and (max-width: 1030px) {
     width: 9rem;

@@ -4,7 +4,7 @@ import { ThemeMode, Action } from "../actions";
 import theme from "schema/theme.json";
 import { Pages, ThemePallet } from "interfaces";
 
-interface GlobalState {
+export interface GlobalState {
   themeMode: ThemeMode;
   themePallet: ThemePallet;
   selectedPallet: string;
