@@ -1,6 +1,6 @@
 import { GiMoonBats } from "react-icons/gi";
 import { PathMatch } from "react-router";
-import { useTheme } from "styled-components";
+import useTheme from "hooks/useTheme";
 
 interface MoonIconProps {
   size?: number;

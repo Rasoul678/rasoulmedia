@@ -1,8 +1,24 @@
-export type ThemeMode = "dark" | "light" | string;
+export type ThemeMode = "dark" | "light";
 
 export interface ButtonColor {
   backgroundColor: string;
   textColor: string;
+}
+
+export interface GlobalState {
+  themeMode: ThemeMode;
+  themePallet: ThemePallet;
+  selectedPallet: string;
+  isMobileMenuOpen: boolean;
+  tour: {
+    hasTour: boolean;
+    pages: {
+      [key in Pages]: {
+        isDone: boolean;
+        name: Pages;
+      };
+    };
+  };
 }
 
 export interface ButtonType {

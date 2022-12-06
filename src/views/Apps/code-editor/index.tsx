@@ -1,4 +1,4 @@
-import MainLayout from "layouts/Main";
+import useTheme from "hooks/useTheme";
 import React, { lazy } from "react";
 import * as Styled from "./CodeEditor.styles";
 
@@ -9,13 +9,15 @@ const Editor = lazy(
 interface IProps {}
 
 const CodeEditor: React.FC<IProps> = (props) => {
+  const { text } = useTheme();
+
   return (
-    <MainLayout>
-      <Styled.Wrapper>
-        <Styled.Header>Online Code Editor</Styled.Header>
-        <Editor />
-      </Styled.Wrapper>
-    </MainLayout>
+    <Styled.Wrapper>
+      <Styled.Header style={{ color: text }}>
+        Online Code Editor
+      </Styled.Header>
+      <Editor />
+    </Styled.Wrapper>
   );
 };
 

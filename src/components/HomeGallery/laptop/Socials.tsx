@@ -10,7 +10,7 @@ import { ThemeColors } from "constants/Colors";
 import * as Styled from "views/Contact/Contact.styles";
 import { Links } from "constants/Links";
 import { useStore } from "store/store";
-import { ThemeMode } from "state/actions";
+import { ThemeMode } from "interfaces";
 
 interface SocialsProps {}
 

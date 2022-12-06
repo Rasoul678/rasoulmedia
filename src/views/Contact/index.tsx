@@ -9,7 +9,6 @@ import { sendEmail } from "utils/helpers";
 import { View } from "components/Global/GlobalStyles";
 import * as Styled from "./Contact.styles";
 import renderToast from "utils/renderToast";
-import MainLayout from "layouts/Main";
 import ReactTour from "components/Tour";
 
 const INITIAL_FORM = {
@@ -90,62 +89,60 @@ const Contact: React.FC = () => {
         name="contact"
         lastStepNextButton={<Button size="small">Bye!</Button>}
       />
-      <MainLayout>
-        <Styled.FormTitle>{t("contact-me")}</Styled.FormTitle>
-        <Styled.InputsWrapper>
-          <Input
-            onChange={handleFieldValue}
-            value={contactForm.name}
-            type="text"
-            label={t("name")}
-            name="name"
-            autoComplete="off"
-            required
-            error={error.name}
-            data-tour="step-1"
-          />
-          <Input
-            onChange={handleFieldValue}
-            value={contactForm.email}
-            type="email"
-            label={t("email")}
-            name="email"
-            autoComplete="off"
-            required
-            error={error.email}
-            data-tour="step-2"
-          />
-          <Input
-            onChange={handleFieldValue}
-            value={contactForm.subject}
-            type="text"
-            label={t("subject")}
-            name="subject"
-            autoComplete="off"
-            data-tour="step-3"
-          />
-          <Textarea
-            onChange={handleFieldValue}
-            value={contactForm.message}
-            required
-            label={t("message")}
-            rows={3}
-            name="message"
-            error={error.message}
-            data-tour="step-4"
-          />
-          <Button
-            loaderJson={sendMailJson}
-            size="large"
-            isLoading={isSending}
-            onClick={handleSendEmail}
-            fullWidth
-            data-tour="step-5"
-          >
-            {t("send")}
-          </Button>
-        </Styled.InputsWrapper>
-      </MainLayout>
+      <Styled.FormTitle>{t("contact-me")}</Styled.FormTitle>
+      <Styled.InputsWrapper>
+        <Input
+          onChange={handleFieldValue}
+          value={contactForm.name}
+          type="text"
+          label={t("name")}
+          name="name"
+          autoComplete="off"
+          required
+          error={error.name}
+          data-tour="step-1"
+        />
+        <Input
+          onChange={handleFieldValue}
+          value={contactForm.email}
+          type="email"
+          label={t("email")}
+          name="email"
+          autoComplete="off"
+          required
+          error={error.email}
+          data-tour="step-2"
+        />
+        <Input
+          onChange={handleFieldValue}
+          value={contactForm.subject}
+          type="text"
+          label={t("subject")}
+          name="subject"
+          autoComplete="off"
+          data-tour="step-3"
+        />
+        <Textarea
+          onChange={handleFieldValue}
+          value={contactForm.message}
+          required
+          label={t("message")}
+          rows={3}
+          name="message"
+          error={error.message}
+          data-tour="step-4"
+        />
+        <Button
+          loaderJson={sendMailJson}
+          size="large"
+          isLoading={isSending}
+          onClick={handleSendEmail}
+          fullWidth
+          data-tour="step-5"
+        >
+          {t("send")}
+        </Button>
+      </Styled.InputsWrapper>
     </View>
   );
 };

@@ -15,6 +15,7 @@ import Modal from "components/Modal";
 import SelectLanguage from "layouts/MobileMenu/SelectLanguage";
 import SelectPalette from "layouts/MobileMenu/SelectPalette";
 import { useStore } from "store/store";
+import useTheme from "hooks/useTheme";
 
 type ModalType = "language" | "palette" | null;
 
@@ -54,6 +55,7 @@ const Navigation = () => {
   const { flag } = useFlags(i18n.language);
   const { isShown, toggle } = useModal();
   const { store, actions } = useStore();
+  const theme = useTheme();
 
   const { themeMode } = store.global;
   const { toggleThemeMode } = actions;
@@ -112,9 +114,9 @@ const Navigation = () => {
           onClick={handleToggle}
         >
           {themeMode === "dark" ? (
-            <SunIcon size={35} />
+            <SunIcon size={35} color="#F8C004" />
           ) : (
-            <MoonIcon className="dark-mode" size={35} />
+            <MoonIcon className="dark-mode" size={35} color={theme.text} />
           )}
         </Styled.MenuCellWrapper>
         <Styled.MenuCellWrapper

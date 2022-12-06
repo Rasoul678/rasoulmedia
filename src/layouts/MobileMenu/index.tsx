@@ -42,40 +42,20 @@ const MobileMenu: React.FC = () => {
 
   return (
     <Styled.MobileMenuContainer isVisible={isVisible}>
-      <Styled.MenuItem
-        // onMouseEnter={() => lottie.play("home")}
-        // onMouseLeave={() => lottie.stop("home")}
-        as={CustomLink}
-        to="/"
-      >
+      <Styled.MenuItem as={CustomLink} to="/">
         <HomeLottie style={{ height: "2.5rem" }} />
       </Styled.MenuItem>
-      <Styled.MenuItem
-        // onMouseEnter={() => lottie.play("apps")}
-        // onMouseLeave={() => lottie.stop("apps")}
-        as={CustomLink}
-        to="/apps"
-      >
-        <LayersLottie style={{ height: "4.7rem" }} />
+      <Styled.MenuItem as={CustomLink} to="/apps">
+        <LayersLottie style={{ height: "3.7rem" }} />
       </Styled.MenuItem>
       <Styled.MenuItem onClick={handleMenuClick} isOpen={isMobileMenuOpen}>
         <BottomSheet />
         {!isMobileMenuOpen && <MenuIcon onClick={handleMenuClick} size={35} />}
       </Styled.MenuItem>
-      <Styled.MenuItem
-        // onMouseEnter={() => lottie.play("code")}
-        // onMouseLeave={() => lottie.stop("code")}
-        as={CustomLink}
-        to="/code"
-      >
+      <Styled.MenuItem as={CustomLink} to="/code">
         <CodeLottie style={{ height: "4.7rem", width: "4.7rem" }} />
       </Styled.MenuItem>
-      <Styled.MenuItem
-        // onMouseEnter={() => lottie.play("contact")}
-        // onMouseLeave={() => lottie.stop("contact")}
-        as={CustomLink}
-        to="/contact"
-      >
+      <Styled.MenuItem as={CustomLink} to="/contact">
         <ContactLottie style={{ height: "4rem" }} />
       </Styled.MenuItem>
     </Styled.MobileMenuContainer>

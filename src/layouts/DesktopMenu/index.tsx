@@ -12,12 +12,14 @@ import MoonIcon from "components/Icons/MoonIcon";
 import PaletteSelect from "./PaletteSelect";
 import CustomSelect from "components/CustomSelect/CustomSelect";
 import { useStore } from "store/store";
-import { GlobalState } from "state/reducers/globalReducer";
+import { GlobalState } from "interfaces";
+import useTheme from "hooks/useTheme";
 
 interface DesktopMenuProps {}
 
 const DesktopMenu: React.FC<DesktopMenuProps> = () => {
   const { store, actions } = useStore();
+  const theme = useTheme();
   const { themeMode, selectedPallet, themePallet } =
     store.global as GlobalState;
   const { toggleThemeMode, setThemePalette } = actions;
@@ -140,7 +142,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = () => {
           {themeMode === "dark" ? (
             <SunIcon size={32} color="#F8C004" />
           ) : (
-            <MoonIcon size={30} />
+            <MoonIcon size={30} color={theme.text} />
           )}
         </Styled.SettingWrapper>
       </Styled.MenuItemsWrapper>

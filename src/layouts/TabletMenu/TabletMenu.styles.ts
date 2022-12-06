@@ -59,7 +59,7 @@ export const TabletMenuItem = styled(motion.li)`
   margin: 0;
   padding: 0;
   list-style: none;
-  margin-bottom: 0.8rem;
+  margin: 0.8rem 1.5rem;
 `;
 
 export const TabletMenuLink = styled.div`

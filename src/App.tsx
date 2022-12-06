@@ -8,6 +8,7 @@ import useSetDirection from "hooks/useSetDirection";
 import useTheme from "hooks/useTheme";
 import { useStore } from "store/store";
 import CodeEditor from "views/Apps/code-editor";
+import MainLayout from "layouts/Main";
 
 const Home = lazy(() => import(/*webpackChunkName: "Home_View"*/ "views/Home"));
 const Contact = lazy(
@@ -31,28 +32,30 @@ const App: React.FC = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <ToastContainer
-        position="bottom-left"
-        autoClose={5000}
-        hideProgressBar
-        newestOnTop
-        closeOnClick
-        rtl={direction === "rtl"}
-        draggable
-      />
-      <Routes>
-        <Route path="/">
-          <Route index element={<Home />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="apps">
-            <Route index element={<Apps />} />
-            <Route path="code-editor" element={<CodeEditor />} />
+      <MainLayout>
+        <GlobalStyles />
+        <ToastContainer
+          position="bottom-left"
+          autoClose={5000}
+          hideProgressBar
+          newestOnTop
+          closeOnClick
+          rtl={direction === "rtl"}
+          draggable
+        />
+        <Routes>
+          <Route path="/">
+            <Route index element={<Home />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="apps">
+              <Route index element={<Apps />} />
+              <Route path="code-editor" element={<CodeEditor />} />
+            </Route>
+            <Route path="code" element={<Code />} />
           </Route>
-          <Route path="code" element={<Code />} />
-        </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </MainLayout>
     </ThemeProvider>
   );
 };

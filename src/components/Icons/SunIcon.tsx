@@ -1,6 +1,6 @@
 import { HiSun } from "react-icons/hi";
 import { PathMatch } from "react-router";
-import { useTheme } from "styled-components";
+import useTheme from "hooks/useTheme";
 
 interface SunIconProps {
   size?: number;

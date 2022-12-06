@@ -10,7 +10,7 @@ const CustomLink = ({ children, to, ...props }: LinkProps) => {
     <Link to={to} {...props}>
       {Children.map<ReactNode, ReactNode>(children, (child) => {
         if (isValidElement(child)) {
-          return cloneElement(child, { match });
+          return cloneElement<any>(child, { match });
         }
       })}
     </Link>
