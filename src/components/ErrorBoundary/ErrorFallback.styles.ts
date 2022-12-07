@@ -14,9 +14,11 @@ export const ErrorFallbackContainer = styled.div`
 `;
 
 export const FallbackAnimationWrapper = styled.div`
-  width: 100%;
   font-size: 1.5rem;
   color: #fff;
   font-family: Ubuntu, "Roboto", sans-serif;
-  text-align: center;
+  display: grid;
+  justify-content: center;
+  place-items: center;
+  height: 100vh;
 `;
