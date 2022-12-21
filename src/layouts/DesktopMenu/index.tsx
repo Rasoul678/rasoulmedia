@@ -97,16 +97,20 @@ const DesktopMenu: React.FC<DesktopMenuProps> = () => {
     <Styled.DesktopNavbar>
       <Styled.MenuItemsWrapper data-tour="step-desktop-nav-links">
         <MenuItem name="home" linkTo="/">
-          <HomeLottie name="home" style={{ width: "2.5rem" }} />
+          <HomeLottie name="home" style={{ width: "2.5rem" }} title="home" />
         </MenuItem>
         <MenuItem name="apps" linkTo="/apps">
-          <LayersLottie name="apps" style={{ width: "2.5rem" }} />
+          <LayersLottie name="apps" style={{ width: "2.5rem" }} title="apps" />
         </MenuItem>
         <MenuItem name="code" linkTo="/code">
-          <CodeLottie name="code" style={{ height: "4rem" }} />
+          <CodeLottie name="code" style={{ height: "4rem" }} title="code" />
         </MenuItem>
         <MenuItem name="contact" linkTo="/contact">
-          <ContactLottie name="contact" style={{ width: "3rem" }} />
+          <ContactLottie
+            name="contact"
+            style={{ width: "3rem" }}
+            title="contact"
+          />
         </MenuItem>
       </Styled.MenuItemsWrapper>
       <Styled.MenuItemsWrapper style={{ gap: "0" }}>

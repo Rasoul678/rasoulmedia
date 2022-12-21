@@ -1,8 +1,6 @@
 import { Breakpoints } from "constants/Global";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import BG_Light from "../../assets/bg/bg9.jpg";
-import BG_Dark from "../../assets/bg/bg10.jpg";
 
 interface MobileMenuProps {
   isVisible: boolean;
@@ -118,9 +116,10 @@ export const MenuCellsContainer = styled.div`
 // `;
 
 export const MenuSlider = styled.div`
-  background: ${({ theme }) => theme.colors[1]};
-  box-shadow: 0px 0px 5px 0px ${({ theme }) => theme.card.backgroundColor};
-  border-radius: 1rem;
+  background: ${({ theme }) =>
+    theme.name === "dark" ? "rgb(25,25,25)" : "rgb(255,255,255)"};
+  box-shadow: 0px 0px 5px 0px ${({ theme }) => theme.text};
+  border-radius: 0.8rem;
   height: 100%;
   aspect-ratio: 1.5;
   padding: 0.3rem;
@@ -132,18 +131,7 @@ export const MenuSlider = styled.div`
   justify-content: space-between;
   align-items: stretch;
   gap: 0.3rem;
-  ${({ theme }) =>
-    theme.name === "dark"
-      ? `
-  background: linear-gradient(rgba(31, 40, 55, 0.4), rgba(31, 40, 55, 0.8)),
-    url(${BG_Dark});
-  `
-      : `
-      background: linear-gradient(rgba(227,231,234,0.2), rgba(227,231,234,0.5)),
-    url(${BG_Light});
-    `}
-  // background-image: url(${BG_Light});
-  background-size: cover;
+
   width: 100%;
 
   .repo-slide-title {
@@ -175,20 +163,18 @@ export const MenuSlider = styled.div`
 
 export const HeaderWrapper = styled.div`
   display: flex;
-  justify-content: fles-start;
+  justify-content: flex-start;
   align-items: center;
   gap: 0.5rem;
+  transition: all 0.5s linear;
 `;
 
 export const RepoImage = styled.img`
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-
-  @media only screen and (min-width: 450px) {
-    width: 4rem;
-    height: 4rem;
-  }
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 `;
 
 export const MenuCellWrapper = styled.div`
@@ -305,6 +291,8 @@ export const RepoTitleWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.5s linear;
+  cursor: pointer;
 
   :hover svg.repo-external-link {
     opacity: 1;
@@ -326,9 +314,9 @@ export const CountWrapper = styled.div`
   width: 3rem;
   margin: auto;
   border-radius: 1rem;
-  background-color: ${({ theme }) => theme.colors[0]};
   transition: all 0.5s linear;
   // padding: 0.5rem;
+  border: 1px solid ${({ theme }) => theme.text};
   font-size: 0.6rem;
 
   svg {

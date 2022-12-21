@@ -1,4 +1,4 @@
-import React, { Children, cloneElement, Fragment, ReactNode } from "react";
+import React, { Children, cloneElement, ReactNode } from "react";
 import Slider from "react-slick";
 import settings from "./settings";
 
@@ -18,9 +18,9 @@ const SlickCarousel: React.FC<SlickCarouselProps> = (props) => {
   return (
     <Styled.SlickWrapper>
       <Slider {...settings} dotsClass="slick-dots custom-dot">
-        {Children.map(arrayChildren, (child, index) => {
+        {Children.map(arrayChildren, (child) => {
           if (React.isValidElement(child)) {
-            return <Fragment key={index}>{cloneElement(child)}</Fragment>;
+            return <>{cloneElement(child)}</>;
           }
         })}
       </Slider>

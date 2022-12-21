@@ -72,6 +72,7 @@ const SocialsLink: React.FC<SocialsProps> = () => {
           onClick={handleClick(Links.twitter)}
           onKeyPress={handleKeyPress(Links.twitter)}
           tabIndex={0}
+          title="twitter"
         >
           <TwitterLottie color={memoColors[0]} style={{ maxWidth: "3rem" }} />
         </Styled.SocialWrapper>
@@ -82,6 +83,7 @@ const SocialsLink: React.FC<SocialsProps> = () => {
           onClick={handleClick(Links.linkedin)}
           onKeyPress={handleKeyPress(Links.linkedin)}
           tabIndex={0}
+          title="linkedin"
         >
           <LinkedinLottie color={memoColors[1]} style={{ maxWidth: "3rem" }} />
         </Styled.SocialWrapper>
@@ -91,6 +93,7 @@ const SocialsLink: React.FC<SocialsProps> = () => {
           onClick={handleClick(Links.instagram)}
           onKeyPress={handleKeyPress(Links.instagram)}
           tabIndex={0}
+          title="instagram"
         >
           <InstagramLottie color={memoColors[2]} style={{ maxWidth: "3rem" }} />
         </Styled.SocialWrapper>
@@ -100,6 +103,7 @@ const SocialsLink: React.FC<SocialsProps> = () => {
           onClick={handleClick(Links.facebook)}
           onKeyPress={handleKeyPress(Links.facebook)}
           tabIndex={0}
+          title="facebook"
         >
           <FacebookLottie color={memoColors[3]} style={{ maxWidth: "3rem" }} />
         </Styled.SocialWrapper>

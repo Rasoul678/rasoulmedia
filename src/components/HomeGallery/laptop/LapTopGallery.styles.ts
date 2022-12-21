@@ -230,7 +230,8 @@ export const ImageWrapper = styled.div`
   align-items: center;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid #333;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   cursor: pointer;
 
   @media only screen and (max-width: 1030px) {

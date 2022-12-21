@@ -9,12 +9,19 @@ export const DesktopNavbar = styled(motion.nav)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: ${({ theme }) => theme.background};
-  
   z-index: 200;
-  -webkit-box-shadow: 0px 1px 1px ${({ theme }) => theme.card.backgroundColor};
-  -moz-box-shadow: 0px 1px 1px ${({ theme }) => theme.card.backgroundColor};
-  box-shadow: 0px 1px 1px ${({ theme }) => theme.card.backgroundColor};
+  background: ${({ theme }) =>
+    theme.name === "dark"
+      ? "rgba(23,23,23,0.36)"
+      : "rgba(255, 255, 255, 0.17)"};
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.7px);
+  -webkit-backdrop-filter: blur(4.7px);
+  border-bottom: 1px solid
+    ${({ theme }) =>
+      theme.name === "dark"
+        ? "rgba(43, 41, 41, 0.41)"
+        : "rgba(255, 255, 255, 0.41)"};
 `;
 
 export const MenuItemsWrapper = styled(motion.section)`

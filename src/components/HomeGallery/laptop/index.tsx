@@ -37,6 +37,7 @@ const HomeGallery: React.FC = () => {
             tabIndex={0}
             onClick={handleClick(Links.github)}
             onKeyDown={handleKeyDown(Links.github)}
+            title='Visit github'
           >
             <Styled.Image
               initial={{ scale: 0 }}

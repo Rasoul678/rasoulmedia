@@ -7,13 +7,19 @@ export const SlickWrapper = styled.div`
   }
 
   button.slick-arrow.slick-prev::before {
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.border};
     opacity: 1;
+    font-size: 2.5rem;
+  }
+  
+  button.slick-arrow.slick-prev {
+    left: -45px;
   }
 
   button.slick-arrow.slick-next::before {
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.border};
     opacity: 1;
+    font-size: 2.5rem;
   }
 
   .custom-dot {

@@ -6,7 +6,7 @@ import * as Styled from "./Home.styles";
 import MobileIcon from "components/Icons/MobileIcon";
 import TabletIcon from "components/Icons/TabletIcon";
 import LapTopIcon from "components/Icons/LapTopIcon";
-// import GithubRepos from "./items/github-repos";
+import GithubRepos from "./items/github-repos";
 import Box from "components/Box";
 import Educations from "./items/educations";
 import ReactTour from "components/Tour";
@@ -21,7 +21,7 @@ const Home: React.FC<IHomeProps> = () => {
       <ReactTour name="home" />
       <DesktopGallery />
       <Box width="90%" margin="auto">
-        {/* <GithubRepos /> */}
+        <GithubRepos />
       </Box>
       <Box marginTop="2rem">
         <Educations />

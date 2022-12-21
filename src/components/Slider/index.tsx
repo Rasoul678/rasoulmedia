@@ -12,9 +12,9 @@ const Slider: React.FC<SliderProps> = ({ children, sliderStyles, ...rest }) => {
 
   return (
     <Styled.SlidesContainer style={{ ...rest }}>
-      {Children.map(arrayChildren, (child, index) => {
+      {Children.map(arrayChildren, (child) => {
         return (
-          <Styled.Slider key={index} style={{ ...sliderStyles }}>
+          <Styled.Slider style={{ ...sliderStyles }}>
             {cloneElement(child as any)}
           </Styled.Slider>
         );
