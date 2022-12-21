@@ -9,6 +9,7 @@ import useTheme from "hooks/useTheme";
 import { useStore } from "store/store";
 import CodeEditor from "views/Apps/code-editor";
 import MainLayout from "layouts/Main";
+import useTrackUser from "hooks/useTrackUser";
 
 const Home = lazy(() => import(/*webpackChunkName: "Home_View"*/ "views/Home"));
 const Contact = lazy(
@@ -24,6 +25,8 @@ const App: React.FC = () => {
   const theme = useTheme();
   const { direction } = useSetDirection();
   const { actions } = useStore();
+
+  useTrackUser();
 
   //! Get repositories from my github account
   useEffect(() => {
