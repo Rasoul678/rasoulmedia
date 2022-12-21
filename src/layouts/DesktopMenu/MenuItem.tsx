@@ -37,7 +37,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ name, linkTo, children }) => {
       onMouseEnter={() => lottie.play(name)}
       onMouseLeave={() => lottie.stop(name)}
     >
-      <Styled.MenuLink as={Link} to={linkTo}>
+      <Styled.MenuLink as={Link} to={linkTo} data-test-id={name}>
         {children}
       </Styled.MenuLink>
     </Styled.MenuItem>
