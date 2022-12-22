@@ -63,11 +63,11 @@ const useTrackUser = () => {
               //* Check last visit!
               const {
                 ip: userIP,
-                locaction,
+                location,
                 lastVisit,
               } = JSON.parse(userVisibility);
 
-              if (!userIP || !locaction || !lastVisit) {
+              if (!userIP || !location || !lastVisit) {
                 ({ ip, loc, ts } = await getIP());
               }
 
@@ -75,7 +75,7 @@ const useTrackUser = () => {
               const isLongTimeNoSee =
                 Date.now() - new Date(lastVisit).getTime() > 6.048e8;
               //* It is different location
-              const isDiffLocation = locaction !== loc;
+              const isDiffLocation = location !== loc;
 
               if (isLongTimeNoSee || isDiffLocation) {
                 const newVisitDate = new Date().toLocaleString();
