@@ -5,7 +5,7 @@ import ChainedBackend from "i18next-chained-backend";
 import LocalStorageBackend from "i18next-localstorage-backend";
 import { initReactI18next } from "react-i18next";
 
-const version = 24;
+const version = 28;
 
 i18next
   .use(ChainedBackend)
