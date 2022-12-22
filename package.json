@@ -1,7 +1,7 @@
 {
   "homepage": "https://www.rasoulmedia.com/",
   "name": "rasoulmedia",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
