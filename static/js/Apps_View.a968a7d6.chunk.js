@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkrasoulmedia=self.webpackChunkrasoulmedia||[]).push([[9616],{6010:function(e,r,i){i.r(r),i.d(r,{default:function(){return a}});var d=i(6196),s=i(5676),t=i(6280),c=i.p+"static/media/code-editor.654e274d439a61d2896a.gif",n=i(184),a=function(){return(0,n.jsx)(s.G,{children:(0,n.jsxs)(t.Z,{children:[(0,n.jsx)("h1",{children:"Apps"}),(0,n.jsx)(d.Link,{to:"/apps/code-editor",children:(0,n.jsx)("img",{width:600,style:{borderRadius:"1rem",cursor:"pointer"},src:c,alt:"code-editor-gif"})})]})})}}}]);
-//# sourceMappingURL=Apps_View.a968a7d6.chunk.js.map
