@@ -1,0 +1,121 @@
+{
+  "bachelor-description": "Obtuve mi licenciatura de la Universidad Malek Ashtar en ingeniería aeroespacial.",
+  "bio-education": "Biografía y educación",
+  "birthday": "Fecha de nacimiento",
+  "blue": "Azul",
+  "born-description": "Nací en Irán.",
+  "bs-degree": "Licenciado en Ciencias",
+  "contact-me": "Ponerse en contacto",
+  "country": { "iran": "Irán" },
+  "dark": "Oscuro",
+  "edu": {
+    "first": "Mi educación escolar comenzó en Rostamkola, donde me gradué de la escuela secundaria Dr. Omidi (1996-2008).",
+    "header": "Antecedentes Académicos",
+    "second": "Me gradué de la Universidad Malek Ashtar con una licenciatura en ingeniería aeroespacial (2009-2012).",
+    "third": "En ingeniería aeroespacial, obtuve mi maestría de la Universidad Shahid Beheshti (2012-2015)."
+  },
+  "email": "E-mail",
+  "front": { "dev": "Desarrollador front-end" },
+  "git": {
+    "message": "Si está interesado en lo que estoy trabajando, no dude en consultar mi página de github.",
+    "repos": "Repositorios Github"
+  },
+  "green": "Verde",
+  "hometown": "Rostamkola",
+  "js": {
+    "description": {
+      "1": "Diseño de landing pages con CSS y HTML.",
+      "2": "Trabajando en estrecha colaboración con desarrolladores frontend experimentados.",
+      "3": "Desarrollando una pequeña porción de sitios web junto con otros desarrolladores."
+    },
+    "dev": "Desarrollador Javascript"
+  },
+  "kara": {
+    "description": {
+      "1": "Desarrollando panel de administración usando ReactJs.",
+      "2": "Implementando algunas mejoras que mejoraron el rendimiento y la experiencia del usuario.",
+      "3": "Trabajando con tecnologías Backend como el framework Laravel.",
+      "4": "Trabajar con API REST en proyectos reales y comprender bases de datos.",
+      "5": "Uso de la biblioteca MaterialUI."
+    }
+  },
+  "lang": {
+    "en": "inglés",
+    "fa": "persa",
+    "hi": "hindi",
+    "nl": "holandesa",
+    "fr": "francesa",
+    "es": "española"
+  },
+  "light": "Luz",
+  "live-description": "Y mi ciudad natal es Rostamkola.",
+  "master-description": "Obtuve mi maestría en ingeniería aeroespacial de la Universidad Shahid Beheshti.",
+  "me": "Rasoul Hesami",
+  "message": "Mensaje",
+  "mind": {
+    "description": {
+      "1": "Jugando un papel clave en el desarrollo, mejora y operación de un software basado en web (SAAS).",
+      "2": "Trabajando en estrecha colaboración con el equipo de desarrollo de aplicaciones, incluido el gerente de proyecto.",
+      "3": "Cambiar el código fuente de la aplicación de Javascript puro a una aplicación de una sola página mediante el uso de ReactJS.",
+      "4": "Desarrollo e integración de componentes ReactJs altamente personalizados y reutilizables."
+    }
+  },
+  "ms-degree": "Maestro de la ciencia",
+  "msg": {
+    "input": { "error": "se requiere {{input}}" },
+    "message": {
+      "error": "¡Algo salió mal, intenta de nuevo!",
+      "sent": "Mensaje enviado con exito."
+    }
+  },
+  "name": "Nombre",
+  "nav": {
+    "projects": "proyectos",
+    "code": "Código",
+    "contact": "Contacto",
+    "home": "Casa"
+  },
+  "next": "próximo",
+  "red": "rojo",
+  "school": "Colegio",
+  "school-description": "Fui a la escuela en mi ciudad natal y me gradué de la Escuela Dr. Omidi.",
+  "select-lang": "Seleccione el idioma",
+  "select-theme": "Seleccione el tema",
+  "send": "Enviar",
+  "step": {
+    "asktour": "¿Te gustaría hacer un recorrido?",
+    "darkmode": "Alternar entre modo oscuro y claro",
+    "enjoy": "Disfrútala",
+    "enterEmail": "Introduce tu correo electrónico",
+    "enterName": "Ingresa tu nombre",
+    "enterSubject": "Introduce el asunto (opcional)",
+    "info": "Aquí encontrarás información sucinta sobre mí y mis habilidades.",
+    "lang": "Elija el idioma del sitio",
+    "nav": "Navegar entre páginas",
+    "no": "Naaah!",
+    "passion": "Estas son mis pasiones",
+    "send": "Y envíamelo",
+    "social": "Esta es mi foto y mis redes sociales 😊",
+    "startContact": "Aquí es donde puedes contactarme",
+    "theme": "Elige el color del tema",
+    "tnx": "¡Gracias! 🎉",
+    "warning": "Si lo cancelas aquí, no lo volverás a ver.",
+    "writeMsg": "Escriba su mensaje aquí",
+    "yes": "Si vamos"
+  },
+  "subject": "Sujeto",
+  "tech-stack": "Tecnología",
+  "typewriter": {
+    "1": "Me gusta diseñar.",
+    "2": "Me gusta conocer gente nueva."
+  },
+  "university": { "mut": "Malek Ashtar", "sbu": "Shahid Beheshti" },
+  "work-experience": "Experiencia laboral",
+  "yellow": "Amarillo",
+  "account": { "signin": "iniciar sesión", "signout": "desconectar" },
+  "hero": {
+    "intro-welcome": "Hola, soy Rasoul Hesami."
+  },
+  "language": "idioma",
+  "my-prof": "mi perfil"
+}

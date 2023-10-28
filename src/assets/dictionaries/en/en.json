@@ -1,0 +1,118 @@
+{
+  "bachelor-description": "I got my bachelor's degree from Malek Ashtar University in aerospace engineering.",
+  "bio-education": "Biography & Education",
+  "birthday": "Date of Birth",
+  "blue": "Blue",
+  "born-description": "I was born in Iran.",
+  "bs-degree": "Bachelor of Science",
+  "contact-me": "Get In Touch",
+  "country": { "iran": "Iran" },
+  "dark": "Dark",
+  "edu": {
+    "first": "My school education began in Rostamkola, where I graduated from the Dr. Omidi high school (1996-2008).",
+    "header": "Academic Background",
+    "second": "I graduated from Malek Ashtar University with a bachelor's degree in aerospace engineering (2009-2012).",
+    "third": "In aerospace engineering, I received my master's degree from Shahid Beheshti University (2012-2015)."
+  },
+  "email": "Email",
+  "front": { "dev": "Frontend Developer" },
+  "git": {
+    "message": "If you are interested in what I am working on, feel free to check out my github page.",
+    "repos": "Github Repositories"
+  },
+  "green": "Green",
+  "hometown": "Rostamkola",
+  "js": {
+    "description": {
+      "1": "Designing landing pages with CSS and HTML.",
+      "2": "Working closely with experienced frontend developers.",
+      "3": "Developing small portion of websites alongside with other developers."
+    },
+    "dev": "Javascript Developer"
+  },
+  "kara": {
+    "description": {
+      "1": "Developing admin panel using ReactJs.",
+      "2": "Implementing some enhancements that improved performance and user experience.",
+      "3": "Working with Backend technologies like Laravel framework.",
+      "4": "Working with REST API in real project and understanding databases.",
+      "5": "Using of MaterialUI library."
+    }
+  },
+  "lang": {
+    "en": "english",
+    "fa": "persian",
+    "hi": "hindi",
+    "nl": "dutch",
+    "fr": "french",
+    "es": "spanish"
+  },
+  "light": "Light",
+  "live-description": "And my hometown is Rostamkola.",
+  "master-description": "I got my master's degree from Shahid Beheshti University in aerospace engineering.",
+  "me": "Rasoul Hesami Rostami",
+  "message": "Message",
+  "mind": {
+    "description": {
+      "1": "Playing a key role in the development, improvement and operation of a web-based software(SAAS).",
+      "2": "Working closely with app development team including project manager.",
+      "3": "Changing app source code from pure Javascript to single page application by using of ReactJS.",
+      "4": "Developing and integrating highly customized and re-usable ReactJs components."
+    }
+  },
+  "ms-degree": "Master of Science",
+  "msg": {
+    "input": { "error": "{{input}} is required" },
+    "message": {
+      "error": "Something went wrong, Try again!",
+      "sent": "Message successfully sent."
+    }
+  },
+  "name": "Name",
+  "nav": {
+    "projects": "Projects",
+    "code": "Code",
+    "contact": "Contact",
+    "home": "Home"
+  },
+  "next": "Next",
+  "red": "Red",
+  "school": "School",
+  "school-description": "I went to school in my hometown and I graduated from Dr. Omidi School.",
+  "select-lang": "Select language",
+  "select-theme": "Select theme",
+  "send": "Send",
+  "step": {
+    "asktour": "Would you like to take a tour?",
+    "darkmode": "Toggle between dark and light mode",
+    "enjoy": "Enjoy it",
+    "enterEmail": "Enter your E-mail",
+    "enterName": "Enter you name",
+    "enterSubject": "Enter subject (optional)",
+    "info": "Here you would find succinct information about me and my skills",
+    "lang": "Choose site language",
+    "nav": "Navigate between pages",
+    "no": "Naaah!",
+    "passion": "These are my passions",
+    "send": "And, send it to me",
+    "social": "This is my picture and my social networks 😊",
+    "startContact": "This is where you can contact me",
+    "theme": "Choose theme color",
+    "tnx": "Thank You! 🎉",
+    "warning": "If you cancel it here, won't see it again.",
+    "writeMsg": "Write your message here",
+    "yes": "Yes, let's go"
+  },
+  "subject": "Subject",
+  "tech-stack": "Technology",
+  "typewriter": { "1": "I like to design.", "2": "I like meeting new people." },
+  "university": { "mut": "Malek Ashtar", "sbu": "Shahid Beheshti" },
+  "work-experience": "Work & Experience",
+  "yellow": "Yellow",
+  "account": { "signin": "sign in", "signout": "sign out" },
+  "hero": {
+    "intro-welcome": "Hi, I am Rasoul Hesami Rostami"
+  },
+  "language": "language",
+  "my-prof": "my profile"
+}

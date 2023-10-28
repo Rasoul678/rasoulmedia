@@ -89,3 +89,7 @@ export const hexToRgb = (hex: string) => {
       }
     : null;
 };
+
+export const random = (min: number, max: number) => {
+  return Math.floor(Math.random() * (max - min)) + min;
+};

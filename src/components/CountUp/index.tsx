@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { useCountUp } from "react-countup";
-import { useCountUpProps } from "react-countup/build/useCountUp";
+import { UseCountUpProps } from "react-countup/build/useCountUp";
 import * as Styled from "./CountUp.styles";
 
-interface CountUpProps extends Omit<useCountUpProps, "ref"> {}
+interface CountUpProps extends Omit<UseCountUpProps, "ref"> {}
 
 const Countup: React.FC<CountUpProps> = (props) => {
   const countUpRef = useRef(null);

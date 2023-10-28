@@ -1,4 +1,3 @@
-import { lazy } from "react";
 import Footer from "components/Footer";
 import { View } from "components/Global/GlobalStyles";
 import * as Styled from "./Home.styles";
@@ -6,26 +5,37 @@ import * as Styled from "./Home.styles";
 import MobileIcon from "components/Icons/MobileIcon";
 import TabletIcon from "components/Icons/TabletIcon";
 import LapTopIcon from "components/Icons/LapTopIcon";
-import GithubRepos from "./items/github-repos";
 import Box from "components/Box";
-import Educations from "./items/educations";
 import ReactTour from "components/Tour";
-
-const DesktopGallery = lazy(() => import("components/HomeGallery/laptop"));
+import HomeHero from "components/Hero";
+import TimeLine from "components/timeline/TimeLine";
+import { useStore } from "store/store";
+import { RepoType } from "interfaces";
 
 interface IHomeProps {}
 
 const Home: React.FC<IHomeProps> = () => {
+  const { store } = useStore();
+  const { isLoading, repositories } = store.github;
+
+  const myRepos = ([...repositories] as RepoType[])
+    ?.sort(
+      (a, b) => Number(new Date(b.created_at)) - Number(new Date(a.created_at))
+    )
+    .filter((repo) => {
+      return !repo.fork && repo.stargazers_count;
+    })
+    .slice(0, 20);
+
   return (
     <View>
       <ReactTour name="home" />
-      <DesktopGallery />
-      <Box width="90%" margin="auto">
-        <GithubRepos />
-      </Box>
-      <Box marginTop="2rem">
-        <Educations />
-      </Box>
+      <HomeHero />
+      {!isLoading && (
+        <Box width="90%" margin="auto">
+          <TimeLine repos={myRepos} />
+        </Box>
+      )}
       <Styled.DevicesWrapper>
         <MobileIcon size={30} />
         <TabletIcon size={30} />

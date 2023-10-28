@@ -9,7 +9,10 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <section>
       <RenderMenu />
-      {children}
+      <div className="main">
+        <div className="gradient" />
+      </div>
+      <main>{children}</main>
     </section>
   );
 };

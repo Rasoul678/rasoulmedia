@@ -1,0 +1,121 @@
+{
+  "bachelor-description": "Ik heb mijn bachelordiploma in lucht- en ruimtevaarttechniek behaald aan de Malek Ashtar University.",
+  "bio-education": "Biografie en onderwijs",
+  "birthday": "Geboortedatum",
+  "blue": "Blauw",
+  "born-description": "Ik ben geboren in Iran.",
+  "bs-degree": "Bachelor of Science",
+  "contact-me": "Neem contact op",
+  "country": { "iran": "Iran" },
+  "dark": "Donker",
+  "edu": {
+    "first": "Mijn schoolopleiding begon in Rostamkola, waar ik afstudeerde aan de Dr. Omidi middelbare school (1996-2008).",
+    "header": "Academische achtergrond",
+    "second": "Ik ben afgestudeerd aan Malek Ashtar University met een bachelor in lucht- en ruimtevaarttechniek (2009-2012).",
+    "third": "In lucht- en ruimtevaarttechniek heb ik mijn masterdiploma behaald aan de Shahid Beheshti University (2012-2015)."
+  },
+  "email": "E-mail",
+  "front": { "dev": "Frontend-ontwikkelaar" },
+  "git": {
+    "message": "Als je geïnteresseerd bent in waar ik aan werk, neem dan gerust een kijkje op mijn github-pagina.",
+    "repos": "Github-opslagplaatsen"
+  },
+  "green": "Groente",
+  "hometown": "Rostamkola",
+  "js": {
+    "description": {
+      "1": "Bestemmingspagina's ontwerpen met CSS en HTML.",
+      "2": "Je werkt nauw samen met ervaren frontend developers.",
+      "3": "Samen met andere ontwikkelaars een klein deel van websites ontwikkelen."
+    },
+    "dev": "Javascript-ontwikkelaar"
+  },
+  "kara": {
+    "description": {
+      "1": "Ontwikkelen van admin panel met behulp van ReactJs.",
+      "2": "Enkele verbeteringen doorgevoerd die de prestaties en gebruikerservaring verbeterden.",
+      "3": "Werken met backend-technologieën zoals het Laravel-framework.",
+      "4": "Werken met REST API in echte projecten en databases begrijpen.",
+      "5": "Gebruik van de MaterialUI-bibliotheek."
+    }
+  },
+  "lang": {
+    "en": "engels",
+    "fa": "perzisch",
+    "hi": "hindi",
+    "nl": "nederlands",
+    "fr": "frans",
+    "es": "spaans"
+  },
+  "light": "Licht",
+  "live-description": "En mijn geboorteplaats is Rostamkola.",
+  "master-description": "Ik heb mijn masterdiploma in lucht- en ruimtevaarttechniek behaald aan de Shahid Beheshti University.",
+  "me": "Rasoul Hesami",
+  "message": "Bericht",
+  "mind": {
+    "description": {
+      "1": "Een sleutelrol spelen in de ontwikkeling, verbetering en werking van webgebaseerde software (SAAS).",
+      "2": "Nauw samenwerken met app-ontwikkelingsteam inclusief projectmanager.",
+      "3": "App-broncode wijzigen van puur Javascript naar applicatie met één pagina met behulp van ReactJS.",
+      "4": "Ontwikkelen en integreren van zeer aangepaste en herbruikbare ReactJs-componenten."
+    }
+  },
+  "ms-degree": "Master of Science",
+  "msg": {
+    "input": { "error": "{{input}} is vereist" },
+    "message": {
+      "error": "Er ging iets fout, probeer opnieuw!",
+      "sent": "Bericht succesvol verzonden."
+    }
+  },
+  "name": "Naam",
+  "nav": {
+    "projects": "projecten",
+    "code": "Code",
+    "contact": "Contact",
+    "home": "Huis"
+  },
+  "next": "Volgende",
+  "red": "rood",
+  "school": "School",
+  "school-description": "Ik ging naar school in mijn geboorteplaats en ik studeerde af aan de Dr. Omidi School.",
+  "select-lang": "Selecteer taal",
+  "select-theme": "Selecteer thema",
+  "send": "Versturen",
+  "step": {
+    "asktour": "Wilt u een rondleiding volgen?",
+    "darkmode": "Schakelen tussen donkere en lichte modus",
+    "enjoy": "Geniet ervan",
+    "enterEmail": "Voer uw e-mailadres in",
+    "enterName": "Vul je naam in",
+    "enterSubject": "Voer onderwerp in (optioneel)",
+    "info": "Hier vind je beknopte informatie over mij en mijn vaardigheden",
+    "lang": "Kies de taal van de site",
+    "nav": "Navigeren tussen pagina's",
+    "no": "Naaah!",
+    "passion": "Dit zijn mijn passies",
+    "send": "En stuur het naar mij",
+    "social": "Dit is mijn foto en mijn sociale netwerken 😊",
+    "startContact": "Hier kunt u contact met mij opnemen",
+    "theme": "Kies themakleur",
+    "tnx": "Bedankt!",
+    "warning": "Als je het hier annuleert, zie je het niet meer terug.",
+    "writeMsg": "Schrijf je bericht hier",
+    "yes": "Ja laten we gaan"
+  },
+  "subject": "Onderwerp",
+  "tech-stack": "Technologie",
+  "typewriter": {
+    "1": "Ik hou van ontwerpen.",
+    "2": "Ik vind het leuk om nieuwe mensen te ontmoeten."
+  },
+  "university": { "mut": "Malek Ashtar", "sbu": "Shahid Beheshti" },
+  "work-experience": "Werkervaring",
+  "yellow": "Geel",
+  "account": { "signin": "inloggen", "signout": "uitloggen" },
+  "hero": {
+    "intro-welcome": "Hallo, ik ben Rasoul Hesami."
+  },
+  "language": "taal",
+  "my-prof": "mijn profiel"
+}

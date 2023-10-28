@@ -1,0 +1,121 @@
+{
+  "bachelor-description": "J'ai obtenu mon baccalauréat de l'Université Malek Ashtar en génie aérospatial.",
+  "bio-education": "Biographie & Éducation",
+  "birthday": "Date de naissance",
+  "blue": "Bleu",
+  "born-description": "Je suis né en Iran.",
+  "bs-degree": "licence en sciences",
+  "contact-me": "Entrer en contact",
+  "country": { "iran": "Iran" },
+  "dark": "Sombre",
+  "edu": {
+    "first": "Mon éducation scolaire a commencé à Rostamkola, où j'ai obtenu mon diplôme du lycée Dr. Omidi (1996-2008).",
+    "header": "Formation universitaire",
+    "second": "Je suis diplômé de l'Université Malek Ashtar avec un baccalauréat en génie aérospatial (2009-2012).",
+    "third": "En génie aérospatial, j'ai obtenu ma maîtrise à l'Université Shahid Beheshti (2012-2015)."
+  },
+  "email": "E-mail",
+  "front": { "dev": "Développeur frontal" },
+  "git": {
+    "message": "Si vous êtes intéressé par ce sur quoi je travaille, n'hésitez pas à consulter ma page github.",
+    "repos": "Dépôts Github"
+  },
+  "green": "Vert",
+  "hometown": "Rostamkola",
+  "js": {
+    "description": {
+      "1": "Conception de pages de destination avec CSS et HTML.",
+      "2": "Travailler en étroite collaboration avec des développeurs frontend expérimentés.",
+      "3": "Développer une petite partie de sites Web avec d'autres développeurs."
+    },
+    "dev": "Développeur Javascript"
+  },
+  "kara": {
+    "description": {
+      "1": "Développement d'un panneau d'administration avec ReactJs.",
+      "2": "Mise en œuvre de certaines améliorations qui ont amélioré les performances et l'expérience utilisateur.",
+      "3": "Travailler avec des technologies Backend comme le framework Laravel.",
+      "4": "Travailler avec l'API REST dans un projet réel et comprendre les bases de données.",
+      "5": "Utilisation de la bibliothèque MaterialUI."
+    }
+  },
+  "lang": {
+    "en": "anglais",
+    "fa": "persan",
+    "hi": "hindi",
+    "nl": "néerlandaise",
+    "fr": "français",
+    "es": "sspagnole"
+  },
+  "light": "Léger",
+  "live-description": "Et ma ville natale est Rostamkola.",
+  "master-description": "J'ai obtenu ma maîtrise de l'Université Shahid Beheshti en génie aérospatial.",
+  "me": "Rasoul Hesami",
+  "message": "Message",
+  "mind": {
+    "description": {
+      "1": "Jouer un rôle clé dans le développement, l'amélioration et l'exploitation d'un logiciel basé sur le Web (SAAS).",
+      "2": "Travailler en étroite collaboration avec l'équipe de développement d'applications, y compris le chef de projet.",
+      "3": "Modification du code source de l'application de Javascript pur à une application à page unique à l'aide de ReactJS.",
+      "4": "Développer et intégrer des composants ReactJs hautement personnalisés et réutilisables."
+    }
+  },
+  "ms-degree": "Maîtrise ès sciences",
+  "msg": {
+    "input": { "error": "{{input}} est requise" },
+    "message": {
+      "error": "Quelque chose s'est mal passé essaie encore!",
+      "sent": "Message envoyé avec succès."
+    }
+  },
+  "name": "Nom",
+  "nav": {
+    "projects": "projets",
+    "code": "Code",
+    "contact": "Contact",
+    "home": "Accueil"
+  },
+  "next": "Suivant",
+  "red": "rouge",
+  "school": "L'école",
+  "school-description": "Je suis allé à l'école dans ma ville natale et je suis diplômé de l'école Dr. Omidi.",
+  "select-lang": "Choisir la langue",
+  "select-theme": "Sélectionne un thème",
+  "send": "Envoyer",
+  "step": {
+    "asktour": "Souhaitez-vous faire un tour?",
+    "darkmode": "Basculer entre les modes sombre et clair",
+    "enjoy": "Profitez-en",
+    "enterEmail": "Entrer votre Email",
+    "enterName": "Entrez votre nom",
+    "enterSubject": "Entrez le sujet (facultatif)",
+    "info": "Vous trouverez ici des informations succinctes sur moi et mes compétences",
+    "lang": "Choisissez la langue du site",
+    "nav": "Naviguer entre les pages",
+    "no": "Naaah !",
+    "passion": "Ce sont mes passions",
+    "send": "Et, envoie-le-moi",
+    "social": "Ceci est ma photo et mes réseaux sociaux 😊",
+    "startContact": "C'est ici que vous pouvez me contacter",
+    "theme": "Choisissez la couleur du thème",
+    "tnx": "Merci! 🎉",
+    "warning": "Si vous l'annulez ici, vous ne le reverrez plus.",
+    "writeMsg": "Ecrivez votre message ici",
+    "yes": "Oui allons-y"
+  },
+  "subject": "Sujet",
+  "tech-stack": "La technologie",
+  "typewriter": {
+    "1": "J'aime concevoir.",
+    "2": "J'aime rencontrer de nouvelles personnes."
+  },
+  "university": { "mut": "Malek Ashtar", "sbu": "Shahid Beheshti" },
+  "work-experience": "L'expérience professionnelle",
+  "yellow": "Jaune",
+  "account": { "signin": "s'identifier", "signout": "se déconnecter" },
+  "hero": {
+    "intro-welcome": "Bonjour, je suis Rasoul Hesami."
+  },
+  "language": "langue",
+  "my-prof": "mon profil"
+}
