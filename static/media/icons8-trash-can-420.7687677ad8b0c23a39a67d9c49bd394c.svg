@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="420px" height="420px">
+    <path fill="#f48fb1"
+        d="M41.5,13h-9c0-2.5-9-2.5-9,0h-9c-0.8,0-1.5,0.7-1.5,1.5s0.7,1.5,1.5,1.5h1v26.5c0,2.2,1.8,4,4,4h17	c2.2,0,4-1.8,4-4V16h1c0.8,0,1.5-0.7,1.5-1.5S42.3,13,41.5,13z" />
+    <path fill="none" stroke="#18193f" stroke-miterlimit="10" stroke-width="3"
+        d="M19.5,11.5V10c0-2.5,2-4.5,4.5-4.5s4.5,2,4.5,4.5v1.5" />
+    <line x1="8.5" x2="39.5" y1="11.5" y2="11.5" fill="none" stroke="#18193f" stroke-linecap="round"
+        stroke-miterlimit="10" stroke-width="3" />
+    <line x1="36.5" x2="36.5" y1="23.5" y2="11.5" fill="none" stroke="#18193f" stroke-linecap="round"
+        stroke-miterlimit="10" stroke-width="3" />
+    <path fill="none" stroke="#18193f" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"
+        d="M11.5,18.7v19.8c0,2.2,1.8,4,4,4h17c2.2,0,4-1.8,4-4V31" />
+    <line x1="20.5" x2="20.5" y1="19.5" y2="34.5" fill="none" stroke="#18193f" stroke-linecap="round"
+        stroke-miterlimit="10" stroke-width="3" />
+    <line x1="27.5" x2="27.5" y1="19.5" y2="34.5" fill="none" stroke="#18193f" stroke-linecap="round"
+        stroke-miterlimit="10" stroke-width="3" />
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="420px" height="420px">
+    <path fill="#9fa8da"
+        d="M41,45H15c-2.209,0-4-1.791-4-4V15c0-2.209,1.791-4,4-4h26c2.209,0,4,1.791,4,4v26	C45,43.209,43.209,45,41,45z" />
+    <line x1="24" x2="24" y1="30.892" y2="36.405" fill="none" stroke="#18193f" stroke-linecap="round"
+        stroke-miterlimit="10" stroke-width="3" />
+    <line x1="24" x2="24" y1="23.541" y2="26.297" fill="none" stroke="#18193f" stroke-linecap="round"
+        stroke-miterlimit="10" stroke-width="3" />
+    <path fill="none" stroke="#18193f" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"
+        d="M18.993,13.717	c1.503-0.769,3.205-1.204,5.007-1.204c6.08,0,11.027,4.947,11.027,11.027v8.27" />
+    <path fill="none" stroke="#18193f" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"
+        d="M12.973,31.811v-8.27	c0-2.398,0.77-4.621,2.075-6.432" />
+    <path fill="none" stroke="#18193f" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"
+        d="M28.466,20.311	c0.659,0.909,1.048,2.024,1.048,3.23v11.027" />
+    <path fill="none" stroke="#18193f" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"
+        d="M18.486,34.568V23.541	c0-3.041,2.473-5.514,5.514-5.514c0.154,0,0.308,0.006,0.459,0.019" />
+    <path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+        stroke-width="3" d="M7.5,15.5v-4.324c0-2.03,1.646-3.676,3.676-3.676H15.5" />
+    <path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+        stroke-width="3" d="M32.5,7.5h4.324c2.03,0,3.676,1.646,3.676,3.676V15.5" />
+    <path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+        stroke-width="3" d="M15.5,40.5h-4.324c-2.03,0-3.676-1.646-3.676-3.676V32.5" />
+    <path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+        stroke-width="3" d="M40.5,32.5v4.324c0,2.03-1.646,3.676-3.676,3.676H32.5" />
+</svg>
